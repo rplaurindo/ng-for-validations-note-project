@@ -2,9 +2,8 @@
 
 import { ExampleService } from './../../services/example/example.service';
 
-import { OnInit } from '@angular/core';
 // stored in node_modules
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 // decorator
 @Component({
