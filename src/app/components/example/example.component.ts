@@ -19,6 +19,7 @@ import { Component, OnInit } from '@angular/core';
 export class ExampleComponent implements OnInit {
 
   stringExamples: String[];
+  mouseIsOver: Boolean = false;
 
   constructor(private exampleService: ExampleService) {
     this.stringExamples = this.exampleService.getStringExamples();
@@ -26,6 +27,14 @@ export class ExampleComponent implements OnInit {
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
+  }
+
+  alertMsg(): void {
+    alert('Event Example!');
+  }
+
+  onMouseOverOut(event: MouseEvent): void {
+    this.mouseIsOver = !this.mouseIsOver;
   }
 
 }
