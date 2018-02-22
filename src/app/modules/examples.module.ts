@@ -1,0 +1,20 @@
+import { ExampleComponent } from '../components/example/example.component';
+import { ExampleService } from '../services/example/example.service';
+
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    HttpModule
+  ],
+  declarations: [ExampleComponent],
+  exports: [ExampleComponent],
+  providers: [ExampleService]
+})
+export class ExamplesModule { }
