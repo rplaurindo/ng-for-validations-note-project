@@ -20,6 +20,7 @@ export class ExampleComponent implements OnInit {
 
   stringExamples: String[];
   mouseIsOver: Boolean = false;
+  inputValue: String;
 
   constructor(private exampleService: ExampleService) {
     this.stringExamples = this.exampleService.getStringExamples();

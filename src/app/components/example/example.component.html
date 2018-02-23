@@ -1,17 +1,19 @@
 <!-- view -->
 
 <ul>
-  <li
-    *ngFor='let str of stringExamples'
-  >
+  <li *ngFor='let str of stringExamples'>
     {{ str }}
   </li>
 </ul>
+
+<!-- two way data binding -->
+<input type="text" [(ngModel)]="inputString" placeholder="ngModel testing" >
+<input type="text" [(ngModel)]="inputString" >
+<p> {{ inputString }} </p>
 
 <!-- [class.<class>]= true|false receives a class if variable returns true-->
 <button
   (click)="alertMsg()"
   (mouseover) = "onMouseOverOut($event)"
   (mouseout) = "onMouseOverOut($event)"
-  [class.highlighted]="mouseIsOver"
->Event Example</button>
+  [class.highlighted]="mouseIsOver">Event Example</button>
