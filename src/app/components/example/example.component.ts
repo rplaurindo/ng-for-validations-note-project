@@ -1,4 +1,4 @@
-// Controller
+// Presenter
 
 import { ExampleService } from './../../services/example/example.service';
 
