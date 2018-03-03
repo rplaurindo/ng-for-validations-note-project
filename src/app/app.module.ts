@@ -1,5 +1,4 @@
-import { DataBindingModule } from './modules/data-binding.module';
-import { InterpolationModule } from './modules/interpolation.module';
+import { ExamplesModule } from './modules/examples.module';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -19,8 +18,7 @@ import { ErrorComponent } from './components/error/error.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    DataBindingModule,
-    InterpolationModule
+    ExamplesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,6 @@
+import { DataBindingComponent } from '../components/data-binding/example.component';
+import { DataBindingService } from '../services/data-binding/example.service';
+
 import { InterpolationComponent } from '../components/interpolation/example.component';
 
 import { NgModule } from '@angular/core';
@@ -12,8 +15,8 @@ import { HttpModule } from '@angular/http';
     FormsModule,
     HttpModule
   ],
-  declarations: [InterpolationComponent],
-  exports: [InterpolationComponent],
-  providers: []
+  declarations: [DataBindingComponent, InterpolationComponent],
+  exports: [DataBindingComponent, InterpolationComponent],
+  providers: [DataBindingService]
 })
-export class InterpolationModule { }
+export class ExamplesModule { }

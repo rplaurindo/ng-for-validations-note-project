@@ -1,5 +1,4 @@
 import { DataBindingComponent } from './components/data-binding/example.component';
-import { InterpolationComponent } from './components/interpolation/example.component';
 
 import { Routes, RouterModule } from '@angular/router';
 
