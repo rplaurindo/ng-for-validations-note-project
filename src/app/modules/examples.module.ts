@@ -1,8 +1,10 @@
+// app modules
 import { DataBindingComponent } from '../components/data-binding/example.component';
 import { DataBindingService } from '../services/data-binding/example.service';
 
 import { InterpolationComponent } from '../components/interpolation/example.component';
 
+// dependencie modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
