@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 
 // dependency injection
 @Injectable()
-export class ExampleService {
+export class DataBindingService {
 
   // string[], Array<String>
   private readonly stringExamples: String[] = ['A', 'service', 'example', 'as', 'a', 'list'];

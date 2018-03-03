@@ -1,14 +1,14 @@
 // Presenter
 
-import { ExampleService } from './../../services/example/example.service';
+import { DataBindingService } from './../../services/data-binding/example.service';
 
 // stored in node_modules
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 // decorator
 @Component({
   // tag name
-  selector: 'app-example',
+  selector: 'app-data-binding',
   // content
   templateUrl: './example.component.html',
   // stylecheet
@@ -16,14 +16,15 @@ import { Component, OnInit } from '@angular/core';
 })
 
 // the "export" keyword enables to use the component as a HTML tag.
-export class ExampleComponent implements OnInit {
+export class DataBindingComponent implements OnInit {
 
   stringExamples: String[];
   mouseIsOver: Boolean = false;
-  inputValue: String;
+  
+  @Input() inputValue: String;
 
-  constructor(private exampleService: ExampleService) {
-    this.stringExamples = this.exampleService.getStringExamples();
+  constructor(private dataBindingService: DataBindingService) {
+    this.stringExamples = this.dataBindingService.getStringExamples();
   }
 
   ngOnInit(): void {

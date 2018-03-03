@@ -1,12 +1,7 @@
 <!-- view -->
 
-<ul>
-  <li *ngFor='let str of stringExamples'>
-    {{ str }}
-  </li>
-</ul>
-
-<!-- two way data binding method with input property [(ngModel)]=... -->
+<!-- two way data binding method -->
+<!-- input property [(ngModel)]=... declared as @Input('optional alias') <property>: <type> = '<value>' in component -->
 <input type="text" [(ngModel)]="inputString" placeholder="ngModel testing" >
 <input type="text" [(ngModel)]="inputString" >
 <p> {{ inputString }} </p>
