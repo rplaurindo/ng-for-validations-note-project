@@ -2,7 +2,7 @@
 
 <!-- input property [(ngModel)]=... declared as @Input('optional alias') <property>: <type> = '<value>' in component -->
 
-<!-- two way data binding method -->
+<!-- property binding (one way) method [html-property]=componentPropertyVariable -->
+<!-- data binding (two way) method [(ngModel)]=componentPropertyVariable -->
 <input type="text" [(ngModel)]="inputString" placeholder="ngModel testing" >
-<input type="text" [(ngModel)]="inputString" >
-<p> {{ inputString }} </p>
+<span> {{ inputString }} </span>

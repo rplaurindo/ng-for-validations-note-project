@@ -20,7 +20,7 @@ export class DataBindingComponent implements OnInit {
 
   stringExamples: String[];
   
-  @Input() inputValue: String;
+  @Input() propertyInputValue: String;
 
   constructor(private dataBindingService: DataBindingService) {
     this.stringExamples = this.dataBindingService.getStringExamples();
