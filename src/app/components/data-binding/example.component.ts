@@ -19,7 +19,6 @@ import { Component, OnInit, Input } from '@angular/core';
 export class DataBindingComponent implements OnInit {
 
   stringExamples: String[];
-  mouseIsOver: Boolean = false;
   
   @Input() inputValue: String;
 
@@ -29,14 +28,6 @@ export class DataBindingComponent implements OnInit {
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
-  }
-
-  alertMsg(): void {
-    alert('Event Example!');
-  }
-
-  onMouseOverOut(event: MouseEvent): void {
-    this.mouseIsOver = !this.mouseIsOver;
   }
 
 }

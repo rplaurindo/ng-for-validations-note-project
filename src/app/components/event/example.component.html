@@ -1,0 +1,6 @@
+<!-- [class.<class>]= true|false receives a class if variable returns true-->
+<button
+  (click)="alertMsg()"
+  (mouseover)="onMouseOverOut($event)"
+  (mouseout)="onMouseOverOut($event)"
+  [class.highlighted]="mouseIsOver">Event Example</button>

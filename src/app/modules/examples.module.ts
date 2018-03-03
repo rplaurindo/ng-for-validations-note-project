@@ -4,6 +4,8 @@ import { DataBindingService } from '../services/data-binding/example.service';
 
 import { InterpolationComponent } from '../components/interpolation/example.component';
 
+import { EventComponent } from '../components/event/example.component';
+
 // dependencie modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -17,8 +19,8 @@ import { HttpModule } from '@angular/http';
     FormsModule,
     HttpModule
   ],
-  declarations: [DataBindingComponent, InterpolationComponent],
-  exports: [DataBindingComponent, InterpolationComponent],
+  exports: [DataBindingComponent, InterpolationComponent, EventComponent],
+  declarations: [DataBindingComponent, InterpolationComponent, EventComponent],
   providers: [DataBindingService]
 })
 export class ExamplesModule { }
