@@ -1,9 +1,9 @@
-import { DataBindingComponent } from './components/data-binding/example.component';
+import { ErrorComponent } from './modules/errors/error.component';
+import { DataBindingComponent } from './modules/examples/components/data-binding/example.component';
 
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { ErrorComponent } from './modules/errors/error.component';
 
 // const routes: Routes = [
 
