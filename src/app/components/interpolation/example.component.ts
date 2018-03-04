@@ -10,8 +10,8 @@ export class InterpolationComponent implements OnInit {
 
   private readonly stringExamples: String[] = ['A', 'interpolation', 'example', 'as', 'a', 'list'];
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  ngOnInit() {
+
   }
 
 }

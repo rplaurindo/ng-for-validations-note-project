@@ -3,7 +3,7 @@
 import { DataBindingService } from './../../services/data-binding/example.service';
 
 // stored in node_modules
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 // decorator
 @Component({
@@ -19,15 +19,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class DataBindingComponent implements OnInit {
 
   stringExamples: String[];
-  
-  @Input() propertyInputValue: String;
 
   constructor(private dataBindingService: DataBindingService) {
     this.stringExamples = this.dataBindingService.getStringExamples();
   }
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  ngOnInit() {
+
   }
 
 }

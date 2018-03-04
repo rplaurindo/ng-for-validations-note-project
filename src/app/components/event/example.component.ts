@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-event',
@@ -10,16 +10,21 @@ export class EventComponent implements OnInit {
 
   mouseIsOver: Boolean = false;
 
-  alertMsg(): void {
+  ngOnInit() {
+
+  }
+
+  alertMsg() {
     alert('Event Example!');
   }
 
-  onMouseOverOut(event: MouseEvent): void {
+  onMouseOverOut() {
     this.mouseIsOver = !this.mouseIsOver;
   }
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  onChangeValue(currentValue: number) {
+    // alert("Current value: " + currentValue)
+    alert(currentValue);
   }
 
 }

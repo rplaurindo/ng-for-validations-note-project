@@ -13,4 +13,5 @@ export class AppComponent {
   load() {
     this.loading = !this.loading;
   }
+  
 }
