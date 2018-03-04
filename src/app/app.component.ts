@@ -6,12 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public loading = false;
   title = 'app';
+
+  public loading = false;
   events = [];
 
   load() {
     this.loading = !this.loading;
   }
-  
+
 }

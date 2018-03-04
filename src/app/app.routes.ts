@@ -3,7 +3,7 @@ import { DataBindingComponent } from './components/data-binding/example.componen
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { ErrorComponent } from './components/error/error.component';
+import { ErrorComponent } from './modules/errors/error.component';
 
 // const routes: Routes = [
 

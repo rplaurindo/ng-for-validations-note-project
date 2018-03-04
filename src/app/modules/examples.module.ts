@@ -1,11 +1,11 @@
-// app modules
-import { DataBindingComponent } from '../components/data-binding/example.component';
-import { DataBindingService } from '../services/data-binding/example.service';
+// module components and services
+import { DataBindingComponent } from './examples/components/data-binding/example.component';
+import { DataBindingService } from './examples/services/data-binding/example.service';
 
-import { InterpolationComponent } from '../components/interpolation/example.component';
+import { InterpolationComponent } from './examples/components/interpolation/example.component';
 
-import { EventComponent } from '../components/event/example.component';
-import { EventChildComponent } from '../components/event-child/example.component';
+import { EventComponent } from './examples/components/event/example.component';
+import { EventChildComponent } from './examples/components/event-child/example.component';
 
 // dependencie modules
 import { NgModule } from '@angular/core';
