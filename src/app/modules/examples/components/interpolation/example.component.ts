@@ -1,4 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input,
+  OnInit,
+  DoCheck,
+  AfterContentChecked,
+  AfterViewChecked,
+  OnDestroy,
+  OnChanges,
+  AfterContentInit} from '@angular/core';
 
 @Component({
   selector: 'app-interpolation',
@@ -6,12 +13,40 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./example.component.sass']
 })
 
-export class InterpolationComponent implements OnInit {
+export class InterpolationComponent implements OnInit,
+                                               DoCheck,
+                                               AfterContentChecked,
+                                               AfterViewChecked,
+                                               OnDestroy,
+                                               OnChanges,
+                                               AfterContentInit {
 
   private readonly stringExamples: String[] = ['A', 'interpolation', 'example', 'as', 'a', 'list'];
 
-  ngOnInit() {
+  constructor() {
+  }
 
+  // component events
+  ngOnInit() {
+  }
+
+  ngDoCheck() {
+  }
+
+  ngAfterContentChecked() {
+  }
+
+  ngAfterViewChecked() {
+  }
+
+  // called when *ngIf="" receives true
+  ngOnDestroy() {
+  }
+
+  ngOnChanges() {
+  }
+
+  ngAfterContentInit() {
   }
 
 }

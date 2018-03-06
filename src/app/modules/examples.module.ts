@@ -1,6 +1,8 @@
-// module components and services
+// components and services
 import { DataBindingComponent } from './examples/components/data-binding/example.component';
 import { DataBindingService } from './examples/services/data-binding/example.service';
+
+import { ManipulatingDomComponent } from './examples/components/manipulating-dom/manipulating-dom.component';
 
 import { InterpolationComponent } from './examples/components/interpolation/example.component';
 
@@ -24,13 +26,15 @@ import { HttpModule } from '@angular/http';
     DataBindingComponent,
     InterpolationComponent,
     EventComponent,
-    EventChildComponent
+    EventChildComponent,
+    ManipulatingDomComponent
   ],
   declarations: [
     DataBindingComponent,
     InterpolationComponent,
     EventComponent,
-    EventChildComponent
+    EventChildComponent,
+    ManipulatingDomComponent
   ],
   providers: [DataBindingService]
 })
