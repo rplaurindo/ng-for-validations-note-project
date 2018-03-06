@@ -1,6 +1,13 @@
-import { ExampleComponent } from '../components/example/example.component';
-import { ExampleService } from '../services/example/example.service';
+// module components and services
+import { DataBindingComponent } from './examples/components/data-binding/example.component';
+import { DataBindingService } from './examples/services/data-binding/example.service';
 
+import { InterpolationComponent } from './examples/components/interpolation/example.component';
+
+import { EventComponent } from './examples/components/event/example.component';
+import { EventChildComponent } from './examples/components/event-child/example.component';
+
+// dependencie modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,8 +20,18 @@ import { HttpModule } from '@angular/http';
     FormsModule,
     HttpModule
   ],
-  declarations: [ExampleComponent],
-  exports: [ExampleComponent],
-  providers: [ExampleService]
+  exports: [
+    DataBindingComponent,
+    InterpolationComponent,
+    EventComponent,
+    EventChildComponent
+  ],
+  declarations: [
+    DataBindingComponent,
+    InterpolationComponent,
+    EventComponent,
+    EventChildComponent
+  ],
+  providers: [DataBindingService]
 })
 export class ExamplesModule { }

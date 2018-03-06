@@ -1,3 +1,4 @@
+import { ErrorsModule } from './modules/errors.module';
 import { ExamplesModule } from './modules/examples.module';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,12 +8,9 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-import { ErrorComponent } from './components/error/error.component';
-
 @NgModule({
   declarations: [
-    AppComponent,
-    ErrorComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
