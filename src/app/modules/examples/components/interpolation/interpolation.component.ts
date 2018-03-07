@@ -9,8 +9,8 @@ import { Component, Input,
 
 @Component({
   selector: 'app-interpolation',
-  templateUrl: './example.component.html',
-  styleUrls: ['./example.component.sass']
+  templateUrl: './interpolation.component.html',
+  styleUrls: ['./interpolation.component.sass']
 })
 
 export class InterpolationComponent implements OnInit,
