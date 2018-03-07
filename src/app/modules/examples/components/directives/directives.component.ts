@@ -9,6 +9,8 @@ export class DirectivesComponent implements OnInit {
 
   ifDirective: Boolean = true;
 
+  tab: String = 'home';
+
   constructor() { }
 
   ngOnInit() {

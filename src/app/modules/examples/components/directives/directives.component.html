@@ -1,7 +1,34 @@
-<p class="bold">
+<h3>
   *ngIf
-</p>
+</h3>
 
+<!-- is equivalent to use a hidden property binding. [hidden]="true|false" -->
 <p *ngIf="ifDirective">
   Showing me cause’ I exist.
 </p>
+
+<h3>
+    *ngSwitch e *ngSwitchCase
+  </h3>
+<nav>
+  <ul>
+      <li><a href="javascript:void(0)" [class.active]="tab == 'home'"
+        (click)="tab = 'home'"
+        >Home</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" [class.active]="tab == 'registration'"
+        (click)="tab = 'registration'"
+        >Cadastros</a>
+      </li>
+    </ul>
+</nav>
+
+<div class="container" [ngSwitch]="tab" >
+  <p *ngSwitchCase="'registration'">
+    Registration Content.
+  </p>
+  <p *ngSwitchDefault>
+    Home Content.
+  </p>
+</div>
