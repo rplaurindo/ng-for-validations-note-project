@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 @Component({
   selector: 'app-manipulating-dom',
   templateUrl: './manipulating-dom.component.html',
-  styleUrls: ['./manipulating-dom.component.css']
+  styleUrls: ['./manipulating-dom.component.sass']
 })
 export class ManipulatingDomComponent implements OnInit {
 

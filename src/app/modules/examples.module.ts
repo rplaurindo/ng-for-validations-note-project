@@ -4,6 +4,8 @@ import { DataBindingService } from './examples/services/data-binding/example.ser
 
 import { ManipulatingDomComponent } from './examples/components/manipulating-dom/manipulating-dom.component';
 
+import { DirectivesComponent } from './examples/components/directives/directives.component';
+
 import { InterpolationComponent } from './examples/components/interpolation/example.component';
 
 import { EventComponent } from './examples/components/event/example.component';
@@ -25,14 +27,16 @@ import { FormsModule } from '@angular/forms';
     InterpolationComponent,
     EventComponent,
     EventChildComponent,
-    ManipulatingDomComponent
+    ManipulatingDomComponent,
+    DirectivesComponent
   ],
   declarations: [
     DataBindingComponent,
     InterpolationComponent,
     EventComponent,
     EventChildComponent,
-    ManipulatingDomComponent
+    ManipulatingDomComponent,
+    DirectivesComponent
   ],
   providers: [DataBindingService]
 })
