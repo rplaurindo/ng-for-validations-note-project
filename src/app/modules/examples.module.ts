@@ -1,3 +1,4 @@
+import { SafeNavigationComponent } from './examples/components/safe-navigation/safe-navigation.component';
 // components and services
 import { DataBindingComponent } from './examples/components/data-binding/data-binding.component';
 import { DataBindingService } from './examples/services/data-binding/data-binding.service';
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     EventComponent,
     // ComponentChildComponent,
     ManipulatingDomComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    SafeNavigationComponent
   ],
   declarations: [
     DataBindingComponent,
@@ -36,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     EventComponent,
     // ComponentChildComponent,
     ManipulatingDomComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    SafeNavigationComponent
   ],
   providers: [DataBindingService]
 })
