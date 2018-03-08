@@ -1,3 +1,4 @@
+import { YellowBackgroundOnEventlistenerDirective } from './examples/directives/yellow-background-on-eventlistener/yellow-background-on-eventlistener.directive';
 import { LightgrayBackgroundDirective } from './examples/directives/lightgray-background/lightgray-background.directive';
 
 import { NgContentExampleComponent } from './examples/components/ng-content-example/ng-content-example.component';
@@ -46,7 +47,8 @@ import { FormsModule } from '@angular/forms';
     DirectivesComponent,
     SafeNavigationComponent,
     NgContentExampleComponent,
-    LightgrayBackgroundDirective
+    LightgrayBackgroundDirective,
+    YellowBackgroundOnEventlistenerDirective
   ],
   providers: [DataBindingService]
 })
