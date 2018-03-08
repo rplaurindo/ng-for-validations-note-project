@@ -1,4 +1,4 @@
-import { YellowBackgroundDirective } from './examples/directives/yellow-background.directive';
+import { LightgrayBackgroundDirective } from './examples/directives/lightgray-background/lightgray-background.directive';
 
 import { NgContentExampleComponent } from './examples/components/ng-content-example/ng-content-example.component';
 import { SafeNavigationComponent } from './examples/components/safe-navigation/safe-navigation.component';
@@ -46,7 +46,7 @@ import { FormsModule } from '@angular/forms';
     DirectivesComponent,
     SafeNavigationComponent,
     NgContentExampleComponent,
-    YellowBackgroundDirective
+    LightgrayBackgroundDirective
   ],
   providers: [DataBindingService]
 })
