@@ -8,6 +8,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class ManipulatingDomComponent implements OnInit {
 
   // it works over component too
+  // Don’t use ElementRef to set anything in a Element to prevent XSS (Cross-Site Scripting) attack
   @ViewChild('DOMReference') handlingDOMReference: ElementRef;
 
   constructor() {
