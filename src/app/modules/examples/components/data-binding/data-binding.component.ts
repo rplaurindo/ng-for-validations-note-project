@@ -1,7 +1,3 @@
-// Presenter
-
-import { DataBindingService } from './../../services/data-binding/data-binding.service';
-
 // stored in node_modules
 import { Component, OnInit, Input, Output } from '@angular/core';
 
@@ -18,10 +14,8 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 // the "export" keyword enables to use the component as a HTML tag.
 export class DataBindingComponent implements OnInit {
 
-  stringExamples: String[];
+  constructor() {
 
-  constructor(private dataBindingService: DataBindingService) {
-    this.stringExamples = this.dataBindingService.getStringExamples();
   }
 
   ngOnInit() {

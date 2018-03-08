@@ -8,12 +8,12 @@ import { Injectable } from '@angular/core';
 
 // dependency injection
 @Injectable()
-export class DataBindingService {
+export class InterpolationService {
 
-  // string[], Array<String>
-  private readonly stringExamples: String[] = ['A', 'service', 'example', 'as', 'a', 'list'];
+  // string[], String[]
+  private readonly stringExamples: Array<String> = ['A', 'service', 'example', 'as', 'a', 'list.'];
 
-  getStringExamples(): String[] {
+  getStringExamples(): Array<String> {
     return this.stringExamples;
   }
 

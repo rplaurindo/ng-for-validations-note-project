@@ -10,13 +10,13 @@ import { ManipulatingDomComponent } from './examples/components/manipulating-dom
 import { DirectivesComponent } from './examples/components/directives/directives.component';
 
 import { InterpolationComponent } from './examples/components/interpolation/interpolation.component';
+import { InterpolationService } from './examples/services/interpolation/interpolation.service';
 
 import { EventComponent } from './examples/components/event/event.component';
 // import { ComponentChildComponent } from './examples/components/component-child/component-child.component';
 
 // components and services
 import { DataBindingComponent } from './examples/components/data-binding/data-binding.component';
-import { DataBindingService } from './examples/services/data-binding/data-binding.service';
 
 // dependencie modules
 import { NgModule } from '@angular/core';
@@ -52,6 +52,6 @@ import { FormsModule } from '@angular/forms';
     YellowBackgroundOnEventlistenerDirective,
     StructuralDirectiveDirective
   ],
-  providers: [DataBindingService]
+  providers: [InterpolationService]
 })
 export class ExamplesModule { }

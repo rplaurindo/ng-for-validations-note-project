@@ -1,3 +1,7 @@
+// Presenter
+
+import { InterpolationService } from './../../services/interpolation/interpolation.service';
+
 import { Component, Input,
   OnInit,
   DoCheck,
@@ -21,9 +25,13 @@ export class InterpolationComponent implements OnInit,
                                                OnChanges,
                                                AfterContentInit {
 
-  private readonly stringExamples: String[] = ['A', 'interpolation', 'example', 'as', 'a', 'list'];
+  // can be passed by contructor as parameters
+  private interpolationService: InterpolationService;
+  stringExamples: Array<String>;
 
   constructor() {
+    this.interpolationService = new InterpolationService();
+    this.stringExamples = this.interpolationService.getStringExamples();
   }
 
   // component events
