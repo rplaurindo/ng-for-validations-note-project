@@ -16,7 +16,8 @@ import { InterpolationService } from './../../services/interpolation/interpolati
 @Component({
   selector: 'app-interpolation',
   templateUrl: './interpolation.component.html',
-  styleUrls: ['./interpolation.component.sass']
+  styleUrls: ['./interpolation.component.sass'],
+  providers: [InterpolationService]
 })
 // the "export" keyword enables to use the component as a HTML tag.
 export class InterpolationComponent implements OnInit,

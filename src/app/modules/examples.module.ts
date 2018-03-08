@@ -53,6 +53,6 @@ import { DataBindingComponent } from './examples/components/data-binding/data-bi
     YellowBackgroundOnEventlistenerDirective,
     StructuralDirectiveDirective
   ],
-  providers: [InterpolationService]
+  providers: []
 })
 export class ExamplesModule { }
