@@ -15,7 +15,7 @@ import { ExamplesModule } from './modules/examples.module';
     FormsModule,
     ExamplesModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: []
 })
 export class AppModule { }
