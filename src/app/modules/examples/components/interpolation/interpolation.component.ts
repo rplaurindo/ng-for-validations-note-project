@@ -27,13 +27,11 @@ export class InterpolationComponent implements OnInit,
                                                OnChanges,
                                                AfterContentInit {
 
-  // can be passed by contructor as parameters
-  private interpolationService: InterpolationService;
   stringExamples: Array<String>;
 
-  constructor() {
-    this.interpolationService = new InterpolationService();
-    this.stringExamples = this.interpolationService.getStringExamples();
+  // dependency injection
+  constructor(private _interpolationService: InterpolationService) {
+    this.stringExamples = this._interpolationService.getStringExamples();
   }
 
   // component events

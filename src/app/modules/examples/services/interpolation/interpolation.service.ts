@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 // import { Observable } from 'rxjs/Observable';
 // import { of } from 'rxjs/observable/of';
 
-// dependency injection
+// provides to be injectable (class should be added in providers)
 @Injectable()
 export class InterpolationService {
 
