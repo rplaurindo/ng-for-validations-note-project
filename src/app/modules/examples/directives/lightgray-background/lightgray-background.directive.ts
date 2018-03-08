@@ -1,5 +1,6 @@
 import { Directive, Renderer, ElementRef } from '@angular/core';
 
+// property directive
 // selector syntax: selector[app<DirectiveName>]
 @Directive({
   selector: '[appLightgrayBackground]'

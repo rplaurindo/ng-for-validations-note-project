@@ -1,3 +1,4 @@
+import { StructuralDirectiveDirective } from './examples/directives/structural-directive/structural-directive.directive';
 import { YellowBackgroundOnEventlistenerDirective } from './examples/directives/yellow-background-on-eventlistener/yellow-background-on-eventlistener.directive';
 import { LightgrayBackgroundDirective } from './examples/directives/lightgray-background/lightgray-background.directive';
 
@@ -48,7 +49,8 @@ import { FormsModule } from '@angular/forms';
     SafeNavigationComponent,
     NgContentExampleComponent,
     LightgrayBackgroundDirective,
-    YellowBackgroundOnEventlistenerDirective
+    YellowBackgroundOnEventlistenerDirective,
+    StructuralDirectiveDirective
   ],
   providers: [DataBindingService]
 })
