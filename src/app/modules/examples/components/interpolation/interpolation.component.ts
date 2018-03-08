@@ -2,6 +2,7 @@
 
 import { InterpolationService } from './../../services/interpolation/interpolation.service';
 
+// stored in node_modules
 import { Component, Input,
   OnInit,
   DoCheck,
@@ -11,12 +12,13 @@ import { Component, Input,
   OnChanges,
   AfterContentInit} from '@angular/core';
 
+// decorator
 @Component({
   selector: 'app-interpolation',
   templateUrl: './interpolation.component.html',
   styleUrls: ['./interpolation.component.sass']
 })
-
+// the "export" keyword enables to use the component as a HTML tag.
 export class InterpolationComponent implements OnInit,
                                                DoCheck,
                                                AfterContentChecked,
