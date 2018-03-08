@@ -1,7 +1,5 @@
+import { NgContentExampleComponent } from './examples/components/ng-content-example/ng-content-example.component';
 import { SafeNavigationComponent } from './examples/components/safe-navigation/safe-navigation.component';
-// components and services
-import { DataBindingComponent } from './examples/components/data-binding/data-binding.component';
-import { DataBindingService } from './examples/services/data-binding/data-binding.service';
 
 import { ManipulatingDomComponent } from './examples/components/manipulating-dom/manipulating-dom.component';
 
@@ -11,6 +9,10 @@ import { InterpolationComponent } from './examples/components/interpolation/inte
 
 import { EventComponent } from './examples/components/event/event.component';
 // import { ComponentChildComponent } from './examples/components/component-child/component-child.component';
+
+// components and services
+import { DataBindingComponent } from './examples/components/data-binding/data-binding.component';
+import { DataBindingService } from './examples/services/data-binding/data-binding.service';
 
 // dependencie modules
 import { NgModule } from '@angular/core';
@@ -30,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     // ComponentChildComponent,
     ManipulatingDomComponent,
     DirectivesComponent,
-    SafeNavigationComponent
+    SafeNavigationComponent,
+    NgContentExampleComponent
   ],
   declarations: [
     DataBindingComponent,
@@ -39,7 +42,8 @@ import { FormsModule } from '@angular/forms';
     // ComponentChildComponent,
     ManipulatingDomComponent,
     DirectivesComponent,
-    SafeNavigationComponent
+    SafeNavigationComponent,
+    NgContentExampleComponent
   ],
   providers: [DataBindingService]
 })
