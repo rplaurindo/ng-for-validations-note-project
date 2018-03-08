@@ -1,7 +1,5 @@
 // Presenter
 
-import { InterpolationService } from './../../services/interpolation/interpolation.service';
-
 // stored in node_modules
 import { Component, Input,
   OnInit,
@@ -11,6 +9,8 @@ import { Component, Input,
   OnDestroy,
   OnChanges,
   AfterContentInit} from '@angular/core';
+
+import { InterpolationService } from './../../services/interpolation/interpolation.service';
 
 // decorator
 @Component({

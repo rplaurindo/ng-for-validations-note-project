@@ -1,3 +1,10 @@
+// angular imports
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { FormsModule } from '@angular/forms';
+
+// app imports
 import { StructuralDirectiveDirective } from './examples/directives/structural-directive/structural-directive.directive';
 import { YellowBackgroundOnEventlistenerDirective } from './examples/directives/yellow-background-on-eventlistener/yellow-background-on-eventlistener.directive';
 import { LightgrayBackgroundDirective } from './examples/directives/lightgray-background/lightgray-background.directive';
@@ -17,12 +24,6 @@ import { EventComponent } from './examples/components/event/event.component';
 
 // components and services
 import { DataBindingComponent } from './examples/components/data-binding/data-binding.component';
-
-// dependencie modules
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [

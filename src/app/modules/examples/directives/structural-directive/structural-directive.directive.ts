@@ -1,5 +1,4 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
-import { Conditional } from '@angular/compiler';
 
 @Directive({
   // tslint:disable-next-line:directive-selector
