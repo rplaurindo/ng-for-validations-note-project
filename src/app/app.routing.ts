@@ -1,5 +1,5 @@
 import { ErrorComponent } from './modules/errors/error.component';
-import { DataBindingComponent } from './modules/examples/components/data-binding/example.component';
+import { InterpolationComponent } from './modules/examples/components/interpolation/interpolation.component';
 
 import { Routes, RouterModule } from '@angular/router';
 
@@ -16,9 +16,9 @@ export const routes: Routes = [
 
     // Products
     {
-        path: 'data-binding',
+        path: 'interpolation',
         // controller
-        component: DataBindingComponent
+        component: InterpolationComponent
     },
     {
         path: '**',

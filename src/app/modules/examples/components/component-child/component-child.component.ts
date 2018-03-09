@@ -1,18 +1,17 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-event-child',
+  selector: 'app-component-child',
   templateUrl: './component-child.component.html',
   styleUrls: ['./component-child.component.sass']
 })
-
 export class ComponentChildComponent implements OnInit {
 
-  // shares a variable with child component
+  // that decorator shares a variable with parent component
   @Input()
   propertyBindingValue: number = 0;
 
-  // shares a variable with parent component
+  // that decorator shares a variable with child component
   @Output()
   customEvent: EventEmitter<number> = new EventEmitter();
 
@@ -22,13 +21,11 @@ export class ComponentChildComponent implements OnInit {
 
   decrement() {
     this.propertyBindingValue--;
-    // console.log(this.propertyBindingValue);
     this.customEvent.emit(this.propertyBindingValue);
   }
 
   increment() {
     this.propertyBindingValue++;
-    // console.log(this.propertyBindingValue);
     this.customEvent.emit(this.propertyBindingValue);
   }
 

@@ -20,7 +20,7 @@ import { InterpolationComponent } from './examples/components/interpolation/inte
 import { InterpolationService } from './examples/services/interpolation/interpolation.service';
 
 import { EventComponent } from './examples/components/event/event.component';
-// import { ComponentChildComponent } from './examples/components/component-child/component-child.component';
+import { ComponentChildComponent } from './examples/components/component-child/component-child.component';
 
 // components and services
 import { DataBindingComponent } from './examples/components/data-binding/data-binding.component';
@@ -34,7 +34,7 @@ import { DataBindingComponent } from './examples/components/data-binding/data-bi
     DataBindingComponent,
     InterpolationComponent,
     EventComponent,
-    // ComponentChildComponent,
+    ComponentChildComponent,
     ManipulatingDomComponent,
     DirectivesComponent,
     SafeNavigationComponent,
@@ -44,7 +44,7 @@ import { DataBindingComponent } from './examples/components/data-binding/data-bi
     DataBindingComponent,
     InterpolationComponent,
     EventComponent,
-    // ComponentChildComponent,
+    ComponentChildComponent,
     ManipulatingDomComponent,
     DirectivesComponent,
     SafeNavigationComponent,

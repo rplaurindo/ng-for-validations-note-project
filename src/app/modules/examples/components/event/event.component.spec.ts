@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EventComponent } from './event.component';
+import { EventComponent } from './example.component';
 
-describe('EventComponent', () => {
+describe('ExampleComponent', () => {
   let component: EventComponent;
   let fixture: ComponentFixture<EventComponent>;
 
