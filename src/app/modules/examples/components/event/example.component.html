@@ -1,4 +1,5 @@
-<app-event-child></app-event-child>
+<!-- property binding shared by @Input decorator and event binding shared by @Output decorator both from a child component-->
+<app-event-child [propertyBindingValue]=0 (customEvent)="onChangeValue($event)"></app-event-child>
 
 <!-- [class.<class>]= true|false receives a class if variable returns true -->
 <!-- (eventName)=method() event binding -->

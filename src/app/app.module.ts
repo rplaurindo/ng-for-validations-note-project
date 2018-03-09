@@ -1,24 +1,21 @@
-import { ErrorsModule } from './modules/errors.module';
-import { ExamplesModule } from './modules/examples.module';
-
+// Angular imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
+// App imports
 import { AppComponent } from './app.component';
+import { ErrorsModule } from './modules/errors.module';
+import { ExamplesModule } from './modules/examples.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
     ExamplesModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: []
 })
 export class AppModule { }
