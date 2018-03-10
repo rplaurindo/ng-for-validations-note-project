@@ -1,6 +1,6 @@
 // Angular imports
 import { NgModule } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 // app component imports
@@ -22,9 +22,11 @@ import { DataBindingComponent } from './examples/components/data-binding/data-bi
 
 import { InterpolationComponent } from './examples/components/interpolation/interpolation.component';
 import { EventSubscribeComponent } from './examples/components/event-subscribe/event-subscribe.component';
+import { CustomPipePipe } from './examples/pipes/custom-pipe/custom-pipe.pipe';
 
 @NgModule({
   imports: [
+    BrowserModule,
     FormsModule
   ],
   exports: [
@@ -50,7 +52,8 @@ import { EventSubscribeComponent } from './examples/components/event-subscribe/e
     LightgrayBackgroundDirective,
     YellowBackgroundOnEventlistenerDirective,
     StructuralDirectiveDirective,
-    EventSubscribeComponent
+    EventSubscribeComponent,
+    CustomPipePipe
   ],
   providers: []
 })
