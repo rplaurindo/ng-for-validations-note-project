@@ -9,6 +9,10 @@ export class EventSubscribeService {
 
   constructor() { }
 
+  getItems() {
+    return this.items;
+  }
+
   addItem(item: String) {
     this.items.push(item);
     this.eventEmitter.emit(item);
