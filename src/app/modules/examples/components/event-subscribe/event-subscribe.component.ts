@@ -13,13 +13,14 @@ export class EventSubscribeComponent implements OnInit {
   items: Array<String>;
 
   constructor(private eventSubscribeService: EventSubscribeService) {
+    // to view iterate
     this.items = eventSubscribeService.getItems();
   }
 
   ngOnInit() {
     this.eventSubscribeService.eventEmitter.subscribe(
       item => {
-        alert('Item ' + item + ' added.')
+        alert(`Item ${item} added.`)
       }
     );
   }
