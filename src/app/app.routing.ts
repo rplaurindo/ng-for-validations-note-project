@@ -8,8 +8,6 @@ import { AppComponent } from './app.component';
 import { ErrorComponent } from './modules/errors/error.component';
 import { InterpolationComponent } from './modules/examples/components/interpolation/interpolation.component';
 
-// const routes: Routes = [
-
 const ROOT_ROUTES: Routes = [
     // home
     {
@@ -27,7 +25,4 @@ const ROOT_ROUTES: Routes = [
     }
 ];
 
-// export const RoutingModule = RouterModule.forRoot(MODULE_ROUTES);
-
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(ROOT_ROUTES);
-// RouterModule.forRoot(MODULE_ROUTES);
