@@ -10,7 +10,14 @@
 
 </head>
 <body>
-  <app-root></app-root>
+  <section>
+    <!-- <header></header> -->
+    <!-- <aside></aside> -->
+    <main>
+      <app-root></app-root>
+    </main>
+  </section>
+  <!-- <footer></footer> -->
 </body>
 </html>
 
@@ -19,11 +26,16 @@
 %head
   %meta{charset: "utf-8"}
   %title
-    Portal
+    Angular2 Examples
   %base{href: "/"}
+
   %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  %link{rel: "icon", type="image/x-icon", href: "favicon.ico"}
+  %link{rel: "icon", type: "image/x-icon", href: "favicon.ico"}
 
 %body
-  %app-root -->
+  %section
+    %header
+    %aside
+    %main
+      %app-root
+  %footer -->

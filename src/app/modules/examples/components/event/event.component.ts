@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.sass']
 })
-
 export class EventComponent implements OnInit {
 
   mouseIsOver: Boolean = false;
