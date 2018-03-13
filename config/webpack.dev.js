@@ -1,5 +1,3 @@
-const { SourceMapDevToolPlugin } = require('webpack');
-
 const webpackMerge = require('webpack-merge');
 const path = require('path');
 
@@ -59,14 +57,6 @@ module.exports = webpackMerge(commonConfig, {
                 ]
             }
         ]
-    },
+    }
 
-    plugins: [
-        new SourceMapDevToolPlugin({
-            filename: "[file].map[query]",
-            moduleFilenameTemplate: "[resource-path]",
-            fallbackModuleFilenameTemplate: "[resource-path]?[hash]",
-            sourceRoot: "webpack:///"
-        }),
-    ]
 });
