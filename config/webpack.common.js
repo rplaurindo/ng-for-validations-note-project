@@ -25,8 +25,7 @@ const genDirNodeModules = path.join(process.cwd(), 'src', '$$_gendir', 'node_mod
 module.exports = {
     entry: {
         main: ['./src/main.ts'],
-        polyfills: ['./src/polyfills.ts'],
-        styles: ['./src/styles.css']
+        polyfills: ['./src/polyfills.ts']
     },
 
     resolve: {
@@ -41,33 +40,89 @@ module.exports = {
     module: {
         rules: [
             {
+                "test": /\.html$/,
+                "loader": "raw-loader"
+            },
+            {
+                "test": /\.(eot|svg|cur)$/,
+                "loader": "file-loader",
+                "options": {
+                    "name": "[name].[hash:20].[ext]",
+                    "limit": 10000
+                }
+            },
+            {
+                "test": /\.(jpg|png|webp|gif|otf|ttf|woff|woff2|ani)$/,
+                "loader": "url-loader",
+                "options": {
+                    "name": "[name].[hash:20].[ext]",
+                    "limit": 10000
+                }
+            },
+            {
+                "exclude": [
+                    path.join(process.cwd(), "src/styles.css")
+                ],
+                "test": /\.css$/,
+                "use": [
+                    {
+                        "loader": "raw-loader"
+                    }
+                ]
+            },
+            {
+                "exclude": [
+                    path.join(process.cwd(), "src/styles.css")
+                ],
+                "test": /\.styl$/,
+                "use": [
+                    {
+                        "loader": "raw-loader"
+                    },
+                    {
+                        "loader": "stylus-loader",
+                        "options": {
+                            "sourceMap": true,
+                            "paths": []
+                        }
+                    }
+                ]
+            },
+            {
+                "include": [
+                    path.join(process.cwd(), "src/styles.css")
+                ],
+                "test": /\.css$/,
+                "use": [
+                    "style-loader",
+                    {
+                        "loader": "raw-loader"
+                    }
+                ]
+            },
+            {
+                "include": [
+                    path.join(process.cwd(), "src/styles.css")
+                ],
+                "test": /\.styl$/,
+                "use": [
+                    "style-loader",
+                    {
+                        "loader": "raw-loader"
+                    },
+                    {
+                        "loader": "stylus-loader",
+                        "options": {
+                            "sourceMap": true,
+                            "paths": []
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.ts$/,
                 loader: "@ngtools/webpack"
-            },
-            {
-                test: /\.html$/,
-                loader: 'raw-loader'
-            },
-            // added
-            // dependencies raw-loader node-sass sass-loader
-            {
-                test: /\.scss$|\.sass$/,
-                loaders: ['raw-loader', 'sass-loader'],
-            },
-            {
-                test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                loader: 'file-loader?name=assets/[name].[hash].[ext]'
-            },
-            // {
-            //     test: /\.css$/,
-            //     exclude: helpers.root('src', 'app'),
-            //     loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
-            // },
-            // {
-            //     test: /\.css$/,
-            //     include: helpers.root('src', 'app'),
-            //     loader: 'raw-loader'
-            // }
+            }
         ]
     },
 
