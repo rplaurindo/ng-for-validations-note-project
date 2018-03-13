@@ -5,10 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.sass']
 })
-
 export class EventComponent implements OnInit {
 
   mouseIsOver: Boolean = false;
+
+  initialValue: number = 0;
 
   ngOnInit() {
 
@@ -23,8 +24,7 @@ export class EventComponent implements OnInit {
   }
 
   onChangeValue(currentValue: number) {
-    // alert("Current value: " + currentValue)
-    alert(currentValue);
+    alert("Current value: " + currentValue);
   }
 
 }

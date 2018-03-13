@@ -1,9 +1,0 @@
-<app-event-child></app-event-child>
-
-<!-- [class.<class>]= true|false receives a class if variable returns true -->
-<!-- (eventName)=method() event binding -->
-<button
-  (click)="alertMsg()"
-  (mouseover)="onMouseOverOut($event)"
-  (mouseout)="onMouseOverOut($event)"
-  [class.highlighted]="mouseIsOver">Event Example</button>

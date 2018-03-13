@@ -1,0 +1,10 @@
+<h3>Event Subscribe</h3>
+
+<input type="text" #input/>
+<button (click)="onAddItem(input.value)">Add Item</button>
+
+<ul>
+  <li *ngFor="let item of items">
+    {{ item | customPipe }}
+  </li>
+</ul>

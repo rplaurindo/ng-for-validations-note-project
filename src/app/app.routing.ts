@@ -1,29 +1,28 @@
-import { ErrorComponent } from './modules/errors/error.component';
-import { DataBindingComponent } from './modules/examples/components/data-binding/data-binding.component';
-
+// Angular imports
+import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+// App imports
 import { AppComponent } from './app.component';
 
-// const routes: Routes = [
+import { ErrorComponent } from './modules/errors/error.component';
+import { InterpolationComponent } from './modules/examples/components/interpolation/interpolation.component';
 
-export const routes: Routes = [
+const ROOT_ROUTES: Routes = [
     // home
-    // {
-    //     path: '',
-    //     component: HomeComponent
-    // },
-
-    // Products
     {
-        path: 'data-binding',
-        // controller
-        component: DataBindingComponent
+        path: '',
+        component: InterpolationComponent
     },
+    // {
+    //     path: 'interpolation',
+    //     // controller
+    //     component: InterpolationComponent
+    // },
     {
         path: '**',
         component: ErrorComponent
     }
 ];
 
-export const RoutingModule = RouterModule.forRoot(routes);
+export const ROUTING: ModuleWithProviders = RouterModule.forRoot(ROOT_ROUTES);
