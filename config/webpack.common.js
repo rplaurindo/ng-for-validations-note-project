@@ -15,15 +15,6 @@ module.exports = {
         polyfills: ['./src/polyfills.ts']
     },
 
-    resolve: {
-        extensions: ['.ts', '.js'],
-        modules: ['./node_modules']
-    },
-
-    resolveLoader: {
-        modules: ['./node_modules'],
-    },
-
     module: {
         rules: [
             {
@@ -47,6 +38,18 @@ module.exports = {
                 }
             },
             {
+                include: [
+                    path.join(process.cwd(), "src/styles.css")
+                ],
+                test: /\.css$/,
+                use: [
+                    "style-loader",
+                    {
+                        loader: "raw-loader"
+                    }
+                ]
+            },
+            {
                 exclude: [
                     path.join(process.cwd(), "src/styles.css")
                 ],
@@ -58,11 +61,12 @@ module.exports = {
                 ]
             },
             {
-                exclude: [
+                include: [
                     path.join(process.cwd(), "src/styles.css")
                 ],
                 test: /\.styl$/,
                 use: [
+                    "style-loader",
                     {
                         loader: "raw-loader"
                     },
@@ -76,24 +80,11 @@ module.exports = {
                 ]
             },
             {
-                include: [
-                    path.join(process.cwd(), "src/styles.css")
-                ],
-                test: /\.css$/,
-                use: [
-                    "style-loader",
-                    {
-                        loader: "raw-loader"
-                    }
-                ]
-            },
-            {
-                include: [
+                exclude: [
                     path.join(process.cwd(), "src/styles.css")
                 ],
                 test: /\.styl$/,
                 use: [
-                    "style-loader",
                     {
                         loader: "raw-loader"
                     },
@@ -121,8 +112,10 @@ module.exports = {
     },
 
     plugins: [
-        new HtmlWebpackPlugin({
-            template: "./src/index.html"
+        new AngularCompilerPlugin({
+            sourceMap: true,
+            tsConfigPath: "src/tsconfig.app.json",
+            skipCodeGeneration: true
         }),
         new CommonsChunkPlugin({
             name: [
@@ -138,9 +131,9 @@ module.exports = {
                 "main"
             ]
         }),
-        new AngularCompilerPlugin({
-            tsConfigPath: "src/tsconfig.app.json",
-            skipCodeGeneration: true
+        new HtmlWebpackPlugin({
+            template: "./src/index.html"
         })
-    ],
+    ]
+
 };
