@@ -4,7 +4,6 @@ const webpackMerge = require('webpack-merge');
 const path = require('path');
 
 const commonConfig = require('./webpack.common.js');
-const helpers = require('./helpers');
 
 module.exports = webpackMerge(commonConfig, {
 
@@ -19,42 +18,42 @@ module.exports = webpackMerge(commonConfig, {
     module: {
         rules: [
             {
-                "include": [
+                include: [
                     path.join(process.cwd(), "src/styles.scss"),
                     path.join(process.cwd(), "src/styles.sass")
                 ],
-                "test": /\.(scss|sass)$/,
-                "use": [
+                test: /\.(scss|sass)$/,
+                use: [
                     "style-loader",
                     {
-                        "loader": "raw-loader"
+                        loader: "raw-loader"
                     },
                     {
-                        "loader": "sass-loader",
-                        "options": {
-                            "sourceMap": true,
-                            "precision": 8,
-                            "includePaths": []
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true,
+                            precision: 8,
+                            includePaths: []
                         }
                     }
                 ]
             },
             {
-                "exclude": [
+                exclude: [
                     path.join(process.cwd(), "src/styles.scss"),
                     path.join(process.cwd(), "src/styles.sass")
                 ],
-                "test": /\.(scss|sass)$/,
-                "use": [
+                test: /\.(scss|sass)$/,
+                use: [
                     {
-                        "loader": "raw-loader"
+                        loader: "raw-loader"
                     },
                     {
-                        "loader": "sass-loader",
-                        "options": {
-                            "sourceMap": true,
-                            "precision": 8,
-                            "includePaths": []
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true,
+                            precision: 8,
+                            includePaths: []
                         }
                     }
                 ]
