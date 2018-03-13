@@ -1,23 +1,10 @@
-const { NoEmitOnErrorsPlugin, NamedModulesPlugin } = require('webpack');
-const { NamedLazyChunksWebpackPlugin, BaseHrefWebpackPlugin, PostcssCliResources } = require('@angular/cli/plugins/webpack');
 const { CommonsChunkPlugin } = require('webpack').optimize;
 const { AngularCompilerPlugin } = require('@ngtools/webpack');
 
-const ProgressPlugin = require('webpack/lib/ProgressPlugin');
-const CircularDependencyPlugin = require('circular-dependency-plugin');
-
-const helpers = require('./helpers');
-
-const entryPoints = ["inline", "polyfills", "sw-register", "styles", "vendor", "main"];
-
 const fs = require('fs');
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const projectRoot = process.cwd();
 const nodeModules = path.join(process.cwd(), 'node_modules');
 const realNodeModules = fs.realpathSync(nodeModules);
 const genDirNodeModules = path.join(process.cwd(), 'src', '$$_gendir', 'node_modules');
@@ -134,77 +121,8 @@ module.exports = {
     },
 
     plugins: [
-        new NoEmitOnErrorsPlugin(),
-        new CopyWebpackPlugin(
-            [
-                {
-                    context: "src",
-                    to: "",
-                    from: {
-                        glob: "assets/**/*",
-                        dot: true
-                    }
-                },
-                {
-                    context: "src",
-                    to: "",
-                    from: {
-                        glob: "favicon.ico",
-                        dot: true
-                    }
-                }
-            ],
-            {
-                ignore: [
-                    ".gitkeep",
-                    "**/.DS_Store",
-                    "**/Thumbs.db"
-                ],
-                debug: "warning"
-            }
-        ),
-        new ProgressPlugin(),
-        new CircularDependencyPlugin({
-            exclude: /(\\|\/)node_modules(\\|\/)/,
-            failOnError: false,
-            onDetected: false,
-            cwd: projectRoot
-        }),
-        new NamedLazyChunksWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: "./src/index.html",
-            filename: "./index.html",
-            hash: false,
-            inject: true,
-            compile: true,
-            favicon: false,
-            minify: false,
-            cache: true,
-            showErrors: true,
-            chunks: "all",
-            excludeChunks: [],
-            title: "Webpack App",
-            xhtml: true,
-            chunksSortMode: function sort(left, right) {
-                let leftIndex = entryPoints.indexOf(left.names[0]);
-                let rightIndex = entryPoints.indexOf(right.names[0]);
-                if (leftIndex > rightIndex) {
-                    return 1;
-                }
-                else if (leftIndex < rightIndex) {
-                    return -1;
-                }
-                else {
-                    return 0;
-                }
-            }
-        }),
-        new BaseHrefWebpackPlugin({}),
-        new CommonsChunkPlugin({
-            name: [
-                "inline"
-            ],
-            minChunks: null
+            template: "./src/index.html"
         }),
         new CommonsChunkPlugin({
             name: [
@@ -220,24 +138,9 @@ module.exports = {
                 "main"
             ]
         }),
-        new CommonsChunkPlugin({
-            name: [
-                "main"
-            ],
-            minChunks: 2,
-            async: "common"
-        }),
-        new NamedModulesPlugin({}),
         new AngularCompilerPlugin({
-            mainPath: "main.ts",
-            platform: 0,
-            hostReplacementPaths: {
-                "environments/environment.ts": "environments/environment.ts"
-            },
-            sourceMap: true,
             tsConfigPath: "src/tsconfig.app.json",
-            skipCodeGeneration: true,
-            compilerOptions: {}
+            skipCodeGeneration: true
         })
     ],
 };
