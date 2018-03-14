@@ -17,32 +17,30 @@ html
     text-align: center
     overflow-x: hidden
 
-    app-root:host
-      img
-        vertical-align: middle
+    img
+      vertical-align: middle
 
-      header
-        text-align: left
+    header
+      text-align: left
 
-      nav
-        text-align: left
+    nav
+      text-align: left
+
+    main
+      position: relative
+      // if width it's set
+      margin: auto
+      text-align: left
 
       section
-        position: relative
-
         aside
           display: inline-block
           vertical-align: top
 
-        main
-          position: relative
-          // if width it's set
-          margin: auto
+      header, main, aside
+        text-align: left
 
-        header, aside, main
-          text-align: left
-
-        dl
-          dt
-            font-weight: bold
-            vertical-align: top
+      dl
+        dt
+          font-weight: bold
+          vertical-align: top
