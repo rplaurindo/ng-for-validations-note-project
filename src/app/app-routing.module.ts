@@ -3,37 +3,24 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // App imports
+
+// module
+import { ExamplesRoutingModule } from './modules/examples/examples-routing.module';
+
+// components
 import { AppComponent } from './app.component';
-
-import { ErrorComponent } from './modules/errors/error.component';
-
-import { EventComponent } from './modules/examples/components/event/event.component';
-import { InterpolationComponent } from './modules/examples/components/interpolation/interpolation.component';
-import { DataBindingComponent } from './modules/examples/components/data-binding/data-binding.component';
-
+import { HomeComponent } from './components/home/home.component';
+import { ErrorComponent } from './components/errors/error.component';
 
 const ROOT_ROUTES: Routes = [
     {
         path: '',
-        component: InterpolationComponent
+        component: HomeComponent
     },
     {
-        path: 'events',
-        component: EventComponent
-    },
-    {
-        path: 'data-bindings',
-        component: DataBindingComponent
+        path: '**',
+        component: ErrorComponent
     }
-    // {
-    //     path: 'interpolation',
-    //     // controller
-    //     component: InterpolationComponent
-    // },
-    // {
-    //     path: '**',
-    //     component: ErrorComponent
-    // }
 ];
 
 @NgModule({
@@ -41,7 +28,8 @@ const ROOT_ROUTES: Routes = [
         RouterModule.forRoot(ROOT_ROUTES, {
             // debugging purposes only
             // enableTracing: true
-        })
+        }),
+        ExamplesRoutingModule
     ],
     exports: [
         RouterModule

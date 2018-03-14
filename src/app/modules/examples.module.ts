@@ -3,7 +3,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-// app component imports
+// app imports
+
+// modules
+import { ExamplesRoutingModule } from './examples/examples-routing.module';
+
 // Pipes
 import { CustomPipePipe } from './examples/pipes/custom-pipe/custom-pipe.pipe';
 
@@ -22,12 +26,13 @@ import { ComponentChildComponent } from './examples/components/component-child/c
 import { DataBindingComponent } from './examples/components/data-binding/data-binding.component';
 import { InterpolationComponent } from './examples/components/interpolation/interpolation.component';
 import { EventSubscribeComponent } from './examples/components/event-subscribe/event-subscribe.component';
-import { HorizontalMenuComponent } from './examples/components/horizontal-menu/horizontal-menu.component';
+
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ExamplesRoutingModule
   ],
   exports: [
     DataBindingComponent,
@@ -38,8 +43,7 @@ import { HorizontalMenuComponent } from './examples/components/horizontal-menu/h
     DirectivesComponent,
     SafeNavigationComponent,
     NgContentExampleComponent,
-    EventSubscribeComponent,
-    HorizontalMenuComponent
+    EventSubscribeComponent
   ],
   declarations: [
     CustomPipePipe,
@@ -54,8 +58,7 @@ import { HorizontalMenuComponent } from './examples/components/horizontal-menu/h
     SafeNavigationComponent,
     NgContentExampleComponent,
     StructuralDirectiveDirective,
-    EventSubscribeComponent,
-    HorizontalMenuComponent
+    EventSubscribeComponent
   ],
   providers: []
 })
