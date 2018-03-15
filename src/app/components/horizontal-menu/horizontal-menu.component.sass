@@ -3,6 +3,9 @@ app-horizontal-menu:host
 
   // isso pode ser extraído para um estilo a parte com o nome tab-behavior.sass. Ver onde poderia ficar e como importar aqui posteriormente
   nav
+    a
+      color: black
+
     ul
       list-style-type: none
       display: inline-block
@@ -23,5 +26,10 @@ app-horizontal-menu:host
 
           padding: 10px
 
-          &.active
-            color: red
+        &.active
+          a
+            color: white
+
+    a
+      &.float-right
+        float: right
