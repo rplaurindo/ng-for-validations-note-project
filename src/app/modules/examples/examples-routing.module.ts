@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { EventComponent } from './components/event/event.component';
 import { InterpolationComponent } from './components/interpolation/interpolation.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
+import { RouteParamsComponent } from './components/route-params/route-params.component';
+import { RouteDataParamsComponent } from './components/route-data-params/route-data-params.component';
 
 
 const ROOT_ROUTES: Routes = [
@@ -17,19 +19,19 @@ const ROOT_ROUTES: Routes = [
         path: 'data-bindings',
         component: DataBindingComponent
     },
-    // {
-    //     path: 'interpolation',
-    //     // controller
-    //     component: InterpolationComponent
-    // },
+    {
+        path: 'route-params',
+        component: RouteParamsComponent
+    },
+    {
+        path: 'route-params/:data',
+        component: RouteDataParamsComponent
+    }
 ];
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(ROOT_ROUTES, {
-            // debugging purposes only
-            // enableTracing: true
-        })
+        RouterModule.forRoot(ROOT_ROUTES, {})
     ],
     exports: [
         RouterModule

@@ -26,6 +26,8 @@ import { ComponentChildComponent } from './examples/components/component-child/c
 import { DataBindingComponent } from './examples/components/data-binding/data-binding.component';
 import { InterpolationComponent } from './examples/components/interpolation/interpolation.component';
 import { EventSubscribeComponent } from './examples/components/event-subscribe/event-subscribe.component';
+import { RouteParamsComponent } from './examples/components/route-params/route-params.component';
+import { RouteDataParamsComponent } from './examples/components/route-data-params/route-data-params.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { EventSubscribeComponent } from './examples/components/event-subscribe/e
     DirectivesComponent,
     SafeNavigationComponent,
     NgContentExampleComponent,
-    EventSubscribeComponent
+    EventSubscribeComponent,
+    RouteParamsComponent,
+    RouteDataParamsComponent
   ],
   declarations: [
     CustomPipePipe,
@@ -58,7 +62,9 @@ import { EventSubscribeComponent } from './examples/components/event-subscribe/e
     SafeNavigationComponent,
     NgContentExampleComponent,
     StructuralDirectiveDirective,
-    EventSubscribeComponent
+    EventSubscribeComponent,
+    RouteParamsComponent,
+    RouteDataParamsComponent
   ],
   providers: []
 })
