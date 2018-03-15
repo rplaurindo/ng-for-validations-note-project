@@ -9,7 +9,7 @@ export class ComponentChildComponent implements OnInit {
 
   // that decorator shares a variable with parent component
   @Input()
-  propertyBindingValue: number = 0;
+  propertyBindingValue: any = 0;
 
   // that decorator shares a variable with child component
   @Output()

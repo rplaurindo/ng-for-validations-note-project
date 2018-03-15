@@ -2,7 +2,12 @@
 
 <!-- input property [(ngModel)]=... declared as @Input('optional alias') <property>: <type> = '<value>' in component -->
 
-<!-- property binding (one way) method [html-property]=componentPropertyVariable -->
-<!-- data binding (two way) method [(ngModel)]=componentPropertyVariable -->
-<input type="text" [(ngModel)]="inputString" placeholder="ngModel testing" >
-<span> {{ inputString }} </span>
+<!-- data binding (two way) method [(ngModel)]=reference -->
+<!-- <input [(ngModel)]="inputReference" placeholder="ngModel testing" >
+<span> {{ inputReference }} </span> -->
+
+<!-- property binding (one-way) method [html-property]=dataSourceVariable html-property="dataSourceVariable" -->
+<input [value]="inputReference" (value)="inputReference" value="inputReference" >
+<span> {{ inputReference }} </span>
+<!-- <input #inputReference >
+<span> {{ inputReference.value }} </span> -->

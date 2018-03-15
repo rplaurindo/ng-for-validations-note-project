@@ -28,6 +28,7 @@ const ROOT_ROUTES: Routes = [
         RouterModule.forRoot(ROOT_ROUTES, {
             // debugging purposes only
             // enableTracing: true
+            // useHash: true
         }),
         ExamplesRoutingModule
     ],
