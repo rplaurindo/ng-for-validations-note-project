@@ -1,5 +1,4 @@
-<a [routerLink]="['/route-params', inputData.value]">link to test</a>
+<a [routerLink]="['/route-params', input.value]">link to test</a>
 <br/>
 
-<input #inputData value="1">
-<button>Test</button>
+<input [(ngModel)]="inputData" #input>
