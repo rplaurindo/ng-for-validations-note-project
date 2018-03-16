@@ -1,13 +1,14 @@
 <h3>Data Binding</h3>
 
-<!-- input property [(ngModel)]=... declared as @Input('optional alias') <property>: <type> = '<value>' in component -->
+<div>
+    <!-- input property [(ngModel)]=... declared as @Input('optional alias') <property>: <type> = '<value>' in component -->
+    <!-- data binding (two way) method [(ngModel)]=reference -->
+    <input [(ngModel)]="inputReference" placeholder="ngModel testing" >
+    <span> {{ inputReference }} </span>
+</div>
 
-<!-- data binding (two way) method [(ngModel)]=reference -->
-<!-- <input [(ngModel)]="inputReference" placeholder="ngModel testing" >
-<span> {{ inputReference }} </span> -->
-
-<!-- property binding (one-way) method [html-property]=dataSourceVariable html-property="dataSourceVariable" -->
-<input [value]="inputReference" (value)="inputReference" value="inputReference" >
-<span> {{ inputReference }} </span>
-<!-- <input #inputReference >
-<span> {{ inputReference.value }} </span> -->
+<div>
+    <!-- property binding (one-way) method [html-property]=dataSourceVariable html-property="dataSourceVariable" -->
+    <input [value]="dataSourceVariable" value="dataSourceVariable" >
+    <span> {{ dataSourceVariable }} </span>
+</div>
