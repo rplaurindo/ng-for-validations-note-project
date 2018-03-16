@@ -1,5 +1,4 @@
 // Angular imports
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -17,10 +16,10 @@ import { HorizontalMenuComponent } from './components/horizontal-menu/horizontal
   bootstrap: [AppComponent],
   // modules
   imports: [
-    BrowserModule,
     AppRoutingModule,
     ExamplesModule
   ],
+  // modules and components
   exports: [],
   // components
   declarations: [
