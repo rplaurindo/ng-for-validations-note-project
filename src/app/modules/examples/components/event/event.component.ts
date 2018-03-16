@@ -9,7 +9,7 @@ export class EventComponent implements OnInit {
 
   mouseIsOver: Boolean = false;
 
-  initialValue: number = 0;
+  initialValue: Number = 0;
 
   ngOnInit() {
 
@@ -19,12 +19,8 @@ export class EventComponent implements OnInit {
     alert('Event Example!');
   }
 
-  onMouseOverOut() {
-    this.mouseIsOver = !this.mouseIsOver;
-  }
-
   onChangeValue(currentValue: number) {
-    alert("Current value: " + currentValue);
+    alert('Current value: ${currentValue}');
   }
 
 }
