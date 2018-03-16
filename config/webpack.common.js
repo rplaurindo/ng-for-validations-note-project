@@ -3,11 +3,16 @@ const { AngularCompilerPlugin } = require('@ngtools/webpack');
 
 const fs = require('fs');
 const path = require('path');
+const CircularDependencyPlugin = require('circular-dependency-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ProgressPlugin = require('webpack/lib/ProgressPlugin');
+const rxPaths = require('rxjs/_esm5/path-mapping');
 
+const projectRoot = process.cwd();
 const nodeModules = path.join(process.cwd(), 'node_modules');
 const realNodeModules = fs.realpathSync(nodeModules);
 const genDirNodeModules = path.join(process.cwd(), 'src', '$$_gendir', 'node_modules');
+
 
 module.exports = {
     entry: {
@@ -33,7 +38,7 @@ module.exports = {
                 test: /\.(jpg|png|webp|gif|otf|ttf|woff|woff2|ani)$/,
                 loader: "url-loader",
                 options: {
-                    name: "[name].[hash:20].[ext]",
+                    name: "[name].[hashnode:20].[ext]",
                     limit: 10000
                 }
             },
@@ -117,6 +122,12 @@ module.exports = {
             tsConfigPath: "src/tsconfig.app.json",
             skipCodeGeneration: true
         }),
+        new CircularDependencyPlugin({
+            "exclude": /(\\|\/)node_modules(\\|\/)/,
+            "failOnError": false,
+            "onDetected": false,
+            "cwd": projectRoot
+        }),
         new CommonsChunkPlugin({
             name: [
                 "vendor"
@@ -133,7 +144,12 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: "./src/index.html"
-        })
-    ]
+        }),
+        new ProgressPlugin()
+    ],
+
+    resolve: {
+        extensions: [".ts",".js"]
+    }
 
 };
