@@ -20,7 +20,7 @@ export class EventComponent implements OnInit {
   }
 
   onChangeValue(currentValue: number) {
-    alert('Current value: ${currentValue}');
+    alert('Current value: ' + currentValue);
   }
 
 }

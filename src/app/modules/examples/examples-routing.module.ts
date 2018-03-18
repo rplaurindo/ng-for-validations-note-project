@@ -9,7 +9,6 @@ import { EventSubscribeComponent } from './components/event-subscribe/event-subs
 import { InterpolationComponent } from './components/interpolation/interpolation.component';
 import { ManipulatingDomComponent } from './components/manipulating-dom/manipulating-dom.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
-import { RouteDataParamsComponent } from './components/route-data-params/route-data-params.component';
 
 
 const ROOT_ROUTES: Routes = [
@@ -34,12 +33,8 @@ const ROOT_ROUTES: Routes = [
         component: ManipulatingDomComponent
     },
     {
-        path: 'route-params',
-        component: RouteParamsComponent
-    },
-    {
         path: 'route-params/:data',
-        component: RouteDataParamsComponent
+        component: RouteParamsComponent
     }
 ];
 

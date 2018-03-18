@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-data-binding',
@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DataBindingComponent implements OnInit {
 
-  dataSourceVariable: String = 'I’m a value of data source variable component';
+  dataSourceVariable: String = 'I’m a value of data source variable component.';
 
   constructor() {}
 

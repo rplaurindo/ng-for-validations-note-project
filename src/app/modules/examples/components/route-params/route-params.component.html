@@ -1,4 +1,7 @@
-<a [routerLink]="['/route-params', input.value]">link to test</a>
+<a [routerLink]="['/route-params', inputReference.value]">link to test</a>
 <br/>
 
-<input [(ngModel)]="inputData" #input>
+<!-- <input #inputReference> -->
+<input [(ngModel)]="inputData" #inputReference>
+
+<p>{{ params | json }}</p>
