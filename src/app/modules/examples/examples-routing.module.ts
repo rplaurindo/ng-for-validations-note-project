@@ -12,7 +12,7 @@ import { RouteParamsComponent } from './components/route-params/route-params.com
 import { RedirectingComponent } from './components/redirecting/redirecting.component';
 
 
-const ROOT_ROUTES: Routes = [
+const exampleRoutes: Routes = [
     {
         path: 'data-bindings',
         component: DataBindingComponent
@@ -45,7 +45,7 @@ const ROOT_ROUTES: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(ROOT_ROUTES, {
+        RouterModule.forRoot(exampleRoutes, {
             useHash: true
         })
     ],

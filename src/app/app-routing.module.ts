@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/errors/error.component';
 
-const ROOT_ROUTES: Routes = [
+const appRoutes: Routes = [
     {
         path: '',
         component: HomeComponent
@@ -25,7 +25,7 @@ const ROOT_ROUTES: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(ROOT_ROUTES, {
+        RouterModule.forRoot(appRoutes, {
             // debugging purposes only
             // enableTracing: true
             // useHash: true
