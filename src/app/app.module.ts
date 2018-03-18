@@ -1,5 +1,6 @@
 // Angular imports
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 // App imports
@@ -17,6 +18,7 @@ import { HorizontalMenuComponent } from './components/horizontal-menu/horizontal
   // modules
   imports: [
     AppRoutingModule,
+    BrowserModule,
     ExamplesModule
   ],
   // modules and components

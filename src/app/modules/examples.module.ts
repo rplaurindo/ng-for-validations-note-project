@@ -1,12 +1,10 @@
 // Angular imports
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 // app imports
-
-// modules
-import { ExamplesRoutingModule } from './examples/examples-routing.module';
 
 // Pipes
 import { CustomPipePipe } from './examples/pipes/custom-pipe/custom-pipe.pipe';
@@ -32,9 +30,9 @@ import { RedirectingComponent } from './examples/components/redirecting/redirect
 
 @NgModule({
   imports: [
-    BrowserModule,
+    CommonModule,
     FormsModule,
-    ExamplesRoutingModule
+    RouterModule
   ],
   exports: [
     DataBindingComponent,
