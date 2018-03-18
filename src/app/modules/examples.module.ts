@@ -27,7 +27,7 @@ import { DataBindingComponent } from './examples/components/data-binding/data-bi
 import { InterpolationComponent } from './examples/components/interpolation/interpolation.component';
 import { EventSubscribeComponent } from './examples/components/event-subscribe/event-subscribe.component';
 import { RouteParamsComponent } from './examples/components/route-params/route-params.component';
-import { RouteDataParamsComponent } from './examples/components/route-data-params/route-data-params.component';
+import { RedirectingComponent } from './examples/components/redirecting/redirecting.component';
 
 
 @NgModule({
@@ -47,7 +47,7 @@ import { RouteDataParamsComponent } from './examples/components/route-data-param
     NgContentExampleComponent,
     EventSubscribeComponent,
     RouteParamsComponent,
-    RouteDataParamsComponent
+    RedirectingComponent
   ],
   declarations: [
     CustomPipePipe,
@@ -64,7 +64,7 @@ import { RouteDataParamsComponent } from './examples/components/route-data-param
     StructuralDirectiveDirective,
     EventSubscribeComponent,
     RouteParamsComponent,
-    RouteDataParamsComponent
+    RedirectingComponent
   ],
   providers: []
 })

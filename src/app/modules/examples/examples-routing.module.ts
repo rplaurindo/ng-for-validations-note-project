@@ -9,6 +9,7 @@ import { EventSubscribeComponent } from './components/event-subscribe/event-subs
 import { InterpolationComponent } from './components/interpolation/interpolation.component';
 import { ManipulatingDomComponent } from './components/manipulating-dom/manipulating-dom.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
+import { RedirectingComponent } from './components/redirecting/redirecting.component';
 
 
 const ROOT_ROUTES: Routes = [
@@ -31,6 +32,10 @@ const ROOT_ROUTES: Routes = [
     {
         path: 'manipulating-dom',
         component: ManipulatingDomComponent
+    },
+    {
+        path: 'redirecting',
+        component: RedirectingComponent
     },
     {
         path: 'route-params/:data',
