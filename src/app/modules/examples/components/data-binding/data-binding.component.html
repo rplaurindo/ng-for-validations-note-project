@@ -1,5 +1,6 @@
 <h3>Data Binding</h3>
 
+<h4>Property Binding</h4>
 <div>
     <!-- input property [(ngModel)]=... declared as @Input('optional alias') <property>: <type> = '<value>' in component -->
     <!-- data binding (two way) method [(ngModel)]=reference -->
@@ -8,7 +9,7 @@
 </div>
 <br/>
 <div>
-    <!-- property binding (one-way) method [html-property]="dataSourceVariable" -->
-    <input [value]="dataSourceVariable" >
+    <!-- property binding (one-way) method [html-property|ngModel(to reference the value property)]="dataSourceVariable" -->
+    <input [ngModel]="dataSourceVariable" >
     <span> {{ dataSourceVariable }} </span>
 </div>
