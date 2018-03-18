@@ -4,4 +4,6 @@
 <!-- <input #inputReference> -->
 <input [(ngModel)]="inputData" #inputReference>
 
-<p>{{ params | json }}</p>
+
+<p><label>Params:</label> {{ params | json }}</p>
+<p><label>Query Params:</label> {{ queryParams | json }}</p>
