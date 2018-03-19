@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 
 // App imports
 import { AppRoutingModule } from './app-routing.module';
-import { ExamplesModule } from './modules/examples.module';
+import { ExamplesModule } from './examples/examples.module';
 
 import { AppComponent } from './app.component';
 import { ErrorComponent } from './components/errors/error.component';

@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 // App imports
 
 // module
-import { ExamplesRoutingModule } from './modules/examples/examples-routing.module';
+import { ExamplesRoutingModule } from './examples/examples-routing.module';
 
 // components
 import { AppComponent } from './app.component';
@@ -30,8 +30,8 @@ const appRoutes: Routes = [
             // debugging purposes only
             // enableTracing: true
             // useHash: true
-        }),
-        ExamplesRoutingModule
+        })
+        , ExamplesRoutingModule
     ],
     exports: [
         RouterModule
