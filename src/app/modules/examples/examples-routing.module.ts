@@ -46,9 +46,7 @@ const exampleRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(exampleRoutes, {
-            // useHash: true
-        })
+        RouterModule.forChild(exampleRoutes)
     ],
     exports: [
         RouterModule
