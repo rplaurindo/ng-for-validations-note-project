@@ -1,6 +1,7 @@
 // Angular imports
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+// import { ModuleWithProviders } from '@angular/core';
 
 // App imports
 

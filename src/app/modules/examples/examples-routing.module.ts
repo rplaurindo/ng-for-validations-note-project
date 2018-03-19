@@ -1,6 +1,7 @@
 // Angular imports
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+// import { ModuleWithProviders } from '@angular/core';
 
 // Example Module imports
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
@@ -46,7 +47,7 @@ const exampleRoutes: Routes = [
 @NgModule({
     imports: [
         RouterModule.forRoot(exampleRoutes, {
-            useHash: true
+            // useHash: true
         })
     ],
     exports: [

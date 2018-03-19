@@ -2,9 +2,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 
 // app imports
+
+// Modules
+import { ExamplesRoutingModule } from './examples/examples-routing.module';
 
 // Pipes
 import { CustomPipePipe } from './examples/pipes/custom-pipe/custom-pipe.pipe';
@@ -32,7 +34,7 @@ import { RedirectingComponent } from './examples/components/redirecting/redirect
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    ExamplesRoutingModule
   ],
   exports: [
     DataBindingComponent,
