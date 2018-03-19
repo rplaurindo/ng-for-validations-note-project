@@ -33,6 +33,7 @@ import { RedirectingComponent } from './components/redirecting/redirecting.compo
 @NgModule({
   imports: [
     CommonModule,
+    // FormsModule,
     FormsModule,
     ExamplesRoutingModule
   ],
