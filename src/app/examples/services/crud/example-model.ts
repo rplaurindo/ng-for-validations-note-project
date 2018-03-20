@@ -5,11 +5,11 @@ export class ExampleModel {
         private name: String
     ) { }
 
-    getId() {
+    getId(): Number {
         return this.id;
     }
 
-    getName() {
+    getName(): String {
         return this.name;
     }
 }

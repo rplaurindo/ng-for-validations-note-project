@@ -1,0 +1,30 @@
+<!-- View -->
+
+<div class="line">
+  <a routerLink="/cruds/novo" class="new">Novo</a>
+</div>
+
+<div class="side-by-side">
+  <table>
+    <thead>
+      <tr>
+        <div>
+          <th>id</th>
+          <th>name</th>
+        </div>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let model of models">
+        <a [routerLink]="['/cruds', model.getId()]">
+          <td>{{ model.getId() }}</td>
+          <td>{{ model.getName() }}</td>
+        </a>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="side-by-side">
+  <router-outlet></router-outlet>
+</div>
