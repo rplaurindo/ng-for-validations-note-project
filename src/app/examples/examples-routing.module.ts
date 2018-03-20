@@ -4,16 +4,21 @@ import { Routes, RouterModule } from '@angular/router';
 // import { ModuleWithProviders } from '@angular/core';
 
 // Example Module imports
+import { CrudComponent } from './components/crud/crud.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { EventComponent } from './components/event/event.component';
 import { EventSubscribeComponent } from './components/event-subscribe/event-subscribe.component';
 import { InterpolationComponent } from './components/interpolation/interpolation.component';
 import { ManipulatingDomComponent } from './components/manipulating-dom/manipulating-dom.component';
-import { RouteParamsComponent } from './components/route-params/route-params.component';
 import { RedirectingComponent } from './components/redirecting/redirecting.component';
+import { RouteParamsComponent } from './components/route-params/route-params.component';
 
 
 const exampleRoutes: Routes = [
+    {
+        path: 'crud',
+        component: CrudComponent
+    },
     {
         path: 'data-bindings',
         component: DataBindingComponent
