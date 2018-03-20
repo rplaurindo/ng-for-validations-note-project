@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 // import { ModuleWithProviders } from '@angular/core';
 
 // Example Module imports
-import { CrudComponent } from './components/crud/crud.component';
+import { CrudComponent } from './components/crud/index/index.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { EventComponent } from './components/event/event.component';
 import { EventSubscribeComponent } from './components/event-subscribe/event-subscribe.component';
@@ -16,8 +16,18 @@ import { RouteParamsComponent } from './components/route-params/route-params.com
 
 const exampleRoutes: Routes = [
     {
-        path: 'crud',
-        component: CrudComponent
+        path: 'cruds',
+        component: CrudComponent,
+        // children: {
+        //     { path: 'novo', component: AlunoFormComponent },
+        //     {
+        //         path: ':id', component: AlunoDetalheComponent,
+        //         resolve: { aluno: AlunoDetalheResolver }
+        //     },
+        //     {
+        //         path: ':id/editar', component: AlunoFormComponent
+        //     }
+        // }
     },
     {
         path: 'data-bindings',

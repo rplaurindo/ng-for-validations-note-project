@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CrudService } from './../../services/crud/crud.service';
-import { ExampleModel } from '../../services/crud/exampleModel';
+import { CrudService } from './../../../services/crud/crud.service';
+import { ExampleModel } from '../../../services/crud/exampleModel';
 
 @Component({
   selector: 'app-crud',

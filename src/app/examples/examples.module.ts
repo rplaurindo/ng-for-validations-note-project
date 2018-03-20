@@ -28,7 +28,7 @@ import { InterpolationComponent } from './components/interpolation/interpolation
 import { EventSubscribeComponent } from './components/event-subscribe/event-subscribe.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
 import { RedirectingComponent } from './components/redirecting/redirecting.component';
-import { CrudComponent } from './components/crud/crud.component';
+import { CrudComponent } from './components/crud/index/index.component';
 
 
 @NgModule({
