@@ -1,3 +1,21 @@
-<p>
-  crud works!
-</p>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- estilizar o tr de forma que pareça um link bem como definir um evento click para que mostre os dados do modelo imediatamento ao lado -->
+      <tr *ngFor="let model of models">
+        <td>{{ model.getId() }}</td>
+        <td>{{ model.getName() }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <router-outlet></router-outlet>
+</div>

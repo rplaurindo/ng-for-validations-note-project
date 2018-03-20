@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CrudService } from './../../services/crud/crud.service';
+import { ExampleModel } from '../../services/crud/exampleModel';
 
 @Component({
   selector: 'app-crud',
@@ -10,9 +11,12 @@ import { CrudService } from './../../services/crud/crud.service';
 })
 export class CrudComponent implements OnInit {
 
-  constructor() { }
+  private models: ExampleModel[];
+
+  constructor(private crudService: CrudService) { }
 
   ngOnInit() {
+    this.models = this.crudService.getExampleModels();
   }
 
 }
