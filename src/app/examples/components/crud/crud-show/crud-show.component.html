@@ -8,5 +8,7 @@
     <dd>{{ modelReference.getName() }}</dd>
   </div>
 </dl>
-<!-- <a [routerLink]="['/cruds', model.getId()]">
-</a> -->
+
+<div class="line">
+  <a [routerLink]="['/cruds', modelReference.getId(), 'editar']">Editar</a>
+</div>
