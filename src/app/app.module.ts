@@ -17,7 +17,7 @@ import { HorizontalMenuComponent } from './components/horizontal-menu/horizontal
 
 @NgModule({
   bootstrap: [AppComponent],
-  // modules
+  // Modules
   imports: [
     AppRoutingModule,
     BrowserModule,
@@ -25,16 +25,16 @@ import { HorizontalMenuComponent } from './components/horizontal-menu/horizontal
     // FormsModule,
     ExamplesModule
   ],
-  // modules and components
+  // Modules and Components
   exports: [],
-  // components
+  // Components, Pipes and Directives
   declarations: [
     AppComponent,
     HomeComponent,
     ErrorComponent,
     HorizontalMenuComponent
   ],
-  // services
+  // Services
   providers: []
 })
 export class AppModule { }

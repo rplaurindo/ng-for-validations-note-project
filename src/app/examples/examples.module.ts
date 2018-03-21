@@ -39,18 +39,6 @@ import { CrudShowComponent } from './components/crud/crud-show/crud-show.compone
     FormsModule,
     ExamplesRoutingModule
   ],
-  exports: [
-    DataBindingComponent,
-    EventComponent,
-    ComponentChildComponent,
-    ManipulatingDomComponent,
-    DirectivesComponent,
-    SafeNavigationComponent,
-    NgContentExampleComponent,
-    EventSubscribeComponent,
-    RouteParamsComponent,
-    RedirectingComponent
-  ],
   declarations: [
     CustomPipePipe,
     LightgrayBackgroundDirective,
