@@ -15,4 +15,8 @@ export class ExampleModel {
     getName(): String {
         return this.name;
     }
+
+    setName(name: String) {
+        this.name = name;
+    }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 
 import { CrudService } from './../../../services/crud/crud.service';
@@ -16,6 +17,8 @@ export class CrudFormComponent implements OnInit, OnDestroy {
   private paramsSubscription: Subscription;
   // private formWasChanged: Boolean = false;
 
+  // private name: String;
+
   constructor(
     private route: ActivatedRoute,
     private crudService: CrudService
@@ -30,12 +33,17 @@ export class CrudFormComponent implements OnInit, OnDestroy {
           this.modelReference = new ExampleModel();
         }
 
+        // this.name = this.modelReference.getName();
       }
     );
   }
 
   ngOnDestroy() {
     this.paramsSubscription.unsubscribe();
+  }
+
+  onSubmit(form: NgForm) {
+    this.modelReference.setName(form.value['name']);
   }
 
   // ngOnInput() {

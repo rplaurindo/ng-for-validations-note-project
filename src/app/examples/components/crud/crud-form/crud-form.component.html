@@ -1,5 +1,7 @@
-<form>
-  <input [value]="modelReference?.getName()"  placeholder="nome" />
+<form #ngForm=ngForm (ngSubmit)="onSubmit(ngForm)">
+<!-- <form (ngSubmit)="onSubmit($data)"> -->
+  <!-- <input name='name' [(ngModel)]="modelReference.name"  placeholder="nome" /> -->
+  <input name="name" ngModel placeholder="nome" [value]="modelReference?.name" />
   <!-- colocar um botão para modificar o objeto, já que não há refresh (single-page) o objeto não é reinicializado, logo haverá uma atualização pelo menos lógica (dados mockados) -->
   <div class="actions">
     <button type="submit">Test</button>
