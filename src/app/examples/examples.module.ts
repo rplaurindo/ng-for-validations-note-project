@@ -24,11 +24,12 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { EventComponent } from './components/event/event.component';
 import { ComponentChildComponent } from './components/component-child/component-child.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
-import { InterpolationComponent } from './components/interpolation/interpolation.component';
 import { EventSubscribeComponent } from './components/event-subscribe/event-subscribe.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
 import { RedirectingComponent } from './components/redirecting/redirecting.component';
-import { CrudComponent } from './components/crud/index/index.component';
+import { CrudComponent } from './components/crud/cruds.component';
+import { CrudFormComponent } from './components/crud/crud-form/crud-form.component';
+import { CrudShowComponent } from './components/crud/crud-show/crud-show.component';
 
 
 @NgModule({
@@ -40,7 +41,6 @@ import { CrudComponent } from './components/crud/index/index.component';
   ],
   exports: [
     DataBindingComponent,
-    InterpolationComponent,
     EventComponent,
     ComponentChildComponent,
     ManipulatingDomComponent,
@@ -56,7 +56,6 @@ import { CrudComponent } from './components/crud/index/index.component';
     LightgrayBackgroundDirective,
     YellowBackgroundOnEventlistenerDirective,
     DataBindingComponent,
-    InterpolationComponent,
     EventComponent,
     ComponentChildComponent,
     ManipulatingDomComponent,
@@ -67,7 +66,9 @@ import { CrudComponent } from './components/crud/index/index.component';
     EventSubscribeComponent,
     RouteParamsComponent,
     RedirectingComponent,
-    CrudComponent
+    CrudComponent,
+    CrudFormComponent,
+    CrudShowComponent
   ],
   providers: []
 })

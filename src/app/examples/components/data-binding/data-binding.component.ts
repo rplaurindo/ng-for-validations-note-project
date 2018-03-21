@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataBindingComponent implements OnInit {
 
-  dataSourceVariable: String = 'I’m a value of data source variable component.';
+  twoWayVar: String = 'I’m a value of data source variable component.';
 
   constructor() {}
 

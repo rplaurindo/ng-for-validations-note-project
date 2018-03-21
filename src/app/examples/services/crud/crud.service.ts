@@ -1,6 +1,8 @@
+// Model
+
 import { Injectable } from '@angular/core';
 
-import { ExampleModel } from './exampleModel';
+import { ExampleModel } from './example-model';
 
 @Injectable()
 export class CrudService {
@@ -11,14 +13,18 @@ export class CrudService {
     new ExampleModel(3, 'Model 03')
   ];
 
+  private cachedModel: ExampleModel;
+
   constructor() { }
 
-  getExampleModel(id: Number) {
-    this.models.forEach((model) => {
+  getExampleModel(id: Number): ExampleModel {
+    let model: any;
+    for (model of this.models) {
       if (model.getId() === id) {
         return model;
       }
-    });
+    }
+
     return null;
   }
 

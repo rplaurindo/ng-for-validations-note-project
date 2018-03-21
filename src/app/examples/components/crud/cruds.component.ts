@@ -3,7 +3,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CrudService } from './../../services/crud/crud.service';
-import { ExampleModel } from '../../services/crud/exampleModel';
+import { ExampleModel } from '../../services/crud/example-model';
 
 @Component({
   selector: 'app-crud',

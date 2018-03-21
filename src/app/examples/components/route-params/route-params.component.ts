@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-route-params',
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class RouteParamsComponent implements OnInit {
 
-  private inputData: Number = 1;
+  private twoWayVar: Number = 1;
   private paramsSubscription: Subscription;
   private queryParamsSubscription: Subscription;
   private params: Object;
