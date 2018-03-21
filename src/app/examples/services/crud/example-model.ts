@@ -1,9 +1,12 @@
 export class ExampleModel {
 
-    constructor(
-        private id: Number,
-        private name: String
-    ) { }
+    id: Number;
+    name: String;
+
+    constructor(optionalParams: Object = {}) {
+        this.id = optionalParams['id'] || null;
+        this.name = optionalParams['name'] || null;
+    }
 
     getId(): Number {
         return this.id;

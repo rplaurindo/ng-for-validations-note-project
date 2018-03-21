@@ -8,9 +8,9 @@ import { ExampleModel } from './example-model';
 export class CrudService {
 
   private models: ExampleModel[] = [
-    new ExampleModel(1, 'Model 01'),
-    new ExampleModel(2, 'Model 02'),
-    new ExampleModel(3, 'Model 03')
+    new ExampleModel({id: 1, name: 'Model 01'}),
+    new ExampleModel({id: 2, name: 'Model 02'}),
+    new ExampleModel({id: 3, name: 'Model 03'})
   ];
 
   private cachedModel: ExampleModel;

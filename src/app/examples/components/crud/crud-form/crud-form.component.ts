@@ -12,14 +12,14 @@ import { ExampleModel } from '../../../services/crud/example-model';
 })
 export class CrudFormComponent implements OnInit, OnDestroy {
 
-  private modelReference: Object;
+  private modelReference: ExampleModel;
   private paramsSubscription: Subscription;
   // private formWasChanged: Boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private crudService: CrudService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.paramsSubscription = this.route.params.subscribe(
@@ -27,8 +27,9 @@ export class CrudFormComponent implements OnInit, OnDestroy {
         this.modelReference = this.crudService.getExampleModel(+params['id']);
 
         if (this.modelReference === null) {
-          this.modelReference = {};
+          this.modelReference = new ExampleModel();
         }
+
       }
     );
   }

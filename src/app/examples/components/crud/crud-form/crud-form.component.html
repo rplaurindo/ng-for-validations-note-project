@@ -1,3 +1,7 @@
-<p>
-  crud-form works!
-</p>
+<form>
+  <input [value]="modelReference?.getName()"  placeholder="nome" />
+  <!-- colocar um botão para modificar o objeto, já que não há refresh (single-page) o objeto não é reinicializado, logo haverá uma atualização pelo menos lógica (dados mockados) -->
+  <div class="actions">
+    <button type="submit">Test</button>
+  </div>
+</form>
