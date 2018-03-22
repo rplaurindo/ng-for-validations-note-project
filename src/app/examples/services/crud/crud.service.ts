@@ -17,15 +17,24 @@ export class CrudService {
 
   constructor() { }
 
+  createExampleModel(exampleModel: ExampleModel) {
+    this.models.push(exampleModel);
+  }
+
   getExampleModel(id: Number): ExampleModel {
     let model: any;
     for (model of this.models) {
       if (model.getId() === id) {
-        return model;
+        this.cachedModel = model;
+        return this.cachedModel;
       }
     }
 
     return null;
+  }
+
+  updateExampleModel(attrs: Object) {
+    this.cachedModel.setName(attrs['name']);
   }
 
   getExampleModels() {

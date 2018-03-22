@@ -15,6 +15,7 @@ export class CrudFormComponent implements OnInit, OnDestroy {
 
   private modelReference: ExampleModel;
   private paramsSubscription: Subscription;
+  private params: Object;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +25,7 @@ export class CrudFormComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.paramsSubscription = this.route.params.subscribe(
       (params: Object) => {
+        this.params = params;
         this.modelReference = this.crudService.getExampleModel(+params['id']);
 
         if (this.modelReference === null) {
@@ -44,7 +46,11 @@ export class CrudFormComponent implements OnInit, OnDestroy {
     // suas instâncias ao invés do component index
     // talvez tenha de usar um subscribe para filtrar a lista de objetos no componente
     // de index
-    this.modelReference.setName(form.value['name']);
+    if (this.params['id']) {
+      this.crudService.updateExampleModel(form.value);
+    } else {
+      this.crudService.createExampleModel(new ExampleModel(form.value));
+    }
   }
 
 }
