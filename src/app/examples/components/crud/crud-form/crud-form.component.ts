@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
@@ -15,9 +15,6 @@ export class CrudFormComponent implements OnInit, OnDestroy {
 
   private modelReference: ExampleModel;
   private paramsSubscription: Subscription;
-  // private formWasChanged: Boolean = false;
-
-  // private name: String;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,8 +29,6 @@ export class CrudFormComponent implements OnInit, OnDestroy {
         if (this.modelReference === null) {
           this.modelReference = new ExampleModel();
         }
-
-        // this.name = this.modelReference.getName();
       }
     );
   }
@@ -45,9 +40,5 @@ export class CrudFormComponent implements OnInit, OnDestroy {
   onSubmit(form: NgForm) {
     this.modelReference.setName(form.value['name']);
   }
-
-  // ngOnInput() {
-  //   this.formWasChanged = true;
-  // }
 
 }
