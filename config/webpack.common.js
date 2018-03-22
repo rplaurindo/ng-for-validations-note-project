@@ -1,5 +1,6 @@
 const { CommonsChunkPlugin } = require('webpack').optimize;
 const { AngularCompilerPlugin } = require('@ngtools/webpack');
+const { NamedLazyChunksWebpackPlugin } = require('@angular/cli/plugins/webpack');
 
 const fs = require('fs');
 const path = require('path');
@@ -118,9 +119,10 @@ module.exports = {
 
     plugins: [
         new AngularCompilerPlugin({
+            mainPath: "main.ts",
             sourceMap: true,
-            tsConfigPath: "src/tsconfig.app.json",
-            skipCodeGeneration: true
+            skipCodeGeneration: true,
+            tsConfigPath: "src/tsconfig.app.json"
         }),
         new CircularDependencyPlugin({
             "exclude": /(\\|\/)node_modules(\\|\/)/,
@@ -145,6 +147,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/index.html"
         }),
+        new NamedLazyChunksWebpackPlugin(),
         new ProgressPlugin()
     ],
 
