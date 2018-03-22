@@ -1,13 +1,8 @@
 // Angular imports
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// import { ModuleWithProviders } from '@angular/core';
 
-// Example Module imports
-import { CrudComponent } from './components/crud/cruds.component';
-import { CrudEditComponent } from './components/crud/crud-edit/crud-edit.component';
-import { CrudNewComponent } from './components/crud/crud-new/crud-new.component';
-import { CrudShowComponent } from './components/crud/crud-show/crud-show.component';
+// Example Components imports
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { EventComponent } from './components/event/event.component';
 import { EventSubscribeComponent } from './components/event-subscribe/event-subscribe.component';
@@ -16,19 +11,11 @@ import { RouteParamsComponent } from './components/route-params/route-params.com
 
 
 const exampleRoutes: Routes = [
+    // lazy loading (works only angular cli server)
     {
         path: 'cruds',
-        component: CrudComponent,
-        children: [
-            { path: 'novo', component: CrudNewComponent },
-            {
-                path: ':id', component: CrudShowComponent,
-                // resolve: { cruds: CrudShowResolver }
-            },
-            {
-                path: ':id/editar', component: CrudEditComponent
-            }
-        ]
+        loadChildren: './components/cruds/cruds.module#CrudsModule'
+        // loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule'
     },
     {
         path: 'data-bindings',
