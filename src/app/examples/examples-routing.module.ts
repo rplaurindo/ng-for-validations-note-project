@@ -12,7 +12,6 @@ import { DataBindingComponent } from './components/data-binding/data-binding.com
 import { EventComponent } from './components/event/event.component';
 import { EventSubscribeComponent } from './components/event-subscribe/event-subscribe.component';
 import { ManipulatingDomComponent } from './components/manipulating-dom/manipulating-dom.component';
-import { RedirectingComponent } from './components/redirecting/redirecting.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
 
 
@@ -46,10 +45,6 @@ const exampleRoutes: Routes = [
     {
         path: 'manipulating-dom',
         component: ManipulatingDomComponent
-    },
-    {
-        path: 'redirecting',
-        component: RedirectingComponent
     },
     {
         path: 'route-params/:data',

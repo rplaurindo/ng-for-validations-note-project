@@ -26,7 +26,6 @@ import { ComponentChildComponent } from './components/component-child/component-
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { EventSubscribeComponent } from './components/event-subscribe/event-subscribe.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
-import { RedirectingComponent } from './components/redirecting/redirecting.component';
 import { CrudComponent } from './components/crud/cruds.component';
 import { CrudEditComponent } from './components/crud/crud-edit/crud-edit.component';
 import { CrudNewComponent } from './components/crud/crud-new/crud-new.component';
@@ -54,7 +53,6 @@ import { CrudShowComponent } from './components/crud/crud-show/crud-show.compone
     StructuralDirectiveDirective,
     EventSubscribeComponent,
     RouteParamsComponent,
-    RedirectingComponent,
     CrudComponent,
     CrudEditComponent,
     CrudNewComponent,
