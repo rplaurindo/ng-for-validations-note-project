@@ -8,10 +8,10 @@ import { ExampleModel } from '../../../services/crud/example-model';
 
 @Component({
   selector: 'app-crud-form',
-  templateUrl: './../templates/crud-form.component.html',
-  styleUrls: ['./crud-edit-form.component.sass']
+  templateUrl: './../crud-form.component.html',
+  styleUrls: ['./crud-new.component.sass']
 })
-export class CrudEditFormComponent implements OnInit, OnDestroy {
+export class CrudNewComponent implements OnInit, OnDestroy {
 
   private modelReference: ExampleModel;
   private paramsSubscription: Subscription;

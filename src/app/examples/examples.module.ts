@@ -28,8 +28,8 @@ import { EventSubscribeComponent } from './components/event-subscribe/event-subs
 import { RouteParamsComponent } from './components/route-params/route-params.component';
 import { RedirectingComponent } from './components/redirecting/redirecting.component';
 import { CrudComponent } from './components/crud/cruds.component';
-import { CrudEditFormComponent } from './components/crud/crud-edit-form/crud-edit-form.component';
-import { CrudNewFormComponent } from './components/crud/crud-new-form/crud-new-form.component';
+import { CrudEditComponent } from './components/crud/crud-edit/crud-edit.component';
+import { CrudNewComponent } from './components/crud/crud-new/crud-new.component';
 import { CrudShowComponent } from './components/crud/crud-show/crud-show.component';
 
 
@@ -56,8 +56,8 @@ import { CrudShowComponent } from './components/crud/crud-show/crud-show.compone
     RouteParamsComponent,
     RedirectingComponent,
     CrudComponent,
-    CrudEditFormComponent,
-    CrudNewFormComponent,
+    CrudEditComponent,
+    CrudNewComponent,
     CrudShowComponent
   ],
   providers: []

@@ -5,8 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Example Module imports
 import { CrudComponent } from './components/crud/cruds.component';
-import { CrudEditFormComponent } from './components/crud/crud-edit-form/crud-edit-form.component';
-import { CrudNewFormComponent } from './components/crud/crud-new-form/crud-new-form.component';
+import { CrudEditComponent } from './components/crud/crud-edit/crud-edit.component';
+import { CrudNewComponent } from './components/crud/crud-new/crud-new.component';
 import { CrudShowComponent } from './components/crud/crud-show/crud-show.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { EventComponent } from './components/event/event.component';
@@ -21,13 +21,13 @@ const exampleRoutes: Routes = [
         path: 'cruds',
         component: CrudComponent,
         children: [
-            { path: 'novo', component: CrudNewFormComponent },
+            { path: 'novo', component: CrudNewComponent },
             {
                 path: ':id', component: CrudShowComponent,
                 // resolve: { cruds: CrudShowResolver }
             },
             {
-                path: ':id/editar', component: CrudEditFormComponent
+                path: ':id/editar', component: CrudEditComponent
             }
         ]
     },
