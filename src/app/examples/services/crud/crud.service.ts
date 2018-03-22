@@ -23,8 +23,9 @@ export class CrudService {
 
   // proxy to remote create method
   createExampleModel(data: Object) {
-    // ver qual é o último id (ordenar por id) para criar na sequência
-    // this.models.push(new ExampleModel(...));
+    const last: ExampleModel = this.models[this.models.length - 1];
+    data['id'] = last.getId() + 1;
+    this.models.push(new ExampleModel(data));
   }
 
   // proxy to remote get method

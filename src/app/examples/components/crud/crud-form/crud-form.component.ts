@@ -8,7 +8,7 @@ import { ExampleModel } from '../../../services/crud/example-model';
 
 @Component({
   selector: 'app-crud-form',
-  templateUrl: './crud-form.component.html',
+  templateUrl: './../templates/crud-form.component.html',
   styleUrls: ['./crud-form.component.sass']
 })
 export class CrudFormComponent implements OnInit, OnDestroy {
@@ -39,6 +39,7 @@ export class CrudFormComponent implements OnInit, OnDestroy {
     this.paramsSubscription.unsubscribe();
   }
 
+  // separar a lógica de editar e criar em dois componentes
   onSubmit(form: NgForm) {
     if (this.params['id']) {
       this.crudService.updateExampleModel(form.value);
