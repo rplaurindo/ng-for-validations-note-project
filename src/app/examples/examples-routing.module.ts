@@ -11,10 +11,9 @@ import { RouteParamsComponent } from './components/route-params/route-params.com
 
 
 const exampleRoutes: Routes = [
-    // lazy loading (works only angular cli server)
+    // lazy loading
     {
         path: 'cruds',
-        // loadChildren: './components/cruds/cruds.module#CrudsModule'
         loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule'
     },
     {
