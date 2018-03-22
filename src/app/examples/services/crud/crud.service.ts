@@ -17,10 +17,17 @@ export class CrudService {
 
   constructor() { }
 
-  createExampleModel(exampleModel: ExampleModel) {
-    this.models.push(exampleModel);
+  getExampleModels() {
+    return this.models;
   }
 
+  // proxy to remote create method
+  createExampleModel(data: Object) {
+    // ver qual é o último id (ordenar por id) para criar na sequência
+    // this.models.push(new ExampleModel(...));
+  }
+
+  // proxy to remote get method
   getExampleModel(id: Number): ExampleModel {
     let model: any;
     for (model of this.models) {
@@ -33,12 +40,9 @@ export class CrudService {
     return null;
   }
 
+  // proxy to remote update method
   updateExampleModel(attrs: Object) {
     this.cachedModel.setName(attrs['name']);
-  }
-
-  getExampleModels() {
-    return this.models;
   }
 
 }

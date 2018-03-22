@@ -41,11 +41,9 @@ export class CrudFormComponent implements OnInit, OnDestroy {
 
   onSubmit(form: NgForm) {
     if (this.params['id']) {
-      // talvez seja melhor passar o id para fazer update, ao invés de cachear o objeto
-      // no serviço
       this.crudService.updateExampleModel(form.value);
     } else {
-      this.crudService.createExampleModel(new ExampleModel(form.value));
+      this.crudService.createExampleModel(form.value);
     }
   }
 
