@@ -1,6 +1,6 @@
 export class ExampleModel {
 
-    id: Number;
+    id: number;
     name: String;
 
     constructor(optionalParams: Object = {}) {
@@ -8,7 +8,7 @@ export class ExampleModel {
         this.name = optionalParams['name'] || null;
     }
 
-    getId(): Number {
+    getId(): number {
         return this.id;
     }
 
