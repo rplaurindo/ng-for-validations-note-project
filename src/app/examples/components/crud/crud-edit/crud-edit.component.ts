@@ -29,6 +29,7 @@ export class CrudEditComponent implements OnInit, OnDestroy {
         this.modelReference = this.crudService.getExampleModel(+params['id']);
 
         if (this.modelReference === null) {
+          // render model not found page instead
           this.modelReference = new ExampleModel();
         }
       }
@@ -39,13 +40,8 @@ export class CrudEditComponent implements OnInit, OnDestroy {
     this.paramsSubscription.unsubscribe();
   }
 
-  // separar a lógica de editar e criar em dois componentes
   onSubmit(form: NgForm) {
-    if (this.params['id']) {
-      this.crudService.updateExampleModel(form.value);
-    } else {
-      this.crudService.createExampleModel(form.value);
-    }
+    this.crudService.updateExampleModel(form.value);
   }
 
 }

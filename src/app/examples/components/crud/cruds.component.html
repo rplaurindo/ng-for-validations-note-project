@@ -21,7 +21,7 @@
           <td>{{ model.getId() }}</td>
           <td>{{ model.getName() }}</td>
         </a>
-        <td><a>excluir</a></td>
+        <td><a href="javascript:void(0)" (click)="onDestroy(model)">excluir</a></td>
       </tr>
     </tbody>
   </table>
