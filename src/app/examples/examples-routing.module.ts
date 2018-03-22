@@ -14,8 +14,8 @@ const exampleRoutes: Routes = [
     // lazy loading (works only angular cli server)
     {
         path: 'cruds',
-        loadChildren: './components/cruds/cruds.module#CrudsModule'
-        // loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule'
+        // loadChildren: './components/cruds/cruds.module#CrudsModule'
+        loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule'
     },
     {
         path: 'data-bindings',

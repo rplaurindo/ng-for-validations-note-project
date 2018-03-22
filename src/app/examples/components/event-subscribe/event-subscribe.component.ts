@@ -20,7 +20,8 @@ export class EventSubscribeComponent implements OnInit {
   ngOnInit() {
     this.eventSubscribeService.eventEmitter.subscribe(
       item => {
-        alert(`Item ${item} added.`)
+        // string’s interpoaltion
+        alert(`Item ${item} added.`);
       }
     );
   }
