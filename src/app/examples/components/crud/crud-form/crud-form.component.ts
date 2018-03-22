@@ -38,6 +38,12 @@ export class CrudFormComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(form: NgForm) {
+    // falta o create. Talvez tenha de mudar aqui para verificar se o modalReference
+    // está null, caso sim é para se fazer this.models.push(new ExampleModel(form.value))
+    // mas ver como seria o acesso. A própria classe poderia guardar um array com
+    // suas instâncias ao invés do component index
+    // talvez tenha de usar um subscribe para filtrar a lista de objetos no componente
+    // de index
     this.modelReference.setName(form.value['name']);
   }
 
