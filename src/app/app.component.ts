@@ -1,18 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
+
+import { AuthService } from './services/auth/auth.service';
+import { User } from './services/auth/user';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.sass'],
+  providers: [AuthService]
 })
-export class AppComponent {
-  title = 'app';
+export class AppComponent implements OnInit,
+                                     AfterContentInit {
 
-  public loading = false;
-  events = [];
+  title = 'Examples';
+  showMenu: Boolean;
 
-  load() {
-    this.loading = !this.loading;
+  constructor (private authService: AuthService) {
+  }
+
+  ngOnInit () {
+    this.authService.authenticatedEmitter.subscribe(
+      authenticated => {
+        this.showMenu = authenticated;
+      }
+    );
+  }
+
+  ngAfterContentInit() {
+    this.authService.authenticate(new User());
   }
 
 }

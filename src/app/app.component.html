@@ -8,26 +8,9 @@
 <app-event></app-event> -->
 
 <header>
-  <app-horizontal-menu></app-horizontal-menu>
-
-  <!-- <nav>
-    <ul>
-      <li routerLinkActive="active">
-        <a routerLink="/data-bindings">Data Bindings</a>
-      </li>
-      <li routerLinkActive="active">
-        <a routerLink="/events">Events</a>
-      </li>
-      <li routerLinkActive="active">
-        <a routerLink="/route-params">Route Params</a>
-      </li>
-    </ul>
-    <a [routerLink]="['/route-params', inputData.value]">link to test</a>
-    <a routerLink="/" class='float-right'>Home</a>
-  </nav> -->
+  <app-horizontal-menu *ngIf="showMenu"></app-horizontal-menu>
 </header>
 <main>
-  <!-- <input #inputData> -->
   <router-outlet></router-outlet>
 </main>
 <!-- <footer></footer> -->

@@ -20,7 +20,7 @@ export class CrudNewComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(form: NgForm) {
-    this.crudService.createExampleModel(form.value);
+    this.crudService.create(form.value);
   }
 
 }

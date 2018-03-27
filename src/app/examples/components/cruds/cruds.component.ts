@@ -1,11 +1,11 @@
-import { OnDestroy } from '@angular/core';
 // Presenter(Controller)
-
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { CrudService } from './../../services/crud/crud.service';
+
 import { ExampleModel } from '../../services/crud/example-model';
+
 
 @Component({
   selector: 'app-crud',
@@ -27,8 +27,18 @@ export class CrudComponent implements OnInit {
   }
 
   onDestroy(exampleModel: ExampleModel) {
-    this.models.splice(this.models.indexOf(exampleModel), 1);
-    this.router.navigate(['/cruds']);
+    let
+      positiveResponse: Boolean = false;
+
+    if (confirm('Tem certeza?')) {
+      positiveResponse = this.crudService.destroy(exampleModel);
+      if (positiveResponse) {
+        this.router.navigate(['/cruds']);
+      } else {
+        alert('O registro não pôde ser excluído');
+      }
+    }
+
   }
 
 }

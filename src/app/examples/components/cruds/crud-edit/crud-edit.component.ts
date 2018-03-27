@@ -41,7 +41,7 @@ export class CrudEditComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(form: NgForm) {
-    this.crudService.updateExampleModel(form.value);
+    this.crudService.update(form.value);
   }
 
 }
