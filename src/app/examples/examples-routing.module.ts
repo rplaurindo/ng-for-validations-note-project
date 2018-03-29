@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 // Example Components imports
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { EventComponent } from './components/event/event.component';
-import { EventSubscribeComponent } from './components/event-subscribe/event-subscribe.component';
 import { ManipulatingDomComponent } from './components/manipulating-dom/manipulating-dom.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
 
@@ -23,10 +22,6 @@ const exampleRoutes: Routes = [
     {
         path: 'events',
         component: EventComponent
-    },
-    {
-        path: 'event-subscribe',
-        component: EventSubscribeComponent
     },
     {
         path: 'manipulating-dom',

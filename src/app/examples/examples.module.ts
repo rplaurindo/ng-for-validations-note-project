@@ -24,7 +24,6 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { EventComponent } from './components/event/event.component';
 import { ComponentChildComponent } from './components/component-child/component-child.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
-import { EventSubscribeComponent } from './components/event-subscribe/event-subscribe.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
 
 
@@ -47,7 +46,6 @@ import { RouteParamsComponent } from './components/route-params/route-params.com
     SafeNavigationComponent,
     NgContentExampleComponent,
     StructuralDirectiveDirective,
-    EventSubscribeComponent,
     RouteParamsComponent
   ],
   providers: []
