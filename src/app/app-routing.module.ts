@@ -12,11 +12,16 @@ import { ExamplesRoutingModule } from './examples/examples-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/errors/error.component';
+import { LoginComponent } from './components/login/login.component';
 
 const appRoutes: Routes = [
     {
         path: '',
         component: HomeComponent
+    },
+    {
+        path: 'sign_in',
+        component: LoginComponent
     },
     {
         path: '**',

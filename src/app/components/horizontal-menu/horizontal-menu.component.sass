@@ -9,27 +9,26 @@ app-horizontal-menu:host
     ul
       list-style-type: none
       display: inline-block
+
       li
         display: inline-block
 
-        background: silver
-        border-right: 1px solid
-        margin-right: -4px
+      &.horizontal-menu
+        li
+          background: silver
+          border-right: 1px solid
+          margin-right: -4px
 
-        &:last-of-type
-          border-right: initial
-          margin-right: initial
+          &:last-of-type
+            border-right: initial
+            margin-right: initial
 
-        a
-          display: block
-          text-decoration: none
-
-          padding: 10px
-
-        &.active
           a
-            color: white
+            display: block
+            text-decoration: none
 
-    a
-      &.float-right
-        float: right
+            padding: 10px
+
+          &.active
+            a
+              color: white

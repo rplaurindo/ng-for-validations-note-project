@@ -6,13 +6,13 @@ import { User } from './user';
 @Injectable()
 export class AuthService {
 
-  authenticated: Boolean = false;
-  authenticatedEmitter = new EventEmitter<Boolean>();
+  private authenticated: Boolean = false;
+  private authenticatedEmitter = new EventEmitter<Boolean>();
 
   constructor(private router: Router) {
   }
 
-  authenticate (user: User) {
+  authenticate(user: User) {
     // console.log('here');
     // if ...
     this.authenticated = true;
@@ -22,7 +22,11 @@ export class AuthService {
     this.authenticatedEmitter.emit(this.authenticated);
   }
 
-  isThereAuthentication (): Boolean {
+  authenticateEmitter() {
+    return this.authenticatedEmitter;
+  }
+
+  isUserAuthenticated (): Boolean {
     return this.authenticated;
     // return false;
   }

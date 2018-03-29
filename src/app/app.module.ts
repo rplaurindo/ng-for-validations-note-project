@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { ErrorComponent } from './components/errors/error.component';
 import { HomeComponent } from './components/home/home.component';
 import { HorizontalMenuComponent } from './components/horizontal-menu/horizontal-menu.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { HorizontalMenuComponent } from './components/horizontal-menu/horizontal
     AppComponent,
     HomeComponent,
     ErrorComponent,
-    HorizontalMenuComponent
+    HorizontalMenuComponent,
+    LoginComponent
   ],
   // Services
   providers: []
