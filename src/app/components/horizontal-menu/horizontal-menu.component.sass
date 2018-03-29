@@ -13,6 +13,12 @@ app-horizontal-menu:host
       li
         display: inline-block
 
+        a
+          display: block
+          text-decoration: none
+
+          padding: 10px
+
       &.horizontal-menu
         li
           background: silver
@@ -22,12 +28,6 @@ app-horizontal-menu:host
           &:last-of-type
             border-right: initial
             margin-right: initial
-
-          a
-            display: block
-            text-decoration: none
-
-            padding: 10px
 
           &.active
             a
