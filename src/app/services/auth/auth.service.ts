@@ -1,8 +1,6 @@
 import {
   Injectable,
-  EventEmitter,
-  Output,
-  Input
+  EventEmitter
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
@@ -60,8 +58,6 @@ export class AuthService {
     // this.authenticated = false;
     // }
 
-    // talvez não seja necessário usar como estático
-    // multicasting
     this.multicast();
   }
 

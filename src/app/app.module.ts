@@ -9,6 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ExamplesModule } from './examples/examples.module';
 
+import { AuthGuard } from './guards/auth-guards/auth.guard';
+
+import { AuthService } from './services/auth/auth.service';
+
 import { AppComponent } from './app.component';
 import { ErrorComponent } from './components/errors/error.component';
 import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
@@ -41,6 +45,9 @@ import { LoginComponent } from './components/login/login.component';
     LoginComponent
   ],
   // Services
-  providers: []
+  providers: [
+    AuthService,
+    AuthGuard
+  ]
 })
 export class AppModule { }

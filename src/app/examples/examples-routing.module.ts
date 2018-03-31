@@ -7,13 +7,15 @@ import { DataBindingComponent } from './components/data-binding/data-binding.com
 import { EventComponent } from './components/event/event.component';
 import { ManipulatingDomComponent } from './components/manipulating-dom/manipulating-dom.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
+import { AuthGuard } from '../guards/auth-guards/auth.guard';
 
 
 const exampleRoutes: Routes = [
     // lazy loading
     {
         path: 'cruds',
-        loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule'
+        loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule',
+        canActivate: [AuthGuard]
     },
     {
         path: 'data-bindings',

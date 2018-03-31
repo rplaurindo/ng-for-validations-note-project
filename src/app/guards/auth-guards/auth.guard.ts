@@ -13,6 +13,7 @@ import { AuthService } from '../../services/auth/auth.service';
 @Injectable()
 export class AuthGuard implements CanActivate {
 
+  // AuthService deve estar definido como num provider
   constructor(
     private router: Router,
     private authService: AuthService
@@ -21,17 +22,15 @@ export class AuthGuard implements CanActivate {
   canActivate(
     activatedRoute: ActivatedRouteSnapshot,
     routeState: RouterStateSnapshot
-  ): Observable<Boolean> | Boolean {
+  ): Observable<boolean> | boolean {
     if (this.authService.isUserAuthenticated()) {
       return true;
     }
-
-    this.router.navigate(['/sign_in']);
+    this.router.navigate([`/sign_in`]);
     return false;
   }
 
   private checkAccess() {
-
   }
 
 }
