@@ -9,7 +9,6 @@ import { CrudShowComponent } from './crud-show/crud-show.component';
 
 
 const crudsRoutes: Routes = [
-    // lazy loading
     {
         path: '',
         component: CrudComponent,

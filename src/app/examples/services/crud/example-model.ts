@@ -3,9 +3,9 @@ export class ExampleModel {
     id: number;
     name: String;
 
-    constructor(optionalParams: Object = {}) {
-        this.id = optionalParams['id'] || null;
-        this.name = optionalParams['name'] || null;
+    constructor(attrs: Object = {}) {
+        this.id = attrs['id'] || null;
+        this.name = attrs['name'] || null;
     }
 
     getId(): number {

@@ -1,16 +1,22 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy
+} from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute } from '@angular/router';
 
 import { CrudService } from './../../../services/crud/crud.service';
 import { ExampleModel } from '../../../services/crud/example-model';
 
+
 @Component({
   selector: 'app-crud-show',
   templateUrl: './crud-show.component.html',
   styleUrls: ['./crud-show.component.sass']
 })
-export class CrudShowComponent implements OnInit, OnDestroy {
+export class CrudShowComponent implements OnInit,
+                                          OnDestroy {
 
   private modelReference: ExampleModel;
   private paramsSubscription: Subscription;

@@ -8,7 +8,8 @@
 <app-event></app-event> -->
 
 <header>
-  <app-horizontal-menu *ngIf="showMenu"></app-horizontal-menu>
+  <app-header></app-header>
+  <app-horizontal-menu *ngIf="showMenuIf"></app-horizontal-menu>
 </header>
 <main>
   <router-outlet></router-outlet>

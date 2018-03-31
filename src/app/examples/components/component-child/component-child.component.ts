@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
+
 
 @Component({
   selector: 'app-component-child',
@@ -7,11 +14,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ComponentChildComponent implements OnInit {
 
-  // that decorator shares a variable with parent component
+  // that decorator shares a variable with parent component to user as property binding
   @Input()
   propertyBindingValue: any = 0;
 
-  // that decorator shares a variable with child component
+  // that decorator shares a variable with parent component to use as custom event binding
   @Output()
   customEvent: EventEmitter<number> = new EventEmitter();
 

@@ -1,34 +1,66 @@
-import { Component, OnInit, AfterContentInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewInit,
+  AfterViewChecked,
+  OnChanges
+} from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 
 import { AuthService } from './services/auth/auth.service';
-import { User } from './services/auth/user';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
-  providers: [AuthService]
+  providers: [
+    AuthService
+  ]
 })
-export class AppComponent implements OnInit,
-                                     AfterContentInit {
+export class AppComponent implements  OnInit,
+                                      OnDestroy,
+                                      OnChanges,
+                                      AfterContentInit,
+                                      AfterContentChecked,
+                                      AfterViewInit,
+                                      AfterViewChecked {
 
   title = 'Examples';
-  showMenu: Boolean;
+  showMenuIf: Boolean;
+  userAuthSubscription: Subscription;
 
-  constructor (private authService: AuthService) {
+  constructor(private authService: AuthService) { }
+
+  ngOnInit() {
   }
 
-  ngOnInit () {
-    this.authService.authenticateEmitter().subscribe(
+  ngOnDestroy() {
+    this.userAuthSubscription.unsubscribe();
+  }
+
+  ngOnChanges() {
+  }
+
+  ngAfterContentInit() {
+    this.userAuthSubscription = this.authService.getUserAuthSubject().subscribe(
       authenticated => {
-        this.showMenu = authenticated;
+        console.log(`authenticated in app: ${authenticated}`)
+        this.showMenuIf = authenticated;
       }
     );
   }
 
-  ngAfterContentInit() {
-    this.authService.authenticate(new User());
+  ngAfterContentChecked() {
+  }
+
+  ngAfterViewInit() {
+  }
+
+  ngAfterViewChecked() {
   }
 
 }

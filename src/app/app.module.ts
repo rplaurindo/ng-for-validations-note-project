@@ -11,7 +11,9 @@ import { ExamplesModule } from './examples/examples.module';
 
 import { AppComponent } from './app.component';
 import { ErrorComponent } from './components/errors/error.component';
+import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
 import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
 import { HorizontalMenuComponent } from './components/horizontal-menu/horizontal-menu.component';
 import { LoginComponent } from './components/login/login.component';
 
@@ -31,8 +33,10 @@ import { LoginComponent } from './components/login/login.component';
   // Components, Pipes and Directives
   declarations: [
     AppComponent,
-    HomeComponent,
     ErrorComponent,
+    AccessDeniedComponent,
+    HomeComponent,
+    HeaderComponent,
     HorizontalMenuComponent,
     LoginComponent
   ],

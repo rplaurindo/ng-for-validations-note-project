@@ -30,12 +30,12 @@ export class CrudComponent implements OnInit {
     let
       positiveResponse: Boolean = false;
 
-    if (confirm('Tem certeza?')) {
+    if (confirm(`Tem certeza?`)) {
       positiveResponse = this.crudService.destroy(exampleModel);
       if (positiveResponse) {
-        this.router.navigate(['/cruds']);
+        this.router.navigate([`/cruds`]);
       } else {
-        alert('O registro não pôde ser excluído');
+        alert(`O registro não pôde ser excluído`);
       }
     }
 

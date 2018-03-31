@@ -1,34 +1,74 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import {
+  Injectable,
+  EventEmitter,
+  Output,
+  Input
+} from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
 
 import { User } from './user';
+
 
 @Injectable()
 export class AuthService {
 
-  private authenticated: Boolean = false;
-  private authenticatedEmitter = new EventEmitter<Boolean>();
+  private static userIsAuthenticated: Boolean = false;
+  private static user: User;
+  private static subject: Subject<Boolean> = new Subject();
 
-  constructor(private router: Router) {
+  // private static observer: Observer<Boolean>;
+  // static observable: Observable<Boolean> = new Observable(
+  //   observer => {
+  //     AuthService.observer = observer;
+  //   }
+  // );
+
+  constructor() { }
+
+  getUserAuthSubject() {
+    return AuthService.subject;
   }
 
-  authenticate(user: User) {
-    // console.log('here');
+  isUserAuthenticated(): Boolean {
+    return AuthService.userIsAuthenticated;
+  }
+
+  private static setUser(attrs: Object) {
+    if (!AuthService.user) {
+      AuthService.user = new User(attrs);
+    }
+  }
+
+  private static unsetUser() {
+    AuthService.user = null;
+  }
+
+  private multicast() {
+    AuthService.subject.observers.forEach(
+      subscriber => {
+        subscriber.next(AuthService.userIsAuthenticated);
+      }
+    );
+  }
+
+  signIn(attrs: Object = {}) {
+    AuthService.setUser(attrs);
     // if ...
-    this.authenticated = true;
+    AuthService.userIsAuthenticated = true;
     // else {
-      // this.authenticated = false;
-      // }
-    this.authenticatedEmitter.emit(this.authenticated);
+    // this.authenticated = false;
+    // }
+
+    // talvez não seja necessário usar como estático
+    // multicasting
+    this.multicast();
   }
 
-  authenticateEmitter() {
-    return this.authenticatedEmitter;
-  }
-
-  isUserAuthenticated (): Boolean {
-    return this.authenticated;
-    // return false;
+  signOut() {
+    AuthService.unsetUser();
+    AuthService.userIsAuthenticated = false;
+    this.multicast();
   }
 
 }

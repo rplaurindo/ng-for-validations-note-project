@@ -8,19 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class EventComponent implements OnInit {
 
   mouseIsOver: Boolean = false;
-
   initialValue: Number = 0;
 
-  ngOnInit() {
+  constructor() { }
 
+  ngOnInit() {
   }
 
   alertMsg() {
-    alert('Event Example!');
+    alert(`Event Example!`);
   }
 
   onChangeValue(currentValue: number) {
-    alert('Current value: ' + currentValue);
+    alert(`Current value: ${currentValue}`);
   }
 
 }
