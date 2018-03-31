@@ -1,12 +1,6 @@
 import {
   Component,
   OnInit,
-  OnDestroy,
-  Output,
-  EventEmitter,
-  Input,
-  // Injectable,
-  AfterViewInit
 } from '@angular/core';
 
 import { AuthService } from '../../services/auth/auth.service';
@@ -23,14 +17,6 @@ export class LoginComponent implements  OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-  }
-
-  ngAfterContentInit() {
-    this.authService.getUserAuthSubject().subscribe(
-      authenticated => {
-        console.log(`authenticated in login: ${authenticated}`)
-      }
-    );
   }
 
   signIn() {
