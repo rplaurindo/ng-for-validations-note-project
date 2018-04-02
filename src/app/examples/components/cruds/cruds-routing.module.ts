@@ -13,13 +13,19 @@ const crudsRoutes: Routes = [
         path: '',
         component: CrudComponent,
         children: [
-            { path: 'novo', component: CrudNewComponent },
             {
-                path: ':id', component: CrudShowComponent,
+                path: 'novo',
+                component: CrudNewComponent
+            },
+            {
+                // seria ideal que houvesse uma forma de diferenciar rotas também por método HTTP, diferenciando-as, uma vez que, por exemplo, as rotas de read (GET) e destroy (DELETE) são idênticas.
+                path: ':id',
+                component: CrudShowComponent,
                 // resolve: { cruds: CrudShowResolver }
             },
             {
-                path: ':id/editar', component: CrudEditComponent
+                path: ':id/editar',
+                component: CrudEditComponent
             }
         ]
     }
