@@ -3,8 +3,11 @@ import {
   OnInit,
   OnDestroy
 } from '@angular/core';
+import {
+  ActivatedRoute,
+  Router
+} from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import { ActivatedRoute } from '@angular/router';
 
 import { CrudService } from './../../../services/crud/crud.service';
 import { ExampleModel } from '../../../services/crud/example-model';
@@ -23,17 +26,28 @@ export class CrudShowComponent implements OnInit,
   // private params: Object;
 
   constructor(
-    // private router: Router,
-    private crudService: CrudService,
+    // private crudService: CrudService,
+    private router: Router,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.paramsSubscription = this.route.params.subscribe(
-      (params: Object) => {
+    // this.paramsSubscription = this.route.params.subscribe(
+    //   (params: Object) => {
+    //     // this.params = params;
+    //     // + used to cast
+    //     this.modelReference = this.crudService.getExampleModel(+params['id']);
+    //   }
+    // );
+
+    this.paramsSubscription = this.route.data.subscribe(
+      (data: {exampleModel: ExampleModel}) => {
+        // console.log(data)
         // this.params = params;
         // + used to cast
-        this.modelReference = this.crudService.getExampleModel(+params['id']);
+        // this.modelReference = this.crudService.getExampleModel(+params['id']);
+        console.log(data.exampleModel);
+        this.modelReference = data.exampleModel;
       }
     );
 

@@ -49,7 +49,6 @@ import { RouteParamsComponent } from './components/route-params/route-params.com
     RouteParamsComponent
   ],
   providers: [
-
   ]
 })
 export class ExamplesModule { }

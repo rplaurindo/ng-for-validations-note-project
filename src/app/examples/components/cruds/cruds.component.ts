@@ -10,8 +10,7 @@ import { ExampleModel } from '../../services/crud/example-model';
 @Component({
   selector: 'app-crud',
   templateUrl: './cruds.component.html',
-  styleUrls: ['./cruds.component.sass'],
-  providers: [CrudService]
+  styleUrls: ['./cruds.component.sass']
 })
 export class CrudComponent implements OnInit {
 

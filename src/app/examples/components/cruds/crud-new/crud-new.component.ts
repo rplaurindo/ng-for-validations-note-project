@@ -28,7 +28,7 @@ export class CrudNewComponent implements  OnInit,
     this.formChanged = true;
   }
 
-  canDeactivate() {
+  canDeactivate(): boolean {
     if (this.formChanged) {
       return confirm(`Os dados preenchidos serão perdidos. Deseja Continuar?`);
     }

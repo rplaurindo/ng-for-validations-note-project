@@ -34,7 +34,7 @@ export class CrudEditComponent implements OnInit, OnDestroy, IFormCanDeactivate 
     this.formChanged = true;
   }
 
-  canDeactivate() {
+  canDeactivate(): boolean {
     if (this.formChanged) {
       return confirm(`Os dados preenchidos serão perdidos. Deseja Continuar?`);
     }

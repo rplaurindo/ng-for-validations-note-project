@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, CanDeactivate } from '@angular/router';
+import {
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  CanDeactivate
+} from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 import { IFormCanDeactivate } from './i-form-can-deactivate';

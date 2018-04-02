@@ -9,6 +9,9 @@ import { CrudEditComponent } from './crud-edit/crud-edit.component';
 import { CrudNewComponent } from './crud-new/crud-new.component';
 import { CrudShowComponent } from './crud-show/crud-show.component';
 
+import { CrudShowResolver } from './crud-show/crud-show.resolver';
+import { CrudService } from '../../services/crud/crud.service';
+
 
 @NgModule({
   imports: [
@@ -24,6 +27,8 @@ import { CrudShowComponent } from './crud-show/crud-show.component';
     CrudShowComponent
   ],
   providers: [
+    CrudService,
+    CrudShowResolver
   ]
 })
 export class CrudsModule { }
