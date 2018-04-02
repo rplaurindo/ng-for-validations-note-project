@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CrudComponent } from './cruds.component';
-import { CrudEditComponent } from './crud-edit/crud-edit.component';
 import { CrudNewComponent } from './crud-new/crud-new.component';
 import { CrudShowComponent } from './crud-show/crud-show.component';
+import { CrudEditComponent } from './crud-edit/crud-edit.component';
 import { AuthGuard } from '../../../guards/auth-guards/auth.guard';
+import { FormCanDeactivateGuard } from '../../../guards/form-deactivate/form-can-deactivate.guard';
 
 
 const crudsRoutes: Routes = [
@@ -18,7 +19,8 @@ const crudsRoutes: Routes = [
         children: [
             {
                 path: 'novo',
-                component: CrudNewComponent
+                component: CrudNewComponent,
+                canDeactivate: [FormCanDeactivateGuard]
             },
             {
                 // seria ideal que houvesse uma forma de diferenciar rotas também por método HTTP, diferenciando-as, uma vez que, por exemplo, as rotas de read (GET) e destroy (DELETE) são idênticas.
@@ -28,7 +30,8 @@ const crudsRoutes: Routes = [
             },
             {
                 path: ':id/editar',
-                component: CrudEditComponent
+                component: CrudEditComponent,
+                canDeactivate: [FormCanDeactivateGuard]
             }
         ]
     }

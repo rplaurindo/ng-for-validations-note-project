@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ExamplesModule } from './examples/examples.module';
 
 import { AuthGuard } from './guards/auth-guards/auth.guard';
+import { FormCanDeactivateGuard } from './guards/form-deactivate/form-can-deactivate.guard';
 
 import { AuthService } from './services/auth/auth.service';
 
@@ -47,7 +48,8 @@ import { LoginComponent } from './components/login/login.component';
   // Services
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    FormCanDeactivateGuard
   ]
 })
 export class AppModule { }

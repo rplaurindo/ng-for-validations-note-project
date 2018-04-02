@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { CrudsRoutingModule } from './cruds-routing.module';
 
-import { AuthService } from './../../../services/auth/auth.service';
-
 import { CrudComponent } from './cruds.component';
 import { CrudEditComponent } from './crud-edit/crud-edit.component';
 import { CrudNewComponent } from './crud-new/crud-new.component';
@@ -25,6 +23,7 @@ import { CrudShowComponent } from './crud-show/crud-show.component';
     CrudNewComponent,
     CrudShowComponent
   ],
-  providers: [AuthService]
+  providers: [
+  ]
 })
 export class CrudsModule { }

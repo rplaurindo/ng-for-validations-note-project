@@ -48,6 +48,8 @@ import { RouteParamsComponent } from './components/route-params/route-params.com
     StructuralDirectiveDirective,
     RouteParamsComponent
   ],
-  providers: []
+  providers: [
+
+  ]
 })
 export class ExamplesModule { }

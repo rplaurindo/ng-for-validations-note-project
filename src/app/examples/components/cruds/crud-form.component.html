@@ -1,4 +1,4 @@
-<form #formReference=ngForm (ngSubmit)="onSubmit(formReference)">
+<form #formReference=ngForm (ngSubmit)="onSubmit(formReference)" (input)="onInput()">
   <input name="name" [ngModel]="modelReference?.name" placeholder="nome" />
   <div class="actions">
     <button type="submit">Salvar</button>
