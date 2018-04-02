@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
+  CanActivate,
   CanActivateChild,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
@@ -11,7 +12,8 @@ import { AuthService } from '../../services/auth/auth.service';
 
 
 @Injectable()
-export class AuthGuard implements CanActivateChild {
+export class AuthGuard implements CanActivate,
+                                  CanActivateChild {
 
   // AuthService should be defined as a provider
   constructor(
@@ -19,16 +21,24 @@ export class AuthGuard implements CanActivateChild {
     private authService: AuthService
   ) { }
 
-  canActivateChild(
+  canActivate(
     activatedRoute: ActivatedRouteSnapshot,
     routeState: RouterStateSnapshot
   ): Observable<boolean> | boolean {
-    // create a "new AccessService().have_user_permission()" and check if user has permission to run a defined route.
+    // create a "new AccessService().hasPermissionOf(routeState)" and check if user has permission to run a defined route.
+    // hasPermissionOf should check activatedRoute.url and check if the user has permission to run this path
     if (this.authService.isUserAuthenticated()) {
       return true;
     }
     this.router.navigate([`/sign_in`]);
     return false;
+  }
+
+  canActivateChild(
+    activatedRoute: ActivatedRouteSnapshot,
+    routeState: RouterStateSnapshot
+  ): Observable<boolean> | boolean {
+    return this.canActivate(activatedRoute, routeState);
   }
 
 }

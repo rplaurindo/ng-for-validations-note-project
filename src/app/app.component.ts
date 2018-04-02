@@ -48,6 +48,7 @@ export class AppComponent implements  OnInit,
   ngAfterContentInit() {
     this.userAuthSubscription = this.authService.getUserAuthSubject().subscribe(
       authenticated => {
+        console.log('here');
         this.showMenuIf = authenticated;
       }
     );
