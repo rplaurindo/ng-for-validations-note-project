@@ -1,34 +1,22 @@
 app-horizontal-menu:host
   display: block
 
-  // isso pode ser extraído para um estilo a parte com o nome tab-behavior.sass. Ver onde poderia ficar e como importar aqui posteriormente
   nav
-    a
-      color: black
-
     ul
-      list-style-type: none
-      display: inline-block
 
       li
-        display: inline-block
+        background: silver
+        border-right: 1px solid
+        margin-right: -4px
+
+        &:last-of-type
+          border-right: initial
+          margin-right: initial
+
+        &.active
+          a
+            color: white
 
         a
-          display: block
-          text-decoration: none
-
+          color: black
           padding: 10px
-
-      &.horizontal-menu
-        li
-          background: silver
-          border-right: 1px solid
-          margin-right: -4px
-
-          &:last-of-type
-            border-right: initial
-            margin-right: initial
-
-          &.active
-            a
-              color: white
