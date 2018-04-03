@@ -25,7 +25,12 @@ export class AuthGuard implements CanActivate,
   ) { }
 
   private checkAccess(): boolean {
-    return this.authService.isUserAuthenticated();
+    if (this.authService.isUserAuthenticated()) {
+      return true;
+    }
+
+    this.router.navigate([`/sign_in`]);
+    return false;
   }
 
   canActivate(
@@ -34,11 +39,7 @@ export class AuthGuard implements CanActivate,
   ): Observable<boolean> | boolean {
     // create a "new AccessService().hasPermissionOf(routeState)" and check if user has permission to run a defined route.
     // hasPermissionOf should check activatedRoute.url and check if the user has permission to run this path
-    if (this.checkAccess()) {
-      return true;
-    }
-    this.router.navigate([`/sign_in`]);
-    return false;
+    return this.checkAccess();
   }
 
   canActivateChild(
