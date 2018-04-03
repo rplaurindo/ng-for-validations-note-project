@@ -11,13 +11,19 @@ import { ExamplesRoutingModule } from './examples/examples-routing.module';
 // components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { ErrorComponent } from './components/errors/error.component';
 import { LoginComponent } from './components/login/login.component';
+import { PageNotFoundComponent } from './components/errors/404/404-error.component';
+
 
 const appRoutes: Routes = [
     {
-        path: '',
+        path: 'home',
         component: HomeComponent
+    },
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: '/home'
     },
     {
         path: 'sign_in',
@@ -25,7 +31,7 @@ const appRoutes: Routes = [
     },
     {
         path: '**',
-        component: ErrorComponent
+        component: PageNotFoundComponent
     }
 ];
 

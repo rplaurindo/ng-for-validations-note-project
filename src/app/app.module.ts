@@ -15,12 +15,12 @@ import { FormCanDeactivateGuard } from './guards/form-deactivate/form-can-deacti
 import { AuthService } from './services/auth/auth.service';
 
 import { AppComponent } from './app.component';
-import { ErrorComponent } from './components/errors/error.component';
 import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HorizontalMenuComponent } from './components/horizontal-menu/horizontal-menu.component';
 import { LoginComponent } from './components/login/login.component';
+import { PageNotFoundComponent } from './components/errors/404/404-error.component';
 
 
 @NgModule({
@@ -38,12 +38,12 @@ import { LoginComponent } from './components/login/login.component';
   // Components, Pipes and Directives
   declarations: [
     AppComponent,
-    ErrorComponent,
     AccessDeniedComponent,
     HomeComponent,
     HeaderComponent,
     HorizontalMenuComponent,
-    LoginComponent
+    LoginComponent,
+    PageNotFoundComponent
   ],
   // Services
   providers: [
