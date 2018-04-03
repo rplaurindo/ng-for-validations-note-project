@@ -15,7 +15,8 @@ const exampleRoutes: Routes = [
     {
         path: 'cruds',
         loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule',
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        canLoad: [AuthGuard]
     },
     {
         path: 'data-bindings',
