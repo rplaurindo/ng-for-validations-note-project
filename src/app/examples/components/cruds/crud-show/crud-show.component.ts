@@ -21,8 +21,8 @@ import { ExampleModel } from '../../../services/crud/example-model';
 export class CrudShowComponent implements OnInit,
                                           OnDestroy {
 
-  private modelReference: ExampleModel;
-  private paramsSubscription: Subscription;
+  modelReference: ExampleModel;
+  paramsSubscription: Subscription;
   // private params: Object;
 
   constructor(
@@ -32,21 +32,8 @@ export class CrudShowComponent implements OnInit,
   ) { }
 
   ngOnInit() {
-    // this.paramsSubscription = this.route.params.subscribe(
-    //   (params: Object) => {
-    //     // this.params = params;
-    //     // + used to cast
-    //     this.modelReference = this.crudService.getExampleModel(+params['id']);
-    //   }
-    // );
-
     this.paramsSubscription = this.route.data.subscribe(
       (data: {exampleModel: ExampleModel}) => {
-        // console.log(data)
-        // this.params = params;
-        // + used to cast
-        // this.modelReference = this.crudService.getExampleModel(+params['id']);
-        console.log(data.exampleModel);
         this.modelReference = data.exampleModel;
       }
     );

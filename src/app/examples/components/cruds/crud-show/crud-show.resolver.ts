@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
 import {
     ActivatedRouteSnapshot,
     RouterStateSnapshot,
     Resolve
 } from '@angular/router';
+import { Observable } from 'rxjs/Rx';
 
 import { ExampleModel } from '../../../services/crud/example-model';
 import { CrudService } from '../../../services/crud/crud.service';
@@ -19,8 +19,8 @@ export class CrudShowResolver implements Resolve<ExampleModel> {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
     ): Observable<any> | Promise<any> | any {
-        let id: number = route.params['id'];
-        return this.crudService.getExampleModel(id);
+        let id: number = route.params[`id`];
+        return this.crudService.getExampleModel(+id);
     }
 
 }

@@ -29,6 +29,7 @@ const crudsRoutes: Routes = [
                 // seria ideal que houvesse uma forma de diferenciar rotas também por método HTTP, diferenciando-as, uma vez que, por exemplo, as rotas de read (GET) e destroy (DELETE) são idênticas.
                 path: ':id',
                 component: CrudShowComponent,
+                // preloading
                 resolve: { exampleModel: CrudShowResolver }
             },
             {
