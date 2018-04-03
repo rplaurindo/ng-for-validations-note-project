@@ -32,6 +32,7 @@ export class CrudNewComponent implements  OnInit,
     if (this.formChanged) {
       return confirm(`Os dados preenchidos serão perdidos. Deseja Continuar?`);
     }
+    return true;
   }
 
   ngOnInit() {
