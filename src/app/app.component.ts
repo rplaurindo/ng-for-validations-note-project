@@ -30,7 +30,7 @@ export class AppComponent implements  OnInit,
                                       AfterViewChecked {
 
   title = `Examples`;
-  showMenuIf: Boolean;
+  showMenuIf: boolean;
   userAuthSubscription: Subscription;
 
   constructor(private authService: AuthService) { }
@@ -48,7 +48,6 @@ export class AppComponent implements  OnInit,
   ngAfterContentInit() {
     this.userAuthSubscription = this.authService.getUserAuthSubject().subscribe(
       authenticated => {
-        console.log('here');
         this.showMenuIf = authenticated;
       }
     );

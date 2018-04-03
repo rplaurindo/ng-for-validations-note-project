@@ -23,7 +23,7 @@ export class CrudEditComponent implements OnInit, OnDestroy, IFormCanDeactivate 
   private modelReference: ExampleModel;
   private paramsSubscription: Subscription;
   private params: Object;
-  private formChanged: Boolean = false;
+  private formChanged: boolean = false;
 
   constructor(
     private route: ActivatedRoute,

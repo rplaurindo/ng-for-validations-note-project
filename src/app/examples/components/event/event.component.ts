@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventComponent implements OnInit {
 
-  mouseIsOver: Boolean = false;
+  mouseIsOver: boolean = false;
   initialValue: Number = 0;
 
   constructor() { }

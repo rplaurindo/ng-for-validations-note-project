@@ -11,12 +11,12 @@ import { User } from './user';
 @Injectable()
 export class AuthService {
 
-  private static userIsAuthenticated: Boolean = false;
+  private static userIsAuthenticated: boolean = false;
   private static user: User;
-  private static subject: Subject<Boolean> = new Subject();
+  private static subject: Subject<boolean> = new Subject();
 
-  // private static observer: Observer<Boolean>;
-  // static observable: Observable<Boolean> = new Observable(
+  // private static observer: Observer<boolean>;
+  // static observable: Observable<boolean> = new Observable(
   //   observer => {
   //     AuthService.observer = observer;
   //   }
@@ -28,7 +28,7 @@ export class AuthService {
     return AuthService.subject;
   }
 
-  isUserAuthenticated(): Boolean {
+  isUserAuthenticated(): boolean {
     return AuthService.userIsAuthenticated;
   }
 

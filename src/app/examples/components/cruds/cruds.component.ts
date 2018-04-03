@@ -27,7 +27,7 @@ export class CrudComponent implements OnInit {
 
   onDestroy(exampleModel: ExampleModel) {
     let
-      positiveResponse: Boolean = false;
+      positiveResponse: boolean = false;
 
     if (confirm(`Tem certeza?`)) {
       positiveResponse = this.crudService.destroy(exampleModel);

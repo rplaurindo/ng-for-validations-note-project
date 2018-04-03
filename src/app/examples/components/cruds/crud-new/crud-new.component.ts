@@ -18,7 +18,7 @@ export class CrudNewComponent implements  OnInit,
                                           IFormCanDeactivate {
 
   private modelReference: ExampleModel;
-  private formChanged: Boolean = false;
+  private formChanged: boolean = false;
 
   constructor(
     private crudService: CrudService

@@ -22,7 +22,7 @@ export class CrudService {
   }
 
   // proxy to remote create method
-  create(data: Object): Boolean {
+  create(data: Object): boolean {
     let
       exampleModel: ExampleModel;
 
@@ -48,13 +48,13 @@ export class CrudService {
   }
 
   // proxy to remote update method
-  update(attrs: Object): Boolean {
+  update(attrs: Object): boolean {
     this.cachedModel.setName(attrs['name']);
 
     return this.cachedModel === attrs['name'];
   }
 
-  destroy(exampleModel: ExampleModel): Boolean {
+  destroy(exampleModel: ExampleModel): boolean {
     // run that only after serve response
     this.models.splice(this.models.indexOf(exampleModel), 1);
 
