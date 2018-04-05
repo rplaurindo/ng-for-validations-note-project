@@ -1,7 +1,12 @@
 import {
   Component,
   OnInit,
-  Input
+  Input,
+  OnChanges,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewInit,
+  AfterViewChecked
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -11,7 +16,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './validation-message.component.html',
   styleUrls: ['./validation-message.component.sass']
 })
-export class ValidationMessageComponent implements OnInit {
+export class ValidationMessageComponent implements  OnInit {
 
   @Input()
     showIf: Boolean = false;
@@ -19,7 +24,23 @@ export class ValidationMessageComponent implements OnInit {
   @Input()
     message: string;
 
+  @Input()
+    presetMessages: Object;
+
+  @Input()
+    foundMessageKeys: Array<string>;
+
+  messages: Array<string> = [];
+
   constructor() { }
+
+  private getMessages(): Array<string> {
+    this.foundMessageKeys.forEach((key) => {
+      this.messages.push(this.presetMessages[key]);
+    });
+
+    return this.messages;
+  }
 
   ngOnInit() {
   }

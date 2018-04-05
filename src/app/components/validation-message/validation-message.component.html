@@ -1,3 +1,9 @@
-<span *ngIf="showIf">
+<!-- <span *ngIf="showIf">
   {{ message }}
-</span>
+</span> -->
+
+<div *ngIf="showIf">
+  <span *ngFor="let msg of getMessages()">
+    {{ msg }}
+  </span>
+</div>

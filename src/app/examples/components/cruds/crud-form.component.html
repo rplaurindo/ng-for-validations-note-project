@@ -8,10 +8,10 @@
     placeholder="nome"
     [ngModel]="modelReference?.name"
     required />
-    <!-- [messageMap]="...(talvez deva vir um array de mensagens do component)" -->
     <app-validation-message
     [showIf]="!valid('name', ['required'])"
-    message="Não pode ficar em branco"
+    [presetMessages]="{'required': 'Não pode ficar em branco'}"
+    [foundMessageKeys]="foundMessageKeysOf('name')"
     ></app-validation-message>
   <div class="actions">
     <button type="submit">Salvar</button>

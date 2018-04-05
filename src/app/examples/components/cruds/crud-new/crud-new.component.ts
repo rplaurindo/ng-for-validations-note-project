@@ -20,6 +20,7 @@ export class CrudNewComponent implements  OnInit,
 
   modelReference: ExampleModel;
   formChanged: Boolean = false;
+  messageKeys: Array<string>;
 
   constructor(
     private crudService: CrudService,
@@ -38,7 +39,12 @@ export class CrudNewComponent implements  OnInit,
   }
 
   ngOnInit() {
+    // ver se realmente há necessidade disso
     this.validationService.setIfFormHasError(false);
+  }
+
+  foundMessageKeysOf(propertyName: string): Array<string> {
+    return this.validationService.foundMessageKeysOf(propertyName);
   }
 
   valid(propertyName: string, validationType: Array<string>): Boolean {

@@ -1,3 +1,4 @@
+import { ValidationMessageComponent } from './../../components/validation-message/validation-message.component';
 import { NgForm } from '@angular/forms';
 import { Injectable } from '@angular/core';
 
@@ -8,14 +9,26 @@ export class FormValidationService {
   private errors: Object = {};
   private formHasError: Boolean = false;
 
+  private foundControlKeys: Object = {};
+
   constructor() { }
 
   setIfFormHasError(value: boolean) {
     this.formHasError = value;
   }
 
-  mapMessages() {
+  foundMessageKeysOf(propertyName: string): Array<string> {
+    // const
+    //   keys: Array<string> = [];
 
+    // this.errors[propertyName].forEach(k => {
+    //   keys.push(k);
+    // });
+
+
+    // return keys;
+
+    return this.foundControlKeys[propertyName];
   }
 
   // valid(propertyName: string, validationType: string): Boolean {
@@ -52,10 +65,12 @@ export class FormValidationService {
       // iterates over errors
       if (!form.controls[controlKey].valid) {
         this.errors[controlKey] = {};
+        this.foundControlKeys[controlKey] = [];
         Object.keys(form.controls[controlKey].errors)
           .forEach((validationKey) => {
             this.errors[controlKey][validationKey] = form
               .controls[controlKey].errors[validationKey];
+            this.foundControlKeys[controlKey].push(validationKey);
           });
       }
     });

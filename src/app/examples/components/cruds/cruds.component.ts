@@ -14,7 +14,7 @@ import { ExampleModel } from '../../services/crud/example-model';
 })
 export class CrudComponent implements OnInit {
 
-  private models: ExampleModel[];
+  models: ExampleModel[];
 
   constructor(
     private crudService: CrudService,
