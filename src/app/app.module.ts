@@ -13,6 +13,7 @@ import { AuthGuard } from './guards/auth-guards/auth.guard';
 import { FormCanDeactivateGuard } from './guards/form-deactivate/form-can-deactivate.guard';
 
 import { AuthService } from './services/auth/auth.service';
+import { FormValidationService } from './services/form-validation/form-validation.service';
 
 import { AppComponent } from './app.component';
 import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
@@ -21,6 +22,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HorizontalMenuComponent } from './components/horizontal-menu/horizontal-menu.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/errors/404/404-error.component';
+import { ValidationMessageComponent } from './components/validation-message/validation-message.component';
 
 
 @NgModule({
@@ -43,13 +45,15 @@ import { PageNotFoundComponent } from './components/errors/404/404-error.compone
     HeaderComponent,
     HorizontalMenuComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    // ValidationMessageComponent
   ],
   // Services
   providers: [
     AuthService,
     AuthGuard,
-    FormCanDeactivateGuard
+    FormCanDeactivateGuard,
+    FormValidationService
   ]
 })
 export class AppModule { }

@@ -8,9 +8,10 @@
     placeholder="nome"
     [ngModel]="modelReference?.name"
     required />
-    <span
-      *ngIf="!valid('name', 'required')">
-      Não pode ficar em branco.</span>
+    <app-validation-message
+    [showIf]="!valid('name', 'required')"
+    message="Não pode ficar em branco"
+    ></app-validation-message>
   <div class="actions">
     <button type="submit">Salvar</button>
   </div>

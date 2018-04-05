@@ -7,23 +7,23 @@ import { NgForm } from '@angular/forms';
 import { CrudService } from './../../../services/crud/crud.service';
 import { ExampleModel } from '../../../services/crud/example-model';
 import { IFormCanDeactivate } from '../../../../guards/form-deactivate/i-form-can-deactivate';
+import { FormValidationService } from '../../../../services/form-validation/form-validation.service';
 
 
 @Component({
   selector: 'app-crud-form',
   templateUrl: './../crud-form.component.html',
-  styleUrls: ['./crud-new.component.sass'],
+  styleUrls: ['./crud-new.component.sass']
 })
 export class CrudNewComponent implements  OnInit,
                                           IFormCanDeactivate {
 
   modelReference: ExampleModel;
   formChanged: Boolean = false;
-  validations: Object = {};
-  error: Boolean = false;
 
   constructor(
-    private crudService: CrudService
+    private crudService: CrudService,
+    private validationService: FormValidationService
   ) {}
 
   onInput() {
@@ -38,33 +38,17 @@ export class CrudNewComponent implements  OnInit,
   }
 
   ngOnInit() {
+    this.validationService.setError(false);
   }
 
-  valid(elementName: string, validationType: string): Boolean {
-    return !this.error || (this.validations[name] &&
-      !this.validations[elementName][validationType]);
+  valid(propertyName: string, validationType: string): Boolean {
+    return this.validationService.valid(propertyName, validationType);
   }
 
   onSubmit(form: NgForm) {
-    // NgForm.prototype.validationsMap()
-    // iterates over controls
-    Object.keys(form.controls).forEach((controlKey) => {
-      // iterates over errors
-      if (!form.controls[controlKey].valid) {
-        this.validations[controlKey] = {};
-        Object.keys(form.controls[controlKey].errors)
-          .forEach((validationKey) => {
-          this.validations[controlKey][validationKey] = form
-            .controls[controlKey].errors[validationKey];
-        });
-      }
-    });
-
+    this.validationService.buildValidationsMap(form);
     if (form.valid) {
       this.crudService.create(form.value);
-      this.error = !this.error;
-    } else {
-      this.error = !this.error;
     }
   }
 
