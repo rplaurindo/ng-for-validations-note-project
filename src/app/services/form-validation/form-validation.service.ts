@@ -1,30 +1,49 @@
 import { NgForm } from '@angular/forms';
 import { Injectable } from '@angular/core';
 
+
 @Injectable()
 export class FormValidationService {
 
-  private validations: Object = {};
-  private error: Boolean = false;
+  private errors: Object = {};
+  private formHasError: Boolean = false;
 
   constructor() { }
 
-  setError(value: boolean) {
-    this.error = value;
+  setIfFormHasError(value: boolean) {
+    this.formHasError = value;
   }
 
-  valid(propertyName: string, validationType: string): Boolean {
-    return !this.error || (this.validations[propertyName] &&
-      !this.validations[propertyName][validationType]);
+  mapMessages() {
+
+  }
+
+  // valid(propertyName: string, validationType: string): Boolean {
+  valid(propertyName: string, validationTypes: Array<string>): Boolean {
+
+    let
+      hasAnyError: Boolean = false;
+
+    // usar também para mapear as mensagens que estão setadas com erro para o componente padrão exibí-las
+    if (Object.keys(this.errors).length && this.errors[propertyName]) {
+      for (const error of Object.keys(this.errors[propertyName])) {
+        if (validationTypes.indexOf(error) !== -1) {
+          hasAnyError = true;
+          break;
+        }
+      }
+    }
+
+    return !this.formHasError || !hasAnyError;
   }
 
   buildValidationsMap(form: NgForm) {
 
     if (form.submitted) {
       if (form.valid) {
-        this.error = false;
+        this.formHasError = false;
       } else {
-        this.error = true;
+        this.formHasError = true;
       }
     }
 
@@ -32,10 +51,10 @@ export class FormValidationService {
     Object.keys(form.controls).forEach((controlKey) => {
       // iterates over errors
       if (!form.controls[controlKey].valid) {
-        this.validations[controlKey] = {};
+        this.errors[controlKey] = {};
         Object.keys(form.controls[controlKey].errors)
           .forEach((validationKey) => {
-            this.validations[controlKey][validationKey] = form
+            this.errors[controlKey][validationKey] = form
               .controls[controlKey].errors[validationKey];
           });
       }

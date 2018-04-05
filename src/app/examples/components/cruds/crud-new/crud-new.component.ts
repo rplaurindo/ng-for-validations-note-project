@@ -38,10 +38,10 @@ export class CrudNewComponent implements  OnInit,
   }
 
   ngOnInit() {
-    this.validationService.setError(false);
+    this.validationService.setIfFormHasError(false);
   }
 
-  valid(propertyName: string, validationType: string): Boolean {
+  valid(propertyName: string, validationType: Array<string>): Boolean {
     return this.validationService.valid(propertyName, validationType);
   }
 

@@ -8,8 +8,9 @@
     placeholder="nome"
     [ngModel]="modelReference?.name"
     required />
+    <!-- [messageMap]="...(talvez deva vir um array de mensagens do component)" -->
     <app-validation-message
-    [showIf]="!valid('name', 'required')"
+    [showIf]="!valid('name', ['required'])"
     message="Não pode ficar em branco"
     ></app-validation-message>
   <div class="actions">
