@@ -16,7 +16,6 @@ import { CrudService } from '../../services/crud/crud.service';
 @NgModule({
   imports: [
     CommonModule,
-    // FormsModule,
     FormsModule,
     CrudsRoutingModule
   ],

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrudEditFormComponent } from './crud-edit-form.component';
+import { CrudEditComponent } from './crud-edit.component';
 
-describe('CrudEditFormComponent', () => {
-  let component: CrudEditFormComponent;
-  let fixture: ComponentFixture<CrudEditFormComponent>;
+describe('CrudEditComponent', () => {
+  let component: CrudEditComponent;
+  let fixture: ComponentFixture<CrudEditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CrudEditFormComponent ]
+      declarations: [ CrudEditComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CrudEditFormComponent);
+    fixture = TestBed.createComponent(CrudEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

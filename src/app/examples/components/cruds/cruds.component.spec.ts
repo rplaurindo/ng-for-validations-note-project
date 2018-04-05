@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrudComponent } from './crud.component';
+import { CrudComponent } from './cruds.component';
 
 describe('CrudComponent', () => {
   let component: CrudComponent;

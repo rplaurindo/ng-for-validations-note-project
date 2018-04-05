@@ -1,16 +1,16 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 
-import { FormCanDeactivate } from './form-can-deactivate.guard';
+import { FormCanDeactivateGuard } from './form-can-deactivate.guard';
 
 
-describe('FormCanDeactivate', () => {
+describe('FormCanDeactivateGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FormCanDeactivate]
+      providers: [FormCanDeactivateGuard]
     });
   });
 
-  it('should ...', inject([FormCanDeactivate], (guard: FormCanDeactivate) => {
+  it('should ...', inject([FormCanDeactivateGuard], (guard: FormCanDeactivateGuard) => {
     expect(guard).toBeTruthy();
   }));
 });

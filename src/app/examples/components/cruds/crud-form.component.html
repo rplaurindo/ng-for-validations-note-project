@@ -1,5 +1,16 @@
-<form #formReference=ngForm (ngSubmit)="onSubmit(formReference)" (input)="onInput()">
-  <input name="name" [ngModel]="modelReference?.name" placeholder="nome" />
+<form #formReference="ngForm"
+  (ngSubmit)="onSubmit(formReference)"
+  (input)="onInput()"
+  >
+  <input
+    #name="ngModel"
+    name="name"
+    placeholder="nome"
+    [ngModel]="modelReference?.name"
+    required />
+    <span
+      *ngIf="!valid('name', 'required')">
+      Não pode ficar em branco.</span>
   <div class="actions">
     <button type="submit">Salvar</button>
   </div>

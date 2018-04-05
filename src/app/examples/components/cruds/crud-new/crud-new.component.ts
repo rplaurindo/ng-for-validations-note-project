@@ -17,8 +17,11 @@ import { IFormCanDeactivate } from '../../../../guards/form-deactivate/i-form-ca
 export class CrudNewComponent implements  OnInit,
                                           IFormCanDeactivate {
 
-  private modelReference: ExampleModel;
-  private formChanged: boolean = false;
+  modelReference: ExampleModel;
+  formChanged: Boolean = false;
+  validations: Object = {};
+  formSubmitted: Boolean = false;
+  error: Boolean = false;
 
   constructor(
     private crudService: CrudService
@@ -26,6 +29,8 @@ export class CrudNewComponent implements  OnInit,
 
   onInput() {
     this.formChanged = true;
+
+    this.formSubmitted = false;
   }
 
   canDeactivate(): boolean {
@@ -38,8 +43,31 @@ export class CrudNewComponent implements  OnInit,
   ngOnInit() {
   }
 
+  valid(elementName: string, validationType: string): Boolean {
+    return !this.error || (this.validations[name] &&
+      !this.validations[elementName][validationType]);
+  }
+
   onSubmit(form: NgForm) {
-    this.crudService.create(form.value);
+    // iterates over controls
+    Object.keys(form.controls).forEach((controlKey) => {
+      // iterates over errors
+      if (!form.controls[controlKey].valid) {
+        this.validations[controlKey] = {};
+        Object.keys(form.controls[controlKey].errors)
+          .forEach((validationKey) => {
+          this.validations[controlKey][validationKey] = form
+            .controls[controlKey].errors[validationKey];
+        });
+      }
+    });
+
+    if (form.valid) {
+      this.crudService.create(form.value);
+      this.error = !this.error;
+    } else {
+      this.error = !this.error;
+    }
   }
 
 }
