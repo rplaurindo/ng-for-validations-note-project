@@ -20,7 +20,6 @@ export class CrudNewComponent implements  OnInit,
   modelReference: ExampleModel;
   formChanged: Boolean = false;
   validations: Object = {};
-  formSubmitted: Boolean = false;
   error: Boolean = false;
 
   constructor(
@@ -29,8 +28,6 @@ export class CrudNewComponent implements  OnInit,
 
   onInput() {
     this.formChanged = true;
-
-    this.formSubmitted = false;
   }
 
   canDeactivate(): boolean {
@@ -49,6 +46,7 @@ export class CrudNewComponent implements  OnInit,
   }
 
   onSubmit(form: NgForm) {
+    // NgForm.prototype.validationsMap()
     // iterates over controls
     Object.keys(form.controls).forEach((controlKey) => {
       // iterates over errors
