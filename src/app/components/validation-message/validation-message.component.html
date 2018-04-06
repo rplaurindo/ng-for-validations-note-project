@@ -1,8 +1,5 @@
-<!-- <span *ngIf="showIf">
-  {{ message }}
-</span> -->
-
 <div *ngIf="showIf">
+   <!-- ver como não renderizar várias vezes ao apertar qualquer chave num campo input -->
   <span *ngFor="let msg of getMessages()">
     {{ msg }}
   </span>
