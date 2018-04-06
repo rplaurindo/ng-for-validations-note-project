@@ -1,12 +1,9 @@
 import {
   Component,
-  OnInit,
   Input,
+  OnInit,
   OnChanges,
-  AfterContentInit,
-  AfterContentChecked,
-  AfterViewInit,
-  AfterViewChecked
+  AfterContentChecked
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -16,33 +13,39 @@ import { NgForm } from '@angular/forms';
   templateUrl: './validation-message.component.html',
   styleUrls: ['./validation-message.component.sass']
 })
-export class ValidationMessageComponent implements  OnInit {
+export class ValidationMessageComponent implements  OnInit,
+  OnChanges,
+  AfterContentChecked {
 
   @Input()
-    showIf: Boolean = false;
-
-  @Input()
-    message: string;
+    canShow: Boolean = false;
 
   @Input()
     presetMessages: Object;
 
   @Input()
-    foundMessageKeys: Array<string>;
+    foundMessageKeys: Array<string> = [];
 
   messages: Array<string> = [];
 
-  constructor() { }
-
-  private getMessages(): Array<string> {
-    this.foundMessageKeys.forEach((key) => {
-      this.messages.push(this.presetMessages[key]);
-    });
-
-    return this.messages;
+  constructor() {
   }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
+    // console.log('Changes')
+    if (this.foundMessageKeys) {
+      this.messages = [];
+      this.foundMessageKeys.forEach((key) => {
+        this.messages.push(this.presetMessages[key]);
+      });
+    }
+  }
+
+  ngAfterContentChecked() {
+    // console.log('ContentChecked')
   }
 
 }

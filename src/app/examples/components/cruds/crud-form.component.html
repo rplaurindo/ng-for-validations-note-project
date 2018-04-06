@@ -9,7 +9,7 @@
     [ngModel]="modelReference?.name"
     required />
     <app-validation-message
-    [showIf]="!valid('name', ['required'])"
+    [canShow]="!valid('name', ['required'])"
     [presetMessages]="{'required': 'Não pode ficar em branco'}"
     [foundMessageKeys]="foundMessageKeysOf('name')"
     ></app-validation-message>
