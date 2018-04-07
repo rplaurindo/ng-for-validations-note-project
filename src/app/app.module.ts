@@ -1,9 +1,12 @@
 // Angular imports
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import {
+  HttpClientModule,
+  HttpClient
+} from '@angular/common/http';
 
 // App imports
 import { AppRoutingModule } from './app-routing.module';
@@ -33,7 +36,8 @@ import { ValidationMessageComponent } from './components/validation-message/vali
     BrowserModule,
     RouterModule,
     // FormsModule,
-    ExamplesModule
+    ExamplesModule,
+    HttpClientModule
   ],
   // Modules and Components
   exports: [],
@@ -53,7 +57,8 @@ import { ValidationMessageComponent } from './components/validation-message/vali
     AuthService,
     AuthGuard,
     FormCanDeactivateGuard,
-    FormValidationService
+    FormValidationService,
+    HttpClient
   ]
 })
 export class AppModule { }

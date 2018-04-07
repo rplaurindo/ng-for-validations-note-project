@@ -2,13 +2,16 @@
   (ngSubmit)="onSubmit(formReference)"
   (input)="onInput()"
   >
-  <!-- #name="ngModel" -->
+
   <input
     #name
-    name="nam"
+    name="name"
     placeholder="nome"
     [ngModel]="modelReference?.name"
-    required />
+    required
+    (blur)="getJSON()"
+  />
+
     <app-validation-message
     [canShow]="!valid(name, ['required'])"
     [presetMessages]="{
@@ -16,7 +19,9 @@
     }"
     [foundMessageKeys]="foundMessageKeysOf(name)"
     ></app-validation-message>
+
   <div class="actions">
     <button type="submit">Salvar</button>
   </div>
+
 </form>

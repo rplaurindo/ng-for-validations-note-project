@@ -4,6 +4,7 @@ import {
   ElementRef
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 import { CrudService } from './../../../services/crud/crud.service';
 import { ExampleModel } from '../../../services/crud/example-model';
@@ -27,8 +28,9 @@ export class CrudNewComponent implements  OnInit,
 
   constructor(
     private crudService: CrudService,
-    private validationService: FormValidationService
-  ) {}
+    private validationService: FormValidationService,
+    private http: HttpClient
+  ) { }
 
   onInput() {
     this.formChanged = true;
@@ -42,6 +44,12 @@ export class CrudNewComponent implements  OnInit,
   }
 
   ngOnInit() {
+  }
+
+  getJSON() {
+    this.http.get(`https://viacep.com.br/ws/28085500/json`).subscribe((r) => {
+      console.log(r);
+    })
   }
 
   foundMessageKeysOf(element: HTMLElement): Array<string> {
