@@ -10,7 +10,9 @@
     required />
     <app-validation-message
     [canShow]="!valid('name', ['required'])"
-    [presetMessages]="{'required': 'Não pode ficar em branco'}"
+    [presetMessages]="{
+      required: 'Não pode ficar em branco'
+    }"
     [foundMessageKeys]="foundMessageKeysOf('name')"
     ></app-validation-message>
   <div class="actions">

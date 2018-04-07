@@ -8,6 +8,7 @@ import { CrudService } from './../../../services/crud/crud.service';
 import { ExampleModel } from '../../../services/crud/example-model';
 import { IFormCanDeactivate } from '../../../../guards/form-deactivate/i-form-can-deactivate';
 import { FormValidationService } from '../../../../services/form-validation/form-validation.service';
+import { IFormValidation } from '../../../../services/form-validation/i-form-validation';
 
 
 @Component({
@@ -16,7 +17,8 @@ import { FormValidationService } from '../../../../services/form-validation/form
   styleUrls: ['./crud-new.component.sass']
 })
 export class CrudNewComponent implements  OnInit,
-                                          IFormCanDeactivate {
+                                          IFormCanDeactivate,
+                                          IFormValidation {
 
   modelReference: ExampleModel;
   formChanged: Boolean = false;
@@ -39,8 +41,6 @@ export class CrudNewComponent implements  OnInit,
   }
 
   ngOnInit() {
-    // ver se realmente há necessidade disso
-    this.validationService.setIfFormHasError(false);
   }
 
   foundMessageKeysOf(propertyName: string): Array<string> {

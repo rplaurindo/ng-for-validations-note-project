@@ -1,4 +1,3 @@
-import { ValidationMessageComponent } from './../../components/validation-message/validation-message.component';
 import { NgForm } from '@angular/forms';
 import { Injectable } from '@angular/core';
 
@@ -8,41 +7,26 @@ export class FormValidationService {
 
   private errors: Object = {};
   private formHasError: Boolean = false;
-
   private foundControlKeys: Object = {};
 
   constructor() { }
 
-  setIfFormHasError(value: boolean) {
-    this.formHasError = value;
-  }
-
   foundMessageKeysOf(propertyName: string): Array<string> {
-    // const
-    //   keys: Array<string> = [];
-
-    // this.errors[propertyName].forEach(k => {
-    //   keys.push(k);
-    // });
-
-
-    // return keys;
-
     return this.foundControlKeys[propertyName];
   }
 
-  // valid(propertyName: string, validationType: string): Boolean {
-  valid(propertyName: string, validationTypes: Array<string>): Boolean {
+  valid(propertyName: string, validationTypes: Array<string> | string): Boolean {
 
     let
       hasAnyError: Boolean = false;
 
-    // usar também para mapear as mensagens que estão setadas com erro para o componente padrão exibí-las
-    if (Object.keys(this.errors).length && this.errors[propertyName]) {
-      for (const error of Object.keys(this.errors[propertyName])) {
-        if (validationTypes.indexOf(error) !== -1) {
-          hasAnyError = true;
-          break;
+    if (validationTypes instanceof Array) {
+      if (Object.keys(this.errors).length && this.errors[propertyName]) {
+        for (const error of Object.keys(this.errors[propertyName])) {
+          if (validationTypes.indexOf(error) !== -1) {
+            hasAnyError = true;
+            break;
+          }
         }
       }
     }
