@@ -1,6 +1,7 @@
 import {
   Component,
-  OnInit
+  OnInit,
+  ElementRef
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -43,12 +44,12 @@ export class CrudNewComponent implements  OnInit,
   ngOnInit() {
   }
 
-  foundMessageKeysOf(propertyName: string): Array<string> {
-    return this.validationService.foundMessageKeysOf(propertyName);
+  foundMessageKeysOf(element: HTMLElement): Array<string> {
+    return this.validationService.foundMessageKeysOf(element);
   }
 
-  valid(propertyName: string, validationType: Array<string>): Boolean {
-    return this.validationService.valid(propertyName, validationType);
+  valid(element: HTMLElement, validationType: Array<string>): Boolean {
+    return this.validationService.valid(element, validationType);
   }
 
   onSubmit(form: NgForm) {

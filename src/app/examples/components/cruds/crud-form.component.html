@@ -2,18 +2,19 @@
   (ngSubmit)="onSubmit(formReference)"
   (input)="onInput()"
   >
+  <!-- #name="ngModel" -->
   <input
-    #name="ngModel"
-    name="name"
+    #name
+    name="nam"
     placeholder="nome"
     [ngModel]="modelReference?.name"
     required />
     <app-validation-message
-    [canShow]="!valid('name', ['required'])"
+    [canShow]="!valid(name, ['required'])"
     [presetMessages]="{
       required: 'Não pode ficar em branco'
     }"
-    [foundMessageKeys]="foundMessageKeysOf('name')"
+    [foundMessageKeys]="foundMessageKeysOf(name)"
     ></app-validation-message>
   <div class="actions">
     <button type="submit">Salvar</button>

@@ -1,9 +1,10 @@
+import { ElementRef } from "@angular/core";
 import { NgForm } from "@angular/forms";
 
 
 export interface IFormValidation {
 
-    foundMessageKeysOf(propertyName: string): Array<string>
-    valid(propertyName: string, validationTypes: Array<string> | string): Boolean;
+    foundMessageKeysOf(element: HTMLElement | string): Array<string>
+    valid(element: HTMLElement | string, validationTypes: Array<string> | string): Boolean;
 
 }

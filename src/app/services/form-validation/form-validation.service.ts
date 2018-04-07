@@ -1,9 +1,11 @@
 import { NgForm } from '@angular/forms';
-import { Injectable } from '@angular/core';
+import { Injectable, ElementRef } from '@angular/core';
+
+import { IFormValidation } from './i-form-validation';
 
 
 @Injectable()
-export class FormValidationService {
+export class FormValidationService implements IFormValidation {
 
   private errors: Object = {};
   private formHasError: Boolean = false;
@@ -11,22 +13,20 @@ export class FormValidationService {
 
   constructor() { }
 
-  foundMessageKeysOf(propertyName: string): Array<string> {
-    return this.foundControlKeys[propertyName];
+  foundMessageKeysOf(element: HTMLElement): Array<string> {
+    return this.foundControlKeys[element.getAttribute('name')];
   }
 
-  valid(propertyName: string, validationTypes: Array<string> | string): Boolean {
+  valid(element: HTMLElement, validationTypes: Array<string>): Boolean {
 
     let
       hasAnyError: Boolean = false;
 
-    if (validationTypes instanceof Array) {
-      if (Object.keys(this.errors).length && this.errors[propertyName]) {
-        for (const error of Object.keys(this.errors[propertyName])) {
-          if (validationTypes.indexOf(error) !== -1) {
-            hasAnyError = true;
-            break;
-          }
+    if (Object.keys(this.errors).length && this.errors[element.getAttribute('name')]) {
+      for (const error of Object.keys(this.errors[element.getAttribute('name')])) {
+        if (validationTypes.indexOf(error) !== -1) {
+          hasAnyError = true;
+          break;
         }
       }
     }
