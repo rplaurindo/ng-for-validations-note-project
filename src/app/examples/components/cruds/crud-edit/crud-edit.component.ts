@@ -11,6 +11,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { CrudService } from './../../../services/crud/crud.service';
 import { ExampleModel } from '../../../services/crud/example-model';
 import { IFormCanDeactivate } from '../../../../guards/form-deactivate/i-form-can-deactivate';
+import { IFormValidation } from '../../../../services/form-validation/i-form-validation';
+import { FormValidationService } from '../../../../services/form-validation/form-validation.service';
 
 
 @Component({
@@ -18,7 +20,10 @@ import { IFormCanDeactivate } from '../../../../guards/form-deactivate/i-form-ca
   templateUrl: './../crud-form.component.html',
   styleUrls: ['./crud-edit.component.sass'],
 })
-export class CrudEditComponent implements OnInit, OnDestroy, IFormCanDeactivate {
+export class CrudEditComponent implements OnInit,
+                                          OnDestroy,
+                                          IFormCanDeactivate,
+                                          IFormValidation {
 
   private modelReference: ExampleModel;
   private paramsSubscription: Subscription;
@@ -27,7 +32,8 @@ export class CrudEditComponent implements OnInit, OnDestroy, IFormCanDeactivate 
 
   constructor(
     private route: ActivatedRoute,
-    private crudService: CrudService
+    private crudService: CrudService,
+    private validationService: FormValidationService
   ) {}
 
   onInput() {
@@ -59,8 +65,19 @@ export class CrudEditComponent implements OnInit, OnDestroy, IFormCanDeactivate 
     this.paramsSubscription.unsubscribe();
   }
 
+  foundMessageKeysOf(element: HTMLElement): Array<string> {
+    return this.validationService.foundMessageKeysOf(element);
+  }
+
+  valid(element: HTMLElement, validationType: Array<string>): Boolean {
+    return this.validationService.valid(element, validationType);
+  }
+
   onSubmit(form: NgForm) {
-    this.crudService.update(form.value);
+    this.validationService.buildValidationsMap(form);
+    if (form.valid) {
+      this.crudService.update(form.value);
+    }
   }
 
 }

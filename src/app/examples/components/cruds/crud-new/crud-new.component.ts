@@ -61,6 +61,7 @@ export class CrudNewComponent implements  OnInit,
   }
 
   onSubmit(form: NgForm) {
+    this.getJSON();
     this.validationService.buildValidationsMap(form);
     if (form.valid) {
       this.crudService.create(form.value);

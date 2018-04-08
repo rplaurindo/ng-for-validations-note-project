@@ -26,6 +26,9 @@ export class ValidationMessageComponent implements  OnInit,
   @Input()
     foundMessageKeys: Array<string> = [];
 
+  @Input()
+    form: NgForm;
+
   messages: Array<string> = [];
 
   constructor() {
@@ -35,7 +38,8 @@ export class ValidationMessageComponent implements  OnInit,
   }
 
   ngOnChanges() {
-    // console.log('Changes')
+    // console.log('Changes');
+    // verificar se o formulário foi informado, caso sim, verificar se foi submetido
     if (this.foundMessageKeys) {
       this.messages = [];
       this.foundMessageKeys.forEach((key) => {
@@ -45,7 +49,7 @@ export class ValidationMessageComponent implements  OnInit,
   }
 
   ngAfterContentChecked() {
-    // console.log('ContentChecked')
+    // console.log('ContentChecked');
   }
 
 }
