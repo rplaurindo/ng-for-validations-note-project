@@ -2,10 +2,12 @@ import {
   Component,
   Input,
   OnInit,
-  OnChanges,
-  AfterContentChecked
+  AfterContentChecked,
+  AfterContentInit
 } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup } from '@angular/forms';
+
+import { FormValidationService } from '../../services/form-validation/form-validation.service';
 
 
 @Component({
@@ -14,42 +16,90 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./validation-message.component.sass']
 })
 export class ValidationMessageComponent implements  OnInit,
-  OnChanges,
-  AfterContentChecked {
+                                                    AfterContentInit,
+                                                    AfterContentChecked {
+
+  canShow: Boolean = false;
+  messagesToShow: Array<string> = [];
+  formControl: Object;
 
   @Input()
-    canShow: Boolean = false;
-
-  @Input()
-    presetMessages: Object;
-
-  @Input()
-    foundMessageKeys: Array<string> = [];
+    messages: Object;
 
   @Input()
     form: NgForm;
 
-  messages: Array<string> = [];
+  @Input()
+    element: HTMLFormElement;
 
-  constructor() {
+  name: string;
+
+  constructor(
+    private validationService: FormValidationService
+  ) { }
+
+  validationTypeKeys(): Array<string> {
+    let
+      keys: Array<string> = [];
+
+    Object.keys(this.messages).forEach((k) => {
+      keys.push(k);
+    });
+
+    return keys;
   }
 
   ngOnInit() {
   }
 
-  ngOnChanges() {
-    // console.log('Changes');
-    // verificar se o formulário foi informado, caso sim, verificar se foi submetido
-    if (this.foundMessageKeys) {
-      this.messages = [];
-      this.foundMessageKeys.forEach((key) => {
-        this.messages.push(this.presetMessages[key]);
-      });
+  private copyControl(control: Object): Object {
+    let
+      copy: Object = {};
+
+    Object.keys(control).forEach((k) => {
+      copy[k] = control[k];
+    });
+
+    return copy;
+  }
+
+  private invalid(): boolean {
+    if (this.formControl && this.formControl['errors']) {
+      return true;
     }
+    return false;
+  }
+
+  private setMessages() {
+    this.messagesToShow = [];
+    this.validationService.getErrorsListFor(
+      this.name,
+      this.form,
+      this.validationTypeKeys()
+    ).forEach((k) => {
+      this.messagesToShow.push(this.messages[k]);
+    });
+  }
+
+  ngAfterContentInit() {
+    this.name = this.element.getAttribute('name');
   }
 
   ngAfterContentChecked() {
-    // console.log('ContentChecked');
+    if (this.form.submitted) {
+      this.formControl = this.form.controls[this.name];
+
+      if (this.invalid()) {
+        this.canShow = true;
+
+        this.setMessages();
+      } else {
+        this.canShow = false;
+      }
+
+      this.validationService.resetForm(this.form);
+    }
+
   }
 
 }
