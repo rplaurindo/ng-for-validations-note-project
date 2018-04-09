@@ -91,7 +91,6 @@ export class FormValidationMessageComponent implements  OnInit,
 
       if (this.invalid()) {
         this.canShow = true;
-
         this.setMessages();
       } else {
         this.canShow = false;
