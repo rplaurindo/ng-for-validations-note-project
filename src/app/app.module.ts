@@ -25,7 +25,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { HorizontalMenuComponent } from './components/horizontal-menu/horizontal-menu.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/errors/404/404-error.component';
-import { ValidationMessageComponent } from './components/validation-message/validation-message.component';
 
 
 @NgModule({
@@ -49,8 +48,7 @@ import { ValidationMessageComponent } from './components/validation-message/vali
     HeaderComponent,
     HorizontalMenuComponent,
     LoginComponent,
-    PageNotFoundComponent,
-    // ValidationMessageComponent
+    PageNotFoundComponent
   ],
   // Services
   providers: [

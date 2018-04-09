@@ -11,13 +11,13 @@
     required
   />
 
-  <app-validation-message
+  <app-form-validation-message
     [form]="formReference"
     [element]="name"
     [messages]="{
       required: 'Não pode ficar em branco'
     }"
-  ></app-validation-message>
+  ></app-form-validation-message>
 
   <div class="actions">
     <button type="submit">Salvar</button>

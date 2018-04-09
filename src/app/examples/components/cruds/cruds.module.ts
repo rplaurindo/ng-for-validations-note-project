@@ -11,7 +11,7 @@ import { CrudShowComponent } from './crud-show/crud-show.component';
 
 import { CrudShowResolver } from './crud-show/crud-show.resolver';
 import { CrudService } from '../../services/crud/crud.service';
-import { ValidationMessageComponent } from '../../../components/validation-message/validation-message.component';
+import { FormValidationMessageComponent } from '../../../components/form-validation-message/form-validation-message.component';
 
 
 @NgModule({
@@ -25,7 +25,7 @@ import { ValidationMessageComponent } from '../../../components/validation-messa
     CrudEditComponent,
     CrudNewComponent,
     CrudShowComponent,
-    ValidationMessageComponent
+    FormValidationMessageComponent
   ],
   providers: [
     CrudService,

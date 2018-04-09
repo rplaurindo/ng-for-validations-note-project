@@ -11,11 +11,11 @@ import { FormValidationService } from '../../services/form-validation/form-valid
 
 
 @Component({
-  selector: 'app-validation-message',
-  templateUrl: './validation-message.component.html',
-  styleUrls: ['./validation-message.component.sass']
+  selector: 'app-form-validation-message',
+  templateUrl: './form-validation-message.component.html',
+  styleUrls: ['./form-validation-message.component.sass']
 })
-export class ValidationMessageComponent implements  OnInit,
+export class FormValidationMessageComponent implements  OnInit,
                                                     AfterContentInit,
                                                     AfterContentChecked {
 
