@@ -46,8 +46,7 @@ export class FormValidationService {
     let
       valuesCopy: Object = this.copyValues(ngForm);
 
-    ngForm.resetForm();
-    ngForm.setValue(valuesCopy);
+    ngForm.resetForm(valuesCopy);
   }
 
   getErrorsListFor(
