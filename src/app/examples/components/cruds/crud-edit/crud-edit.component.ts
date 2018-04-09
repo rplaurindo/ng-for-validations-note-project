@@ -11,7 +11,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { CrudService } from './../../../services/crud/crud.service';
 import { ExampleModel } from '../../../services/crud/example-model';
 import { IFormCanDeactivate } from '../../../../guards/form-deactivate/i-form-can-deactivate';
-import { IFormValidation } from '../../../../services/form-validation/i-form-validation';
 import { FormValidationService } from '../../../../services/form-validation/form-validation.service';
 
 
@@ -22,8 +21,7 @@ import { FormValidationService } from '../../../../services/form-validation/form
 })
 export class CrudEditComponent implements OnInit,
                                           OnDestroy,
-                                          IFormCanDeactivate,
-                                          IFormValidation {
+                                          IFormCanDeactivate {
 
   private modelReference: ExampleModel;
   private paramsSubscription: Subscription;
@@ -65,16 +63,7 @@ export class CrudEditComponent implements OnInit,
     this.paramsSubscription.unsubscribe();
   }
 
-  foundMessageKeysOf(element: HTMLElement): Array<string> {
-    return this.validationService.foundMessageKeysOf(element);
-  }
-
-  valid(element: HTMLElement, validationType: Array<string>): Boolean {
-    return this.validationService.valid(element, validationType);
-  }
-
   onSubmit(form: NgForm) {
-    this.validationService.buildValidationsMap(form);
     if (form.valid) {
       this.crudService.update(form.value);
     }

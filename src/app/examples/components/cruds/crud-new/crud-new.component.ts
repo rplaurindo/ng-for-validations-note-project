@@ -10,7 +10,6 @@ import { CrudService } from './../../../services/crud/crud.service';
 import { ExampleModel } from '../../../services/crud/example-model';
 import { IFormCanDeactivate } from '../../../../guards/form-deactivate/i-form-can-deactivate';
 import { FormValidationService } from '../../../../services/form-validation/form-validation.service';
-import { IFormValidation } from '../../../../services/form-validation/i-form-validation';
 
 
 @Component({
@@ -19,8 +18,8 @@ import { IFormValidation } from '../../../../services/form-validation/i-form-val
   styleUrls: ['./crud-new.component.sass']
 })
 export class CrudNewComponent implements  OnInit,
-                                          IFormCanDeactivate,
-                                          IFormValidation {
+                                          IFormCanDeactivate {
+                                          // IFormValidation {
 
   modelReference: ExampleModel;
   formChanged: Boolean = false;
@@ -52,17 +51,8 @@ export class CrudNewComponent implements  OnInit,
     })
   }
 
-  foundMessageKeysOf(element: HTMLElement): Array<string> {
-    return this.validationService.foundMessageKeysOf(element);
-  }
-
-  valid(element: HTMLElement, validationType: Array<string>): Boolean {
-    return this.validationService.valid(element, validationType);
-  }
-
   onSubmit(form: NgForm) {
     this.getJSON();
-    this.validationService.buildValidationsMap(form);
     if (form.valid) {
       this.crudService.create(form.value);
     }
