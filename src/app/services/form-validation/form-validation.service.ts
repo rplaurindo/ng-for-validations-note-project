@@ -6,8 +6,6 @@ import { Injectable, ElementRef } from '@angular/core';
 export class FormValidationService {
 
   private errors: Array<string> = [];
-  private formHasError: Boolean = false;
-  private foundControlKeys: Object = {};
 
   constructor() { }
 
@@ -31,6 +29,25 @@ export class FormValidationService {
       );
     }
 
+  }
+
+  private copyValues(ngForm: NgForm): Object {
+    let
+      valuesMap: Object = {};
+
+    Object.keys(ngForm.controls).forEach(control => {
+      valuesMap[control] = ngForm.controls[control].value;
+    });
+
+    return valuesMap;
+  }
+
+  resetForm(ngForm: NgForm) {
+    let
+      valuesCopy: Object = this.copyValues(ngForm);
+
+    ngForm.resetForm();
+    ngForm.setValue(valuesCopy);
   }
 
   getErrorsListFor(
