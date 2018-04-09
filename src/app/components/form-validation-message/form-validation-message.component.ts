@@ -5,7 +5,7 @@ import {
   AfterContentChecked,
   AfterContentInit
 } from '@angular/core';
-import { NgForm, FormGroup } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 import { FormValidationService } from '../../services/form-validation/form-validation.service';
 
@@ -21,21 +21,18 @@ export class FormValidationMessageComponent implements  OnInit,
 
   canShow: Boolean = false;
   messagesToShow: Array<string> = [];
+  name: string;
   formControl: Object;
-
-  @Input()
-    messages: Object;
-
-  @Input()
-    form: NgForm;
 
   @Input()
     element: HTMLFormElement;
 
-  name: string;
+  @Input()
+    messages: Object;
 
   constructor(
-    private validationService: FormValidationService
+    private validationService: FormValidationService,
+    private form: NgForm
   ) { }
 
   validationTypeKeys(): Array<string> {
