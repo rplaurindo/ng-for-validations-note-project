@@ -1,11 +1,11 @@
+import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Injectable, ElementRef } from '@angular/core';
 
 
 @Injectable()
 export class FormValidationService {
 
-  private errors: Array<string> = [];
+  private errors: Array<string>;
 
   constructor() { }
 
@@ -19,6 +19,8 @@ export class FormValidationService {
       errors: Object;
 
     if (ngForm.controls[name].invalid) {
+      // Angular maps one error by time
+      this.errors = [];
       errors = ngForm.controls[name].errors;
       Object.keys(errors).forEach((error) => {
           if (validationTypes.indexOf(error) !== -1 &&
