@@ -5,11 +5,11 @@ import { NgForm } from '@angular/forms';
 @Injectable()
 export class FormValidationService {
 
-  private errors: Array<string>;
+  private error: String = '';
 
   constructor() { }
 
-  private mapValidationErrorsFor(
+  private mapValidationErrorFor(
                                 ngForm: NgForm,
                                 name: string,
                                 validationTypes: Array<string>
@@ -20,15 +20,12 @@ export class FormValidationService {
 
     if (ngForm.controls[name].invalid) {
       // Angular maps one error by time
-      this.errors = [];
       errors = ngForm.controls[name].errors;
       Object.keys(errors).forEach((error) => {
-          if (validationTypes.indexOf(error) !== -1 &&
-            this.errors.indexOf(error) === -1) {
-            this.errors.push(error);
-          }
+        if (validationTypes.indexOf(error) !== -1) {
+          this.error = error;
         }
-      );
+      });
     }
 
   }
@@ -55,13 +52,13 @@ export class FormValidationService {
                     formElementName: string,
                     ngForm: NgForm,
                     validationTypes: Array<string>
-                    ): Array<string> {
+                    ): string {
 
-    this.mapValidationErrorsFor(ngForm,
+    this.mapValidationErrorFor(ngForm,
                                 formElementName,
                                 validationTypes);
 
-    return this.errors;
+    return this.error.toString();
   }
 
 }

@@ -20,7 +20,7 @@ export class FormValidationMessageComponent implements  OnInit,
                                                     AfterContentChecked {
 
   canShow: Boolean = false;
-  messagesToShow: Array<string> = [];
+  message: String;
   name: string;
   formControl: Object;
 
@@ -67,15 +67,14 @@ export class FormValidationMessageComponent implements  OnInit,
     return false;
   }
 
-  private setMessages() {
-    this.messagesToShow = [];
-    this.validationService.getErrorsListFor(
-      this.name,
-      this.form,
-      this.validationTypeKeys()
-    ).forEach((k) => {
-      this.messagesToShow.push(this.messages[k]);
-    });
+  private setMessage() {
+    this.message = this.messages[
+      this.validationService.getErrorsListFor(
+        this.name,
+        this.form,
+        this.validationTypeKeys()
+      )
+    ];
   }
 
   ngAfterContentInit() {
@@ -85,14 +84,12 @@ export class FormValidationMessageComponent implements  OnInit,
   ngAfterContentChecked() {
     if (this.form.submitted) {
       this.formControl = this.form.controls[this.name];
-
       if (this.invalid()) {
         this.canShow = true;
-        this.setMessages();
+        this.setMessage();
       } else {
         this.canShow = false;
       }
-
       this.validationService.resetForm(this.form);
     }
 
