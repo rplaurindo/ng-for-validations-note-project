@@ -32,7 +32,7 @@ export class FormValidationService {
   }
 
   private copyValues(ngForm: NgForm): Object {
-    let
+    const
       valuesMap: Object = {};
 
     Object.keys(ngForm.controls).forEach(control => {
@@ -43,7 +43,7 @@ export class FormValidationService {
   }
 
   resetForm(ngForm: NgForm) {
-    let
+    const
       valuesCopy: Object = this.copyValues(ngForm);
 
     ngForm.resetForm(valuesCopy);

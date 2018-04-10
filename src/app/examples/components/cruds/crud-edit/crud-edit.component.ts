@@ -26,7 +26,7 @@ export class CrudEditComponent implements OnInit,
   private modelReference: ExampleModel;
   private paramsSubscription: Subscription;
   private params: Object;
-  private formChanged: boolean = false;
+  private formChanged: Boolean = false;
 
   constructor(
     private route: ActivatedRoute,

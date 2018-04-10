@@ -48,7 +48,7 @@ export class CrudNewComponent implements  OnInit,
   getJSON() {
     this.http.get(`https://viacep.com.br/ws/28085500/json`).subscribe((r) => {
       console.log(r);
-    })
+    });
   }
 
   onSubmit(form: NgForm) {

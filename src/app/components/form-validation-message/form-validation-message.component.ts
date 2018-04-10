@@ -36,7 +36,7 @@ export class FormValidationMessageComponent implements  OnInit,
   ) { }
 
   validationTypeKeys(): Array<string> {
-    let
+    const
       keys: Array<string> = [];
 
     Object.keys(this.messages).forEach((k) => {
@@ -50,7 +50,7 @@ export class FormValidationMessageComponent implements  OnInit,
   }
 
   private copyControl(control: Object): Object {
-    let
+    const
       copy: Object = {};
 
     Object.keys(control).forEach((k) => {
