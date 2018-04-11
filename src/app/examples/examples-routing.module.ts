@@ -1,24 +1,22 @@
-// Angular imports
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {
+  Routes,
+  RouterModule
+} from '@angular/router';
 
-// Example Components imports
 import { EventComponent } from './components/event/event.component';
 import { ManipulatingDomComponent } from './components/manipulating-dom/manipulating-dom.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
-import { AuthGuard } from '../guards/auth-guards/auth.guard';
 
 
 const examplesRoutes: Routes = [
     {
-        path: 'examples',
-        canActivate: [AuthGuard],
+        path: '',
         children: [
             // lazy loading
             {
                 path: 'cruds',
-                loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule',
-                canLoad: [AuthGuard]
+                loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule'
             },
             {
                 path: 'events',

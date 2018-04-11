@@ -1,18 +1,23 @@
 // Angular imports
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-// import { ModuleWithProviders } from '@angular/core';
+import {
+  Routes,
+  RouterModule
+} from '@angular/router';
 
 // App imports
 
 // module
 import { ExamplesRoutingModule } from './examples/examples-routing.module';
 
-// components
+// Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/errors/404/404-error.component';
+
+// Guards
+import { AuthGuard } from './guards/auth-guards/auth.guard';
 
 
 const appRoutes: Routes = [
@@ -22,14 +27,22 @@ const appRoutes: Routes = [
     },
     {
         path: '',
-        pathMatch: 'full',
-        redirectTo: '/home'
+        redirectTo: 'home',
+        pathMatch: 'full'
     },
     {
         path: 'sign_in',
         component: LoginComponent
     },
     {
+        path: 'examples',
+        loadChildren: 'app/examples/examples.module#ExamplesModule',
+        canActivate: [AuthGuard],
+        canActivateChild: [AuthGuard],
+        canLoad: [AuthGuard]
+    },
+    {
+        // the precedence is important
         path: '**',
         component: PageNotFoundComponent
     }
@@ -42,7 +55,6 @@ const appRoutes: Routes = [
             // enableTracing: true
             // useHash: true
         })
-        , ExamplesRoutingModule
     ],
     exports: [
         RouterModule

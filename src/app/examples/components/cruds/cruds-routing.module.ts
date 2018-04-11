@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {
+  Routes,
+  RouterModule
+} from '@angular/router';
 
 import { CrudComponent } from './cruds.component';
 import { CrudNewComponent } from './crud-new/crud-new.component';
@@ -17,7 +20,6 @@ const crudsRoutes: Routes = [
         path: '',
         component: CrudComponent,
         // necessary if you want to check only over children, but don't over parent
-        canActivateChild: [AuthGuard],
         children: [
             {
                 path: 'novo',

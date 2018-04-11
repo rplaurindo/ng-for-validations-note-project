@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 
 @Component({
   selector: 'app-event',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventComponent implements OnInit {
 
-  mouseIsOver: boolean = false;
+  mouseIsOver: Boolean = false;
   initialValue: Number = 0;
 
   constructor() { }

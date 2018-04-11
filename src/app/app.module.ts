@@ -9,7 +9,6 @@ import {
 
 // App imports
 import { AppRoutingModule } from './app-routing.module';
-import { ExamplesModule } from './examples/examples.module';
 
 import { AuthGuard } from './guards/auth-guards/auth.guard';
 import { FormCanDeactivateGuard } from './guards/form-deactivate/form-can-deactivate.guard';
@@ -33,7 +32,6 @@ import { PageNotFoundComponent } from './components/errors/404/404-error.compone
     AppRoutingModule,
     BrowserModule,
     RouterModule,
-    ExamplesModule,
     HttpClientModule
   ],
   // Modules and Components
