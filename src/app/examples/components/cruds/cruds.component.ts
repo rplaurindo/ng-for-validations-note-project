@@ -27,12 +27,12 @@ export class CrudComponent implements OnInit {
 
   onDestroy(exampleModel: ExampleModel) {
     let
-      positiveResponse: boolean = false;
+      positiveResponse: Boolean = false;
 
     if (confirm(`Tem certeza?`)) {
       positiveResponse = this.crudService.destroy(exampleModel);
       if (positiveResponse) {
-        this.router.navigate([`/cruds`]);
+        this.router.navigate([`/examples/cruds`]);
       } else {
         alert(`O registro não pôde ser excluído`);
       }

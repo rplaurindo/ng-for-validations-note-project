@@ -1,7 +1,7 @@
 <!-- View -->
 
 <div class="line">
-  <a routerLink="/cruds/novo" class="new">Novo</a>
+  <a routerLink="/examples/cruds/novo" class="new">Novo</a>
 </div>
 
 <div class="side-by-side">
@@ -17,7 +17,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let model of models">
-        <a [routerLink]="['/cruds', model.getId()]">
+        <a [routerLink]="['/examples/cruds', model.getId()]">
           <td>{{ model.getId() }}</td>
           <td>{{ model.getName() }}</td>
         </a>

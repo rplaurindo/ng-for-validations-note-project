@@ -2,7 +2,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import {
   HttpClientModule,
   HttpClient
@@ -34,7 +33,6 @@ import { PageNotFoundComponent } from './components/errors/404/404-error.compone
     AppRoutingModule,
     BrowserModule,
     RouterModule,
-    // FormsModule,
     ExamplesModule,
     HttpClientModule
   ],

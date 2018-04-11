@@ -1,7 +1,7 @@
 // Angular imports
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { Http } from '@angular/http';
 
@@ -25,22 +25,21 @@ import { ManipulatingDomComponent } from './components/manipulating-dom/manipula
 import { DirectivesComponent } from './components/directives/directives.component';
 import { EventComponent } from './components/event/event.component';
 import { ComponentChildComponent } from './components/component-child/component-child.component';
-import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
+import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    // FormsModule,
     FormsModule,
+    ReactiveFormsModule,
     ExamplesRoutingModule
   ],
   declarations: [
     CustomPipePipe,
     LightgrayBackgroundDirective,
     YellowBackgroundOnEventlistenerDirective,
-    DataBindingComponent,
     EventComponent,
     ComponentChildComponent,
     ManipulatingDomComponent,
@@ -48,7 +47,8 @@ import { RouteParamsComponent } from './components/route-params/route-params.com
     SafeNavigationComponent,
     NgContentExampleComponent,
     StructuralDirectiveDirective,
-    RouteParamsComponent
+    RouteParamsComponent,
+    ReactiveFormsComponent
   ],
   providers: [
   ]

@@ -9,11 +9,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RouteParamsComponent implements OnInit {
 
-  private twoWayVar: Number = 1;
-  private paramsSubscription: Subscription;
-  private queryParamsSubscription: Subscription;
-  private params: Object;
-  private queryParams: Object;
+  twoWayVar: Number = 1;
+  paramsSubscription: Subscription;
+  queryParamsSubscription: Subscription;
+  params: Object;
+  queryParams: Object;
 
   constructor(private route: ActivatedRoute) {
   }

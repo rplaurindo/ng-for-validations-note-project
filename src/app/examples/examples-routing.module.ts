@@ -9,31 +9,36 @@ import { RouteParamsComponent } from './components/route-params/route-params.com
 import { AuthGuard } from '../guards/auth-guards/auth.guard';
 
 
-const exampleRoutes: Routes = [
-    // lazy loading
+const examplesRoutes: Routes = [
     {
-        path: 'cruds',
-        loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule',
+        path: 'examples',
         canActivate: [AuthGuard],
-        canLoad: [AuthGuard]
-    },
-    {
-        path: 'events',
-        component: EventComponent
-    },
-    {
-        path: 'manipulating-dom',
-        component: ManipulatingDomComponent
-    },
-    {
-        path: 'route-params/:data',
-        component: RouteParamsComponent
+        children: [
+            // lazy loading
+            {
+                path: 'cruds',
+                loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule',
+                canLoad: [AuthGuard]
+            },
+            {
+                path: 'events',
+                component: EventComponent
+            },
+            {
+                path: 'manipulating-dom',
+                component: ManipulatingDomComponent
+            },
+            {
+                path: 'route-params/:data',
+                component: RouteParamsComponent
+            }
+        ]
     }
 ];
 
 @NgModule({
     imports: [
-        RouterModule.forChild(exampleRoutes)
+        RouterModule.forChild(examplesRoutes)
     ],
     exports: [
         RouterModule
