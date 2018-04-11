@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-// import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CrudComponent } from './cruds.component';
