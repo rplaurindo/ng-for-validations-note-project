@@ -14,12 +14,11 @@ import { FormValidationService } from '../../../../services/form-validation/form
 
 @Component({
   selector: 'app-crud-form',
-  templateUrl: './../crud-form.component.html',
-  styleUrls: ['./crud-new.component.sass']
+  templateUrl: './../cruds-form.component.html',
+  styleUrls: ['./new.component.sass']
 })
-export class CrudNewComponent implements  OnInit,
-                                          IFormCanDeactivate {
-                                          // IFormValidation {
+export class NewComponent implements OnInit,
+                              IFormCanDeactivate {
 
   modelReference: ExampleModel;
   formChanged: Boolean = false;

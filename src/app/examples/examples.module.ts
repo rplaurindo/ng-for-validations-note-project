@@ -26,7 +26,7 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { EventComponent } from './components/event/event.component';
 import { ComponentChildComponent } from './components/component-child/component-child.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
-import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
+// import { ReactiveFormComponent } from './components/reactive-forms/new/reactive-form.component';
 
 
 @NgModule({
@@ -48,7 +48,7 @@ import { ReactiveFormsComponent } from './components/reactive-forms/reactive-for
     NgContentExampleComponent,
     StructuralDirectiveDirective,
     RouteParamsComponent,
-    ReactiveFormsComponent
+    // ReactiveFormComponent
   ],
   providers: [
   ]

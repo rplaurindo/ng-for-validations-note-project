@@ -1,3 +1,5 @@
+/// <reference path="./index.ts"/>
+
 // Presenter(Controller)
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
@@ -8,11 +10,11 @@ import { ExampleModel } from '../../services/crud/example-model';
 
 
 @Component({
-  selector: 'app-crud',
+  selector: 'app-cruds',
   templateUrl: './cruds.component.html',
   styleUrls: ['./cruds.component.sass']
 })
-export class CrudComponent implements OnInit {
+export class CrudsComponent implements OnInit {
 
   models: ExampleModel[];
 

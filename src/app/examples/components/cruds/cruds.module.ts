@@ -4,12 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { CrudsRoutingModule } from './cruds-routing.module';
 
-import { CrudComponent } from './cruds.component';
-import { CrudEditComponent } from './crud-edit/crud-edit.component';
-import { CrudNewComponent } from './crud-new/crud-new.component';
-import { CrudShowComponent } from './crud-show/crud-show.component';
+// import { Cruds } from '.';
+import * as Cruds from '.';
 
-import { CrudShowResolver } from './crud-show/crud-show.resolver';
 import { CrudService } from '../../services/crud/crud.service';
 import { FormValidationMessageComponent } from '../../../components/form-validation-message/form-validation-message.component';
 
@@ -21,15 +18,15 @@ import { FormValidationMessageComponent } from '../../../components/form-validat
     CrudsRoutingModule
   ],
   declarations: [
-    CrudComponent,
-    CrudEditComponent,
-    CrudNewComponent,
-    CrudShowComponent,
-    FormValidationMessageComponent
+    FormValidationMessageComponent,
+    Cruds.CrudsComponent,
+    Cruds.NewComponent,
+    Cruds.ShowComponent,
+    Cruds.EditComponent
   ],
   providers: [
     CrudService,
-    CrudShowResolver
+    Cruds.ShowResolver
   ]
 })
 export class CrudsModule { }

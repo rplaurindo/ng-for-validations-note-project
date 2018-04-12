@@ -15,10 +15,10 @@ import { ExampleModel } from '../../../services/crud/example-model';
 
 @Component({
   selector: 'app-crud-show',
-  templateUrl: './crud-show.component.html',
-  styleUrls: ['./crud-show.component.sass']
+  templateUrl: './show.component.html',
+  styleUrls: ['./show.component.sass']
 })
-export class CrudShowComponent implements OnInit,
+export class ShowComponent implements OnInit,
                                           OnDestroy {
 
   modelReference: ExampleModel;

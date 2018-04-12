@@ -2,10 +2,16 @@ import {
   Component,
   Input,
   OnInit,
-  OnDestroy
+  OnDestroy,
+  ViewChild,
+  ElementRef,
+  AfterContentInit,
+  AfterViewInit,
+  AfterContentChecked,
+  AfterViewChecked
 } from '@angular/core';
+import { FormGroup, NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 
 import { CrudService } from './../../../services/crud/crud.service';
@@ -15,24 +21,30 @@ import { FormValidationService } from '../../../../services/form-validation/form
 
 
 @Component({
-  selector: 'app-crud-form',
-  templateUrl: './../crud-form.component.html',
-  styleUrls: ['./crud-edit.component.sass'],
+  selector: 'app-cruds-form',
+  templateUrl: './../cruds-form.component.html',
+  styleUrls: ['./edit.component.sass']
 })
-export class CrudEditComponent implements OnInit,
+export class EditComponent implements OnInit,
+                                          AfterContentInit,
+                                          AfterViewInit,
+                                          AfterContentChecked,
+                                          AfterViewChecked,
                                           OnDestroy,
                                           IFormCanDeactivate {
 
-  private modelReference: ExampleModel;
-  private paramsSubscription: Subscription;
-  private params: Object;
-  private formChanged: Boolean = false;
+  modelReference: ExampleModel;
+  paramsSubscription: Subscription;
+  params: Object;
+  formChanged: Boolean = false;
+  // @ViewChild('formReference') form: ElementRef;
+  // form: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
     private crudService: CrudService,
     private validationService: FormValidationService
-  ) {}
+  ) { }
 
   onInput() {
     this.formChanged = true;
@@ -55,8 +67,26 @@ export class CrudEditComponent implements OnInit,
           // render model not found page instead
           this.modelReference = new ExampleModel();
         }
+
+        // console.log(new NgForm(this.form.nativeElement))
+        // console.log(this.form)
+        // this.form.form.patchValue(this.modelReference);
+        // this.form.setValue(this.modelReference);
+
       }
     );
+  }
+
+  ngAfterContentInit() {
+  }
+
+  ngAfterViewInit() {
+  }
+
+  ngAfterContentChecked() {
+  }
+
+  ngAfterViewChecked() {
   }
 
   ngOnDestroy() {

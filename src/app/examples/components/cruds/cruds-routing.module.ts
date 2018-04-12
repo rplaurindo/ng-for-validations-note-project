@@ -4,38 +4,32 @@ import {
   RouterModule
 } from '@angular/router';
 
-import { CrudComponent } from './cruds.component';
-import { CrudNewComponent } from './crud-new/crud-new.component';
-import { CrudShowComponent } from './crud-show/crud-show.component';
-import { CrudEditComponent } from './crud-edit/crud-edit.component';
+import * as Cruds from '.';
 
-import { AuthGuard } from '../../../guards/auth-guards/auth.guard';
-import { FormCanDeactivateGuard } from '../../../guards/form-deactivate/form-can-deactivate.guard';
-
-import { CrudShowResolver } from './crud-show/crud-show.resolver';
+import { FormCanDeactivateGuard } from './../../../guards/form-deactivate/form-can-deactivate.guard';
 
 
 const crudsRoutes: Routes = [
     {
         path: '',
-        component: CrudComponent,
+        component: Cruds.CrudsComponent,
         // necessary if you want to check only over children, but don't over parent
         children: [
             {
                 path: 'novo',
-                component: CrudNewComponent,
+                component: Cruds.NewComponent,
                 canDeactivate: [FormCanDeactivateGuard]
             },
             {
                 // seria ideal que houvesse uma forma de diferenciar rotas também por método HTTP, diferenciando-as, uma vez que, por exemplo, as rotas de read (GET) e destroy (DELETE) são idênticas.
                 path: ':id',
-                component: CrudShowComponent,
+                component: Cruds.ShowComponent,
                 // preloading
-                resolve: { exampleModel: CrudShowResolver }
+                resolve: { exampleModel: Cruds.ShowResolver }
             },
             {
                 path: ':id/editar',
-                component: CrudEditComponent,
+                component: Cruds.EditComponent,
                 canDeactivate: [FormCanDeactivateGuard]
             }
         ]

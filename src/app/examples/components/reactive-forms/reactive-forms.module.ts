@@ -1,37 +1,28 @@
 // import { NgModule } from '@angular/core';
 // import { CommonModule } from '@angular/common';
-// import {
-//   FormsModule
-// } from '@angular/forms';
+// import { ReactiveFormsModule } from '@angular/forms';
 
-// import { CrudsRoutingModule } from './cruds-routing.module';
+// import { ReacticeFormsRoutingModule } from './reactive-forms-routing.module';
 
-// import { CrudComponent } from './cruds.component';
-// import { CrudEditComponent } from './crud-edit/crud-edit.component';
-// import { CrudNewComponent } from './crud-new/crud-new.component';
-// import { CrudShowComponent } from './crud-show/crud-show.component';
+// // import { CrudComponent } from './cruds.component';
+// // import { CrudEditComponent } from './crud-edit/crud-edit.component';
+// // import { CrudNewComponent } from './crud-new/crud-new.component';
+// // import { CrudShowComponent } from './crud-show/crud-show.component';
 
-// import { CrudShowResolver } from './crud-show/crud-show.resolver';
-// import { CrudService } from '../../services/crud/crud.service';
-// import { FormValidationMessageComponent } from '../../../components/form-validation-message/form-validation-message.component';
+// // import { CrudShowResolver } from './crud-show/crud-show.resolver';
+// // import { CrudService } from '../../services/crud/crud.service';
+// // import { FormValidationMessageComponent } from '../../../components/form-validation-message/form-validation-message.component';
 
 
 // @NgModule({
 //   imports: [
 //     CommonModule,
-//     FormsModule,
-//     CrudsRoutingModule
+//     ReactiveFormsModule,
+//     ReactiveFormsRoutingModule
 //   ],
 //   declarations: [
-//     CrudComponent,
-//     CrudEditComponent,
-//     CrudNewComponent,
-//     CrudShowComponent,
-//     FormValidationMessageComponent
 //   ],
 //   providers: [
-//     CrudService,
-//     CrudShowResolver
 //   ]
 // })
-// export class CrudsModule { }
+// export class ReactiveFormsExampleModule { }

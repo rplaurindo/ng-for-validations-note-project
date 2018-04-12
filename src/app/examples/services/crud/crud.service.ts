@@ -1,6 +1,6 @@
-// Model
-
+// ORM
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { ExampleModel } from './example-model';
 
@@ -15,7 +15,7 @@ export class CrudService {
 
   private cachedModel: ExampleModel;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getExampleModels(): Array<ExampleModel> {
     return this.models;
@@ -26,10 +26,14 @@ export class CrudService {
     let
       exampleModel: ExampleModel;
 
-    const last: ExampleModel = this.models[this.models.length - 1];
-    data['id'] = last.getId() + 1;
-    exampleModel = new ExampleModel(data);
-    this.models.push(new ExampleModel(data));
+    const
+      last: ExampleModel = this.models[this.models.length - 1];
+
+    // this.http.post('URI', JSON.stringify(data)).subscribe(() => {
+      data['id'] = last.getId() + 1;
+      exampleModel = new ExampleModel(data);
+      this.models.push(new ExampleModel(data));
+    // });
 
     return this.models.indexOf(exampleModel) !== -1;
   }
