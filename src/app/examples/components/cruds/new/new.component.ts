@@ -15,7 +15,7 @@ import { FormValidationService } from '../../../../services/form-validation/form
 @Component({
   selector: 'app-crud-form',
   templateUrl: './../cruds-form.component.html',
-  styleUrls: ['./new.component.sass']
+  styleUrls: ['./../cruds-form.component.sass']
 })
 export class NewComponent implements OnInit,
                               IFormCanDeactivate {
@@ -26,7 +26,6 @@ export class NewComponent implements OnInit,
 
   constructor(
     private crudService: CrudService,
-    private validationService: FormValidationService,
     private http: HttpClient
   ) { }
 

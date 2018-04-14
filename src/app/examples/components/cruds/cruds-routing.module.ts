@@ -12,7 +12,7 @@ import { FormCanDeactivateGuard } from './../../../guards/form-deactivate/form-c
 const crudsRoutes: Routes = [
     {
         path: '',
-        component: Cruds.CrudsComponent,
+        component: Cruds.IndexComponent,
         // necessary if you want to check only over children, but don't over parent
         children: [
             {

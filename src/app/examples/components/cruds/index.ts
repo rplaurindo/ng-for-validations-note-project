@@ -1,12 +1,12 @@
-import { CrudsComponent } from './cruds.component';
 import { NewComponent } from './new/new.component';
+import { IndexComponent } from './index.component';
 import { ShowComponent } from './show/show.component';
 import { ShowResolver } from './show/show.resolver';
 import { EditComponent } from './edit/edit.component';
 
 // re-export (without export doesn’t possible import in another escope)
-export { CrudsComponent };
 export { NewComponent };
+export { IndexComponent };
 export { ShowComponent };
 export { ShowResolver };
 export { EditComponent };

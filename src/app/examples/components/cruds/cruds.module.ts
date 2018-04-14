@@ -19,8 +19,8 @@ import { FormValidationMessageComponent } from '../../../components/form-validat
   ],
   declarations: [
     FormValidationMessageComponent,
-    Cruds.CrudsComponent,
     Cruds.NewComponent,
+    Cruds.IndexComponent,
     Cruds.ShowComponent,
     Cruds.EditComponent
   ],

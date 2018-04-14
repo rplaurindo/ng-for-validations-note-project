@@ -11,10 +11,10 @@ import { ExampleModel } from '../../services/crud/example-model';
 
 @Component({
   selector: 'app-cruds',
-  templateUrl: './cruds.component.html',
-  styleUrls: ['./cruds.component.sass']
+  templateUrl: './index.component.html',
+  styleUrls: ['./index.component.sass']
 })
-export class CrudsComponent implements OnInit {
+export class IndexComponent implements OnInit {
 
   models: ExampleModel[];
 

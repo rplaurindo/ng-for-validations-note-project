@@ -23,7 +23,7 @@ import { FormValidationService } from '../../../../services/form-validation/form
 @Component({
   selector: 'app-cruds-form',
   templateUrl: './../cruds-form.component.html',
-  styleUrls: ['./edit.component.sass']
+  styleUrls: ['./../cruds-form.component.sass']
 })
 export class EditComponent implements OnInit,
                                           AfterContentInit,
@@ -42,8 +42,7 @@ export class EditComponent implements OnInit,
 
   constructor(
     private route: ActivatedRoute,
-    private crudService: CrudService,
-    private validationService: FormValidationService
+    private crudService: CrudService
   ) { }
 
   onInput() {

@@ -22,10 +22,10 @@ import { FormValidationService } from '../../../../services/form-validation/form
 
 @Component({
   selector: 'app-crud-form',
-  templateUrl: './../crud-form.component.html',
-  styleUrls: ['./crud-edit.component.sass']
+  templateUrl: './../cruds-form.component.html',
+  styleUrls: ['./../cruds-form.component.sass']
 })
-export class CrudEditComponent implements OnInit,
+export class EditComponent implements OnInit,
                                           AfterContentInit,
                                           AfterViewInit,
                                           AfterContentChecked,
