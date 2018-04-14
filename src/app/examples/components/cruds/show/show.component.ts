@@ -14,7 +14,7 @@ import { ExampleModel } from '../../../services/crud/example-model';
 
 
 @Component({
-  selector: 'app-crud-show',
+  selector: 'app-cruds-show',
   templateUrl: './show.component.html',
   styleUrls: ['./show.component.sass']
 })

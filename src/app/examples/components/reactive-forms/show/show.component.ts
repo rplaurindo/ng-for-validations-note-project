@@ -14,9 +14,9 @@ import { ExampleModel } from '../../../services/crud/example-model';
 
 
 @Component({
-  selector: 'app-crud-show',
-  templateUrl: './crud-show.component.html',
-  styleUrls: ['./crud-show.component.sass']
+  selector: 'app-reactive-forms-show',
+  templateUrl: './show.component.html',
+  styleUrls: ['./show.component.sass']
 })
 export class ShowComponent implements OnInit,
                                           OnDestroy {

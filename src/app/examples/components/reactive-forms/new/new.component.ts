@@ -9,8 +9,7 @@ import {
 
 
 @Component({
-  selector: 'app-reactive-form',
-  templateUrl: './../reactive-forms-form.component.html',
+  selector: 'app-reactive-forms',
   styleUrls: ['./../reactive-forms-form.component.sass']
 })
 export class NewComponent implements  OnInit {

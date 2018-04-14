@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { CrudsRoutingModule } from './cruds-routing.module';
-
 // import { Cruds } from '.';
 import * as Cruds from '.';
+
+import { CrudsRoutingModule } from './cruds-routing.module';
 
 import { CrudService } from '../../services/crud/crud.service';
 import { FormValidationMessageComponent } from '../../../components/form-validation-message/form-validation-message.component';

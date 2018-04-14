@@ -19,6 +19,10 @@ const examplesRoutes: Routes = [
                 loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule'
             },
             {
+                path: 'reactive-forms',
+                loadChildren: 'app/examples/components/reactive-forms/reactive-forms-example.module#ReactiveFormsExampleModule'
+            },
+            {
                 path: 'events',
                 component: EventComponent
             },

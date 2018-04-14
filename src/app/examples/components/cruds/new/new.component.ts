@@ -13,7 +13,7 @@ import { FormValidationService } from '../../../../services/form-validation/form
 
 
 @Component({
-  selector: 'app-crud-form',
+  selector: 'app-cruds-form',
   templateUrl: './../cruds-form.component.html',
   styleUrls: ['./../cruds-form.component.sass']
 })

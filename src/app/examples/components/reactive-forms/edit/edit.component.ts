@@ -21,9 +21,8 @@ import { FormValidationService } from '../../../../services/form-validation/form
 
 
 @Component({
-  selector: 'app-crud-form',
-  templateUrl: './../cruds-form.component.html',
-  styleUrls: ['./../cruds-form.component.sass']
+  selector: 'app-reactive-forms',
+  styleUrls: ['./../reactive-forms-form.component.sass']
 })
 export class EditComponent implements OnInit,
                                           AfterContentInit,
