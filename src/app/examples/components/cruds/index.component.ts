@@ -1,5 +1,3 @@
-/// <reference path="./index.ts"/>
-
 // Presenter(Controller)
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
@@ -29,11 +27,11 @@ export class IndexComponent implements OnInit {
 
   onDestroy(exampleModel: ExampleModel) {
     let
-      positiveResponse: Boolean = false;
+      answer: Boolean = false;
 
     if (confirm(`Tem certeza?`)) {
-      positiveResponse = this.crudService.destroy(exampleModel);
-      if (positiveResponse) {
+      answer = this.crudService.destroy(exampleModel);
+      if (answer) {
         this.router.navigate([`/examples/cruds`]);
       } else {
         alert(`O registro não pôde ser excluído`);

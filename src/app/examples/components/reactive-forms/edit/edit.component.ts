@@ -22,6 +22,7 @@ import { FormValidationService } from '../../../../services/form-validation/form
 
 @Component({
   selector: 'app-reactive-forms',
+  templateUrl: './../reactive-forms-form.component.html',
   styleUrls: ['./../reactive-forms-form.component.sass']
 })
 export class EditComponent implements OnInit,
