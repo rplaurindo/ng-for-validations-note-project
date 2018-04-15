@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import * as ReactiveForms from '.';
 
 import { ReactiveFormsRoutingModule } from './reactive-forms-routing.module';
-import { FormValidationMessageComponent } from '../../../components/form-validation-message/form-validation-message.component';
 import { CrudService } from '../../services/crud/crud.service';
 
 
@@ -19,8 +18,7 @@ import { CrudService } from '../../services/crud/crud.service';
     ReactiveForms.NewComponent,
     ReactiveForms.IndexComponent,
     ReactiveForms.ShowComponent,
-    ReactiveForms.EditComponent,
-    FormValidationMessageComponent
+    ReactiveForms.EditComponent
   ],
   providers: [
     CrudService

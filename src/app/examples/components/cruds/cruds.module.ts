@@ -18,11 +18,11 @@ import { FormValidationMessageComponent } from '../../../components/form-validat
     CrudsRoutingModule
   ],
   declarations: [
-    FormValidationMessageComponent,
     Cruds.NewComponent,
     Cruds.IndexComponent,
     Cruds.ShowComponent,
-    Cruds.EditComponent
+    Cruds.EditComponent,
+    FormValidationMessageComponent
   ],
   providers: [
     CrudService,

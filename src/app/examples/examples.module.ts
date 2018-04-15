@@ -26,29 +26,26 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { EventComponent } from './components/event/event.component';
 import { ComponentChildComponent } from './components/component-child/component-child.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
-// import { ReactiveFormComponent } from './components/reactive-forms/new/reactive-form.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ExamplesRoutingModule
+    ExamplesRoutingModule,
+    FormsModule
   ],
   declarations: [
     CustomPipePipe,
     LightgrayBackgroundDirective,
     YellowBackgroundOnEventlistenerDirective,
+    StructuralDirectiveDirective,
     EventComponent,
     ComponentChildComponent,
     ManipulatingDomComponent,
     DirectivesComponent,
     SafeNavigationComponent,
     NgContentExampleComponent,
-    StructuralDirectiveDirective,
-    RouteParamsComponent,
-    // ReactiveFormComponent
+    RouteParamsComponent
   ],
   providers: [
   ]
