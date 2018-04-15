@@ -13,7 +13,8 @@ import { FormValidationService } from '../../services/form-validation/form-valid
 @Component({
   selector: 'app-form-validation-message',
   templateUrl: './form-validation-message.component.html',
-  styleUrls: ['./form-validation-message.component.sass']
+  styleUrls: ['./form-validation-message.component.sass'],
+  providers: [FormValidationService]
 })
 export class FormValidationMessageComponent implements  OnInit,
                                                     AfterContentInit,

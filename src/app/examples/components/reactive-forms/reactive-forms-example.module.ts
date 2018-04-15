@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import * as ReactiveForms from '.';
 
 import { ReactiveFormsRoutingModule } from './reactive-forms-routing.module';
 import { CrudService } from '../../services/crud/crud.service';
+import { SharedComponentsModule } from '../../../shared-components.module';
 
 
 @NgModule({
   imports: [
-    CommonModule,
-    ReactiveFormsModule,
+    SharedComponentsModule,
     ReactiveFormsRoutingModule
   ],
   declarations: [

@@ -1,9 +1,6 @@
 // Angular imports
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { Http } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 // app imports
 
@@ -26,13 +23,14 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { EventComponent } from './components/event/event.component';
 import { ComponentChildComponent } from './components/component-child/component-child.component';
 import { RouteParamsComponent } from './components/route-params/route-params.component';
+import { SharedComponentsModule } from '../shared-components.module';
 
 
 @NgModule({
   imports: [
-    CommonModule,
-    ExamplesRoutingModule,
-    FormsModule
+    SharedComponentsModule,
+    FormsModule,
+    ExamplesRoutingModule
   ],
   declarations: [
     CustomPipePipe,
@@ -46,8 +44,6 @@ import { RouteParamsComponent } from './components/route-params/route-params.com
     SafeNavigationComponent,
     NgContentExampleComponent,
     RouteParamsComponent
-  ],
-  providers: [
   ]
 })
 export class ExamplesModule { }

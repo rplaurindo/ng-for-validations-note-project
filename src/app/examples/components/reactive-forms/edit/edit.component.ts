@@ -17,7 +17,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { CrudService } from './../../../services/crud/crud.service';
 import { ExampleModel } from '../../../services/crud/example-model';
 import { IFormCanDeactivate } from '../../../../guards/form-deactivate/i-form-can-deactivate';
-import { FormValidationService } from '../../../../services/form-validation/form-validation.service';
 
 
 @Component({
@@ -42,8 +41,7 @@ export class EditComponent implements OnInit,
 
   constructor(
     private route: ActivatedRoute,
-    private crudService: CrudService,
-    private validationService: FormValidationService
+    private crudService: CrudService
   ) { }
 
   onInput() {

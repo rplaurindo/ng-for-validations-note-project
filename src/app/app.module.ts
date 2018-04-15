@@ -14,7 +14,6 @@ import { AuthGuard } from './guards/auth-guards/auth.guard';
 import { FormCanDeactivateGuard } from './guards/form-deactivate/form-can-deactivate.guard';
 
 import { AuthService } from './services/auth/auth.service';
-import { FormValidationService } from './services/form-validation/form-validation.service';
 
 import { AppComponent } from './app.component';
 import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
@@ -27,16 +26,12 @@ import { PageNotFoundComponent } from './components/errors/404/404-error.compone
 
 @NgModule({
   bootstrap: [AppComponent],
-  // Modules
   imports: [
     AppRoutingModule,
     BrowserModule,
     RouterModule,
     HttpClientModule
   ],
-  // Modules and Components
-  exports: [],
-  // Components, Pipes and Directives
   declarations: [
     AppComponent,
     AccessDeniedComponent,
@@ -46,12 +41,10 @@ import { PageNotFoundComponent } from './components/errors/404/404-error.compone
     LoginComponent,
     PageNotFoundComponent
   ],
-  // Services
   providers: [
     AuthService,
     AuthGuard,
     FormCanDeactivateGuard,
-    FormValidationService,
     HttpClient
   ]
 })
