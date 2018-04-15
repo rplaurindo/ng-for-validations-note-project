@@ -7,16 +7,16 @@ import {
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { FormValidationService } from '../../services/form-validation/form-validation.service';
-
+// os serviços também são diferentes, prefixar namespace e usar interface para se chegar a implementação
+import { FormValidationService } from './../../../services/form-validation/form-validation.service';
 
 @Component({
   selector: 'app-form-validation-message',
-  templateUrl: './form-validation-message.component.html',
-  styleUrls: ['./form-validation-message.component.sass'],
+  templateUrl: './../form-validation-messages.component.html',
+  styleUrls: ['./../form-validation-messages.component.sass'],
   providers: [FormValidationService]
 })
-export class FormValidationMessageComponent implements  OnInit,
+export class TemplateDrivenComponent implements  OnInit,
                                                     AfterContentInit,
                                                     AfterContentChecked {
 

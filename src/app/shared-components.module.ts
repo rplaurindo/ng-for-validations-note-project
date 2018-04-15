@@ -1,25 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import {
+    ReactiveFormsModule,
+    FormsModule
+} from '@angular/forms';
 
-import { FormValidationMessageComponent } from './components/form-validation-message/form-validation-message.component';
+import { FormValidationMessagesModule } from './components/form-validation-messages/form-validation-messages.module';
 
 
 @NgModule({
     // Modules
     imports: [
         CommonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormValidationMessagesModule
+        // FormsModule
     ],
     // Modules and Components
     exports: [
         CommonModule,
         ReactiveFormsModule,
-        FormValidationMessageComponent
+        FormValidationMessagesModule
     ],
     // Components, Pipes and Directives
     declarations: [
-        FormValidationMessageComponent
     ],
     // Injectable class
     providers: []
