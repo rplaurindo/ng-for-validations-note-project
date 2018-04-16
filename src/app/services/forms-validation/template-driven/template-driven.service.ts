@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 
 
 @Injectable()
-export class FormValidationService {
+export class TemplateDrivenService {
 
   private error: String = '';
 
