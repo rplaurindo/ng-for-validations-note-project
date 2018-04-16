@@ -5,18 +5,16 @@ import {
   AfterContentChecked,
   AfterContentInit
 } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
-// os serviços também são diferentes, prefixar namespace e usar interface para se chegar a implementação
-import { FormValidationService } from './../../../services/form-validation/form-validation.service';
 
 @Component({
   selector: 'app-form-validation-message',
   templateUrl: './../form-validation-messages.component.html',
   styleUrls: ['./../form-validation-messages.component.sass'],
-  providers: [FormValidationService]
+  // providers: []
 })
-export class DataDrivenComponent implements  OnInit,
+export class ReactiveFormsComponent implements  OnInit,
                                                     AfterContentInit,
                                                     AfterContentChecked {
 
@@ -32,8 +30,8 @@ export class DataDrivenComponent implements  OnInit,
     messages: Object;
 
   constructor(
-    private validationService: FormValidationService,
-    private form: NgForm
+    // private validationService: FormValidationService
+    private form: FormBuilder
   ) { }
 
   validationTypeKeys(): Array<string> {
@@ -69,13 +67,14 @@ export class DataDrivenComponent implements  OnInit,
   }
 
   private setMessage() {
-    this.message = this.messages[
-      this.validationService.getErrorsListFor(
-        this.name,
-        this.form,
-        this.validationTypeKeys()
-      )
-    ];
+    console.log(this.form);
+    // this.message = this.messages[
+    //   this.validationService.getErrorsListFor(
+    //     this.name,
+    //     this.form,
+    //     this.validationTypeKeys()
+    //   )
+    // ];
   }
 
   ngAfterContentInit() {
@@ -83,16 +82,17 @@ export class DataDrivenComponent implements  OnInit,
   }
 
   ngAfterContentChecked() {
-    if (this.form.submitted) {
-      this.formControl = this.form.controls[this.name];
-      if (this.invalid()) {
-        this.canShow = true;
-        this.setMessage();
-      } else {
-        this.canShow = false;
-      }
-      this.validationService.resetForm(this.form);
-    }
+    console.log(this.form)
+    // if (this.form.submitted) {
+    //   this.formControl = this.form.controls[this.name];
+    //   if (this.invalid()) {
+    //     this.canShow = true;
+    //     this.setMessage();
+    //   } else {
+    //     this.canShow = false;
+    //   }
+    //   this.validationService.resetForm(this.form);
+    // }
 
   }
 

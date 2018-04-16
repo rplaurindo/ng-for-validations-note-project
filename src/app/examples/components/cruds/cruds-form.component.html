@@ -12,13 +12,13 @@
     required
     minlength="4"
   />
-  <app-form-validation-message
+  <app-template-driven-validation-msg
     [element]="name"
     [messages]="{
       required: 'Não pode ficar em branco.',
       minlength: 'Deve ter no mínimo 4 caracteres.'
     }"
-  ></app-form-validation-message>
+  ></app-template-driven-validation-msg>
 
   <div class="actions">
     <button type="submit">Salvar</button>

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataDrivenComponent } from './data-driven.component';
+import { ReactiveFormsComponent } from './reactive-forms.component';
 
-describe('DataDrivenComponent', () => {
-  let component: DataDrivenComponent;
-  let fixture: ComponentFixture<DataDrivenComponent>;
+describe('ReactiveFormsComponent', () => {
+  let component: ReactiveFormsComponent;
+  let fixture: ComponentFixture<ReactiveFormsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DataDrivenComponent ]
+      declarations: [ ReactiveFormsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataDrivenComponent);
+    fixture = TestBed.createComponent(ReactiveFormsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
