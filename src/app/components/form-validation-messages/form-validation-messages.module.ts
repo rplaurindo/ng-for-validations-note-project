@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {
+    FormsModule,
+    ReactiveFormsModule
+} from '@angular/forms';
 
 import * as FormValidationMessages from '.';
 
@@ -8,13 +11,17 @@ import * as FormValidationMessages from '.';
 @NgModule({
     imports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
     exports: [
-        FormValidationMessages.TemplateDrivenComponent
+        FormValidationMessages.TemplateDrivenComponent,
+        FormValidationMessages.ReactiveFormsComponent
     ],
     declarations: [
-        FormValidationMessages.TemplateDrivenComponent
+        FormValidationMessages.TemplateDrivenComponent,
+        FormValidationMessages.ReactiveFormsComponent
+
     ],
     providers: [
     ]
