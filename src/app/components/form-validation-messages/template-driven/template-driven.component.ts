@@ -8,7 +8,7 @@ import { FormControl, FormBuilder } from '@angular/forms';
 import * as FormsValidation from './../../../services/forms-validation';
 
 @Component({
-  selector: 'app-template-driven-validation-msg',
+  selector: 'app-form-validation-msg',
   templateUrl: './../form-validation-messages.component.html',
   styleUrls: ['./../form-validation-messages.component.sass'],
   providers: [FormsValidation.TemplateDrivenService]
