@@ -7,6 +7,8 @@ import {
 
 import { FormValidationMessagesModule } from './components/form-validation-messages/form-validation-messages.module';
 
+import * as FormsValidation from './services/forms-validation';
+
 
 @NgModule({
     // Modules
@@ -26,6 +28,6 @@ import { FormValidationMessagesModule } from './components/form-validation-messa
     declarations: [
     ],
     // Injectable class
-    providers: []
+    providers: [FormsValidation.TemplateDrivenService]
 })
 export class SharedComponentsModule { }

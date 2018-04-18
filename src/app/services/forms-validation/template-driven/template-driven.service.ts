@@ -1,33 +1,33 @@
 import { Injectable } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {
+  NgForm,
+  FormControl,
+  FormGroup
+} from '@angular/forms';
+import { Subject } from 'rxjs/Subject';
 
 
 @Injectable()
 export class TemplateDrivenService {
 
-  private error: String = '';
+  // it should cames before instance variable declarations
+  private static validationObserver: Subject<Object> = new Subject();
 
   constructor() { }
 
-  private mapValidationErrorFor(
-                                ngForm: NgForm,
-                                name: string,
-                                validationTypes: Array<string>
-                                ) {
-
-    let
-      errors: Object;
-
-    if (ngForm.controls[name].invalid) {
-      // Angular maps one error by time
-      errors = ngForm.controls[name].errors;
-      Object.keys(errors).forEach((error) => {
+  getValidationErrorFor(
+    control: FormControl,
+    validationTypes: Array<string>
+  ): string {
+    if (control.invalid) {
+      for (const error of Object.keys(control.errors)) {
         if (validationTypes.indexOf(error) !== -1) {
-          this.error = error;
+          return error;
         }
-      });
+      }
     }
 
+    return '';
   }
 
   private copyValues(ngForm: NgForm): Object {
@@ -48,17 +48,18 @@ export class TemplateDrivenService {
     ngForm.resetForm(valuesCopy);
   }
 
-  getErrorsListFor(
-                    formElementName: string,
-                    ngForm: NgForm,
-                    validationTypes: Array<string>
-                    ): string {
+  // the control would can be passed by here, but for some reason the control still doesn’t exist in any default initialization event
+  subscribeOverValidation(callback) {
+    TemplateDrivenService.validationObserver.subscribe(callback);
+  }
 
-    this.mapValidationErrorFor(ngForm,
-                                formElementName,
-                                validationTypes);
+  unsubscribeOverValidation() {
+    TemplateDrivenService.validationObserver.unsubscribe();
+  }
 
-    return this.error.toString();
+  emitValidity(form: NgForm | FormGroup = null) {
+    TemplateDrivenService.validationObserver.observers
+      .forEach(o => o.next({form: form}));
   }
 
 }

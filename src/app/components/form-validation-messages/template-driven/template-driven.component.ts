@@ -1,11 +1,9 @@
 import {
   Component,
   Input,
-  OnInit,
-  AfterContentChecked,
-  AfterContentInit
+  OnInit
 } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormBuilder } from '@angular/forms';
 
 import * as FormsValidation from './../../../services/forms-validation';
 
@@ -15,25 +13,20 @@ import * as FormsValidation from './../../../services/forms-validation';
   styleUrls: ['./../form-validation-messages.component.sass'],
   providers: [FormsValidation.TemplateDrivenService]
 })
-export class TemplateDrivenComponent implements  OnInit,
-                                                    AfterContentInit,
-                                                    AfterContentChecked {
+export class TemplateDrivenComponent implements OnInit {
 
   canShow: Boolean = false;
   message: String;
-  name: string;
-  formControl: Object;
 
   @Input()
-    element: HTMLFormElement;
+  control: FormControl;
 
   @Input()
-    messages: Object;
+  messages: Object;
 
   constructor(
-    private validationService: FormsValidation.TemplateDrivenService,
-    private form: NgForm
-  ) { }
+    private validator: FormsValidation.TemplateDrivenService,
+  ) {}
 
   validationTypeKeys(): Array<string> {
     const
@@ -47,52 +40,22 @@ export class TemplateDrivenComponent implements  OnInit,
   }
 
   ngOnInit() {
-  }
+    let
+      error: string;
 
-  private copyControl(control: Object): Object {
-    const
-      copy: Object = {};
-
-    Object.keys(control).forEach((k) => {
-      copy[k] = control[k];
-    });
-
-    return copy;
-  }
-
-  private invalid(): boolean {
-    if (this.formControl && this.formControl['errors']) {
-      return true;
-    }
-    return false;
-  }
-
-  private setMessage() {
-    this.message = this.messages[
-      this.validationService.getErrorsListFor(
-        this.name,
-        this.form,
+    this.validator.subscribeOverValidation(() => {
+      error = this.validator.getValidationErrorFor(
+        this.control,
         this.validationTypeKeys()
-      )
-    ];
-  }
-
-  ngAfterContentInit() {
-    this.name = this.element.getAttribute('name');
-  }
-
-  ngAfterContentChecked() {
-    if (this.form.submitted) {
-      this.formControl = this.form.controls[this.name];
-      if (this.invalid()) {
+      );
+      if (error) {
         this.canShow = true;
-        this.setMessage();
+        this.message = this.messages[error];
       } else {
+        this.message = '';
         this.canShow = false;
       }
-      this.validationService.resetForm(this.form);
-    }
-
+    });
   }
 
 }

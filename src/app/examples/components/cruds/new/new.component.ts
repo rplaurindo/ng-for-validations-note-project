@@ -8,16 +8,15 @@ import { HttpClient } from '@angular/common/http';
 
 import { CrudService } from './../../../services/crud/crud.service';
 import { ExampleModel } from '../../../services/crud/example-model';
-import { IFormCanDeactivate } from '../../../../guards/form-deactivate/i-form-can-deactivate';
 
+import * as FormsValidation from './../../../../services/forms-validation';
 
 @Component({
   selector: 'app-cruds-form',
   templateUrl: './../cruds-form.component.html',
   styleUrls: ['./../cruds-form.component.sass']
 })
-export class NewComponent implements OnInit,
-                              IFormCanDeactivate {
+export class NewComponent implements OnInit {
 
   modelReference: ExampleModel;
   formChanged: Boolean = false;
@@ -25,7 +24,8 @@ export class NewComponent implements OnInit,
 
   constructor(
     private crudService: CrudService,
-    private http: HttpClient
+    private http: HttpClient,
+    private validator: FormsValidation.TemplateDrivenService
   ) { }
 
   onInput() {
@@ -50,6 +50,7 @@ export class NewComponent implements OnInit,
 
   onSubmit(form: NgForm) {
     this.getJSON();
+    this.validator.emitValidity();
     if (form.valid) {
       this.crudService.create(form.value);
     }

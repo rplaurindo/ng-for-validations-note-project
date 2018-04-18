@@ -1,19 +1,19 @@
 <form
-  #formReference="ngForm"
-  (ngSubmit)="onSubmit(formReference)"
+  #form="ngForm"
+  (ngSubmit)="onSubmit(form)"
   (input)="onInput()"
   >
 
   <input
     [ngModel]="modelReference?.name"
-    #name
     name="name"
     placeholder="nome"
     required
     minlength="4"
   />
+
   <app-template-driven-validation-msg
-    [element]="name"
+    [control]="form.controls['name']"
     [messages]="{
       required: 'Não pode ficar em branco.',
       minlength: 'Deve ter no mínimo 4 caracteres.'
