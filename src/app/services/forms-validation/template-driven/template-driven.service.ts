@@ -13,6 +13,7 @@ export class TemplateDrivenService {
   // it should cames before instance variable declarations
   private static validationObserver: Subject<Object> = new Subject();
 
+  // constructor(control: FormControl, validationTypes: Array<string>) {
   constructor() { }
 
   getValidationErrorFor(
