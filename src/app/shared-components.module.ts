@@ -18,16 +18,16 @@ import * as FormsValidation from './services/forms-validation';
         FormValidationMessagesModule
         // FormsModule
     ],
+    // Injectable class
+    providers: [FormsValidation.TemplateDrivenService],
+    // Components, Pipes and Directives
+    declarations: [
+    ],
     // Modules and Components
     exports: [
         CommonModule,
         ReactiveFormsModule,
         FormValidationMessagesModule
-    ],
-    // Components, Pipes and Directives
-    declarations: [
-    ],
-    // Injectable class
-    providers: [FormsValidation.TemplateDrivenService]
+    ]
 })
 export class SharedComponentsModule { }
