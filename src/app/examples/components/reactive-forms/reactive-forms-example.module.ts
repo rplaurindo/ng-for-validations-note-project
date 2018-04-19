@@ -13,7 +13,8 @@ import { SharedComponentsModule } from '../../../shared-components.module';
     ReactiveFormsRoutingModule
   ],
   providers: [
-    CrudService
+    CrudService,
+    ReactiveForms.ShowResolver
   ],
   declarations: [
     ReactiveForms.NewComponent,

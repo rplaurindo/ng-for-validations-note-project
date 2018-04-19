@@ -1,3 +1,5 @@
+// Model
+
 export class ExampleModel {
 
     id: number;

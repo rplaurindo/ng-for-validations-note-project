@@ -3,10 +3,7 @@ import {
   OnInit,
   OnDestroy
 } from '@angular/core';
-import {
-  ActivatedRoute,
-  Router
-} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
 import { CrudService } from './../../../services/crud/crud.service';
@@ -19,15 +16,12 @@ import { ExampleModel } from '../../../services/crud/example-model';
   styleUrls: ['./show.component.sass']
 })
 export class ShowComponent implements OnInit,
-                                          OnDestroy {
+                                      OnDestroy {
 
   modelReference: ExampleModel;
   paramsSubscription: Subscription;
-  // private params: Object;
 
   constructor(
-    // private crudService: CrudService,
-    private router: Router,
     private route: ActivatedRoute
   ) { }
 

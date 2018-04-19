@@ -6,7 +6,8 @@ import {
 } from '@angular/core';
 import {
   FormGroup,
-  FormBuilder
+  FormBuilder,
+  Validators
 } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
@@ -44,9 +45,12 @@ export class EditComponent implements OnInit,
           this.modelReference = new ExampleModel();
         }
 
-        this.form.setValue(this.modelReference);
-        // update just part of all
+        // update all or part of the whole
+        // this.form.setValue(this.modelReference);
         // this.form.form.patchValue(this.modelReference);
+        this.form = this.formBuilder.group({
+          name: [this.modelReference.getName(), [Validators.required, Validators.minLength(4)]]
+        });
       }
     );
   }

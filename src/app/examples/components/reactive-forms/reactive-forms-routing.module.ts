@@ -18,7 +18,8 @@ const reactiveFormsRoutes: Routes = [
             },
             {
                 path: ':id',
-                component: ReactiveForms.ShowComponent
+                component: ReactiveForms.ShowComponent,
+                resolve: { exampleModel: ReactiveForms.ShowResolver }
             },
             {
                 path: ':id/editar',
