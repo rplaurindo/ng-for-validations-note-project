@@ -1,9 +1,13 @@
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+import { Subject } from 'rxjs/Subject';
 import {
   Component,
   Input,
-  OnInit
+  OnInit,
+  OnDestroy
 } from '@angular/core';
-import { FormControl, FormBuilder } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 import * as FormsValidation from './../../../services/forms-validation';
 
@@ -13,7 +17,8 @@ import * as FormsValidation from './../../../services/forms-validation';
   styleUrls: ['./../form-validation-messages.component.sass'],
   providers: [FormsValidation.TemplateDrivenService]
 })
-export class TemplateDrivenComponent implements OnInit {
+export class TemplateDrivenComponent implements OnInit,
+                                                OnDestroy {
 
   canShow: Boolean = false;
   message: String;
@@ -23,6 +28,7 @@ export class TemplateDrivenComponent implements OnInit {
 
   @Input()
   messages: Object;
+
 
   constructor(
     private validator: FormsValidation.TemplateDrivenService,
@@ -56,6 +62,10 @@ export class TemplateDrivenComponent implements OnInit {
         this.canShow = false;
       }
     });
+  }
+
+  ngOnDestroy() {
+    this.validator.unsubscribeOverValidation();
   }
 
 }

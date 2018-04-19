@@ -16,15 +16,15 @@ import { SharedComponentsModule } from '../../../shared-components.module';
     SharedComponentsModule,
     CrudsRoutingModule
   ],
+  providers: [
+    CrudService,
+    Cruds.ShowResolver
+  ],
   declarations: [
     Cruds.NewComponent,
     Cruds.IndexComponent,
     Cruds.ShowComponent,
     Cruds.EditComponent
-  ],
-  providers: [
-    CrudService,
-    Cruds.ShowResolver
   ]
 })
 export class CrudsModule { }

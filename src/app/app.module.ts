@@ -32,6 +32,12 @@ import { PageNotFoundComponent } from './components/errors/404/404-error.compone
     RouterModule,
     HttpClientModule
   ],
+  providers: [
+    HttpClient,
+    AuthService,
+    AuthGuard,
+    FormCanDeactivateGuard
+  ],
   declarations: [
     AppComponent,
     AccessDeniedComponent,
@@ -40,12 +46,6 @@ import { PageNotFoundComponent } from './components/errors/404/404-error.compone
     HorizontalMenuComponent,
     LoginComponent,
     PageNotFoundComponent
-  ],
-  providers: [
-    AuthService,
-    AuthGuard,
-    FormCanDeactivateGuard,
-    HttpClient
   ]
 })
 export class AppModule { }

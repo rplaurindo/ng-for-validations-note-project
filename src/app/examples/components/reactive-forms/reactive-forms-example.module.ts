@@ -12,14 +12,14 @@ import { SharedComponentsModule } from '../../../shared-components.module';
     SharedComponentsModule,
     ReactiveFormsRoutingModule
   ],
+  providers: [
+    CrudService
+  ],
   declarations: [
     ReactiveForms.NewComponent,
     ReactiveForms.IndexComponent,
     ReactiveForms.ShowComponent,
     ReactiveForms.EditComponent
-  ],
-  providers: [
-    CrudService
   ]
 })
 export class ReactiveFormsExampleModule { }

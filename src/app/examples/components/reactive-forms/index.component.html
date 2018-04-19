@@ -15,7 +15,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let model of models">
-        <a [routerLink]="['/examples/cruds', model.getId()]">
+        <a [routerLink]="['/examples/reactive-forms', model.getId()]">
           <td>{{ model.getId() }}</td>
           <td>{{ model.getName() }}</td>
         </a>

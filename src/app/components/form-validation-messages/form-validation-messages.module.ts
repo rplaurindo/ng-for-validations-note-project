@@ -14,16 +14,13 @@ import * as FormValidationMessages from '.';
         FormsModule,
         ReactiveFormsModule
     ],
-    exports: [
-        FormValidationMessages.TemplateDrivenComponent,
-        FormValidationMessages.ReactiveFormsComponent
+    providers: [
     ],
     declarations: [
         FormValidationMessages.TemplateDrivenComponent,
-        FormValidationMessages.ReactiveFormsComponent
-
     ],
-    providers: [
+    exports: [
+        FormValidationMessages.TemplateDrivenComponent
     ]
 })
 export class FormValidationMessagesModule { }
