@@ -6,12 +6,10 @@
   <input
     formControlName="name"
     placeholder="nome"
-    required
-    minlength="4"
   />
 
   <app-form-validation-msg
-    [control]="form.controls['name']"
+    [control]="form.get('name')"
     [messages]="{
       required: 'Não pode ficar em branco.',
       minlength: 'Deve ter no mínimo 4 caracteres.'

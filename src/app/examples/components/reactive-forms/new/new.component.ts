@@ -5,7 +5,8 @@ import {
 } from '@angular/core';
 import {
   FormGroup,
-  FormBuilder
+  FormBuilder,
+  Validators
 } from '@angular/forms';
 
 import { CrudService } from './../../../services/crud/crud.service';
@@ -29,7 +30,7 @@ export class NewComponent implements  OnInit {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      name: [null]
+      name: [null, [Validators.required, Validators.minLength(4)]]
     });
   }
 

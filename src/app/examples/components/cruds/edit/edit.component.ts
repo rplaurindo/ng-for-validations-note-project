@@ -1,14 +1,9 @@
 import {
   Component,
-  Input,
   OnInit,
   OnDestroy,
   ViewChild,
-  ElementRef,
-  AfterContentInit,
-  AfterViewInit,
-  AfterContentChecked,
-  AfterViewChecked
+  ElementRef
 } from '@angular/core';
 import { FormGroup, NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -25,19 +20,13 @@ import { IFormCanDeactivate } from '../../../../guards/form-deactivate/i-form-ca
   styleUrls: ['./../cruds-form.component.sass']
 })
 export class EditComponent implements OnInit,
-                                          AfterContentInit,
-                                          AfterViewInit,
-                                          AfterContentChecked,
-                                          AfterViewChecked,
-                                          OnDestroy,
-                                          IFormCanDeactivate {
+                                      OnDestroy,
+                                      IFormCanDeactivate {
 
   modelReference: ExampleModel;
   paramsSubscription: Subscription;
   params: Object;
   formChanged: Boolean = false;
-  // @ViewChild('formReference') form: ElementRef;
-  // form: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
@@ -65,26 +54,8 @@ export class EditComponent implements OnInit,
           // render model not found page instead
           this.modelReference = new ExampleModel();
         }
-
-        // console.log(new NgForm(this.form.nativeElement))
-        // console.log(this.form)
-        // this.form.form.patchValue(this.modelReference);
-        // this.form.setValue(this.modelReference);
-
       }
     );
-  }
-
-  ngAfterContentInit() {
-  }
-
-  ngAfterViewInit() {
-  }
-
-  ngAfterContentChecked() {
-  }
-
-  ngAfterViewChecked() {
   }
 
   ngOnDestroy() {
