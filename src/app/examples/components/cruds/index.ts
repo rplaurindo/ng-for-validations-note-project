@@ -1,5 +1,5 @@
 import { NewComponent } from './new/new.component';
-import { IndexComponent } from './index.component';
+import { IndexComponent } from './index/index.component';
 import { ShowComponent } from './show/show.component';
 import { ShowResolver } from './show/show.resolver';
 import { EditComponent } from './edit/edit.component';
