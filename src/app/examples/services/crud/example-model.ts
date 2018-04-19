@@ -3,7 +3,7 @@
 export class ExampleModel {
 
   id: number;
-  name: String;
+  name: string;
 
   constructor(attrs: Object = {}) {
     this.id = attrs['id'] || null;
@@ -14,8 +14,12 @@ export class ExampleModel {
     return this.id;
   }
 
-  getName(): String {
+  getName(): string {
     return this.name;
+  }
+
+  setName(name: string): string {
+    return this.name = name;
   }
 
 }
