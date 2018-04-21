@@ -6,6 +6,7 @@ import {
 } from '@angular/forms';
 
 import * as FormValidationMessages from '.';
+import * as FormsValidationServices from './../../services/forms-validation';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import * as FormValidationMessages from '.';
         ReactiveFormsModule
     ],
     providers: [
+        FormsValidationServices.TemplateDrivenService
     ],
+    // add locally to component providers will create a new instance breaking the singleton pattern
     declarations: [
         FormValidationMessages.TemplateDrivenComponent,
     ],

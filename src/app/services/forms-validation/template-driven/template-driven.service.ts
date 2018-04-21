@@ -10,8 +10,7 @@ import { Subscriber } from 'rxjs/Subscriber';
 @Injectable()
 export class TemplateDrivenService {
 
-  // it should cames before instance variable declarations
-  private static validationSubjectsList: Array<Subscriber<Object>> = [];
+  private validationSubjectsList: Array<Subscriber<Object>> = [];
   private validationSubject: Subscriber<Object>;
 
   // constructor(control: FormControl, validationTypes: Array<string>) {
@@ -53,8 +52,7 @@ export class TemplateDrivenService {
   // the control would can be passed by here, but for some reason the control still doesn’t exist in any default initialization event
   subscribeOverValidation(callback) {
     this.validationSubject = new Subscriber(callback);
-    TemplateDrivenService.validationSubjectsList.push(this.validationSubject);
-
+    this.validationSubjectsList.push(this.validationSubject);
   }
 
   unsubscribeOverValidation() {
@@ -62,7 +60,7 @@ export class TemplateDrivenService {
   }
 
   emitValidity(form: NgForm | FormGroup = null) {
-    TemplateDrivenService.validationSubjectsList.forEach(s => {
+    this.validationSubjectsList.forEach(s => {
       s.next({ form: form });
     });
   }

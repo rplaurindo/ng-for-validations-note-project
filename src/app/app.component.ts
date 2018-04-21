@@ -16,10 +16,7 @@ import { AuthService } from './services/auth/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass'],
-  providers: [
-    AuthService
-  ]
+  styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements  OnInit,
                                       OnDestroy,
@@ -46,6 +43,7 @@ export class AppComponent implements  OnInit,
   }
 
   ngAfterContentInit() {
+    // fazer a merma coisa que fez em TemplateDriven
     this.userAuthSubscription = this.authService.getUserAuthSubject().subscribe(
       authenticated => {
         this.showMenuIf = authenticated;

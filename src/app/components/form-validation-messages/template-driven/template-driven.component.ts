@@ -14,8 +14,7 @@ import * as FormsValidation from './../../../services/forms-validation';
 @Component({
   selector: 'app-form-validation-msg',
   templateUrl: './../form-validation-messages.component.html',
-  styleUrls: ['./../form-validation-messages.component.sass'],
-  providers: [FormsValidation.TemplateDrivenService]
+  styleUrls: ['./../form-validation-messages.component.sass']
 })
 export class TemplateDrivenComponent implements OnInit,
                                                 OnDestroy {

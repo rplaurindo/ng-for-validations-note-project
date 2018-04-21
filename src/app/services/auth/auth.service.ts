@@ -4,6 +4,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
+// import { Subscriber } from 'rxjs/Subscriber';
 
 import { User } from './user';
 
@@ -11,9 +12,9 @@ import { User } from './user';
 @Injectable()
 export class AuthService {
 
-  private static userIsAuthenticated: boolean = false;
-  private static user: User;
-  private static subject: Subject<boolean> = new Subject();
+  private userIsAuthenticated: boolean = false;
+  private user: User;
+  private subject: Subject<boolean> = new Subject();
 
   // private static observer: Observer<boolean>;
   // static observable: Observable<boolean> = new Observable(
@@ -25,35 +26,36 @@ export class AuthService {
   constructor() { }
 
   getUserAuthSubject() {
-    return AuthService.subject;
+    return this.subject;
   }
 
   isUserAuthenticated(): boolean {
-    return AuthService.userIsAuthenticated;
+    return this.userIsAuthenticated;
   }
 
-  private static setUser(attrs: Object) {
-    if (!AuthService.user) {
-      AuthService.user = new User(attrs);
+  private setUser(attrs: Object) {
+    if (!this.user) {
+      this.user = new User(attrs);
     }
   }
 
-  private static unsetUser() {
-    AuthService.user = null;
+  private unsetUser() {
+    this.user = null;
   }
 
   private multicast() {
-    AuthService.subject.observers.forEach(
+    this.subject.observers.forEach(
       subscriber => {
-        subscriber.next(AuthService.userIsAuthenticated);
+        subscriber.next(this.userIsAuthenticated);
       }
     );
   }
 
   signIn(attrs: Object = {}) {
-    AuthService.setUser(attrs);
+    this.setUser(attrs);
     // if ...
-    AuthService.userIsAuthenticated = true;
+    // this.userIsAuthenticated = true;
+    this.userIsAuthenticated = true;
     // else {
     // this.authenticated = false;
     // }
@@ -62,8 +64,8 @@ export class AuthService {
   }
 
   signOut() {
-    AuthService.unsetUser();
-    AuthService.userIsAuthenticated = false;
+    this.unsetUser();
+    this.userIsAuthenticated = false;
     this.multicast();
   }
 
