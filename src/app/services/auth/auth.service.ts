@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
-// import { Subscriber } from 'rxjs/Subscriber';
+// import { Subscribable } from 'rxjs/Observable';
 
 import { User } from './user';
 
@@ -14,7 +14,7 @@ export class AuthService {
 
   private userIsAuthenticated: boolean = false;
   private user: User;
-  private subject: Subject<boolean> = new Subject();
+  private authSubscription: Subject<boolean> = new Subject();
 
   // private static observer: Observer<boolean>;
   // static observable: Observable<boolean> = new Observable(
@@ -25,8 +25,12 @@ export class AuthService {
 
   constructor() { }
 
-  getUserAuthSubject() {
-    return this.subject;
+  susbscribeOverAuthentication(callback) {
+    this.authSubscription.subscribe(callback);
+  }
+
+  unsusbscribeOverAuthentication() {
+    this.authSubscription.unsubscribe();
   }
 
   isUserAuthenticated(): boolean {
@@ -44,7 +48,7 @@ export class AuthService {
   }
 
   private multicast() {
-    this.subject.observers.forEach(
+    this.authSubscription.observers.forEach(
       subscriber => {
         subscriber.next(this.userIsAuthenticated);
       }

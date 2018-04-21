@@ -4,14 +4,13 @@ import {
   FormControl,
   FormGroup
 } from '@angular/forms';
-import { Subscriber } from 'rxjs/Subscriber';
+import { Subject } from 'rxjs/Subject';
 
 
 @Injectable()
 export class TemplateDrivenService {
 
-  private validationSubjectsList: Array<Subscriber<Object>> = [];
-  private validationSubject: Subscriber<Object>;
+  private validationSubscription: Subject<Object> = new Subject();
 
   // constructor(control: FormControl, validationTypes: Array<string>) {
   constructor() { }
@@ -51,16 +50,15 @@ export class TemplateDrivenService {
 
   // the control would can be passed by here, but for some reason the control still doesn’t exist in any default initialization event
   subscribeOverValidation(callback) {
-    this.validationSubject = new Subscriber(callback);
-    this.validationSubjectsList.push(this.validationSubject);
+    this.validationSubscription.subscribe(callback);
   }
 
   unsubscribeOverValidation() {
-    this.validationSubject.unsubscribe();
+    this.validationSubscription.unsubscribe();
   }
 
   emitValidity(form: NgForm | FormGroup = null) {
-    this.validationSubjectsList.forEach(s => {
+    this.validationSubscription.observers.forEach(s => {
       s.next({ form: form });
     });
   }

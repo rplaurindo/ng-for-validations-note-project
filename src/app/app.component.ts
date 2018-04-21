@@ -19,9 +19,9 @@ import { AuthService } from './services/auth/auth.service';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements  OnInit,
+                                      AfterContentInit,
                                       OnDestroy,
                                       OnChanges,
-                                      AfterContentInit,
                                       AfterContentChecked,
                                       AfterViewInit,
                                       AfterViewChecked {
@@ -35,20 +35,19 @@ export class AppComponent implements  OnInit,
   ngOnInit() {
   }
 
-  ngOnDestroy() {
-    this.userAuthSubscription.unsubscribe();
-  }
-
-  ngOnChanges() {
-  }
-
   ngAfterContentInit() {
-    // fazer a merma coisa que fez em TemplateDriven
-    this.userAuthSubscription = this.authService.getUserAuthSubject().subscribe(
+    this.authService.susbscribeOverAuthentication(
       authenticated => {
         this.showMenuIf = authenticated;
       }
     );
+  }
+
+  ngOnDestroy() {
+    this.authService.unsusbscribeOverAuthentication();
+  }
+
+  ngOnChanges() {
   }
 
   ngAfterContentChecked() {
