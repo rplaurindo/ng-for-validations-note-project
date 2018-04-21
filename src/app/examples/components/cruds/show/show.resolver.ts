@@ -6,8 +6,8 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-import { ExampleModel } from '../../../services/crud/example-model';
-import { CrudService } from '../../../services/crud/crud.service';
+import { ExampleModel } from '../../../../services/crud/example-model';
+import { CrudService } from '../../../../services/crud/crud.service';
 
 
 @Injectable()

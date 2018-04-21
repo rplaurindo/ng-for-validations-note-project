@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import * as ReactiveForms from '.';
 
 import { ReactiveFormsRoutingModule } from './reactive-forms-routing.module';
-import { CrudService } from '../../services/crud/crud.service';
+import { CrudService } from '../../../services/crud/crud.service';
 import { SharedComponentsModule } from '../../../shared-components.module';
 
 

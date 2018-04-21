@@ -9,8 +9,8 @@ import { FormGroup, NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
-import { CrudService } from './../../../services/crud/crud.service';
-import { ExampleModel } from '../../../services/crud/example-model';
+import { CrudService } from './../../../../services/crud/crud.service';
+import { ExampleModel } from '../../../../services/crud/example-model';
 import { IFormCanDeactivate } from '../../../../guards/form-deactivate/i-form-can-deactivate';
 
 

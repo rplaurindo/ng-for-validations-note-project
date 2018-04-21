@@ -6,8 +6,8 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
-import { CrudService } from './../../../services/crud/crud.service';
-import { ExampleModel } from '../../../services/crud/example-model';
+import { CrudService } from './../../../../services/crud/crud.service';
+import { ExampleModel } from '../../../../services/crud/example-model';
 
 
 @Component({

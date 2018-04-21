@@ -6,8 +6,8 @@ import {
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-import { CrudService } from './../../../services/crud/crud.service';
-import { ExampleModel } from '../../../services/crud/example-model';
+import { CrudService } from './../../../../services/crud/crud.service';
+import { ExampleModel } from '../../../../services/crud/example-model';
 
 import * as FormsValidation from './../../../../services/forms-validation';
 
