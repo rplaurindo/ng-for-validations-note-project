@@ -5,6 +5,7 @@ const { NamedLazyChunksWebpackPlugin } = require('@angular/cli/plugins/webpack')
 const fs = require('fs');
 const path = require('path');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressPlugin = require('webpack/lib/ProgressPlugin');
 const rxPaths = require('rxjs/_esm5/path-mapping');
@@ -144,6 +145,14 @@ module.exports = {
                 "main"
             ]
         }),
+        new CopyWebpackPlugin([
+            {
+                "context": "src",
+                "from": {
+                    "glob": "assets/**/*"
+                }
+            }
+        ]),
         new HtmlWebpackPlugin({
             template: "./src/index.html"
         }),
