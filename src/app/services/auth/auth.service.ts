@@ -14,16 +14,16 @@ export class AuthService {
 
   private user: User;
   private userIsAuthenticated: Boolean = false;
-  private authSubscription: Subject<Boolean> = new Subject();
+  private authSubscription: Promise<Boolean>;
+  private _accomplish: Function;
 
-  // private static observer: Observer<boolean>;
-  // static observable: Observable<boolean> = new Observable(
-  //   observer => {
-  //     AuthService.observer = observer;
-  //   }
-  // );
-
-  constructor() { }
+  constructor() {
+    this.authSubscription = new Promise(
+      accomplish => {
+        this._accomplish = accomplish;
+      }
+    );
+  }
 
   private setUser(attrs: Object) {
     if (!this.user) {
@@ -35,25 +35,17 @@ export class AuthService {
     this.user = null;
   }
 
-  private multicast() {
-    this.authSubscription.observers.forEach(
-      subscriber => {
-        subscriber.next(this.userIsAuthenticated);
-      }
-    );
-  }
-
   signOut() {
     this.unsetUser();
     this.userIsAuthenticated = false;
-    this.multicast();
+    this._accomplish(this.userIsAuthenticated);
   }
 
   isUserAuthenticated(): Boolean {
     return this.userIsAuthenticated;
   }
 
-  getUserAuth(): Subject<Boolean> {
+  getUserAuth(): Promise<Boolean> {
     return this.authSubscription;
   }
 
@@ -66,7 +58,7 @@ export class AuthService {
     // this.authenticated = false;
     // }
 
-    this.multicast();
+    this._accomplish(this.userIsAuthenticated);
   }
 
 }

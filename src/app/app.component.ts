@@ -29,25 +29,18 @@ export class AppComponent implements  OnInit,
   title = `Examples`;
   showMenuIf: Boolean;
 
-  private authSubscription: Subject<Boolean>;
-
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
   ngAfterContentInit() {
-    this.authSubscription = this.authService.getUserAuth();
-
-    this.authSubscription.subscribe(
-      authenticated => {
-        this.showMenuIf = authenticated;
-      }
-    );
+    this.authService.getUserAuth().then(isAuth => {
+      this.showMenuIf = isAuth;
+    });
   }
 
   ngOnDestroy() {
-    this.authSubscription.unsubscribe();
   }
 
   ngOnChanges() {
