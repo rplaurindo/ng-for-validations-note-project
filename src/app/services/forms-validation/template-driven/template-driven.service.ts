@@ -4,16 +4,20 @@ import {
   FormControl,
   FormGroup
 } from '@angular/forms';
-import { Subject } from 'rxjs/Subject';
 
 
 @Injectable()
 export class TemplateDrivenService {
 
-  private validationSubscription: Subject<Object> = new Subject();
+  private validationSubscription: Promise<Object>;
+  private _emitValidity: Function;
 
   // constructor(control: FormControl, validationTypes: Array<string>) {
-  constructor() { }
+  constructor() {
+    this.validationSubscription = new Promise(accomplish => {
+      this._emitValidity = accomplish;
+    });
+  }
 
   private copyValues(ngForm: NgForm): Object {
     const
@@ -49,12 +53,12 @@ export class TemplateDrivenService {
   }
 
   // the control would can be passed by here, but for some reason the control still doesn’t exist in any default initialization event
-  getValidation(): Subject<Object> {
+  getValidationSubscription(): Promise<Object> {
     return this.validationSubscription;
   }
 
   emitValidity(form: NgForm | FormGroup = null) {
-    this.validationSubscription.next({ form: form });
+    this._emitValidity({ form: form });
   }
 
 }

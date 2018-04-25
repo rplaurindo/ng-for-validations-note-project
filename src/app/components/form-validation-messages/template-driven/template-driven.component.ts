@@ -5,23 +5,18 @@ import {
   OnDestroy
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Subject } from 'rxjs/Subject';
 
 import * as FormsValidation from './../../../services/forms-validation';
-import { Subscribable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-form-validation-msg',
   templateUrl: './../form-validation-messages.component.html',
   styleUrls: ['./../form-validation-messages.component.sass']
 })
-export class TemplateDrivenComponent implements OnInit,
-                                                OnDestroy {
+export class TemplateDrivenComponent implements OnInit {
 
   canShow: Boolean = false;
   message: String;
-
-  private validationSubscription: Subject<Object>;
 
   @Input()
   control: FormControl;
@@ -48,9 +43,7 @@ export class TemplateDrivenComponent implements OnInit,
     let
       error: string;
 
-    this.validationSubscription = this.validator.getValidation();
-
-    this.validationSubscription.subscribe(() => {
+    this.validator.getValidationSubscription().then(() => {
       error = this.validator.getValidationErrorFor(
         this.control,
         this.validationTypeKeys()
@@ -64,10 +57,6 @@ export class TemplateDrivenComponent implements OnInit,
       }
     });
 
-  }
-
-  ngOnDestroy() {
-    this.validationSubscription.unsubscribe();
   }
 
 }
