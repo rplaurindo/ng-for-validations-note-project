@@ -5,8 +5,10 @@ import {
   OnDestroy
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Subject } from 'rxjs/Subject';
 
 import * as FormsValidation from './../../../services/forms-validation';
+import { Subscribable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-form-validation-msg',
@@ -19,12 +21,13 @@ export class TemplateDrivenComponent implements OnInit,
   canShow: Boolean = false;
   message: String;
 
+  private validationSubscription: Subject<Object>;
+
   @Input()
   control: FormControl;
 
   @Input()
   messages: Object;
-
 
   constructor(
     private validator: FormsValidation.TemplateDrivenService,
@@ -45,7 +48,9 @@ export class TemplateDrivenComponent implements OnInit,
     let
       error: string;
 
-    this.validator.subscribeOverValidation(() => {
+    this.validationSubscription = this.validator.getValidation();
+
+    this.validationSubscription.subscribe(() => {
       error = this.validator.getValidationErrorFor(
         this.control,
         this.validationTypeKeys()
@@ -58,10 +63,11 @@ export class TemplateDrivenComponent implements OnInit,
         this.canShow = false;
       }
     });
+
   }
 
   ngOnDestroy() {
-    this.validator.unsubscribeOverValidation();
+    this.validationSubscription.unsubscribe();
   }
 
 }

@@ -15,21 +15,6 @@ export class TemplateDrivenService {
   // constructor(control: FormControl, validationTypes: Array<string>) {
   constructor() { }
 
-  getValidationErrorFor(
-    control: FormControl,
-    validationTypes: Array<string>
-  ): string {
-    if (control.invalid) {
-      for (const error of Object.keys(control.errors)) {
-        if (validationTypes.indexOf(error) !== -1) {
-          return error;
-        }
-      }
-    }
-
-    return '';
-  }
-
   private copyValues(ngForm: NgForm): Object {
     const
       valuesMap: Object = {};
@@ -48,19 +33,28 @@ export class TemplateDrivenService {
     ngForm.resetForm(valuesCopy);
   }
 
-  // the control would can be passed by here, but for some reason the control still doesn’t exist in any default initialization event
-  subscribeOverValidation(callback) {
-    this.validationSubscription.subscribe(callback);
+  getValidationErrorFor(
+    control: FormControl,
+    validationTypes: Array<string>
+  ): string {
+    if (control.invalid) {
+      for (const error of Object.keys(control.errors)) {
+        if (validationTypes.indexOf(error) !== -1) {
+          return error;
+        }
+      }
+    }
+
+    return '';
   }
 
-  unsubscribeOverValidation() {
-    this.validationSubscription.unsubscribe();
+  // the control would can be passed by here, but for some reason the control still doesn’t exist in any default initialization event
+  getValidation(): Subject<Object> {
+    return this.validationSubscription;
   }
 
   emitValidity(form: NgForm | FormGroup = null) {
-    this.validationSubscription.observers.forEach(s => {
-      s.next({ form: form });
-    });
+    this.validationSubscription.next({ form: form });
   }
 
 }

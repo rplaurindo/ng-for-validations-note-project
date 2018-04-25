@@ -12,8 +12,8 @@ import { User } from './user';
 @Injectable()
 export class AuthService {
 
-  private userIsAuthenticated: Boolean = false;
   private user: User;
+  private userIsAuthenticated: Boolean = false;
   private authSubscription: Subject<Boolean> = new Subject();
 
   // private static observer: Observer<boolean>;
@@ -24,18 +24,6 @@ export class AuthService {
   // );
 
   constructor() { }
-
-  susbscribeOverAuthentication(callback) {
-    this.authSubscription.subscribe(callback);
-  }
-
-  unsusbscribeOverAuthentication() {
-    this.authSubscription.unsubscribe();
-  }
-
-  isUserAuthenticated(): Boolean {
-    return this.userIsAuthenticated;
-  }
 
   private setUser(attrs: Object) {
     if (!this.user) {
@@ -55,6 +43,20 @@ export class AuthService {
     );
   }
 
+  signOut() {
+    this.unsetUser();
+    this.userIsAuthenticated = false;
+    this.multicast();
+  }
+
+  isUserAuthenticated(): Boolean {
+    return this.userIsAuthenticated;
+  }
+
+  getUserAuth(): Subject<Boolean> {
+    return this.authSubscription;
+  }
+
   signIn(attrs: Object = {}) {
     this.setUser(attrs);
     // if ...
@@ -64,12 +66,6 @@ export class AuthService {
     // this.authenticated = false;
     // }
 
-    this.multicast();
-  }
-
-  signOut() {
-    this.unsetUser();
-    this.userIsAuthenticated = false;
     this.multicast();
   }
 
