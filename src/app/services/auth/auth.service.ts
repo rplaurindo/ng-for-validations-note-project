@@ -12,9 +12,9 @@ import { User } from './user';
 @Injectable()
 export class AuthService {
 
-  private userIsAuthenticated: boolean = false;
+  private userIsAuthenticated: Boolean = false;
   private user: User;
-  private authSubscription: Subject<boolean> = new Subject();
+  private authSubscription: Subject<Boolean> = new Subject();
 
   // private static observer: Observer<boolean>;
   // static observable: Observable<boolean> = new Observable(
@@ -33,7 +33,7 @@ export class AuthService {
     this.authSubscription.unsubscribe();
   }
 
-  isUserAuthenticated(): boolean {
+  isUserAuthenticated(): Boolean {
     return this.userIsAuthenticated;
   }
 

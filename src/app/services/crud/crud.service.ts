@@ -40,7 +40,9 @@ export class CrudService {
 
   // proxy to remote get method
   getExampleModel(id: number): ExampleModel {
-    let model: any;
+    let
+      model: ExampleModel;
+
     for (model of this.models) {
       if (model.getId() === id) {
         this.cachedModel = model;
