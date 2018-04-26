@@ -11,30 +11,24 @@ import { RouteParamsComponent } from './components/route-params/route-params.com
 
 const examplesRoutes: Routes = [
     {
-        path: '',
-        children: [
-            // lazy loading
-            {
-                path: 'cruds',
-                loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule'
-            },
-            {
-                path: 'reactive-forms',
-                loadChildren: 'app/examples/components/reactive-forms/reactive-forms-example.module#ReactiveFormsExampleModule'
-            },
-            {
-                path: 'events',
-                component: EventComponent
-            },
-            {
-                path: 'manipulating-dom',
-                component: ManipulatingDomComponent
-            },
-            {
-                path: 'route-params/:data',
-                component: RouteParamsComponent
-            }
-        ]
+        path: 'cruds',
+        loadChildren: 'app/examples/components/cruds/cruds.module#CrudsModule'
+    },
+    {
+        path: 'reactive-forms',
+        loadChildren: 'app/examples/components/reactive-forms/reactive-forms-example.module#ReactiveFormsExampleModule'
+    },
+    {
+        path: 'events',
+        component: EventComponent
+    },
+    {
+        path: 'manipulating-dom',
+        component: ManipulatingDomComponent
+    },
+    {
+        path: 'route-params/:data',
+        component: RouteParamsComponent
     }
 ];
 

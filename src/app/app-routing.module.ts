@@ -36,13 +36,13 @@ const appRoutes: Routes = [
     },
     {
         path: 'examples',
+        // lazy loading
         loadChildren: 'app/examples/examples.module#ExamplesModule',
         canActivate: [AuthGuard],
         canActivateChild: [AuthGuard],
         canLoad: [AuthGuard]
     },
     {
-        // the precedence is important
         path: '**',
         component: PageNotFoundComponent
     }

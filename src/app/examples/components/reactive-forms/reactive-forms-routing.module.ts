@@ -8,33 +8,33 @@ import * as ReactiveForms from '.';
 
 
 const reactiveFormsRoutes: Routes = [
-    {
-        path: '',
-        component: ReactiveForms.IndexComponent,
-        children: [
-            {
-                path: 'novo',
-                component: ReactiveForms.NewComponent
-            },
-            {
-                path: ':id',
-                component: ReactiveForms.ShowComponent,
-                resolve: { exampleModel: ReactiveForms.ShowResolver }
-            },
-            {
-                path: ':id/editar',
-                component: ReactiveForms.EditComponent
-            }
-        ]
-    }
+  {
+    path: '',
+    component: ReactiveForms.IndexComponent,
+    children: [
+      {
+        path: 'novo',
+        component: ReactiveForms.NewComponent
+      },
+      {
+        path: ':id',
+        component: ReactiveForms.ShowComponent,
+        resolve: { exampleModel: ReactiveForms.ShowResolver }
+      },
+      {
+        path: ':id/editar',
+        component: ReactiveForms.EditComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({
-    imports: [
-        RouterModule.forChild(reactiveFormsRoutes)
-    ],
-    exports: [
-        RouterModule
-    ]
+  imports: [
+    RouterModule.forChild(reactiveFormsRoutes)
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class ReactiveFormsRoutingModule { }
