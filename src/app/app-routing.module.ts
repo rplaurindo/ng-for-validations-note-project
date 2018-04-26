@@ -14,7 +14,6 @@ import { ExamplesRoutingModule } from './examples/examples-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { PageNotFoundComponent } from './components/errors/404/404-error.component';
 
 // Guards
 import { AuthGuard } from './guards/auth-guards/auth.guard';
@@ -44,7 +43,7 @@ const appRoutes: Routes = [
     },
     {
         path: '**',
-        component: PageNotFoundComponent
+        loadChildren: './components/errors/404/page-not-found.module#PageNotFoundModule'
     }
 ];
 
