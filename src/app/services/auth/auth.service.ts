@@ -12,29 +12,17 @@ import { User } from './user';
 @Injectable()
 export class AuthService {
 
-  private userIsAuthenticated: boolean = false;
   private user: User;
-  private authSubscription: Subject<boolean> = new Subject();
+  private userIsAuthenticated: Boolean = false;
+  private authSubscription: Promise<Boolean>;
+  private _accomplish: Function;
 
-  // private static observer: Observer<boolean>;
-  // static observable: Observable<boolean> = new Observable(
-  //   observer => {
-  //     AuthService.observer = observer;
-  //   }
-  // );
-
-  constructor() { }
-
-  susbscribeOverAuthentication(callback) {
-    this.authSubscription.subscribe(callback);
-  }
-
-  unsusbscribeOverAuthentication() {
-    this.authSubscription.unsubscribe();
-  }
-
-  isUserAuthenticated(): boolean {
-    return this.userIsAuthenticated;
+  constructor() {
+    this.authSubscription = new Promise(
+      accomplish => {
+        this._accomplish = accomplish;
+      }
+    );
   }
 
   private setUser(attrs: Object) {
@@ -47,12 +35,18 @@ export class AuthService {
     this.user = null;
   }
 
-  private multicast() {
-    this.authSubscription.observers.forEach(
-      subscriber => {
-        subscriber.next(this.userIsAuthenticated);
-      }
-    );
+  signOut() {
+    this.unsetUser();
+    this.userIsAuthenticated = false;
+    this._accomplish(this.userIsAuthenticated);
+  }
+
+  isUserAuthenticated(): Boolean {
+    return this.userIsAuthenticated;
+  }
+
+  getUserAuth(): Promise<Boolean> {
+    return this.authSubscription;
   }
 
   signIn(attrs: Object = {}) {
@@ -64,13 +58,7 @@ export class AuthService {
     // this.authenticated = false;
     // }
 
-    this.multicast();
-  }
-
-  signOut() {
-    this.unsetUser();
-    this.userIsAuthenticated = false;
-    this.multicast();
+    this._accomplish(this.userIsAuthenticated);
   }
 
 }

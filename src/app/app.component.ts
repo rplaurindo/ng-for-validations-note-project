@@ -8,7 +8,7 @@ import {
   AfterViewChecked,
   OnChanges
 } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Subject } from 'rxjs/Subject';
 
 import { AuthService } from './services/auth/auth.service';
 
@@ -27,8 +27,7 @@ export class AppComponent implements  OnInit,
                                       AfterViewChecked {
 
   title = `Examples`;
-  showMenuIf: boolean;
-  userAuthSubscription: Subscription;
+  showMenuIf: Boolean;
 
   constructor(private authService: AuthService) { }
 
@@ -36,15 +35,12 @@ export class AppComponent implements  OnInit,
   }
 
   ngAfterContentInit() {
-    this.authService.susbscribeOverAuthentication(
-      authenticated => {
-        this.showMenuIf = authenticated;
-      }
-    );
+    this.authService.getUserAuth().then(isAuth => {
+      this.showMenuIf = isAuth;
+    });
   }
 
   ngOnDestroy() {
-    this.authService.unsusbscribeOverAuthentication();
   }
 
   ngOnChanges() {

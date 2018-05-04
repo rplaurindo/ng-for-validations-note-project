@@ -21,7 +21,6 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HorizontalMenuComponent } from './components/horizontal-menu/horizontal-menu.component';
 import { LoginComponent } from './components/login/login.component';
-import { PageNotFoundComponent } from './components/errors/404/404-error.component';
 
 
 @NgModule({
@@ -44,8 +43,7 @@ import { PageNotFoundComponent } from './components/errors/404/404-error.compone
     HomeComponent,
     HeaderComponent,
     HorizontalMenuComponent,
-    LoginComponent,
-    PageNotFoundComponent
+    LoginComponent
   ]
 })
 export class AppModule { }

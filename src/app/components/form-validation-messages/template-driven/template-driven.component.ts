@@ -1,6 +1,3 @@
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
-import { Subject } from 'rxjs/Subject';
 import {
   Component,
   Input,
@@ -16,8 +13,7 @@ import * as FormsValidation from './../../../services/forms-validation';
   templateUrl: './../form-validation-messages.component.html',
   styleUrls: ['./../form-validation-messages.component.sass']
 })
-export class TemplateDrivenComponent implements OnInit,
-                                                OnDestroy {
+export class TemplateDrivenComponent implements OnInit {
 
   canShow: Boolean = false;
   message: String;
@@ -27,7 +23,6 @@ export class TemplateDrivenComponent implements OnInit,
 
   @Input()
   messages: Object;
-
 
   constructor(
     private validator: FormsValidation.TemplateDrivenService,
@@ -48,7 +43,7 @@ export class TemplateDrivenComponent implements OnInit,
     let
       error: string;
 
-    this.validator.subscribeOverValidation(() => {
+    this.validator.getValidationSubscription().then(() => {
       error = this.validator.getValidationErrorFor(
         this.control,
         this.validationTypeKeys()
@@ -61,10 +56,7 @@ export class TemplateDrivenComponent implements OnInit,
         this.canShow = false;
       }
     });
-  }
 
-  ngOnDestroy() {
-    this.validator.unsubscribeOverValidation();
   }
 
 }
