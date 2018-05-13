@@ -18,8 +18,8 @@ import { ExampleModel } from '../../../../services/crud/example-model';
 
 @Component({
   selector: 'app-reactive-forms',
-  templateUrl: './../reactive-forms-form.component.html',
-  styleUrls: ['./../reactive-forms-form.component.sass']
+  templateUrl: '../component.html',
+  styleUrls: ['../component.sass']
 })
 export class EditComponent implements OnInit,
                                       OnDestroy {

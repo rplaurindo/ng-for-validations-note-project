@@ -6,15 +6,15 @@ import {
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-import { CrudService } from './../../../../services/crud/crud.service';
+import { CrudService } from '../../../../services/crud/crud.service';
 import { ExampleModel } from '../../../../services/crud/example-model';
 
-import * as FormsValidation from './../../../../services/forms-validation';
+import { NgFormValidations } from '../../../../services/ng-form-validations';
 
 @Component({
   selector: 'app-cruds-form',
-  templateUrl: './../cruds-form.component.html',
-  styleUrls: ['./../cruds-form.component.sass']
+  templateUrl: '../cruds-form.component.html',
+  styleUrls: ['../cruds-form.component.sass']
 })
 export class NewComponent implements OnInit {
 
@@ -25,7 +25,7 @@ export class NewComponent implements OnInit {
   constructor(
     private crudService: CrudService,
     private http: HttpClient,
-    private validator: FormsValidation.TemplateDrivenService
+    private validator: NgFormValidations
   ) { }
 
   onInput() {

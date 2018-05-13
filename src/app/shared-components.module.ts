@@ -5,9 +5,7 @@ import {
     FormsModule
 } from '@angular/forms';
 
-import { FormValidationMessagesModule } from './components/form-validation-messages/form-validation-messages.module';
-
-import * as FormsValidation from './services/forms-validation';
+import { NgFormValidationNotifierModule } from './components/ng-validations-notifier/module';
 
 
 @NgModule({
@@ -15,11 +13,12 @@ import * as FormsValidation from './services/forms-validation';
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        FormValidationMessagesModule
+        NgFormValidationNotifierModule
         // FormsModule
     ],
     // Injectable class
-    providers: [FormsValidation.TemplateDrivenService],
+    providers: [
+    ],
     // Components, Pipes and Directives
     declarations: [
     ],
@@ -27,7 +26,7 @@ import * as FormsValidation from './services/forms-validation';
     exports: [
         CommonModule,
         ReactiveFormsModule,
-        FormValidationMessagesModule
+        NgFormValidationNotifierModule
     ]
 })
 export class SharedComponentsModule { }

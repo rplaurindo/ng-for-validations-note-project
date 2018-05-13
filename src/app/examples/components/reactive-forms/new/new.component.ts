@@ -9,14 +9,14 @@ import {
   Validators
 } from '@angular/forms';
 
-import { CrudService } from './../../../../services/crud/crud.service';
-import * as FormsValidation from './../../../../services/forms-validation';
+import { CrudService } from '../../../../services/crud/crud.service';
+import { NgFormValidations } from '../../../../services/ng-form-validations';
 
 
 @Component({
   selector: 'app-reactive-forms',
-  templateUrl: './../reactive-forms-form.component.html',
-  styleUrls: ['./../reactive-forms-form.component.sass']
+  templateUrl: '../component.html',
+  styleUrls: ['../component.sass']
 })
 export class NewComponent implements  OnInit {
 
@@ -25,7 +25,7 @@ export class NewComponent implements  OnInit {
   constructor(
     private crudService: CrudService,
     private formBuilder: FormBuilder,
-    private validator: FormsValidation.TemplateDrivenService
+    private validator: NgFormValidations
   ) { }
 
   ngOnInit() {
