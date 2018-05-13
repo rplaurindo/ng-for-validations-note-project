@@ -9,8 +9,10 @@ import {
     FormGroup,
     NgForm
 } from '@angular/forms';
+import { Subscription } from 'rxjs/Subscription';
 
 import { NgFormValidations } from './services/ng-form-validations';
+
 
 
 @Component({
@@ -18,11 +20,14 @@ import { NgFormValidations } from './services/ng-form-validations';
     templateUrl: './component.html',
     styleUrls: ['./component.sass']
 })
-export class ValidationComponent implements OnInit {
+export class ValidationComponent implements OnInit,
+                                            OnDestroy {
 
     canShow: Boolean = false;
-    message: String;
     errorMessages: Array<String> = [];
+
+    private validationSubscription: Subscription;
+    private guidedValidationSubscription: Subscription;
 
     @Input()
     control: FormControl;
@@ -30,11 +35,15 @@ export class ValidationComponent implements OnInit {
     @Input()
     messages: Object;
 
+    @Input()
+    propertyTranslates: Object;
+    // {name: 'nome'...}
+
     constructor(private validator: NgFormValidations) {}
 
     validationTypeKeys(): Array<string> {
         const
-        keys: Array<string> = [];
+            keys: Array<string> = [];
 
         Object.keys(this.messages).forEach((k) => {
             keys.push(k);
@@ -45,34 +54,57 @@ export class ValidationComponent implements OnInit {
 
     ngOnInit() {
         let
-            error: string;
+            mappedErrorKey: string;
 
-        this.validator.getValidationOverComponent().subscribe((form: NgForm | FormGroup) => {
-            // console.log(this.control)
-            // if (this.control) {
-                error = this.validator.getValidationErrorFor(
+        this.validationSubscription = this.validator.getValidation().subscribe(
+            () => {
+                mappedErrorKey = this.validator.getValidationErrorFor(
                     this.control,
                     this.validationTypeKeys()
                 );
-            // } else {
-                // iterar sobre controls...
-            // }
-
-            // console.log('here')
-            this.errorMessages = [];
-            if (error) {
-                this.canShow = true;
-                // this.message = this.messages[error];
-                this.errorMessages.push(this.messages[error]);
-            } else {
-                // this.message = '';
                 this.errorMessages = [];
-                this.canShow = false;
+                if (mappedErrorKey) {
+                    this.canShow = true;
+                    this.errorMessages.push(this.messages[mappedErrorKey]);
+                } else {
+                    this.errorMessages = [];
+                    this.canShow = false;
+                }
             }
-        });
+        );
 
-        // colocar pra emitir
+        this.guidedValidationSubscription = this.validator
+            .getGuidedValidation().subscribe(
+            (form: NgForm | FormGroup) => {
+                const
+                    controls: Object = form.controls;
 
+                let
+                    control: FormControl;
+
+                for (let k of Object.keys(form.controls)) {
+                    control = controls[k];
+                    mappedErrorKey = this.validator.getValidationErrorFor(
+                        control,
+                        this.validationTypeKeys()
+                    );
+                    this.errorMessages = [];
+                    if (mappedErrorKey) {
+                        this.canShow = true;
+                        // ver como definir uma classe para o campo para que ele possa receber um destaque
+                        this.errorMessages.push(this.messages[mappedErrorKey]);
+                        // no caso de mostrar os erros correntes de todos os elementos do formulário, não fazer break
+                        break;
+                    }
+                }
+            }
+        );
+
+    }
+
+    ngOnDestroy() {
+        this.validationSubscription.unsubscribe();
+        this.guidedValidationSubscription.unsubscribe();
     }
 
 }

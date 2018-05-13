@@ -10,8 +10,8 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class NgFormValidations {
 
-    private componentValidationSubscription: Subject<Object> = new Subject();
-    private _emitValidity: Function;
+    private validationSubscription: Subject<Object> = new Subject();
+    private guidedValidationSubscription: Subject<Object> = new Subject();
 
     // constructor(control: FormControl, validationTypes: Array<string>) {
     constructor() {}
@@ -50,16 +50,20 @@ export class NgFormValidations {
     }
 
     // the control would can be passed by here, but for some reason the control still doesn’t exist in any default initialization event
-    getValidationOverComponent(): Subject<Object> {
-        return this.componentValidationSubscription;
+    getValidation(): Subject<Object> {
+        return this.validationSubscription;
     }
 
-    // getValidationOverForm(): <Object> {
-    //     // return this.validationSubscription;
-    // }
+    getGuidedValidation(): Subject<Object> {
+        return this.guidedValidationSubscription;
+    }
 
-    notify(form?: NgForm | FormGroup) {
-        this.componentValidationSubscription.next({ form: form });
+    notify() {
+        this.validationSubscription.next();
+    }
+
+    notifyGuide(form: NgForm | FormGroup) {
+        this.guidedValidationSubscription.next(form);
     }
 
 }
