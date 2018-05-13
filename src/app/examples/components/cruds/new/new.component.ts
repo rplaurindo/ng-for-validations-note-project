@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { CrudService } from '../../../../services/crud/crud.service';
 import { ExampleModel } from '../../../../services/crud/example-model';
 
-import { NgFormValidations } from '../../../../services/ng-form-validations';
+import { NgFormValidations } from '../../../../components/ng-form-validations-notifier/services/ng-form-validations';
 
 @Component({
   selector: 'app-cruds-form',
@@ -50,7 +50,7 @@ export class NewComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     this.getJSON();
-    this.validator.emitValidity();
+    this.validator.notify();
     if (form.valid) {
       this.crudService.create(form.value);
     }

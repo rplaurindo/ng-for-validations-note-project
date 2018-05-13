@@ -58,7 +58,7 @@ export class NgFormValidations {
     //     // return this.validationSubscription;
     // }
 
-    emitValidity(form?: NgForm | FormGroup) {
+    notify(form?: NgForm | FormGroup) {
         this.componentValidationSubscription.next({ form: form });
     }
 

@@ -5,7 +5,7 @@ import {
     FormsModule
 } from '@angular/forms';
 
-import { NgFormValidationNotifierModule } from './components/ng-validations-notifier/module';
+import { NgFormValidationNotifierModule } from './components/ng-form-validations-notifier/module';
 
 
 @NgModule({

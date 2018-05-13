@@ -10,7 +10,7 @@ import {
 } from '@angular/forms';
 
 import { CrudService } from '../../../../services/crud/crud.service';
-import { NgFormValidations } from '../../../../services/ng-form-validations';
+import { NgFormValidations } from '../../../../components/ng-form-validations-notifier/services/ng-form-validations';
 
 
 @Component({
@@ -35,7 +35,7 @@ export class NewComponent implements  OnInit {
   }
 
   onSubmit() {
-    this.validator.emitValidity();
+    this.validator.notify();
     if (this.form.valid) {
       this.crudService.create(this.form.value);
     }

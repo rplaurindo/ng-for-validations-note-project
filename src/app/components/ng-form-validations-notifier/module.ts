@@ -6,7 +6,7 @@ import {
 } from '@angular/forms';
 
 import * as Components from '.';
-import { NgFormValidations } from '../../services/ng-form-validations';
+import { NgFormValidations } from './services/ng-form-validations';
 
 
 @NgModule({

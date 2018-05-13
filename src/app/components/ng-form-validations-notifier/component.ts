@@ -10,7 +10,7 @@ import {
     NgForm
 } from '@angular/forms';
 
-import { NgFormValidations } from '../../services/ng-form-validations';
+import { NgFormValidations } from './services/ng-form-validations';
 
 
 @Component({
@@ -30,9 +30,7 @@ export class ValidationComponent implements OnInit {
     @Input()
     messages: Object;
 
-    constructor(
-        private validator: NgFormValidations,
-    ) {}
+    constructor(private validator: NgFormValidations) {}
 
     validationTypeKeys(): Array<string> {
         const
