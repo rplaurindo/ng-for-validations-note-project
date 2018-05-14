@@ -65,8 +65,8 @@ export class UniqComponent implements OnInit,
                         this.typeKeys(this.messages)
                     );
                 } else if (form) {
-                    // extract to a method
-                    for (let k of Object.keys(form.controls)) {
+                    controls = form.controls;
+                    for (let k of Object.keys(controls)) {
                         control = controls[k];
                         mappedErrorKey = this.validator.getValidationErrorFor(
                             control,
@@ -77,7 +77,6 @@ export class UniqComponent implements OnInit,
                         }
                     }
                 }
-
 
                 if (mappedErrorKey) {
                     this.canShow = true;
