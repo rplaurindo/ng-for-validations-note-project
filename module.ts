@@ -28,8 +28,4 @@ import * as Services from './src/services';
         Components.ListComponent
     ]
 })
-export class NgFormValidationNotifierModule { }
-
-// import { Module } from './module';
-
-// export { Module as NgFormValidationNotifierModule };
+export class Module { }

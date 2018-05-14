@@ -9,9 +9,9 @@ import {
     FormGroup,
     NgForm
 } from '@angular/forms';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
-import { NgFormValidations } from '../services/ng-form-validations';
+import { NgFormValidations } from '../services';
 
 
 @Component({
