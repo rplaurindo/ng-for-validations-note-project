@@ -20,10 +20,12 @@ import { NgFormValidations } from './services/ng-form-validations';
     ],
     // add locally to component providers will create a new instance breaking the singleton pattern
     declarations: [
-        Components.ValidationComponent,
+        Components.IndividualComponent,
+        Components.UniqComponent
     ],
     exports: [
-        Components.ValidationComponent
+        Components.IndividualComponent,
+        Components.UniqComponent
     ]
 })
 export class NgFormValidationNotifierModule { }

@@ -37,7 +37,7 @@ export class NewComponent implements  OnInit {
 
     onSubmit() {
         // this.validator.notify();
-        this.validator.notifyGuide(this.form);
+        this.validator.notify(this.form);
         if (this.form.valid) {
             this.crudService.create(this.form.value);
         }

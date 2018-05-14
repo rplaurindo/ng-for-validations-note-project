@@ -11,7 +11,6 @@ import { Subject } from 'rxjs/Subject';
 export class NgFormValidations {
 
     private validationSubscription: Subject<Object> = new Subject();
-    private guidedValidationSubscription: Subject<Object> = new Subject();
 
     // constructor(control: FormControl, validationTypes: Array<string>) {
     constructor() {}
@@ -54,16 +53,8 @@ export class NgFormValidations {
         return this.validationSubscription;
     }
 
-    getGuidedValidation(): Subject<Object> {
-        return this.guidedValidationSubscription;
-    }
-
-    notify() {
-        this.validationSubscription.next();
-    }
-
-    notifyGuide(form: NgForm | FormGroup) {
-        this.guidedValidationSubscription.next(form);
+    notify(form?: NgForm | FormGroup) {
+        this.validationSubscription.next(form);
     }
 
 }

@@ -1,3 +1,5 @@
-import { ValidationComponent } from './component';
+import { IndividualComponent } from './individual/component';
+import { UniqComponent } from './uniq/component';
 
-export { ValidationComponent };
+export { IndividualComponent };
+export { UniqComponent };

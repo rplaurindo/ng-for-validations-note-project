@@ -1,10 +1,14 @@
 <div class="line">
-  <app-form-validation-msgs
+  <app-form-uniq-validation
     [messages]="{
-      required: 'Não pode ficar em branco.',
-      minlength: 'Deve ter no mínimo 4 caracteres.'
+      required: 'não pode ficar em branco.',
+      minlength: 'deve ter no mínimo 4 caracteres.'
     }"
-  ></app-form-validation-msgs>
+    [translations]="{
+      name: 'Nome',
+      name2: 'Nome2'
+    }"
+  ></app-form-uniq-validation>
 </div>
 
 <form
@@ -32,12 +36,12 @@
       placeholder="nome"
     />
 
-    <app-form-validation-msgs
+    <app-form-validation
       [control]="form.get('name')"
       [messages]="{
         required: 'Não pode ficar em branco.',
         minlength: 'Deve ter no mínimo 4 caracteres.'
-      }"></app-form-validation-msgs>
+      }"></app-form-validation>
   </div>
 
   <div class="line">
@@ -46,13 +50,13 @@
       placeholder="nome2"
     />
 
-    <app-form-validation-msgs
+    <app-form-validation
       [control]="form.get('name2')"
       [messages]="{
         required: 'Não pode ficar em branco.',
         minlength: 'Deve ter no mínimo 4 caracteres.'
       }"
-    ></app-form-validation-msgs>
+    ></app-form-validation>
   </div> -->
 
   <div class="actions">
