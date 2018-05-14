@@ -32,9 +32,6 @@ export class UniqComponent implements OnInit,
     messages: Object;
 
     @Input()
-    translations: Object;
-
-    @Input()
     control: FormControl;
 
     constructor(private validator: NgFormValidations) {}

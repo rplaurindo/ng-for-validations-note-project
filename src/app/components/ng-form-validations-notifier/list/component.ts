@@ -31,7 +31,7 @@ export class ListComponent implements OnInit,
     messages: Object;
 
     @Input()
-    translations: Object;
+    nameTranslations: Object;
 
     constructor(private validator: NgFormValidations) {}
 
@@ -66,9 +66,9 @@ export class ListComponent implements OnInit,
                             this.typeKeys(this.messages)
                         );
 
-                        if (this.translations[k] && mappedErrorKey) {
+                        if (this.nameTranslations[k] && mappedErrorKey) {
                             this.errorMessages.push(`
-                                ${this.translations[k]} ${this.messages[mappedErrorKey]}
+                                ${this.nameTranslations[k]} ${this.messages[mappedErrorKey]}
                             `);
                         }
                     }

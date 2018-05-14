@@ -1,15 +1,15 @@
-<div class="line">
+<!-- <div class="line">
   <app-form-validation
     [messages]="{
       required: 'não pode ficar em branco.',
       minlength: 'deve ter no mínimo 4 caracteres.'
     }"
-    [translations]="{
+    [nameTranslations]="{
       name: 'Nome',
       name2: 'Nome2'
     }"
   ></app-form-validation>
-</div>
+</div> -->
 
 <!-- <div class="line">
   <app-form-validation-list
@@ -17,7 +17,7 @@
       required: 'não pode ficar em branco.',
       minlength: 'deve ter no mínimo 4 caracteres.'
     }"
-    [translations]="{
+    [nameTranslations]="{
       name: 'Nome',
       name2: 'Nome2'
     }"
@@ -29,7 +29,7 @@
   (ngSubmit)="onSubmit()"
 >
 
-  <div class="line">
+  <!-- <div class="line">
     <input
       formControlName="name"
       placeholder="nome"
@@ -41,10 +41,9 @@
       formControlName="name2"
       placeholder="nome2"
     />
-  </div>
+  </div> -->
 
-
-  <!-- <div class="line">
+  <div class="line">
     <input
       formControlName="name"
       placeholder="nome"
@@ -72,7 +71,7 @@
         minlength: 'Deve ter no mínimo 4 caracteres.'
       }"
     ></app-form-validation>
-  </div> -->
+  </div>
 
   <div class="actions">
     <button type="submit">Salvar</button>
