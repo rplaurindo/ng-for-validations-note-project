@@ -1,5 +1,5 @@
-import { IndividualComponent } from './individual/component';
 import { UniqComponent } from './uniq/component';
+import { ListComponent } from './list/component';
 
-export { IndividualComponent };
 export { UniqComponent };
+export { ListComponent };

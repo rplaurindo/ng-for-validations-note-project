@@ -1,5 +1,5 @@
 <div class="line">
-  <app-form-uniq-validation
+  <app-form-validation
     [messages]="{
       required: 'não pode ficar em branco.',
       minlength: 'deve ter no mínimo 4 caracteres.'
@@ -8,8 +8,21 @@
       name: 'Nome',
       name2: 'Nome2'
     }"
-  ></app-form-uniq-validation>
+  ></app-form-validation>
 </div>
+
+<!-- <div class="line">
+  <app-form-validation-list
+    [messages]="{
+      required: 'não pode ficar em branco.',
+      minlength: 'deve ter no mínimo 4 caracteres.'
+    }"
+    [translations]="{
+      name: 'Nome',
+      name2: 'Nome2'
+    }"
+  ></app-form-validation-list>
+</div> -->
 
 <form
   [formGroup]="form"
@@ -30,6 +43,7 @@
     />
   </div>
 
+
   <!-- <div class="line">
     <input
       formControlName="name"
@@ -41,7 +55,8 @@
       [messages]="{
         required: 'Não pode ficar em branco.',
         minlength: 'Deve ter no mínimo 4 caracteres.'
-      }"></app-form-validation>
+      }"
+    ></app-form-validation>
   </div>
 
   <div class="line">
