@@ -8,7 +8,7 @@ import {
   AfterViewChecked,
   OnChanges
 } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 import { AuthService } from './services/auth/auth.service';
 

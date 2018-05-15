@@ -7,9 +7,6 @@ import {
 
 // App imports
 
-// module
-import { ExamplesRoutingModule } from './examples/examples-routing.module';
-
 // Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -36,7 +33,7 @@ const appRoutes: Routes = [
     {
         path: 'examples',
         // lazy loading
-        loadChildren: 'app/examples/examples.module#ExamplesModule',
+        loadChildren: 'app/examples/module#Examples',
         canActivate: [AuthGuard],
         canActivateChild: [AuthGuard],
         canLoad: [AuthGuard]

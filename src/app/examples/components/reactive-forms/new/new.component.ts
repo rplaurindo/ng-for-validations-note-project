@@ -10,7 +10,8 @@ import {
 } from '@angular/forms';
 
 import { CrudService } from '../../../../services/crud/crud.service';
-import { NgFormValidations } from '../../../../components/ng-form-validations-notifier/services/ng-form-validations';
+
+import { NgFormValidations } from 'ng-form-validations-notifier/services';
 
 
 @Component({

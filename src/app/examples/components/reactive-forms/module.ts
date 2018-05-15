@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import * as ReactiveForms from '.';
 
-import { ReactiveFormsRoutingModule } from './reactive-forms-routing.module';
+import { RoutingModule } from './routing.module';
 import { CrudService } from '../../../services/crud/crud.service';
 import { SharedComponentsModule } from '../../../shared-components.module';
 
@@ -10,7 +10,7 @@ import { SharedComponentsModule } from '../../../shared-components.module';
 @NgModule({
   imports: [
     SharedComponentsModule,
-    ReactiveFormsRoutingModule
+    RoutingModule
   ],
   providers: [
     CrudService,
@@ -23,4 +23,4 @@ import { SharedComponentsModule } from '../../../shared-components.module';
     ReactiveForms.EditComponent
   ]
 })
-export class ReactiveFormsExampleModule { }
+export class ReactiveFormsExample { }

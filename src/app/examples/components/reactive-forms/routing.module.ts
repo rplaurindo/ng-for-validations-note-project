@@ -37,4 +37,4 @@ const reactiveFormsRoutes: Routes = [
     RouterModule
   ]
 })
-export class ReactiveFormsRoutingModule { }
+export class RoutingModule { }

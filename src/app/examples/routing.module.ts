@@ -16,7 +16,7 @@ const examplesRoutes: Routes = [
     },
     {
         path: 'reactive-forms',
-        loadChildren: 'app/examples/components/reactive-forms/reactive-forms-example.module#ReactiveFormsExampleModule'
+        loadChildren: 'app/examples/components/reactive-forms/module#ReactiveFormsExample'
     },
     {
         path: 'events',
@@ -40,4 +40,4 @@ const examplesRoutes: Routes = [
         RouterModule
     ]
 })
-export class ExamplesRoutingModule { }
+export class RoutingModule { }

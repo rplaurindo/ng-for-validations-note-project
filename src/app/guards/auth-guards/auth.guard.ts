@@ -8,7 +8,7 @@ import {
   CanLoad
 } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { AuthService } from '../../services/auth/auth.service';
 

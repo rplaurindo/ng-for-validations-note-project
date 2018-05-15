@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 // app imports
 
 // Modules
-import { ExamplesRoutingModule } from './examples-routing.module';
+import { RoutingModule } from './routing.module';
 
 // Pipes
 import { CustomPipePipe } from './pipes/custom-pipe/custom-pipe.pipe';
@@ -30,7 +30,7 @@ import { SharedComponentsModule } from '../shared-components.module';
   imports: [
     SharedComponentsModule,
     FormsModule,
-    ExamplesRoutingModule
+    RoutingModule
   ],
   declarations: [
     CustomPipePipe,
@@ -46,4 +46,4 @@ import { SharedComponentsModule } from '../shared-components.module';
     RouteParamsComponent
   ]
 })
-export class ExamplesModule { }
+export class Examples { }

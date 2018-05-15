@@ -4,7 +4,7 @@ import {
     RouterStateSnapshot,
     Resolve
 } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { ExampleModel } from '../../../../services/crud/example-model';
 import { CrudService } from '../../../../services/crud/crud.service';

@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { CrudService } from '../../../../services/crud/crud.service';
 import { ExampleModel } from '../../../../services/crud/example-model';
 
-import { NgFormValidations } from '../../../../components/ng-form-validations-notifier/services/ng-form-validations';
+import { NgFormValidations } from 'ng-form-validations-notifier/services';
 
 @Component({
   selector: 'app-cruds-form',

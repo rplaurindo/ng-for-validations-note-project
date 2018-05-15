@@ -3,8 +3,8 @@ import {
   EventEmitter
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs/Subject';
-// import { Subscribable } from 'rxjs/Observable';
+import { Subject } from 'rxjs';
+// import { Subscribable } from 'rxjs';
 
 import { User } from './user';
 
