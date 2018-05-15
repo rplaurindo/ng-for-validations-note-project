@@ -1,3 +1,1 @@
-import { NgFormValidations } from './ng-form-validations/service';
-
-export { NgFormValidations };
+export { NgFormValidations } from './ng-form-validations/service';

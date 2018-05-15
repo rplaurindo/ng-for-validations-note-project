@@ -1,3 +1,1 @@
-import { NgFormValidations } from './src/services';
-
-export { NgFormValidations };
+export { NgFormValidations } from './src/services';

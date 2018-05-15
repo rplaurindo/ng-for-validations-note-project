@@ -5,12 +5,13 @@
   "private": true,
   "dependencies": {
     "@angular/compiler": "^6.0.1",
+    "@angular/common": "^6.0.1",
     "@angular/core": "^6.0.1",
     "@angular/forms": "^6.0.1",
     "@angular/platform-browser": "^6.0.1",
     "@angular/platform-browser-dynamic": "^6.0.1",
     "rxjs": "~6.1",
-    "zone.js": "0.8.20"
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@types/jasmine": "^2.8.7",
@@ -21,6 +22,7 @@
     "jasmine-spec-reporter": "^4.2.1",
     "node-sass": "~4.9",
     "ts-node": "~6.0",
+    "tslint": "^5.0.0",
     "typescript": "~2.7"
   }
 }

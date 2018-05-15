@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import {
     FormsModule,
     ReactiveFormsModule
@@ -11,7 +11,7 @@ import * as Services from './src/services';
 
 @NgModule({
     imports: [
-        // CommonModule,
+        CommonModule,
         FormsModule,
         ReactiveFormsModule
     ],
