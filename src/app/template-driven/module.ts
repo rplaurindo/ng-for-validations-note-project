@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { SharedComponentsModule } from '../shared-components.module';
 import * as TemplateDriven from './components';
-
 import { RoutingModule } from './routing.module';
 
-import { SharedComponentsModule } from '../shared-components.module';
 // import * as NgFormValidationNotifier from 'ng-form-validations-notifier';
 
 
