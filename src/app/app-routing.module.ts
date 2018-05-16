@@ -1,19 +1,11 @@
-// Angular imports
 import { NgModule } from '@angular/core';
 import {
-  Routes,
-  RouterModule
+    Routes,
+    RouterModule
 } from '@angular/router';
 
-// App imports
-
-// Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-
-// Guards
-import { AuthGuard } from './guards/auth-guards/auth.guard';
 
 
 const appRoutes: Routes = [
@@ -22,21 +14,17 @@ const appRoutes: Routes = [
         component: HomeComponent
     },
     {
+        path: 'reactive-forms',
+        loadChildren: './reactive-forms/module#Module'
+    },
+    {
+        path: 'template-driven',
+        loadChildren: './template-driven/module#Module'
+    },
+    {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'
-    },
-    {
-        path: 'sign_in',
-        component: LoginComponent
-    },
-    {
-        path: 'examples',
-        // lazy loading
-        loadChildren: 'app/examples/module#Examples',
-        canActivate: [AuthGuard],
-        canActivateChild: [AuthGuard],
-        canLoad: [AuthGuard]
     },
     {
         path: '**',
@@ -46,11 +34,7 @@ const appRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(appRoutes, {
-            // debugging purposes only
-            // enableTracing: true
-            // useHash: true
-        })
+        RouterModule.forRoot(appRoutes)
     ],
     exports: [
         RouterModule

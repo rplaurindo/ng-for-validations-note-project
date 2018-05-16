@@ -1,16 +1,7 @@
 import {
   Component,
-  OnInit,
-  OnDestroy,
-  AfterContentInit,
-  AfterContentChecked,
-  AfterViewInit,
-  AfterViewChecked,
-  OnChanges
+  OnInit
 } from '@angular/core';
-import { Subject } from 'rxjs';
-
-import { AuthService } from './services/auth/auth.service';
 
 
 @Component({
@@ -18,42 +9,13 @@ import { AuthService } from './services/auth/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent implements  OnInit,
-                                      AfterContentInit,
-                                      OnDestroy,
-                                      OnChanges,
-                                      AfterContentChecked,
-                                      AfterViewInit,
-                                      AfterViewChecked {
+export class AppComponent implements OnInit {
 
-  title = `Examples`;
-  showMenuIf: Boolean;
+  title = `ng-form-validations-notifier-project`;
 
-  constructor(private authService: AuthService) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  ngAfterContentInit() {
-    this.authService.getUserAuth().then(isAuth => {
-      this.showMenuIf = isAuth;
-    });
-  }
-
-  ngOnDestroy() {
-  }
-
-  ngOnChanges() {
-  }
-
-  ngAfterContentChecked() {
-
-  }
-
-  ngAfterViewInit() {
-  }
-
-  ngAfterViewChecked() {
   }
 
 }

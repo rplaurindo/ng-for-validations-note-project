@@ -1,49 +1,35 @@
-// Angular imports
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import {
-  HttpClientModule,
-  HttpClient
+    HttpClientModule,
+    HttpClient
 } from '@angular/common/http';
 
-// App imports
 import { AppRoutingModule } from './app-routing.module';
-
-import { AuthGuard } from './guards/auth-guards/auth.guard';
-import { FormCanDeactivateGuard } from './guards/form-deactivate/form-can-deactivate.guard';
-
-import { AuthService } from './services/auth/auth.service';
+import { SharedComponentsModule } from './shared-components.module';
 
 import { AppComponent } from './app.component';
-import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
+import { UsersMenuComponent } from './components/users-menu/users-menu.component';
 import { HomeComponent } from './components/home/home.component';
-import { HeaderComponent } from './components/header/header.component';
-import { HorizontalMenuComponent } from './components/horizontal-menu/horizontal-menu.component';
-import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
-  bootstrap: [AppComponent],
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    RouterModule,
-    HttpClientModule
-  ],
-  providers: [
-    HttpClient,
-    AuthService,
-    AuthGuard,
-    FormCanDeactivateGuard
-  ],
-  declarations: [
-    AppComponent,
-    AccessDeniedComponent,
-    HomeComponent,
-    HeaderComponent,
-    HorizontalMenuComponent,
-    LoginComponent
-  ]
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        RouterModule,
+        HttpClientModule,
+        AppRoutingModule,
+        SharedComponentsModule
+    ],
+    providers: [
+        HttpClient
+    ],
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        UsersMenuComponent
+    ]
 })
 export class AppModule { }

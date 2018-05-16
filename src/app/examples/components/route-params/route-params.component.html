@@ -1,9 +1,0 @@
-<a [routerLink]="['/route-params', inputReference.value]" [queryParams]="{param1: 1}" >link to test</a>
-<br/>
-
-<!-- <input #inputReference> -->
-<input [(ngModel)]="twoWayVar" #inputReference>
-
-
-<p><label>Params:</label> {{ params | json }}</p>
-<p><label>Query Params:</label> {{ queryParams | json }}</p>

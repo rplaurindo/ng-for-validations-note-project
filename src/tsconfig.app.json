@@ -1,17 +1,12 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "../out-tsc/app",
-    "target": "esnext",
-    "types": [
-      "node"
-    ],
-    "module": "amd",
-    "emitDecoratorMetadata": true
+    "module": "es2015",
+    "types": []
   },
   "exclude": [
-    "test.ts",
+    "src/test.ts",
     "**/*.spec.ts"
   ]
 }
