@@ -9,13 +9,13 @@ import {
     Validators
 } from '@angular/forms';
 
-import { Notifier } from 'ng-form-validations-notifier/services';
+// import { Notifier } from 'ng-form-validations-notifier/services';
 
 
 @Component({
-    selector: 'app-reactive-forms',
-    templateUrl: '../component.html',
-    styleUrls: ['../component.sass']
+    selector: 'app-reactive-forms-form',
+    templateUrl: '../form.html',
+    styleUrls: ['../form.sass']
 })
 export class NewComponent implements  OnInit {
 
@@ -23,7 +23,7 @@ export class NewComponent implements  OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private validator: Notifier
+        // private validator: Notifier
     ) { }
 
     ngOnInit() {
@@ -34,7 +34,7 @@ export class NewComponent implements  OnInit {
     }
 
     onSubmit() {
-        this.validator.notify();
+        // this.validator.notify();
         // this.validator.notify(this.form);
     }
 

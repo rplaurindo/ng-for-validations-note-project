@@ -6,8 +6,8 @@ import {
 
 @Component({
   selector: 'app-404-error',
-  templateUrl: './page-not-found.component.html',
-  styleUrls: ['./page-not-found.component.sass']
+  templateUrl: './component.html',
+  styleUrls: ['./component.sass']
 })
 export class PageNotFoundComponent implements OnInit {
 

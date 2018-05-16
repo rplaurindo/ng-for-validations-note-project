@@ -10,8 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedComponentsModule } from './shared-components.module';
 
 import { AppComponent } from './app.component';
-import { UsersMenuComponent } from './components/users-menu/users-menu.component';
-import { HomeComponent } from './components/home/home.component';
+import { HorizontalMenuComponent } from './components/horizontal-menu';
+import { HomeComponent } from './components/home';
 
 
 @NgModule({
@@ -29,7 +29,7 @@ import { HomeComponent } from './components/home/home.component';
     declarations: [
         AppComponent,
         HomeComponent,
-        UsersMenuComponent
+        HorizontalMenuComponent
     ]
 })
 export class AppModule { }

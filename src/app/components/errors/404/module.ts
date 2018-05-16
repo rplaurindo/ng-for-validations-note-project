@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 
 import { SharedComponentsModule } from './../../../shared-components.module';
-import { PageNotFoundRoutingModule } from './page-not-found-routing.module';
-import { PageNotFoundComponent } from './page-not-found.component';
+import { RoutingModule } from './routing.module';
+import { PageNotFoundComponent } from '.';
 
 
 @NgModule({
   imports: [
     SharedComponentsModule,
-    PageNotFoundRoutingModule
+    RoutingModule
   ],
   providers: [
   ],
@@ -16,4 +16,4 @@ import { PageNotFoundComponent } from './page-not-found.component';
     PageNotFoundComponent
   ]
 })
-export class PageNotFoundModule { }
+export class Module { }

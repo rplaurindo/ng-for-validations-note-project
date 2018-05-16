@@ -6,8 +6,8 @@ import {
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  templateUrl: './app.html',
+  styleUrls: ['./app.sass']
 })
 export class AppComponent implements OnInit {
 

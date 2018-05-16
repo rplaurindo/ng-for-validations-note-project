@@ -5,7 +5,7 @@ import {
 } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './components/home';
 
 
 const appRoutes: Routes = [
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     },
     {
         path: '**',
-        loadChildren: './components/errors/404/page-not-found.module#PageNotFoundModule'
+        loadChildren: './components/errors/404/module#Module'
     }
 ];
 
