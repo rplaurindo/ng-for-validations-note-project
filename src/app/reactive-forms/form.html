@@ -1,0 +1,80 @@
+<!-- <div class="line">
+  <app-form-validation
+    [messages]="{
+      required: 'não pode ficar em branco.',
+      minlength: 'deve ter no mínimo 4 caracteres.'
+    }"
+    [nameTranslations]="{
+      name: 'Nome',
+      name2: 'Nome2'
+    }"
+  ></app-form-validation>
+</div> -->
+
+<!-- <div class="line">
+  <app-form-validation-list
+    [messages]="{
+      required: 'não pode ficar em branco.',
+      minlength: 'deve ter no mínimo 4 caracteres.'
+    }"
+    [nameTranslations]="{
+      name: 'Nome',
+      name2: 'Nome2'
+    }"
+  ></app-form-validation-list>
+</div> -->
+
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+
+  <!-- <div class="line">
+    <input
+      formControlName="name"
+      placeholder="nome"
+    />
+  </div>
+
+  <div class="line">
+    <input
+      formControlName="name2"
+      placeholder="nome2"
+    />
+  </div> -->
+
+  <div class="line">
+    <input
+      formControlName="name"
+      placeholder="nome"
+    />
+
+    <!-- <app-form-validation
+      [control]="form.get('name')"
+      [messages]="{
+        required: 'Não pode ficar em branco.',
+        minlength: 'Deve ter no mínimo 4 caracteres.'
+      }"
+    ></app-form-validation> -->
+  </div>
+
+  <div class="line">
+    <input
+      formControlName="name 2"
+      placeholder="nome2"
+    />
+
+    <!-- <app-form-validation
+      [control]="form.get('name2')"
+      [messages]="{
+        required: 'Não pode ficar em branco.',
+        minlength: 'Deve ter no mínimo 4 caracteres.'
+      }"
+    ></app-form-validation> -->
+  </div>
+
+  <div class="actions">
+    <button type="submit">Salvar</button>
+  </div>
+
+</form>

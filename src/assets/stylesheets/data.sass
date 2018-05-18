@@ -1,0 +1,18 @@
+@import mixins
+
+html
+  body
+    dl
+      line-height: 25px
+
+      dt
+        font-weight: bold
+        vertical-align: top
+
+      dd
+        +text-overflow
+
+    dl,
+    dl dt,
+    dl dd
+      display: inline-block
