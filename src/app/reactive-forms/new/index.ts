@@ -35,8 +35,7 @@ export class NewComponent implements  OnInit {
     }
 
     onSubmit() {
-        // this.validator.notify();
-        this.validator.notify(this.form);
+        this.validator.notify();
     }
 
 }

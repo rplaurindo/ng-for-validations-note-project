@@ -1,7 +1,6 @@
 <form
   #form="ngForm"
   (ngSubmit)="onSubmit(form)"
-  (input)="onInput()"
   >
 
   <div class="line">
@@ -12,24 +11,33 @@
       required
       minlength="4"
     />
+
+    <app-form-validation
+      [control]="form.controls['name']"
+      [messages]="{
+        required: 'Não pode ficar em branco.',
+        minlength: 'Deve ter no mínimo 4 caracteres.'
+      }"
+    ></app-form-validation>
   </div>
 
   <div class="line">
     <input
-      [ngModel]="modelReference?.name"
+      [ngModel]="modelReference?.name2"
       name="name2"
       placeholder="nome 2"
       required
     />
+
+    <app-form-validation
+      [control]="form.controls['name2']"
+      [messages]="{
+        required: 'Não pode ficar em branco.',
+        minlength: 'Deve ter no mínimo 4 caracteres.'
+      }"
+    ></app-form-validation>
   </div>
 
-  <!-- <app-form-validation-msg
-    [control]="form.controls['name']"
-    [messages]="{
-      required: 'Não pode ficar em branco.',
-      minlength: 'Deve ter no mínimo 4 caracteres.'
-    }"
-  ></app-form-validation-msg> -->
 
   <div class="actions">
     <button type="submit">Salvar</button>
