@@ -35,7 +35,9 @@ export class NewComponent implements  OnInit {
     }
 
     onSubmit() {
-        this.validator.notify();
+        // this.validator.notify();
+        // report form to make uniq component has effect
+        this.validator.notify(this.form);
     }
 
 }

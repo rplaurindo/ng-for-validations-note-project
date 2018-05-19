@@ -34,12 +34,16 @@ export class UniqComponent implements OnInit,
     @Input()
     control: FormControl;
 
+    @Input()
+    nameTranslations: Object;
+
     constructor(
         private notifier: Notifier
     ) {}
 
     ngOnInit() {
         let
+            controlName: string,
             mappedErrorKey: string,
             controls: Object,
             control: FormControl;
@@ -61,6 +65,7 @@ export class UniqComponent implements OnInit,
                             Notifier.typeKeys(this.messages)
                         );
                         if (mappedErrorKey) {
+                            controlName = k;
                             break;
                         }
                     }
@@ -68,7 +73,14 @@ export class UniqComponent implements OnInit,
 
                 if (mappedErrorKey) {
                     this.canShow = true;
-                    this.message = this.messages[mappedErrorKey];
+                    // by controlName has how to manipulate the HTMLElement
+                    if (this.nameTranslations[controlName]) {
+                        this.message = `
+                            ${this.nameTranslations[controlName]} ${this.messages[mappedErrorKey]}
+                        `;
+                    } else {
+                        this.message = this.messages[mappedErrorKey];
+                    }
                 } else {
                     this.message = '';
                     this.canShow = false;
