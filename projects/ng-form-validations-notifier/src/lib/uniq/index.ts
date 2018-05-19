@@ -15,7 +15,7 @@ import { Notifier } from '../services';
 
 
 @Component({
-    selector: 'app-form-validation',
+    selector: 'app-form-uniq-validation',
     templateUrl: './component.html',
     styleUrls: ['./component.sass']
 })
@@ -43,7 +43,6 @@ export class UniqComponent implements OnInit,
 
     ngOnInit() {
         let
-            controlName: string,
             mappedErrorKey: string,
             controls: Object,
             control: FormControl;
@@ -51,12 +50,7 @@ export class UniqComponent implements OnInit,
         this.validationSubscription = this.notifier.getValidation().subscribe(
             (form: NgForm | FormGroup) => {
 
-                if (this.control) {
-                    mappedErrorKey = this.notifier.getValidationErrorFor(
-                        this.control,
-                        Notifier.typeKeys(this.messages)
-                    );
-                } else if (form) {
+                if (form) {
                     controls = form.controls;
                     for (let k of Object.keys(controls)) {
                         control = controls[k];
@@ -65,25 +59,16 @@ export class UniqComponent implements OnInit,
                             Notifier.typeKeys(this.messages)
                         );
                         if (mappedErrorKey) {
-                            controlName = k;
+                            this.canShow = true;
+                            this.message = `
+                                ${this.nameTranslations[k]} ${this.messages[mappedErrorKey]}
+                            `;
                             break;
+                        } else {
+                            this.message = '';
+                            this.canShow = false;
                         }
                     }
-                }
-
-                if (mappedErrorKey) {
-                    this.canShow = true;
-                    // by controlName has how to manipulate the HTMLElement
-                    if (this.nameTranslations[controlName]) {
-                        this.message = `
-                            ${this.nameTranslations[controlName]} ${this.messages[mappedErrorKey]}
-                        `;
-                    } else {
-                        this.message = this.messages[mappedErrorKey];
-                    }
-                } else {
-                    this.message = '';
-                    this.canShow = false;
                 }
             }
         );

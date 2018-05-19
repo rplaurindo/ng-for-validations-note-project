@@ -15,10 +15,12 @@ import * as Components from './components';
         FormsModule
     ],
     declarations: [
+        Components.OverControlComponent,
         Components.UniqComponent,
         Components.ListComponent
     ],
     exports: [
+        Components.OverControlComponent,
         Components.UniqComponent,
         Components.ListComponent
     ]
