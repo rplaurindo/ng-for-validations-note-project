@@ -17,7 +17,7 @@
       "dom"
     ],
     "paths": {
-      "example": [
+      "ng-form-validations-notifier": [
         "dist/ng-form-validations-notifier"
       ]
     }
