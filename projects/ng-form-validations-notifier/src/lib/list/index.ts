@@ -20,7 +20,7 @@ import { Notifier } from '../services';
     styleUrls: ['./component.sass']
 })
 export class ListComponent implements OnInit,
-                                            OnDestroy {
+                                      OnDestroy {
 
     canShow: Boolean = false;
     errorMessages: Array<String> = [];

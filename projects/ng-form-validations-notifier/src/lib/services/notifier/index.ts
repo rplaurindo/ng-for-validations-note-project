@@ -46,21 +46,6 @@ export class Notifier {
         ngForm.resetForm(valuesCopy);
     }
 
-    getValidationErrorFor(
-        control: FormControl,
-        validationTypes: Array<string>
-    ): string {
-        if (control.invalid) {
-        for (const error of Object.keys(control.errors)) {
-            if (validationTypes.indexOf(error) !== -1) {
-                return error;
-                }
-            }
-        }
-
-        return '';
-    }
-
     // the control would can be passed by here, but for some reason the control still doesn’t exist in any default initialization event
     getValidation(): Subject<Object> {
         return this.validationSubscription;
@@ -68,6 +53,27 @@ export class Notifier {
 
     notify(form?: NgForm | FormGroup) {
         this.validationSubscription.next(form);
+    }
+
+    getValidationErrorFor(
+        control: FormControl,
+        validationTypes: Array<string>
+    ): string {
+        let
+            error: string,
+            errorKeys: Array<string> = [];
+
+        if (control.invalid) {
+            errorKeys = Object.keys(control.errors);
+            for (let k = 0; k < errorKeys.length; k++) {
+                error = errorKeys[k];
+                if (validationTypes.indexOf(error) !== -1) {
+                    return error;
+                }
+            }
+        }
+
+        return '';
     }
 
 }

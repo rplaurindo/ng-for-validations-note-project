@@ -34,7 +34,9 @@ export class UniqComponent implements OnInit,
     @Input()
     control: FormControl;
 
-    constructor(private notifier: Notifier) {}
+    constructor(
+        private notifier: Notifier
+    ) {}
 
     ngOnInit() {
         let

@@ -6,6 +6,7 @@ import * as ReactiveForms from './components';
 import { RoutingModule } from './routing.module';
 
 // import * as NgFormValidationNotifier from 'ng-form-validations-notifier';
+import * as NgFormValidationNotifier from 'dist/ng-form-validations-notifier';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { RoutingModule } from './routing.module';
         RoutingModule
     ],
     providers: [
-        // NgFormValidationNotifier.Services.Notifier
+        NgFormValidationNotifier.Services.Notifier
     ],
     declarations: [
         ReactiveForms.NewComponent

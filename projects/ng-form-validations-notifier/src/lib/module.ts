@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-    FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
 } from '@angular/forms';
 
 import * as Components from './components';
@@ -14,7 +14,6 @@ import * as Components from './components';
         ReactiveFormsModule,
         FormsModule
     ],
-    // don't add providers in a shared module
     declarations: [
         Components.UniqComponent,
         Components.ListComponent
