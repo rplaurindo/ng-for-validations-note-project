@@ -10,9 +10,9 @@
 </code></pre>
 <hr>
 <pre><code>@NgModule({
-	imports: [
+    imports: [
         NgFormValidationsNotifier.Module
-	]
+    ]
 })
 </code></pre>
 <p>Choose which component you want to use</p>
