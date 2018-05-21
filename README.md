@@ -21,7 +21,7 @@ Choose which component you want to use
 >- app-form-uniq-validation;
 >- app-form-validation-list.
 
-To use anyone you must define the messages property binding like that
+To use anyone you must define ```messages``` property binding like that
 
 	<app-form-validation
 	  [messages]="{
