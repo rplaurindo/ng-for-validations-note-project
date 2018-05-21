@@ -50,8 +50,8 @@
       placeholder="nome"
     />
 
-      <!-- [control]="form.controls['name']" -->
     <app-form-validation
+      [control]="form.controls['name']"
       [messages]="{
         required: 'Não pode ficar em branco.',
         minlength: 'Deve ter no mínimo 4 caracteres.'

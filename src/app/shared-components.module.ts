@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-// import * as NgFormValidationsNotifier from 'ng-form-validations-notifier';
-import * as NgFormValidationsNotifier from 'dist/ng-form-validations-notifier';
+import * as NgFormValidationsNotifier from 'ng-form-validations-notifier';
 
 
 @NgModule({

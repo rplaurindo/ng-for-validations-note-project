@@ -6,8 +6,8 @@ import {
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-// import { Notifier } from 'ng-form-validations-notifier/services';
-import * as NgFormValidationsNotifier from 'dist/ng-form-validations-notifier';
+import * as NgFormValidationsNotifier from 'ng-form-validations-notifier';
+
 
 @Component({
     selector: 'app-template-driven-form',

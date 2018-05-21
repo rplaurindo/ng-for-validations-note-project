@@ -9,8 +9,7 @@ import {
     Validators
 } from '@angular/forms';
 
-// import * as NgFormValidationsNotifier from 'ng-form-validations-notifier/services';
-import * as NgFormValidationsNotifier from 'dist/ng-form-validations-notifier';
+import * as NgFormValidationsNotifier from 'ng-form-validations-notifier';
 
 
 @Component({
