@@ -5,8 +5,12 @@
 <pre><code>$ npm i ng-form-validations-notifier --save
 </code></pre>
 <h2 id="usage">Usage</h2>
-<p>Include the module in <code>imports</code> key of <code>NgModule</code> decorator.</p>
+<p>Include the module into <code>imports</code> metadata key of <code>NgModule</code> decorator of your application.</p>
 <pre><code>import * as NgFormValidationsNotifier from 'ng-form-validations-notifier';
+
+ @NgModule({
+     imports: [NgFormValidationsNotifier.Module]
+ })
 </code></pre>
 <p>Choose which component you want to use</p>
 <blockquote>
