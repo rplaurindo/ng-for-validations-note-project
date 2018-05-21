@@ -35,7 +35,7 @@
 <pre><code>&lt;form
   &lt;!-- on Reactive Forms --&gt;
   [formGroup]="form"
-  &lt;!-- on Template Driven --&gt;	  
+  &lt;!-- on Template Driven --&gt;
   #form="ngForm"
 &gt;
 &lt;input name="aName"/&gt;
