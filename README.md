@@ -9,7 +9,9 @@
 <pre><code>import * as NgFormValidationsNotifier from 'ng-form-validations-notifier';
 
  @NgModule({
-     imports: [NgFormValidationsNotifier.Module]
+     imports: [
+    NgFormValidationsNotifier.Module
+     ]
  })
 </code></pre>
 <p>Choose which component you want to use</p>
