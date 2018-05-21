@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-// import * as NgFormValidationNotifier from 'ng-form-validations-notifier';
-import * as NgFormValidationNotifier from 'dist/ng-form-validations-notifier';
+// import * as NgFormValidationsNotifier from 'ng-form-validations-notifier';
+import * as NgFormValidationsNotifier from 'dist/ng-form-validations-notifier';
 
 
 @NgModule({
     imports: [
         CommonModule,
-        NgFormValidationNotifier.Module
+        NgFormValidationsNotifier.Module
     ],
     declarations: [
     ],
     exports: [
         CommonModule,
-        NgFormValidationNotifier.Module
+        NgFormValidationsNotifier.Module
     ]
 })
 export class SharedComponentsModule { }
