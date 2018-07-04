@@ -9,7 +9,7 @@ import {
     Validators
 } from '@angular/forms';
 
-import * as NgFormValidationsNotifier from 'ng-form-validations-notifier';
+import * as NgForValidationsNote from 'ng-for-validations-note';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class NewComponent implements  OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private validator: NgFormValidationsNotifier.Services.Notifier
+        private validator: NgForValidationsNote.Services.Notifier
     ) { }
 
     ngOnInit() {

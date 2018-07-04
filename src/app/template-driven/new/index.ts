@@ -6,7 +6,7 @@ import {
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-import * as NgFormValidationsNotifier from 'ng-form-validations-notifier';
+import * as NgForValidationsNote from 'ng-for-validations-note';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class NewComponent implements OnInit {
 
     constructor(
         private http: HttpClient,
-        private validator: NgFormValidationsNotifier.Services.Notifier
+        private validator: NgForValidationsNote.Services.Notifier
     ) { }
 
     ngOnInit() {

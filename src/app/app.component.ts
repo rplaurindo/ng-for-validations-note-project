@@ -11,7 +11,7 @@ import {
 })
 export class AppComponent implements OnInit {
 
-  title = `ng-form-validations-notifier-project`;
+  title = `ng-for-validations-note-project`;
 
   constructor() { }
 

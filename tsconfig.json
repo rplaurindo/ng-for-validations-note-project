@@ -17,8 +17,8 @@
       "dom"
     ],
     "paths": {
-      "ng-form-validations-notifier": [
-        "dist/ng-form-validations-notifier"
+      "ng-for-validations-note": [
+        "dist/ng-for-validations-note"
       ]
     }
   }

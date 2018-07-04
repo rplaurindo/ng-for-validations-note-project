@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/ng-form-validations-notifier",
+  "dest": "../../dist/ng-for-validations-note",
   "lib": {
     "entryFile": "src/public_api.ts"
   }
