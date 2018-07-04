@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html>
+---
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NgFormValidationsNotifier</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
-</head>
 
-<body class="stackedit">
-  <div class="stackedit__html"><h1 id="ngforvalidationsnote">NgForValidationsNote</h1>
+---
+
+<h1 id="ngforvalidationsnote">NgForValidationsNote</h1>
 <h2 id="requirements">Requirements</h2>
 <p>Angular 6 or higher.</p>
 <h2 id="installing">Installing</h2>
@@ -62,7 +56,4 @@
 &gt;&lt;/app-form-uniq-validation&gt;
 </code></pre>
 <p>So inject the service on your component and call the <code>notifier</code> method when you want to show the validation message in your application. If you want to use <code>app-form-uniq-validation</code> or <code>app-form-validation-list</code>, you must pass <code>NgForm</code> of <code>FormGroup</code> object as argument.</p>
-</div>
-</body>
 
-</html>
