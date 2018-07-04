@@ -1,17 +1,17 @@
-<h1 id="ngformvalidationsnotifier">NgFormValidationsNotifier</h1>
+<h1 id="ngforvalidationsnote">NgForValidationsNote</h1>
 <h2 id="requirements">Requirements</h2>
 <p>Angular 6 or higher.</p>
 <h2 id="installing">Installing</h2>
-<pre><code>$ npm i ng-form-validations-notifier --save
+<pre><code>$ npm i ng-for-validations-note --save
 </code></pre>
 <h2 id="usage">Usage</h2>
 <p>Include the module into <code>imports</code> metadata key of <code>NgModule</code> decorator of your application.</p>
-<pre><code>import * as NgFormValidationsNotifier from 'ng-form-validations-notifier';
+<pre><code>import * as NgForValidationsNote from 'ng-for-validations-note';
 </code></pre>
 <hr>
 <pre><code>@NgModule({
     imports: [
-        NgFormValidationsNotifier.Module
+        NgForValidationsNote.Module
     ]
 })
 </code></pre>
