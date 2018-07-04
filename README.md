@@ -1,8 +1,3 @@
----
-
-
----
-
 <h1 id="ngforvalidationsnote">NgForValidationsNote</h1>
 <h2 id="requirements">Requirements</h2>
 <p>Angular 6 or higher.</p>
