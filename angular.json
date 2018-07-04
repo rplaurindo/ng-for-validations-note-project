@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-form-validations-notifier",
+            "outputPath": "dist/ng-for-validations-note",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -117,38 +117,38 @@
         }
       }
     },
-    "ng-form-validations-notifier": {
-      "root": "projects/ng-form-validations-notifier",
-      "sourceRoot": "projects/ng-form-validations-notifier/src",
+    "ng-for-validations-note": {
+      "root": "projects/ng-for-validations-note",
+      "sourceRoot": "projects/ng-for-validations-note/src",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ng-form-validations-notifier/tsconfig.lib.json",
-            "project": "projects/ng-form-validations-notifier/ng-package.json"
+            "tsConfig": "projects/ng-for-validations-note/tsconfig.lib.json",
+            "project": "projects/ng-for-validations-note/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ng-form-validations-notifier/ng-package.prod.json"
+              "project": "projects/ng-for-validations-note/ng-package.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-form-validations-notifier/src/test.ts",
-            "tsConfig": "projects/ng-form-validations-notifier/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-form-validations-notifier/karma.conf.js"
+            "main": "projects/ng-for-validations-note/src/test.ts",
+            "tsConfig": "projects/ng-for-validations-note/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-for-validations-note/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ng-form-validations-notifier/tsconfig.lib.json",
-              "projects/ng-form-validations-notifier/tsconfig.spec.json"
+              "projects/ng-for-validations-note/tsconfig.lib.json",
+              "projects/ng-for-validations-note/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -158,5 +158,5 @@
       }
     }
   },
-  "defaultProject": "ng-form-validations-notifier-project"
+  "defaultProject": "ng-for-validations-note-project"
 }
