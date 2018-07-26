@@ -23,7 +23,7 @@
 <li>app-form-validation-list.</li>
 </ul>
 </blockquote>
-<p>To use anyone you must define <code>messages</code> property binding like that</p>
+<p>To use anyone you must tdefine the <code>messages</code> property binding like that</p>
 <pre><code>&lt;app-form-validation
   [messages]="{
     required: 'this field is required.'
