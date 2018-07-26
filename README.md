@@ -1,54 +1,15 @@
-<h1 id="ngforvalidationsnote">NgForValidationsNote</h1>
-<h2 id="requirements">Requirements</h2>
-<p>Angular 6 or higher.</p>
-<h2 id="installing">Installing</h2>
-<pre><code>$ npm i ng-for-validations-note --save
-</code></pre>
-<h2 id="usage">Usage</h2>
-<p>Include the module into <code>imports</code> metadata key of <code>NgModule</code> decorator of your application.</p>
-<pre><code>import * as NgForValidationsNote from 'ng-for-validations-note';
-</code></pre>
-<hr>
-<pre><code>@NgModule({
-    imports: [
-        NgForValidationsNote.Module
-    ]
-})
-</code></pre>
-<p>Choose which component you want to use</p>
-<blockquote>
-<ul>
-<li>app-form-validation;</li>
-<li>app-form-uniq-validation;</li>
-<li>app-form-validation-list.</li>
-</ul>
-</blockquote>
-<p>To use anyone you must define <code>messages</code> property binding like that</p>
-<pre><code>&lt;app-form-validation
-  [messages]="{
-    required: 'this field is required.'
-  }"
-&gt;&lt;/app-form-validation&gt;
-</code></pre>
-<p>To use <code>app-form-uniq-validation</code> or <code>app-form-validation-list</code> you must define <code>nameTranslations</code> property binding.</p>
-<pre><code>&lt;app-form-uniq-validation
-  [nameTranslations]="{
-    name: 'Name',
-	name2: 'Name 2'
-  }"
-&gt;&lt;/app-form-uniq-validation&gt;
-</code></pre>
-<p>To use <code>app-form-validation</code> you must define <code>control</code> property binding.</p>
-<pre><code>&lt;form
-  &lt;!-- on Reactive Forms --&gt;
-  [formGroup]="form"
-  &lt;!-- on Template Driven --&gt;
-  #form="ngForm"
-&gt;
-&lt;input name="aName"/&gt;
-&lt;app-form-validation
-  [control]="form.controls['aName']"
-&gt;&lt;/app-form-uniq-validation&gt;
-</code></pre>
-<p>So inject the service on your component and call the <code>notifier</code> method when you want to show the validation message in your application. If you want to use <code>app-form-uniq-validation</code> or <code>app-form-validation-list</code>, you must pass <code>NgForm</code> of <code>FormGroup</code> object as argument.</p>
+<h1 id="ngforvalidationsnoteproject">NgForValidationsNoteProject</h1>
+<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 6.0.8.</p>
+<h2 id="development-server">Development server</h2>
+<p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
+<h2 id="code-scaffolding">Code scaffolding</h2>
+<p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
+<h2 id="build">Build</h2>
+<p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory. Use the <code>--prod</code> flag for a production build.</p>
+<h2 id="running-unit-tests">Running unit tests</h2>
+<p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
+<h2 id="running-end-to-end-tests">Running end-to-end tests</h2>
+<p>Run <code>ng e2e</code> to execute the end-to-end tests via <a href="http://www.protractortest.org/">Protractor</a>.</p>
+<h2 id="further-help">Further help</h2>
+<p>To get more help on the Angular CLI use <code>ng help</code> or go check out the <a href="https://github.com/angular/angular-cli/blob/master/README.md">Angular CLI README</a>.</p>
 
