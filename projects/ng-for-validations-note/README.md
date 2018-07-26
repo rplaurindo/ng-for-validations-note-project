@@ -23,14 +23,14 @@
 <li>app-form-validation-list.</li>
 </ul>
 </blockquote>
-<p>To use anyone you must define <code>messages</code> property binding like that</p>
+<p>To use anyone you must tdefine the <code>messages</code> property binding like that</p>
 <pre><code>&lt;app-form-validation
   [messages]="{
     required: 'this field is required.'
   }"
 &gt;&lt;/app-form-validation&gt;
 </code></pre>
-<p>To use <code>app-form-uniq-validation</code> or <code>app-form-validation-list</code> you must define <code>nameTranslations</code> property binding.</p>
+<p>To use <code>app-form-uniq-validation</code> or <code>app-form-validation-list</code> you must define the <code>nameTranslations</code> property binding.</p>
 <pre><code>&lt;app-form-uniq-validation
   [nameTranslations]="{
     name: 'Name',
@@ -38,7 +38,7 @@
   }"
 &gt;&lt;/app-form-uniq-validation&gt;
 </code></pre>
-<p>To use <code>app-form-validation</code> you must define <code>control</code> property binding.</p>
+<p>To use <code>app-form-validation</code> you must define the <code>control</code> property binding.</p>
 <pre><code>&lt;form
   &lt;!-- on Reactive Forms --&gt;
   [formGroup]="form"
@@ -50,5 +50,6 @@
   [control]="form.controls['aName']"
 &gt;&lt;/app-form-uniq-validation&gt;
 </code></pre>
-<p>So inject the service on your component and call the <code>notifier</code> method when you want to show the validation message in your application. If you want to use <code>app-form-uniq-validation</code> or <code>app-form-validation-list</code>, you must pass <code>NgForm</code> of <code>FormGroup</code> object as argument.</p>
+<p>So inject the service on your component and call the <code>notifier</code> method when you want to show the validation message in your application. If you want to use <code>app-form-uniq-validation</code> or <code>app-form-validation-list</code>, you must pass <code>NgForm</code> of <code>FormGroup</code> object as argument to use it.<br>
+test</p>
 
