@@ -31,37 +31,38 @@ Choose which component you want to use
 To use anyone you must define the ```messages``` property binding like that
 
 ```html
-<app-form-validation
-  [messages]="{
-    required: 'this field is required.'
-  }"
+<app-form-validation 
+	[messages]="{
+		required: 'this field is required.'
+	}"
 ></app-form-validation>
 ```
 
 To use ```app-form-uniq-validation``` or ```app-form-validation-list``` you must define the ```nameTranslations``` property binding.
 
 ```html
-<app-form-uniq-validation
-  [nameTranslations]="{
-    name: 'Name',
-	name2: 'Name 2'
-  }"
+<app-form-uniq-validation 
+	[nameTranslations]="{
+		name: 'Name',
+		name2: 'Name 2'
+	}"
 ></app-form-uniq-validation>
 ```
 
 To use ```app-form-validation``` you must define the ```control``` property binding.
 
 ```html
+<!-- on Reactive Forms -->
+<!-- on Template Driven -->
 <form
-  <!-- on Reactive Forms -->
-  [formGroup]="form"
-  <!-- on Template Driven -->
-  #form="ngForm"
+	[formGroup]="form"
+	#form="ngForm"
 >
-<input name="aName"/>
-<app-form-validation
-  [control]="form.controls['aName']"
-></app-form-uniq-validation>
+	<input name="aName"/>
+	<app-form-validation
+		[control]="form.controls['aName']"
+	></app-form-uniq-validation>
+</form>
 ```
 
 So inject the service on your component and call the ```notifier``` method when you want to show the validation message in your application. If you want to use ```app-form-uniq-validation``` or ```app-form-validation-list```, you must pass ```NgForm``` of ```FormGroup``` object as argument to use it.
