@@ -9,7 +9,7 @@ import {
     Validators
 } from '@angular/forms';
 
-import * as NgForValidationsNote from 'ng-for-validations-note';
+import { NgForValidationsNote } from 'ng-for-validations-note';
 
 
 @Component({

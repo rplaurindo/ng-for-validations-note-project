@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import * as NgForValidationsNote from 'ng-for-validations-note';
+import { NgForValidationsNote } from 'ng-for-validations-note';
 
 
 @NgModule({
