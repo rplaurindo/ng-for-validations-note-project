@@ -50,5 +50,6 @@
   [control]="form.controls['aName']"
 &gt;&lt;/app-form-uniq-validation&gt;
 </code></pre>
-<p>So inject the service on your component and call the <code>notifier</code> method when you want to show the validation message in your application. If you want to use <code>app-form-uniq-validation</code> or <code>app-form-validation-list</code>, you must pass <code>NgForm</code> of <code>FormGroup</code> object as argument to use it.</p>
+<p>So inject the service on your component and call the <code>notifier</code> method when you want to show the validation message in your application. If you want to use <code>app-form-uniq-validation</code> or <code>app-form-validation-list</code>, you must pass <code>NgForm</code> of <code>FormGroup</code> object as argument to use it.<br>
+test</p>
 
