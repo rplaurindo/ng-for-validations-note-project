@@ -25,4 +25,4 @@ import * as Components from './components';
         Components.ListComponent
     ]
 })
-export class Module { }
+export class NgForValidationsNoteModule { }
