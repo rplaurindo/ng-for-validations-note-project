@@ -13,11 +13,11 @@
 Include the module into ```imports``` metadata key of ```NgModule``` decorator of your application.
 
 ```typescript
-import { NgForValidationsNote } from 'ng-for-validations-note';
+import { NgForValidationsNoteModule } from 'ng-for-validations-note';
 
 @NgModule({
     imports: [
-        NgForValidationsNote.Module
+        NgForValidationsNoteModule
     ]
 })
 ```
@@ -31,7 +31,7 @@ Choose which component you want to use
 To use anyone you must define the ```messages``` property binding like that
 
 ```html
-<app-form-validation 
+<app-form-validation
 	[messages]="{
 		required: 'this field is required.'
 	}"
@@ -41,7 +41,7 @@ To use anyone you must define the ```messages``` property binding like that
 To use ```app-form-uniq-validation``` or ```app-form-validation-list``` you must define the ```nameTranslations``` property binding.
 
 ```html
-<app-form-uniq-validation 
+<app-form-uniq-validation
 	[nameTranslations]="{
 		name: 'Name',
 		name2: 'Name 2'

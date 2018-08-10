@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NgForValidationsNote } from 'ng-for-validations-note';
+import { NgForValidationsNoteModule } from 'ng-for-validations-note';
 
 
 @NgModule({
     imports: [
         CommonModule,
-        NgForValidationsNote.Module
+        NgForValidationsNoteModule
     ],
     declarations: [
     ],
     exports: [
         CommonModule,
-        NgForValidationsNote.Module
+        NgForValidationsNoteModule
     ]
 })
 export class SharedComponentsModule { }
