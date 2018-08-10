@@ -11,7 +11,7 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
-import { Notifier } from '../services';
+import { Services } from '../services';
 
 
 @Component({
@@ -38,7 +38,7 @@ export class UniqComponent implements OnInit,
     nameTranslations: Object;
 
     constructor(
-        private notifier: Notifier
+        private notifier: Services.Notifier
     ) {}
 
     ngOnInit() {
@@ -56,7 +56,7 @@ export class UniqComponent implements OnInit,
                         control = controls[k];
                         mappedErrorKey = this.notifier.getValidationErrorFor(
                             control,
-                            Notifier.typeKeys(this.messages)
+                            Services.Notifier.typeKeys(this.messages)
                         );
                         if (mappedErrorKey) {
                             this.canShow = true;

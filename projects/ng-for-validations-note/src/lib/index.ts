@@ -1,5 +1,4 @@
-import * as Services from './services';
-export { Services };
+export { Services } from './services';
 
 import * as Components from './components';
 export { Components };

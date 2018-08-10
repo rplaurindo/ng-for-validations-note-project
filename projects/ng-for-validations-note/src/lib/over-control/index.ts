@@ -11,7 +11,7 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
-import { Notifier } from '../services';
+import { Services } from '../services';
 
 
 @Component({
@@ -35,7 +35,7 @@ export class OverControlComponent implements OnInit,
     control: FormControl;
 
     constructor(
-        private notifier: Notifier
+        private notifier: Services.Notifier
     ) {}
 
     ngOnInit() {
@@ -47,7 +47,7 @@ export class OverControlComponent implements OnInit,
                 if (this.control) {
                     mappedErrorKey = this.notifier.getValidationErrorFor(
                         this.control,
-                        Notifier.typeKeys(this.messages)
+                        Services.Notifier.typeKeys(this.messages)
                     );
                     if (mappedErrorKey) {
                         this.canShow = true;

@@ -11,7 +11,7 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
-import { Notifier } from '../services';
+import { Services } from '../services';
 
 
 @Component({
@@ -33,7 +33,7 @@ export class ListComponent implements OnInit,
     @Input()
     nameTranslations: Object;
 
-    constructor(private notifier: Notifier) {}
+    constructor(private notifier: Services.Notifier) {}
 
     ngOnInit() {
         let
@@ -52,7 +52,7 @@ export class ListComponent implements OnInit,
                         control = controls[k];
                         mappedErrorKey = this.notifier.getValidationErrorFor(
                             control,
-                            Notifier.typeKeys(this.messages)
+                            Services.Notifier.typeKeys(this.messages)
                         );
 
                         if (this.nameTranslations[k] && mappedErrorKey) {

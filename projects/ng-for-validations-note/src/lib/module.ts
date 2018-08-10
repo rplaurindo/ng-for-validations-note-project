@@ -5,7 +5,9 @@ import {
     FormsModule
 } from '@angular/forms';
 
-import * as Components from './components';
+import { ListComponent } from './list';
+import { OverControlComponent } from './over-control';
+import { UniqComponent } from './uniq';
 
 
 @NgModule({
@@ -15,14 +17,14 @@ import * as Components from './components';
         FormsModule
     ],
     declarations: [
-        Components.OverControlComponent,
-        Components.UniqComponent,
-        Components.ListComponent
+        ListComponent,
+        OverControlComponent,
+        UniqComponent
     ],
     exports: [
-        Components.OverControlComponent,
-        Components.UniqComponent,
-        Components.ListComponent
+        ListComponent,
+        OverControlComponent,
+        UniqComponent
     ]
 })
 export class NgForValidationsNoteModule { }

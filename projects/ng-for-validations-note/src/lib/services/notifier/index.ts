@@ -7,6 +7,7 @@ import {
 import { Subject } from 'rxjs';
 
 
+// @Injectable()
 @Injectable({
     providedIn: 'root'
 })

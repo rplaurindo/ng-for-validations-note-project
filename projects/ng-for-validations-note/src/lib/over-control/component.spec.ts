@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UniqComponent } from '.';
+import { OverControlComponent } from '.';
 
-describe('UniqComponent', () => {
-    let component: UniqComponent;
-    let fixture: ComponentFixture<UniqComponent>;
+describe('OverControlComponent', () => {
+    let component: OverControlComponent;
+    let fixture: ComponentFixture<OverControlComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [UniqComponent]
+            declarations: [OverControlComponent]
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(UniqComponent);
+        fixture = TestBed.createComponent(OverControlComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
