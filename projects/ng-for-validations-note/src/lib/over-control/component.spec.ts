@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OverControlComponent } from '.';
+import { OverControlComponent } from './component';
 
 describe('OverControlComponent', () => {
     let component: OverControlComponent;

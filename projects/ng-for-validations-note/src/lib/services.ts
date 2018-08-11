@@ -1,1 +1,1 @@
-export { Notifier } from './services/notifier.service';
+export { Notifier } from './services/notifier';

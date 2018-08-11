@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UniqComponent } from '.';
+import { UniqComponent } from './component';
 
 describe('UniqComponent', () => {
     let component: UniqComponent;

@@ -5,9 +5,9 @@ import {
     FormsModule
 } from '@angular/forms';
 
-import { ListComponent } from './list';
-import { OverControlComponent } from './over-control';
-import { UniqComponent } from './uniq';
+import { ListComponent } from './list/component';
+import { OverControlComponent } from './over-control/component';
+import { UniqComponent } from './uniq/component';
 
 
 @NgModule({
