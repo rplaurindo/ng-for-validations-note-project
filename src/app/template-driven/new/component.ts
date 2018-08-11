@@ -25,7 +25,6 @@ export class NewComponent implements OnInit {
     }
 
     onSubmit(form: NgForm) {
-        // this.validator.notify();
         this.validator.notify(form);
     }
 
