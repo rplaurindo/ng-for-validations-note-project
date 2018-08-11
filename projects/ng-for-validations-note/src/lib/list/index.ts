@@ -11,7 +11,10 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
-import { Services } from '../services';
+// import { Notifier } from '../services/notifier.service';
+// import { Notifier } from '../services/index';
+// import { Notifier } from '../services';
+// import { Services } from '..';
 
 
 @Component({
@@ -33,46 +36,46 @@ export class ListComponent implements OnInit,
     @Input()
     nameTranslations: Object;
 
-    constructor(private notifier: Services.Notifier) {}
+    // constructor(private notifier: Notifier) { }
 
     ngOnInit() {
-        let
-            mappedErrorKey: string;
+        // let
+        //     mappedErrorKey: string;
 
-        this.validationSubscription = this.notifier.getValidation().subscribe(
-            (form: NgForm | FormGroup) => {
-                let
-                    controls: Object,
-                    control: FormControl;
+        // this.validationSubscription = this.notifier.getValidation().subscribe(
+        //     (form: NgForm | FormGroup) => {
+        //         let
+        //             controls: Object,
+        //             control: FormControl;
 
-                if (form) {
-                    controls = form.controls;
-                    this.errorMessages = [];
-                    for (let k of Object.keys(form.controls)) {
-                        control = controls[k];
-                        mappedErrorKey = this.notifier.getValidationErrorFor(
-                            control,
-                            Services.Notifier.typeKeys(this.messages)
-                        );
+        //         if (form) {
+        //             controls = form.controls;
+        //             this.errorMessages = [];
+        //             for (let k of Object.keys(form.controls)) {
+        //                 control = controls[k];
+        //                 mappedErrorKey = this.notifier.getValidationErrorFor(
+        //                     control,
+        //                     Notifier.typeKeys(this.messages)
+        //                 );
 
-                        if (this.nameTranslations[k] && mappedErrorKey) {
-                            this.errorMessages.push(`
-                                ${this.nameTranslations[k]} ${this.messages[mappedErrorKey]}
-                            `);
-                        }
-                    }
+        //                 if (this.nameTranslations[k] && mappedErrorKey) {
+        //                     this.errorMessages.push(`
+        //                         ${this.nameTranslations[k]} ${this.messages[mappedErrorKey]}
+        //                     `);
+        //                 }
+        //             }
 
-                    if (mappedErrorKey) {
-                        this.canShow = true;
-                    }
-                }
+        //             if (mappedErrorKey) {
+        //                 this.canShow = true;
+        //             }
+        //         }
 
-            }
-        );
+        //     }
+        // );
     }
 
     ngOnDestroy() {
-        this.validationSubscription.unsubscribe();
+        // this.validationSubscription.unsubscribe();
     }
 
 }

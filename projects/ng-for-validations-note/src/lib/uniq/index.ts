@@ -11,7 +11,7 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
-import { Services } from '../services';
+// import { Notifier } from '../services';
 
 
 @Component({
@@ -22,60 +22,60 @@ import { Services } from '../services';
 export class UniqComponent implements OnInit,
                                       OnDestroy {
 
-    canShow: Boolean = false;
-    message: string;
-    errorMessages: Array<String> = [];
+    // canShow: Boolean = false;
+    // message: string;
+    // errorMessages: Array<String> = [];
 
-    private validationSubscription: Subscription;
+    // private validationSubscription: Subscription;
 
-    @Input()
-    messages: Object;
+    // @Input()
+    // messages: Object;
 
-    @Input()
-    control: FormControl;
+    // @Input()
+    // control: FormControl;
 
-    @Input()
-    nameTranslations: Object;
+    // @Input()
+    // nameTranslations: Object;
 
-    constructor(
-        private notifier: Services.Notifier
-    ) {}
+    // constructor(
+    //     private notifier: Notifier
+    // ) {}
 
     ngOnInit() {
-        let
-            mappedErrorKey: string,
-            controls: Object,
-            control: FormControl;
+        // let
+        //     mappedErrorKey: string,
+        //     controls: Object,
+        //     control: FormControl;
 
-        this.validationSubscription = this.notifier.getValidation().subscribe(
-            (form: NgForm | FormGroup) => {
+        // this.validationSubscription = this.notifier.getValidation().subscribe(
+        //     (form: NgForm | FormGroup) => {
 
-                if (form) {
-                    controls = form.controls;
-                    for (let k of Object.keys(controls)) {
-                        control = controls[k];
-                        mappedErrorKey = this.notifier.getValidationErrorFor(
-                            control,
-                            Services.Notifier.typeKeys(this.messages)
-                        );
-                        if (mappedErrorKey) {
-                            this.canShow = true;
-                            this.message = `
-                                ${this.nameTranslations[k]} ${this.messages[mappedErrorKey]}
-                            `;
-                            break;
-                        } else {
-                            this.message = '';
-                            this.canShow = false;
-                        }
-                    }
-                }
-            }
-        );
+        //         if (form) {
+        //             controls = form.controls;
+        //             for (let k of Object.keys(controls)) {
+        //                 control = controls[k];
+        //                 mappedErrorKey = this.notifier.getValidationErrorFor(
+        //                     control,
+        //                     Notifier.typeKeys(this.messages)
+        //                 );
+        //                 if (mappedErrorKey) {
+        //                     this.canShow = true;
+        //                     this.message = `
+        //                         ${this.nameTranslations[k]} ${this.messages[mappedErrorKey]}
+        //                     `;
+        //                     break;
+        //                 } else {
+        //                     this.message = '';
+        //                     this.canShow = false;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // );
     }
 
     ngOnDestroy() {
-        this.validationSubscription.unsubscribe();
+        // this.validationSubscription.unsubscribe();
     }
 
 }

@@ -1,4 +1,4 @@
-export { Services } from './services';
+// export { Notifier } from './services/notifier.service';
 
-import * as Components from './components';
-export { Components };
+import * as Services from './services';
+export { Services };
