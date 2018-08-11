@@ -4,7 +4,7 @@ import {
     RouterModule
 } from '@angular/router';
 
-import { HomeComponent } from './components/home';
+import { HomeComponent } from './components/home/component';
 
 
 const appRoutes: Routes = [
@@ -14,11 +14,11 @@ const appRoutes: Routes = [
     },
     {
         path: 'reactive-forms',
-        loadChildren: './reactive-forms/module#Module'
+        loadChildren: './reactive-forms/module#ReactiveFormsExampleModule'
     },
     {
         path: 'template-driven',
-        loadChildren: './template-driven/module#Module'
+        loadChildren: './template-driven/module#TemplateDrivenModule'
     },
     {
         path: '',

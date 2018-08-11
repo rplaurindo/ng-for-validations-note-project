@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 
 import { SharedComponentsModule } from './../../../shared-components.module';
 import { RoutingModule } from './routing.module';
-import { PageNotFoundComponent } from '.';
+
+import { PageNotFoundComponent } from './component';
 
 
 @NgModule({
@@ -16,4 +17,4 @@ import { PageNotFoundComponent } from '.';
     PageNotFoundComponent
   ]
 })
-export class Module { }
+export class PageNotFoundErrorModule { }

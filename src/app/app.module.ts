@@ -10,8 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedComponentsModule } from './shared-components.module';
 
 import { AppComponent } from './app.component';
-import { HorizontalMenuComponent } from './components/horizontal-menu';
-import { HomeComponent } from './components/home';
+
+import { HorizontalMenuComponent } from './components/horizontal-menu/component';
+import { HomeComponent } from './components/home/component';
 
 
 @NgModule({

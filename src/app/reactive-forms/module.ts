@@ -1,11 +1,10 @@
-// index
-
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { SharedComponentsModule } from '../shared-components.module';
-import * as Components from './components';
 import { RoutingModule } from './routing.module';
+
+import { NewComponent } from './new/component';
 
 
 @NgModule({
@@ -17,7 +16,7 @@ import { RoutingModule } from './routing.module';
     providers: [
     ],
     declarations: [
-        Components.NewComponent
+        NewComponent
     ]
 })
-export class Module { }
+export class ReactiveFormsExampleModule { }

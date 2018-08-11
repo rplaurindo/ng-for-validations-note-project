@@ -4,13 +4,13 @@ import {
     RouterModule
 } from '@angular/router';
 
-import * as Components from './components';
+import { NewComponent } from './new/component';
 
 
 const routes: Routes = [
     {
         path: 'novo',
-        component: Components.NewComponent
+        component: NewComponent
     }
 ];
 
