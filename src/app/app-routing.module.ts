@@ -27,7 +27,7 @@ const appRoutes: Routes = [
     },
     {
         path: '**',
-        loadChildren: './components/errors/404/module#Module'
+        loadChildren: './components/errors/404/module#PageNotFoundErrorModule'
     }
 ];
 

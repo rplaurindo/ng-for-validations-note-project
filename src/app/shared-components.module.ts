@@ -9,8 +9,6 @@ import { NgForValidationsNoteModule } from 'ng-for-validations-note';
         CommonModule,
         NgForValidationsNoteModule
     ],
-    declarations: [
-    ],
     exports: [
         CommonModule,
         NgForValidationsNoteModule
