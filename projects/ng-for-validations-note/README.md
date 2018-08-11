@@ -10,7 +10,7 @@
 
 ## Usage
 
-Include the module into ```imports``` metadata key of ```NgModule``` decorator of your application.
+Include the module into ```imports``` metadata key of ```NgModule``` decorator of your application importing ```NgForValidationsNoteModule``` from ```ng-for-validations-note```, like that.
 
 ```typescript
 import { NgForValidationsNoteModule } from 'ng-for-validations-note';
@@ -20,6 +20,7 @@ import { NgForValidationsNoteModule } from 'ng-for-validations-note';
         NgForValidationsNoteModule
     ]
 })
+export class MyModule() { }
 ```
 
 Choose which component you want to use
@@ -28,10 +29,10 @@ Choose which component you want to use
 >- app-form-uniq-validation;
 >- app-form-validation-list.
 
-To use anyone you must define the ```messages``` property binding like that
+To use anyone you must define the ```messages``` property binding, like that
 
 ```html
-<app-form-validation
+<app-form-validation 
 	[messages]="{
 		required: 'this field is required.'
 	}"
@@ -41,7 +42,7 @@ To use anyone you must define the ```messages``` property binding like that
 To use ```app-form-uniq-validation``` or ```app-form-validation-list``` you must define the ```nameTranslations``` property binding.
 
 ```html
-<app-form-uniq-validation
+<app-form-uniq-validation 
 	[nameTranslations]="{
 		name: 'Name',
 		name2: 'Name 2'
@@ -65,5 +66,5 @@ To use ```app-form-validation``` you must define the ```control``` property bind
 </form>
 ```
 
-So inject the service on your component and call the ```notifier``` method when you want to show the validation message in your application. If you want to use ```app-form-uniq-validation``` or ```app-form-validation-list```, you must pass ```NgForm``` of ```FormGroup``` object as argument to use it.
+So inject the ```NgForValidationsNote.Services.Notifier``` service on your component importing ```NgForValidationsNote``` from ```ng-for-validations-note``` and call the ```notifier``` method when you want to show the validation message in your application. If you want to use ```app-form-uniq-validation``` or ```app-form-validation-list```, you must pass a ```NgForm``` of ```FormGroup``` instance as argument to work.
 
