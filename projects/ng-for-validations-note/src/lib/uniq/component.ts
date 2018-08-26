@@ -16,8 +16,8 @@ import { Services } from '..';
 
 @Component({
     selector: 'app-form-uniq-validation',
-    templateUrl: './component.html',
-    styleUrls: ['./component.sass']
+    templateUrl: './template.html',
+    styleUrls: ['./style.sass']
 })
 export class UniqComponent implements OnInit,
                                       OnDestroy {

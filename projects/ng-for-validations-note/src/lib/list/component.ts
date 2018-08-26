@@ -16,8 +16,8 @@ import { Services } from '..';
 
 @Component({
     selector: 'app-form-validation-list',
-    templateUrl: './component.html',
-    styleUrls: ['./component.sass']
+    templateUrl: './template.html',
+    styleUrls: ['./style.sass']
 })
 export class ListComponent implements OnInit,
                                       OnDestroy {
