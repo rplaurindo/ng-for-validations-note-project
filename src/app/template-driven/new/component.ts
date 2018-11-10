@@ -6,7 +6,7 @@ import {
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-import { NgForValidationsNote } from 'ng-for-validations-note';
+import { NgForValidationsNote } from '../../../../projects/ng-for-validations-note/src/public_api';
 
 
 @Component({

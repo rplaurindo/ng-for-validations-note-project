@@ -11,7 +11,7 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
-import { Services } from '..';
+import { Services } from '../services/namespace';
 
 
 @Component({
@@ -36,7 +36,7 @@ export class OverControlComponent implements OnInit,
 
     constructor(
         private notifier: Services.Notifier
-    ) {}
+    ) { }
 
     ngOnInit() {
         let

@@ -5,6 +5,8 @@ import {
     FormsModule
 } from '@angular/forms';
 
+import { Services } from './services/namespace';
+
 import { ListComponent } from './list/component';
 import { OverControlComponent } from './over-control/component';
 import { UniqComponent } from './uniq/component';
@@ -25,6 +27,9 @@ import { UniqComponent } from './uniq/component';
         ListComponent,
         OverControlComponent,
         UniqComponent
+    ],
+    providers: [
+        Services.Notifier
     ]
 })
 export class NgForValidationsNoteModule { }

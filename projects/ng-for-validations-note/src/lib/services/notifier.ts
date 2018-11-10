@@ -7,9 +7,7 @@ import {
 import { Subject } from 'rxjs';
 
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class Notifier {
 
     private validationSubscription: Subject<Object> = new Subject();

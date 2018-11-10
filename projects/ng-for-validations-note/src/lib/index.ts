@@ -1,2 +1,3 @@
-import * as Services from './services';
-export { Services };
+export { Services } from './services/namespace';
+
+export { NgForValidationsNoteModule } from './module';

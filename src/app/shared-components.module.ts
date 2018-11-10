@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 
-import { NgForValidationsNoteModule } from 'ng-for-validations-note';
+import { NgForValidationsNoteModule } from '../../projects/ng-for-validations-note/src/public_api';
 
 
 @NgModule({

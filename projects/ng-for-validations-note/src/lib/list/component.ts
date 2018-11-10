@@ -11,7 +11,7 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
-import { Services } from '..';
+import { Services } from '../services/namespace';
 
 
 @Component({
@@ -33,7 +33,9 @@ export class ListComponent implements OnInit,
     @Input()
     nameTranslations: Object;
 
-    constructor(private notifier: Services.Notifier) { }
+    constructor(
+        private notifier: Services.Notifier
+    ) { }
 
     ngOnInit() {
         let
