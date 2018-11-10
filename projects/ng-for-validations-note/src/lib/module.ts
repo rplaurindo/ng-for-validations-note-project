@@ -7,9 +7,7 @@ import {
 
 import { Services } from './services/namespace';
 
-import { ListComponent } from './list/component';
-import { OverControlComponent } from './over-control/component';
-import { UniqComponent } from './uniq/component';
+import * as Components from './components';
 
 
 @NgModule({
@@ -19,14 +17,14 @@ import { UniqComponent } from './uniq/component';
         FormsModule
     ],
     declarations: [
-        ListComponent,
-        OverControlComponent,
-        UniqComponent
+        Components.ListComponent,
+        Components.OverControlComponent,
+        Components.UniqComponent
     ],
     exports: [
-        ListComponent,
-        OverControlComponent,
-        UniqComponent
+        Components.ListComponent,
+        Components.OverControlComponent,
+        Components.UniqComponent
     ],
     providers: [
         Services.Notifier

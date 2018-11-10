@@ -11,7 +11,7 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
-import { Services } from '../services/namespace';
+import { Services } from '../../services/namespace';
 
 
 @Component({
