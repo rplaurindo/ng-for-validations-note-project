@@ -8,7 +8,8 @@ import { NgForValidationsNoteModule } from '../../projects/ng-for-validations-no
 @NgModule({
     imports: [
         CommonModule,
-        NgForValidationsNoteModule
+
+        NgForValidationsNoteModule.forRoot()
     ],
     exports: [
         CommonModule,

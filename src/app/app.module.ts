@@ -8,11 +8,13 @@ import {
 
 import { AppRoutingModule } from './app-routing.module';
 import { SharedComponentsModule } from './shared-components.module';
+import { NgForValidationsNoteModule } from 'projects/ng-for-validations-note/src/public_api';
 
 import { AppComponent } from './app.component';
 
 import { HorizontalMenuComponent } from './components/horizontal-menu/component';
 import { HomeComponent } from './components/home/component';
+
 
 
 @NgModule({
@@ -22,7 +24,10 @@ import { HomeComponent } from './components/home/component';
         RouterModule,
         HttpClientModule,
         AppRoutingModule,
-        SharedComponentsModule
+
+        SharedComponentsModule,
+
+        // NgForValidationsNoteModule.forRoot()
     ],
     providers: [
         HttpClient

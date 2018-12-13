@@ -1,4 +1,7 @@
-import { NgModule } from '@angular/core';
+import {
+    NgModule,
+    ModuleWithProviders
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
     ReactiveFormsModule,
@@ -25,9 +28,17 @@ import * as Components from './components';
         Components.ListComponent,
         Components.OverControlComponent,
         Components.UniqComponent
-    ],
-    providers: [
-        Services.Notifier
     ]
 })
-export class NgForValidationsNoteModule { }
+export class NgForValidationsNoteModule {
+
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: NgForValidationsNoteModule,
+            providers: [
+                Services.Notifier
+            ]
+        };
+    }
+
+}
