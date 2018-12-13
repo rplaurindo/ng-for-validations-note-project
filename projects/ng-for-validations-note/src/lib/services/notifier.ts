@@ -13,7 +13,9 @@ export class Notifier {
     private validationSubscription: Subject<Object> = new Subject();
 
     // constructor(control: FormControl, validationTypes: Array<string>) {
-    constructor() {}
+    constructor() {
+
+    }
 
     private copyValues(ngForm: NgForm): Object {
         const
