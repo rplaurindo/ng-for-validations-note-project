@@ -9,10 +9,11 @@ import { NgForValidationsNoteModule } from '../../projects/ng-for-validations-no
     imports: [
         CommonModule,
 
-        NgForValidationsNoteModule.forRoot()
+        NgForValidationsNoteModule
     ],
     exports: [
         CommonModule,
+
         NgForValidationsNoteModule
     ]
 })

@@ -7,7 +7,6 @@ import {
 } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { SharedComponentsModule } from './shared-components.module';
 import { NgForValidationsNoteModule } from 'projects/ng-for-validations-note/src/public_api';
 
 import { AppComponent } from './app.component';
@@ -27,9 +26,7 @@ import { ReactiveFormsExampleModule } from './reactive-forms';
 
         ReactiveFormsExampleModule,
 
-        SharedComponentsModule
-
-        // NgForValidationsNoteModule.forRoot()
+        NgForValidationsNoteModule.forRoot()
     ],
     providers: [
         HttpClient
