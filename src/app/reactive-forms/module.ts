@@ -7,8 +7,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedComponentsModule } from '../shared-components.module';
 import { NgForValidationsNoteModule } from '../../../projects/ng-for-validations-note/src/public_api';
 
-import { RoutingModule } from './routing.module';
-
 import { NewComponent } from './new/component';
 
 
@@ -16,7 +14,6 @@ import { NewComponent } from './new/component';
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        RoutingModule,
 
         SharedComponentsModule
 
@@ -25,6 +22,8 @@ import { NewComponent } from './new/component';
     ],
     declarations: [
         NewComponent
+    ],
+    exports: [
     ],
     providers: [
 

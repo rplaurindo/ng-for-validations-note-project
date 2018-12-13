@@ -6,6 +6,8 @@ import {
 
 import { HomeComponent } from './components/home/component';
 
+import { NewComponent } from './reactive-forms/new/component';
+
 
 const appRoutes: Routes = [
     {
@@ -14,7 +16,12 @@ const appRoutes: Routes = [
     },
     {
         path: 'reactive-forms',
-        loadChildren: './reactive-forms/module#ReactiveFormsExampleModule'
+        children: [
+            {
+                path: 'novo',
+                component: NewComponent
+            }
+        ]
     },
     {
         path: 'template-driven',

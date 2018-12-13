@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 
 import { HorizontalMenuComponent } from './components/horizontal-menu/component';
 import { HomeComponent } from './components/home/component';
-
+import { ReactiveFormsExampleModule } from './reactive-forms';
 
 
 @NgModule({
@@ -25,7 +25,9 @@ import { HomeComponent } from './components/home/component';
         HttpClientModule,
         AppRoutingModule,
 
-        SharedComponentsModule,
+        ReactiveFormsExampleModule,
+
+        SharedComponentsModule
 
         // NgForValidationsNoteModule.forRoot()
     ],
