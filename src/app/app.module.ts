@@ -24,9 +24,9 @@ import { ReactiveFormsExampleModule } from './reactive-forms';
         HttpClientModule,
         AppRoutingModule,
 
-        ReactiveFormsExampleModule,
+        NgForValidationsNoteModule.forRoot(),
 
-        NgForValidationsNoteModule.forRoot()
+        ReactiveFormsExampleModule
     ],
     providers: [
         HttpClient
