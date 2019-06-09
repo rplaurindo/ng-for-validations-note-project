@@ -7,7 +7,6 @@ import {
 } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NgForValidationsNoteModule } from 'projects/ng-for-validations-note/src/public_api';
 
 import { AppComponent } from './app.component';
 
@@ -17,24 +16,22 @@ import { ReactiveFormsExampleModule } from './reactive-forms';
 
 
 @NgModule({
-    bootstrap: [AppComponent],
     imports: [
         BrowserModule,
         RouterModule,
         HttpClientModule,
         AppRoutingModule,
 
-        NgForValidationsNoteModule.forRoot(),
-
         ReactiveFormsExampleModule
-    ],
-    providers: [
-        HttpClient
     ],
     declarations: [
         AppComponent,
         HomeComponent,
         HorizontalMenuComponent
-    ]
+    ],
+    providers: [
+        HttpClient
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
