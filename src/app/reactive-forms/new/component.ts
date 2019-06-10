@@ -1,7 +1,7 @@
 import {
     Component,
     OnInit,
-    Output
+    ViewChild
 } from '@angular/core';
 import {
     FormGroup,
@@ -14,10 +14,14 @@ import { NgForValidationsNote } from '../../../../projects/ng-for-validations-no
 
 @Component({
     selector: 'app-reactive-form-form',
-    templateUrl: '../form.html',
-    styleUrls: ['../form.sass']
+    templateUrl: '../_form.html',
+    styleUrls: ['../style.sass']
 })
-export class NewComponent implements  OnInit {
+export class NewComponent implements OnInit {
+
+    @ViewChild('validatorAsList') private validatorAsList: NgForValidationsNote.Components.ListComponent;
+
+    @ViewChild('uniqMessageValidator') private uniqMessageValidator: NgForValidationsNote.Components.UniqComponent;
 
     form: FormGroup;
 
@@ -36,7 +40,11 @@ export class NewComponent implements  OnInit {
     onSubmit() {
         // report form to make uniq component has effect
         // console.log(this.form);
-        this.validator.notify(this.form);
+        // this.validator.notify(this.form);
+
+        // this.validatorAsList.validate(this.form);
+
+        this.uniqMessageValidator.validate(this.form);
     }
 
 }

@@ -5,9 +5,7 @@ import {
     OnDestroy
 } from '@angular/core';
 import {
-    FormControl,
-    FormGroup,
-    NgForm
+    FormControl
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
@@ -15,24 +13,24 @@ import { Services } from '../../services/namespace';
 
 
 @Component({
-    selector: 'app-form-validation',
+    selector: 'lib-form-validation',
     templateUrl: './template.html',
     styleUrls: ['./style.sass']
 })
 export class OverControlComponent implements OnInit,
                                              OnDestroy {
 
-    canShow: Boolean = false;
-    message: string;
-    errorMessages: Array<String> = [];
-
-    private validationSubscription: Subscription;
-
     @Input()
     messages: Object;
 
     @Input()
     control: FormControl;
+
+    canShow: Boolean = false;
+    message: string;
+    errorMessages: Array<String> = [];
+
+    private validationSubscription: Subscription;
 
     constructor(
         private notifier: Services.Notifier
@@ -45,7 +43,7 @@ export class OverControlComponent implements OnInit,
         this.validationSubscription = this.notifier.getValidation().subscribe(
             () => {
                 if (this.control) {
-                    mappedErrorKey = this.notifier.getValidationErrorFor(
+                    mappedErrorKey = this.notifier.getNextErrorFor(
                         this.control,
                         Services.Notifier.typeKeys(this.messages)
                     );

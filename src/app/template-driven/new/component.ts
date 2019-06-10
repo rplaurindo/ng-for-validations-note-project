@@ -11,8 +11,8 @@ import { NgForValidationsNote } from '../../../../projects/ng-for-validations-no
 
 @Component({
     selector: 'app-template-driven-form',
-    templateUrl: '../form.html',
-    styleUrls: ['../form.sass']
+    templateUrl: '../_form.html',
+    styleUrls: ['../style.sass']
 })
 export class NewComponent implements OnInit {
 

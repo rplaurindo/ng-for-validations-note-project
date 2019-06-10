@@ -17,6 +17,19 @@ export class Notifier {
 
     }
 
+    static typeKeys(messages: Object): Array<string> {
+        const
+            keys: Array<string> = [];
+
+        Object.keys(messages).forEach(
+            (k) => {
+                keys.push(k);
+            }
+        );
+
+        return keys;
+    }
+
     private copyValues(ngForm: NgForm): Object {
         const
             valuesMap: Object = {};
@@ -26,17 +39,6 @@ export class Notifier {
         });
 
         return valuesMap;
-    }
-
-    static typeKeys(messages: Object): Array<string> {
-        const
-            keys: Array<string> = [];
-
-        Object.keys(messages).forEach((k) => {
-            keys.push(k);
-        });
-
-        return keys;
     }
 
     resetForm(ngForm: NgForm) {
@@ -55,7 +57,7 @@ export class Notifier {
         this.validationSubscription.next(form);
     }
 
-    getValidationErrorFor(
+    getNextErrorFor(
         control: FormControl,
         validationTypes: Array<string>
     ): string {
