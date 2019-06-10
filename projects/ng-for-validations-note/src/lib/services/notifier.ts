@@ -4,7 +4,7 @@ import {
     FormControl,
     FormGroup
 } from '@angular/forms';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 
 
 @Injectable()
@@ -30,17 +30,6 @@ export class Notifier {
         return keys;
     }
 
-    private copyValues(ngForm: NgForm): Object {
-        const
-            valuesMap: Object = {};
-
-        Object.keys(ngForm.controls).forEach(control => {
-            valuesMap[control] = ngForm.controls[control].value;
-        });
-
-        return valuesMap;
-    }
-
     resetForm(ngForm: NgForm) {
         const
             valuesCopy: Object = this.copyValues(ngForm);
@@ -49,8 +38,8 @@ export class Notifier {
     }
 
     // the control would can be passed by here, but for some reason the control still doesn’t exist in any default initialization event
-    getValidation(): Subject<Object> {
-        return this.validationSubscription;
+    subscribe(callback: Function): Subscription {
+        return this.validationSubscription.subscribe(callback as any);
     }
 
     notify(form?: NgForm | FormGroup) {
@@ -76,6 +65,17 @@ export class Notifier {
         }
 
         return '';
+    }
+
+    private copyValues(ngForm: NgForm): Object {
+        const
+            valuesMap: Object = {};
+
+        Object.keys(ngForm.controls).forEach(control => {
+            valuesMap[control] = ngForm.controls[control].value;
+        });
+
+        return valuesMap;
     }
 
 }

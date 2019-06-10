@@ -40,7 +40,7 @@ export class OverControlComponent implements OnInit,
         let
             mappedErrorKey: string;
 
-        this.validationSubscription = this.notifier.getValidation().subscribe(
+        this.validationSubscription = this.notifier.subscribe(
             () => {
                 if (this.control) {
                     mappedErrorKey = this.notifier.getNextErrorFor(
