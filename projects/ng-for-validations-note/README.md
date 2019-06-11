@@ -39,7 +39,7 @@ To use anyone you must define the ```messages``` property binding, like that
 ></lib-form-validation>
 ```
 
-To use ```lib-form-uniq-validation``` or ```lib-form-validation-list``` you must define the ```nameTranslations``` property binding and define a variable to bind a property by ```@ViewChild('')```.
+To use ```lib-form-uniq-validation``` or ```lib-form-validation-list``` you must define the ```nameTranslations``` property binding and define a variable to bind a property by ```@ViewChild('')``` of ```NgForValidationsNote.Components.ListComponent``` or ```NgForValidationsNote.Components.UniqComponent``` kind.
 
 ```html
 <lib-form-uniq-validation
