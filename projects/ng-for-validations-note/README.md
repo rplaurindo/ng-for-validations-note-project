@@ -17,7 +17,7 @@ import { NgForValidationsNoteModule } from 'ng-for-validations-note';
 
 @NgModule({
     imports: [
-        NgForValidationsNoteModule
+        NgForValidationsNoteModule.forRoot()
     ]
 })
 export class MyModule() { }
@@ -25,46 +25,48 @@ export class MyModule() { }
 
 Choose which component you want to use
 
->- app-form-validation;
->- app-form-uniq-validation;
->- app-form-validation-list.
+>- lib-form-validation;
+>- lib-form-validation-list;
+>- lib-form-uniq-validation.
 
 To use anyone you must define the ```messages``` property binding, like that
 
 ```html
-<app-form-validation 
+<lib-form-validation 
 	[messages]="{
 		required: 'this field is required.'
 	}"
-></app-form-validation>
+></lib-form-validation>
 ```
 
-To use ```app-form-uniq-validation``` or ```app-form-validation-list``` you must define the ```nameTranslations``` property binding.
+To use ```lib-form-uniq-validation``` or ```lib-form-validation-list``` you must define the ```nameTranslations``` property binding and define a variable to bind a property by ```@ViewChild('')```.
 
 ```html
-<app-form-uniq-validation 
+<lib-form-uniq-validation
+	#validator
 	[nameTranslations]="{
 		name: 'Name',
 		name2: 'Name 2'
 	}"
-></app-form-uniq-validation>
+></lib-form-uniq-validation>
 ```
 
-To use ```app-form-validation``` you must define the ```control``` property binding.
+So in your component you should to call the ```validate(form: FormGroup | NgForm)``` of ```NgForValidationsNote.Components.ListComponent``` or ```NgForValidationsNote.Components.UniqComponent```.
+
+To use ```lib-form-validation``` you must define the ```control``` property binding.
 
 ```html
 <!-- on Reactive Forms -->
-<!-- on Template Driven -->
 <form
 	[formGroup]="form"
 	#form="ngForm"
 >
 	<input name="aName"/>
-	<app-form-validation
+	<lib-form-validation
 		[control]="form.controls['aName']"
-	></app-form-uniq-validation>
+	></lib-form-validation>
 </form>
 ```
 
-So inject the ```NgForValidationsNote.Services.Notifier``` service on your component importing ```NgForValidationsNote``` from ```ng-for-validations-note``` and call the ```notifier``` method when you want to show the validation message in your application. If you want to use ```app-form-uniq-validation``` or ```app-form-validation-list```, you must pass a ```NgForm``` of ```FormGroup``` instance as argument to work.
+So inject the ```NgForValidationsNote.Services.Notifier``` service on your component importing ```NgForValidationsNote``` from ```ng-for-validations-note``` and call the ```notifier()``` method when you want to show the validation message in your application.
 
