@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import {
     NgForm,
-    FormControl,
-    FormGroup
+    FormControl
 } from '@angular/forms';
 import { Subject, Subscription } from 'rxjs';
 
@@ -10,7 +9,7 @@ import { Subject, Subscription } from 'rxjs';
 @Injectable()
 export class Notifier {
 
-    private validationSubscription: Subject<Object> = new Subject();
+    private validationSubscription: Subject<void> = new Subject();
 
     // constructor(control: FormControl, validationTypes: Array<string>) {
     constructor() {
@@ -42,8 +41,8 @@ export class Notifier {
         return this.validationSubscription.subscribe(callback as any);
     }
 
-    notify(form?: NgForm | FormGroup) {
-        this.validationSubscription.next(form);
+    notify() {
+        this.validationSubscription.next();
     }
 
     getNextErrorFor(

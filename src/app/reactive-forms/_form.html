@@ -1,3 +1,31 @@
+<div class="line">
+  <lib-form-validation-list
+    #validatorAsList
+    [messages]="{
+      required: 'não pode ficar em branco.',
+      minlength: 'deve ter no mínimo 4 caracteres.'
+    }"
+    [nameTranslations]="{
+      name: 'Nome',
+      name2: 'Nome 2'
+    }"
+  ></lib-form-validation-list>
+</div>
+
+<!-- <div class="line">
+  <lib-form-uniq-validation
+    #uniqMessageValidator
+    [messages]="{
+      required: 'não pode ficar em branco.',
+      minlength: 'deve ter no mínimo 4 caracteres.'
+    }"
+    [nameTranslations]="{
+      name: 'Nome',
+      name2: 'Nome 2'
+    }"
+  ></lib-form-uniq-validation>
+</div> -->
+
 <form
   [formGroup]="form"
   (ngSubmit)="onSubmit()"
@@ -38,31 +66,3 @@
   </div>
 
 </form>
-
-<!-- <div class="line">
-  <lib-form-validation-list
-    #validatorAsList
-    [messages]="{
-      required: 'não pode ficar em branco.',
-      minlength: 'deve ter no mínimo 4 caracteres.'
-    }"
-    [nameTranslations]="{
-      name: 'Nome',
-      name2: 'Nome 2'
-    }"
-  ></lib-form-validation-list>
-</div> -->
-
-<!-- <div class="line">
-  <lib-form-uniq-validation
-    #uniqMessageValidator
-    [messages]="{
-      required: 'não pode ficar em branco.',
-      minlength: 'deve ter no mínimo 4 caracteres.'
-    }"
-    [nameTranslations]="{
-      name: 'Nome',
-      name2: 'Nome 2'
-    }"
-  ></lib-form-uniq-validation>
-</div> -->
