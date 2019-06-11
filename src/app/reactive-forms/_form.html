@@ -1,3 +1,44 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+
+  <div class="line">
+    <input
+      formControlName="name"
+      placeholder="nome"
+    />
+
+    <!-- <lib-form-validation
+      [control]="form.controls['name']"
+      [messages]="{
+        required: 'Não pode ficar em branco.',
+        minlength: 'Deve ter no mínimo 4 caracteres.'
+      }"
+    ></lib-form-validation> -->
+  </div>
+
+  <div class="line">
+    <input
+      formControlName="name2"
+      placeholder="nome 2"
+    />
+
+    <!-- <lib-form-validation
+      [control]="form.get('name2')"
+      [messages]="{
+        required: 'Não pode ficar em branco.',
+        minlength: 'Deve ter no mínimo 4 caracteres.'
+      }"
+    ></lib-form-validation> -->
+  </div>
+
+  <div class="actions">
+    <button type="submit">Salvar</button>
+  </div>
+
+</form>
+
 <!-- <div class="line">
   <lib-form-validation-list
     #validatorAsList
@@ -12,7 +53,7 @@
   ></lib-form-validation-list>
 </div> -->
 
-<div class="line">
+<!-- <div class="line">
   <lib-form-uniq-validation
     #uniqMessageValidator
     [messages]="{
@@ -24,45 +65,4 @@
       name2: 'Nome 2'
     }"
   ></lib-form-uniq-validation>
-</div>
-
-<form
-  [formGroup]="form"
-  (ngSubmit)="onSubmit()"
->
-
-  <div class="line">
-    <input
-      formControlName="name"
-      placeholder="nome"
-    />
-
-    <!-- <app-form-validation
-      [control]="form.controls['name']"
-      [messages]="{
-        required: 'Não pode ficar em branco.',
-        minlength: 'Deve ter no mínimo 4 caracteres.'
-      }"
-    ></app-form-validation> -->
-  </div>
-
-  <div class="line">
-    <input
-      formControlName="name2"
-      placeholder="nome 2"
-    />
-
-    <!-- <app-form-validation
-      [control]="form.get('name2')"
-      [messages]="{
-        required: 'Não pode ficar em branco.',
-        minlength: 'Deve ter no mínimo 4 caracteres.'
-      }"
-    ></app-form-validation> -->
-  </div>
-
-  <div class="actions">
-    <button type="submit">Salvar</button>
-  </div>
-
-</form>
+</div> -->
