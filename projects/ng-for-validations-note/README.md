@@ -25,9 +25,9 @@ export class MyModule() { }
 
 Choose which component you want to use
 
->- libapp-form-validation;
->- libapp-form-uniq-validation-list;
->- libapp-form-uniq-validation-list.
+>- lib-form-validation;
+>- lib-form-uniq-validation-list;
+>- lib-form-uniq-validation-list.
 
 To use anyone you must define the ```messages``` property binding, like that
 
@@ -39,7 +39,7 @@ To use anyone you must define the ```messages``` property binding, like that
 ></lib-form-validation>
 ```
 
-To use ```libapp-form-uniq-validation``` or ```libapp-form-validation-list``` you must define the ```nameTranslations``` property binding and define a variable to bind a property by ```@ViewChild('')``` of ```NgForValidationsNote.Components.ListComponent``` or ```NgForValidationsNote.Components.UniqComponent``` kind.
+To use ```lib-form-uniq-validation``` or ```lib-form-validation-list``` you must define the ```nameTranslations``` property binding and define a variable to bind a property by ```@ViewChild('')``` of ```NgForValidationsNote.Components.ListComponent``` or ```NgForValidationsNote.Components.UniqComponent``` kind.
 
 ```html
 <lib-form-uniq-validation
