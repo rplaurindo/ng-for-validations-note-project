@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import {
-    HttpClientModule,
-    HttpClient
-} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -19,7 +15,6 @@ import { ReactiveFormsExampleModule } from './reactive-forms';
     imports: [
         BrowserModule,
         RouterModule,
-        HttpClientModule,
         AppRoutingModule,
 
         ReactiveFormsExampleModule
@@ -30,7 +25,7 @@ import { ReactiveFormsExampleModule } from './reactive-forms';
         HorizontalMenuComponent
     ],
     providers: [
-        HttpClient
+
     ],
     bootstrap: [AppComponent]
 })
