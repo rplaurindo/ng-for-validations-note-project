@@ -9,7 +9,9 @@ import {
     Validators
 } from '@angular/forms';
 
-import { NgForValidationsNote } from '../../../../projects/ng-for-validations-note/src/public_api';
+// import { NgForValidationsNote } from '../../../../projects/ng-for-validations-note/src/public_api';
+import { NgForValidationsNote } from 'ng-for-validations-note';
+import { Services as NgForValidationsNoteServices } from 'ng-for-validations-note';
 
 
 @Component({
@@ -27,7 +29,7 @@ export class NewComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private validator: NgForValidationsNote.Services.Notifier
+        private validator: NgForValidationsNoteServices.Notifier
     ) { }
 
     ngOnInit() {

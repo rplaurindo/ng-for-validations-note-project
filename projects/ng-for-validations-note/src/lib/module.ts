@@ -4,30 +4,32 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-    ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 } from '@angular/forms';
 
-import { Services } from './services/namespace';
+import { Notifier } from './services/notifier';
 
-import * as Components from './components';
+import { ListComponent } from './components/list/component';
+import { OverControlComponent } from './components/over-control/component';
+import { UniqComponent } from './components/uniq/component';
 
 
 @NgModule({
     imports: [
         CommonModule,
-        ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
     declarations: [
-        Components.ListComponent,
-        Components.OverControlComponent,
-        Components.UniqComponent
+        ListComponent,
+        OverControlComponent,
+        UniqComponent
     ],
     exports: [
-        Components.ListComponent,
-        Components.OverControlComponent,
-        Components.UniqComponent
+        ListComponent,
+        OverControlComponent,
+        UniqComponent
     ]
 })
 export class NgForValidationsNoteModule {
@@ -36,7 +38,7 @@ export class NgForValidationsNoteModule {
         return {
             ngModule: NgForValidationsNoteModule,
             providers: [
-                Services.Notifier
+                Notifier
             ]
         };
     }
