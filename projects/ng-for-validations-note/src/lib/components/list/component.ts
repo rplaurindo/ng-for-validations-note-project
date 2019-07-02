@@ -25,13 +25,14 @@ export class ListComponent implements OnInit {
     @Input()
     nameTranslations: object;
 
-    canShow: boolean;
+    displayed: boolean;
+
     errorMessages: Array<string> = [];
 
     constructor(
         private notifier: Notifier
     ) {
-        this.canShow = false;
+        this.displayed = false;
     }
 
     ngOnInit() {
@@ -62,7 +63,7 @@ export class ListComponent implements OnInit {
             }
 
             if (mappedErrorKey) {
-                this.canShow = true;
+                this.displayed = true;
             }
         }
     }

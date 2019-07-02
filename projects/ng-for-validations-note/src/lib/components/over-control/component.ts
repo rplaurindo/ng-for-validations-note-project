@@ -24,8 +24,10 @@ export class OverControlComponent implements OnInit,
     @Input()
     control: any;
 
-    canShow: boolean;
+    displayed: boolean;
+
     message: string;
+
     errorMessages: Array<string> = [];
 
     private validationSubscription: Subscription;
@@ -33,7 +35,7 @@ export class OverControlComponent implements OnInit,
     constructor(
         private notifier: Notifier
     ) {
-        this.canShow = false;
+        this.displayed = false;
     }
 
     ngOnInit() {
@@ -48,11 +50,11 @@ export class OverControlComponent implements OnInit,
                         Notifier.typeKeys(this.messages)
                     );
                     if (mappedErrorKey) {
-                        this.canShow = true;
+                        this.displayed = true;
                         this.message = this.messages[mappedErrorKey];
                     } else {
                         this.message = '';
-                        this.canShow = false;
+                        this.displayed = false;
                     }
                 }
             }

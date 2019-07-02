@@ -28,14 +28,16 @@ export class UniqComponent implements OnInit {
     @Input()
     nameTranslations: object;
 
-    canShow: boolean;
+    displayed: boolean;
+
     message: string;
+
     errorMessages: Array<string> = [];
 
     constructor(
         private notifier: Notifier
     ) {
-        this.canShow = false;
+        this.displayed = false;
     }
 
     ngOnInit() {
@@ -59,14 +61,14 @@ export class UniqComponent implements OnInit {
                     Notifier.typeKeys(this.messages)
                 );
                 if (mappedErrorKey) {
-                    this.canShow = true;
+                    this.displayed = true;
                     this.message = `
                                 ${this.nameTranslations[k]} ${this.messages[mappedErrorKey]}
                             `;
                     break;
                 } else {
                     this.message = '';
-                    this.canShow = false;
+                    this.displayed = false;
                 }
             }
         }

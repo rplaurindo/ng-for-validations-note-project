@@ -21,9 +21,9 @@ import { Notifier } from 'ng-for-validations-note';
 })
 export class NewComponent implements OnInit {
 
-    @ViewChild('validatorAsList', { static: true }) private validatorAsList: NgForValidationsNote.Components.ListComponent;
+    @ViewChild('validatorAsList', { static: false }) private validatorAsList: NgForValidationsNote.Components.ListComponent;
 
-    @ViewChild('uniqMessageValidator', { static: true }) private uniqMessageValidator: NgForValidationsNote.Components.UniqComponent;
+    @ViewChild('uniqMessageValidator', { static: false }) private uniqMessageValidator: NgForValidationsNote.Components.UniqComponent;
 
     form: FormGroup;
 
