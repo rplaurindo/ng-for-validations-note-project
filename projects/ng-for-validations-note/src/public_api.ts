@@ -1,15 +1,6 @@
-export { NgForValidationsNoteModule } from './lib/module';
-
-export { Services } from './lib/services/namespace';
-
+export * from './lib/services';
+export * from './lib/components';
+export * from './lib/module';
 
 import * as NgForValidationsNote from './lib';
 export { NgForValidationsNote };
-
-
-// import { Components as _Components } from './lib/components/namespace';
-// export namespace NgForValidationsNote {
-
-//     export const Components = _Components;
-
-// }

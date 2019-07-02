@@ -9,7 +9,7 @@ import {
     NgForm
 } from '@angular/forms';
 
-import { Services } from '../../services/namespace';
+import { Notifier } from '../../services';
 
 
 @Component({
@@ -20,28 +20,31 @@ import { Services } from '../../services/namespace';
 export class ListComponent implements OnInit {
 
     @Input()
-    messages: Object;
+    messages: object;
 
     @Input()
-    nameTranslations: Object;
+    nameTranslations: object;
 
-    canShow: Boolean = false;
-    errorMessages: Array<String> = [];
+    canShow: boolean;
+    errorMessages: Array<string> = [];
 
     constructor(
-        private notifier: Services.Notifier
-    ) { }
+        private notifier: Notifier
+    ) {
+        this.canShow = false;
+    }
 
     ngOnInit() {
 
     }
 
     validate(form: NgForm | FormGroup) {
-        let
-            mappedErrorKey: string,
-            controls: Object,
-            control: FormControl
-        ;
+
+        let mappedErrorKey: string;
+
+        let controls: object;
+
+        let control: FormControl;
 
         if (form) {
             controls = form.controls;
@@ -50,7 +53,7 @@ export class ListComponent implements OnInit {
                 control = controls[fieldName];
                 mappedErrorKey = this.notifier.getNextErrorFor(
                     control,
-                    Services.Notifier.typeKeys(this.messages)
+                    Notifier.typeKeys(this.messages)
                 );
 
                 if (this.nameTranslations[fieldName] && mappedErrorKey) {

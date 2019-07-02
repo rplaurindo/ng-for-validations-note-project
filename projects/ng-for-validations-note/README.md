@@ -32,7 +32,7 @@ Choose which component you want to use
 To use anyone you must define the ```messages``` property binding, like that
 
 ```html
-<lib-form-validation 
+<lib-form-validation
 	[messages]="{
 		required: 'this field is required.'
 	}"
@@ -43,7 +43,7 @@ To use ```lib-form-uniq-validation``` or ```lib-form-validation-list``` you must
 
 ```html
 <lib-form-uniq-validation
-	#validator 
+	#validator
 	[nameTranslations]="{
 		name: 'Name',
 		name2: 'Name 2'
@@ -69,5 +69,4 @@ To use ```libuse ```app-form-validation``` you must define the ```control``` pro
 </form>
 ```
 
-So inject the ```NgForValidationsNote.Services.Notifier``` service on your component importing ```NgForValidationsNote``` from ```ng-for-validations-note``` and call the ```notifier()``` method when you want to show the validation message in your application. If you want to use ```app-form-uniq-validation``` or ```app-form-validation-list```, you must pass a ```NgForm``` of ```FormGroup``` instance as argument to work.
-
+So inject the ```Notifier``` service on your component importing ```NgForValidationsNote``` from ```ng-for-validations-note``` and call the ```notifier()``` method when you want to show the validation message in your application. If you want to use ```app-form-uniq-validation``` or ```app-form-validation-list```, you must pass a ```NgForm``` of ```FormGroup``` instance as argument to work.

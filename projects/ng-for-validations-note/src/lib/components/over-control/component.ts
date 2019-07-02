@@ -4,12 +4,10 @@ import {
     OnInit,
     OnDestroy
 } from '@angular/core';
-import {
-    FormControl
-} from '@angular/forms';
+
 import { Subscription } from 'rxjs';
 
-import { Services } from '../../services/namespace';
+import { Notifier } from '../../services';
 
 
 @Component({
@@ -21,20 +19,22 @@ export class OverControlComponent implements OnInit,
                                              OnDestroy {
 
     @Input()
-    messages: Object;
+    messages: object;
 
     @Input()
-    control: FormControl;
+    control: any;
 
-    canShow: Boolean = false;
+    canShow: boolean;
     message: string;
-    errorMessages: Array<String> = [];
+    errorMessages: Array<string> = [];
 
     private validationSubscription: Subscription;
 
     constructor(
-        private notifier: Services.Notifier
-    ) { }
+        private notifier: Notifier
+    ) {
+        this.canShow = false;
+    }
 
     ngOnInit() {
         let
@@ -45,7 +45,7 @@ export class OverControlComponent implements OnInit,
                 if (this.control) {
                     mappedErrorKey = this.notifier.getNextErrorFor(
                         this.control,
-                        Services.Notifier.typeKeys(this.messages)
+                        Notifier.typeKeys(this.messages)
                     );
                     if (mappedErrorKey) {
                         this.canShow = true;

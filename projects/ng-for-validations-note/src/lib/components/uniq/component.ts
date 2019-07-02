@@ -9,7 +9,7 @@ import {
     NgForm
 } from '@angular/forms';
 
-import { Services } from '../../services/namespace';
+import { Notifier } from '../../services';
 
 
 @Component({
@@ -20,39 +20,43 @@ import { Services } from '../../services/namespace';
 export class UniqComponent implements OnInit {
 
     @Input()
-    messages: Object;
+    messages: object;
 
     @Input()
-    control: FormControl;
+    control: any;
 
     @Input()
-    nameTranslations: Object;
+    nameTranslations: object;
 
-    canShow: Boolean = false;
+    canShow: boolean;
     message: string;
-    errorMessages: Array<String> = [];
+    errorMessages: Array<string> = [];
 
     constructor(
-        private notifier: Services.Notifier
-    ) { }
+        private notifier: Notifier
+    ) {
+        this.canShow = false;
+    }
 
     ngOnInit() {
 
     }
 
     validate(form: NgForm | FormGroup) {
-        let
-            mappedErrorKey: string,
-            controls: Object,
-            control: FormControl;
+
+        let mappedErrorKey: string;
+
+        let controls: object;
+
+        let control: FormControl;
 
         if (form) {
             controls = form.controls;
-            for (let k of Object.keys(controls)) {
+            for (const k of Object.keys(controls)) {
                 control = controls[k];
                 mappedErrorKey = this.notifier.getNextErrorFor(
                     control,
-                    Services.Notifier.typeKeys(this.messages)
+                    Notifier.typeKeys(this.messages)
                 );
                 if (mappedErrorKey) {
                     this.canShow = true;

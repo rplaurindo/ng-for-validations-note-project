@@ -11,7 +11,7 @@ import {
 
 // import { NgForValidationsNote } from '../../../../projects/ng-for-validations-note/src/public_api';
 import { NgForValidationsNote } from 'ng-for-validations-note';
-import { Services as NgForValidationsNoteServices } from 'ng-for-validations-note';
+import { Notifier } from 'ng-for-validations-note';
 
 
 @Component({
@@ -21,15 +21,15 @@ import { Services as NgForValidationsNoteServices } from 'ng-for-validations-not
 })
 export class NewComponent implements OnInit {
 
-    @ViewChild('validatorAsList') private validatorAsList: NgForValidationsNote.Components.ListComponent;
+    @ViewChild('validatorAsList', { static: true }) private validatorAsList: NgForValidationsNote.Components.ListComponent;
 
-    @ViewChild('uniqMessageValidator') private uniqMessageValidator: NgForValidationsNote.Components.UniqComponent;
+    @ViewChild('uniqMessageValidator', { static: true }) private uniqMessageValidator: NgForValidationsNote.Components.UniqComponent;
 
     form: FormGroup;
 
     constructor(
         private formBuilder: FormBuilder,
-        private validator: NgForValidationsNoteServices.Notifier
+        private validator: Notifier
     ) { }
 
     ngOnInit() {
