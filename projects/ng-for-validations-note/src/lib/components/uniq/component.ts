@@ -9,7 +9,7 @@ import {
     NgForm
 } from '@angular/forms';
 
-import { Notifier } from '../../services';
+import { Notifier } from '../../services/notifier';
 
 
 @Component({

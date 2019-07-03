@@ -7,7 +7,7 @@ import {
 
 import { Subscription } from 'rxjs';
 
-import { Notifier } from '../../services';
+import { Notifier } from '../../services/notifier';
 
 
 @Component({

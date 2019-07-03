@@ -5,6 +5,8 @@ import {
 
 import { Notifier } from 'ng-for-validations-note';
 
+import { ModelTemplateExample } from '../model-template-example';
+
 
 @Component({
     selector: 'app-template-driven-form',
@@ -13,11 +15,19 @@ import { Notifier } from 'ng-for-validations-note';
 })
 export class NewComponent implements OnInit {
 
+    modelReference: ModelTemplateExample;
+
     constructor(
         // private validator: Notifier
-    ) { }
+    ) {
+        this.modelReference = {
+            name: null,
+            name2: null
+        };
+    }
 
     ngOnInit() {
+        // this.modelReference ;
     }
 
     onSubmit() {
