@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 
 import { HorizontalMenuComponent } from './components/horizontal-menu/component';
 import { HomeComponent } from './components/home/component';
-import { ReactiveFormsExampleModule } from './reactive-forms';
+
+import { ReactiveFormsExampleModule } from './reactive-forms/module';
 
 
 @NgModule({

@@ -14,14 +14,14 @@ import { Notifier } from 'ng-for-validations-note';
 export class NewComponent implements OnInit {
 
     constructor(
-        private validator: Notifier
+        // private validator: Notifier
     ) { }
 
     ngOnInit() {
     }
 
     onSubmit() {
-        this.validator.notify();
+        // this.validator.notify();
     }
 
 }

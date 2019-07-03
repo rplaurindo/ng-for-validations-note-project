@@ -29,7 +29,7 @@ export class NewComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private validator: Notifier
+        // private validator: Notifier
     ) { }
 
     ngOnInit() {
@@ -40,7 +40,7 @@ export class NewComponent implements OnInit {
     }
 
     onSubmit() {
-        this.validator.notify();
+        // this.validator.notify();
 
         this.validatorAsList.validate(this.form);
 
