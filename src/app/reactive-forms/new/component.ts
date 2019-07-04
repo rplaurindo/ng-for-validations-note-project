@@ -28,8 +28,8 @@ export class NewComponent implements OnInit {
     form: FormGroup;
 
     constructor(
-        private formBuilder: FormBuilder,
-        // private validator: Notifier
+        // private validator: Notifier,
+        private formBuilder: FormBuilder
     ) { }
 
     ngOnInit() {
