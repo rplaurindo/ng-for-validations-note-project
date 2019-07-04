@@ -18,7 +18,7 @@ export class NewComponent implements OnInit {
     modelReference: ModelTemplateExample;
 
     constructor(
-        // private validator: Notifier
+        private validator: Notifier
     ) {
         this.modelReference = {
             name: null,
@@ -27,11 +27,11 @@ export class NewComponent implements OnInit {
     }
 
     ngOnInit() {
-        // this.modelReference ;
+
     }
 
     onSubmit() {
-        // this.validator.notify();
+        this.validator.notify();
     }
 
 }
