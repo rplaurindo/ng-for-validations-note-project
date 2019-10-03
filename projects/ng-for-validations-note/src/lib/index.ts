@@ -1,3 +1,3 @@
-export { Components } from './components/namespace';
+export * from './components/index';
 
 export { Services } from './services/namespace';

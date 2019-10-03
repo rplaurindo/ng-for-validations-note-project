@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "ng-for-validations-note": [
-        "dist/ng-for-validations-note"
+      "@rplaurindo/ng-for-validations-note": [
+        "dist/@rplaurindo/ng-for-validations-note"
       ],
-      "ng-for-validations-note/*": [
-        "dist/ng-for-validations-note/*"
+      "@rplaurindo/ng-for-validations-note/*": [
+        "dist/@rplaurindo/ng-for-validations-note/*"
       ]
     }
   }
