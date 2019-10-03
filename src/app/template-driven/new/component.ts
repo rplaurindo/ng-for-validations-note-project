@@ -3,7 +3,8 @@ import {
     OnInit
 } from '@angular/core';
 
-import { Notifier } from 'ng-for-validations-note';
+// import { } from '@rplaurindo/ng-for-validations-note';
+import { NgForValidationsNote } from 'projects/ng-for-validations-note';
 
 import { ModelTemplateExample } from '../model-template-example';
 
@@ -18,7 +19,7 @@ export class NewComponent implements OnInit {
     modelReference: ModelTemplateExample;
 
     constructor(
-        private validator: Notifier
+        private validator: NgForValidationsNote.Services.Notifier
     ) {
         this.modelReference = {
             name: null,
