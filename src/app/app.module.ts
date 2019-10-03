@@ -14,16 +14,16 @@ import { ReactiveFormsExampleModule } from './reactive-forms/module';
 
 @NgModule({
     imports: [
-        BrowserModule,
-        RouterModule,
-        AppRoutingModule,
+        BrowserModule
+        , RouterModule
+        , AppRoutingModule
 
-        ReactiveFormsExampleModule
+        , ReactiveFormsExampleModule
     ],
     declarations: [
-        AppComponent,
-        HomeComponent,
-        HorizontalMenuComponent
+        AppComponent
+        , HomeComponent
+        , HorizontalMenuComponent
     ],
     providers: [
 

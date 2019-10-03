@@ -9,9 +9,8 @@ import {
     Validators
 } from '@angular/forms';
 
-// import { NgForValidationsNote } from '../../../../projects/ng-for-validations-note/src/public_api';
-import { NgForValidationsNote } from 'ng-for-validations-note';
-import { Notifier } from 'ng-for-validations-note';
+// import { NgForValidationsNote } from '@rplaurindo/ng-for-validations-note';
+import { NgForValidationsNote } from 'projects/ng-for-validations-note';
 
 
 @Component({
@@ -21,14 +20,13 @@ import { Notifier } from 'ng-for-validations-note';
 })
 export class NewComponent implements OnInit {
 
-    @ViewChild('validatorAsList', { static: false }) private validatorAsList: NgForValidationsNote.Components.ListComponent;
+    @ViewChild('validatorAsList', { static: false }) private validatorAsList: NgForValidationsNote.ListComponent;
 
-    @ViewChild('uniqMessageValidator', { static: false }) private uniqMessageValidator: NgForValidationsNote.Components.UniqComponent;
+    @ViewChild('uniqMessageValidator', { static: false }) private uniqMessageValidator: NgForValidationsNote.UniqComponent;
 
     form: FormGroup;
 
     constructor(
-        // private validator: Notifier,
         private formBuilder: FormBuilder
     ) { }
 
