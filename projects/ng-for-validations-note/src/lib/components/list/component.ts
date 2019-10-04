@@ -15,7 +15,7 @@ import { Notifier } from '../../services/notifier';
 @Component({
     selector: 'lib-form-validation-list',
     templateUrl: './template.html',
-    styleUrls: ['./style.sass']
+    styleUrls: ['./style.styl']
 })
 export class ListComponent implements OnInit {
 

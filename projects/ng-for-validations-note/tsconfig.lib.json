@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../out-tsc/lib",
+    "outDir": "../../dist/@rplaurindo/ng-for-validations-note",
     "target": "es2015",
     "declaration": true,
     "inlineSources": true,
@@ -12,12 +12,7 @@
     ]
   },
   "angularCompilerOptions": {
-    "annotateForClosureCompiler": true,
-    "skipTemplateCodegen": true,
-    "strictMetadataEmit": true,
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true,
-    "enableResourceInlining": true
+    "annotateForClosureCompiler": true
   },
   "exclude": [
     "src/test.ts",
