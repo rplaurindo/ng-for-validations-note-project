@@ -6,7 +6,7 @@ import {
 // import { Notifier } from '@rplaurindo/ng-for-validations-note';
 import { Notifier } from 'projects/ng-for-validations-note';
 
-import { ModelTemplateExample } from '../model-template-example';
+import { IModelTemplateExample } from '../i-model-template-example';
 
 
 @Component({
@@ -16,7 +16,7 @@ import { ModelTemplateExample } from '../model-template-example';
 })
 export class NewComponent implements OnInit {
 
-    modelReference: ModelTemplateExample;
+    modelReference: IModelTemplateExample;
 
     constructor(
         private validator: Notifier

@@ -1,4 +1,4 @@
-export interface ModelTemplateExample {
+export interface IModelTemplateExample {
 
     name?: string;
     name2?: string;
