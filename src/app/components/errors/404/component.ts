@@ -1,13 +1,13 @@
 import {
-  Component,
-  OnInit
+  Component
+  , OnInit
 } from '@angular/core';
 
 
 @Component({
   selector: 'app-404-error',
-  templateUrl: './component.html',
-  styleUrls: ['./component.sass']
+  templateUrl: './template.html',
+  styleUrls: ['./style.styl']
 })
 export class PageNotFoundComponent implements OnInit {
 

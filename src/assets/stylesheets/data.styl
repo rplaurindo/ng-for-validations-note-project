@@ -1,4 +1,5 @@
-@import mixins
+@import 'mixins.styl'
+
 
 html
   body
@@ -10,9 +11,7 @@ html
         vertical-align: top
 
       dd
-        +text-overflow
+        text-overflow()
 
-    dl,
-    dl dt,
-    dl dd
-      display: inline-block
+      dt, dd
+        display: inline-block

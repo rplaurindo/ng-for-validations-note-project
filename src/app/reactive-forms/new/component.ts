@@ -1,12 +1,12 @@
 import {
-    Component,
-    OnInit,
-    ViewChild
+    Component
+    , OnInit
+    , ViewChild
 } from '@angular/core';
 import {
-    FormGroup,
-    FormBuilder,
-    Validators
+    FormGroup
+    , FormBuilder
+    , Validators
 } from '@angular/forms';
 
 // import { NgForValidationsNote } from '@rplaurindo/ng-for-validations-note';
@@ -15,8 +15,8 @@ import { NgForValidationsNote } from 'projects/ng-for-validations-note';
 
 @Component({
     selector: 'app-reactive-form-form',
-    templateUrl: '../_form.html',
-    styleUrls: ['../style.sass']
+    templateUrl: '../_form-template.html',
+    styleUrls: ['../style.styl']
 })
 export class NewComponent implements OnInit {
 

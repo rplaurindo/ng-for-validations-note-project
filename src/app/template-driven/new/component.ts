@@ -1,6 +1,6 @@
 import {
-    Component,
-    OnInit
+    Component
+    , OnInit
 } from '@angular/core';
 
 // import { Notifier } from '@rplaurindo/ng-for-validations-note';
@@ -11,8 +11,8 @@ import { ModelTemplateExample } from '../model-template-example';
 
 @Component({
     selector: 'app-template-driven-form',
-    templateUrl: '../_form.html',
-    styleUrls: ['../style.sass']
+    templateUrl: '../_form-template.html',
+    styleUrls: ['../style.styl']
 })
 export class NewComponent implements OnInit {
 
