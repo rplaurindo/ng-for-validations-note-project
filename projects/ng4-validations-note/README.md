@@ -54,7 +54,7 @@ To use `lib-form-uniq-validation` or `lib-form-validation-list` you must define 
 
 To in your component you should to call the `validate(form: FormGroup | NgForm)` of `NgForValidationsNote.Components.ListComponent` or `NgForValidationsNote.Components.UniqComponent`.
 
-To use `lib-app-form-validation` you must define the `control` property binding.
+To use `lib-form-validation` you must define the `control` property binding.
 
 ```html
 <!-- on Reactive Forms -->
