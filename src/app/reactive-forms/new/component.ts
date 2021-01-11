@@ -10,12 +10,11 @@ import {
 } from '@angular/forms';
 
 import { Ng4ValidationsNote } from '@actjs.on/ng4-validations-note';
-// import { Ng4ValidationsNote } from 'projects/ng4-validations-note';
 
 
 @Component({
     selector: 'app-reactive-form-form',
-    templateUrl: '../_form-template.html',
+    templateUrl: '../template.html',
     styleUrls: ['../style.styl']
 })
 export class NewComponent implements OnInit {

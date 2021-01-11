@@ -3,15 +3,14 @@ import {
     , OnInit
 } from '@angular/core';
 
-import { Notifier } from '@rplaurindo/ng4-validations-note';
-// import { Notifier } from 'projects/ng4-validations-note';
+import { Notifier } from '@actjs.on/ng4-validations-note';
 
 import { IModelTemplateExample } from '../i-model-template-example';
 
 
 @Component({
     selector: 'app-template-driven-form',
-    templateUrl: '../_form-template.html',
+    templateUrl: '../template.html',
     styleUrls: ['../style.styl']
 })
 export class NewComponent implements OnInit {
