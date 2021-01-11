@@ -3,7 +3,7 @@
 ## Requirements
 
 >- @angular/common, @angular/core and @angular/forms 5 or higher;
->- rxjs 5Angular 6 or higher
+>- rxjs 5Angular 6 or higher.
 
 ## Installing
 
