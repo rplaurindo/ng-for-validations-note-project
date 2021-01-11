@@ -1,4 +1,4 @@
-<h1 id="ngforvalidationsnote">NgForValidationsNote</h1>
+<h1 id="ng4validationsnote">Ng4ValidationsNote</h1>
 <h2 id="requirements">Requirements</h2>
 <blockquote>
 <ul>
@@ -7,15 +7,15 @@
 </ul>
 </blockquote>
 <h2 id="installing">Installing</h2>
-<pre><code>$ npm i ng-for-validations-note --save
+<pre><code>$ npm i ng4-validations-note --save
 </code></pre>
 <h2 id="usage">Usage</h2>
-<p>Include the module into <code>imports</code> metadata key of <code>NgModule</code> decorator of your application importing <code>NgForValidationsNoteModule</code> from <code>ng-for-validations-note</code>, like that.</p>
-<pre class=" language-typescript"><code class="prism  language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> NgForValidationsNoteModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ng-for-validations-note'</span><span class="token punctuation">;</span>
+<p>Include the module into <code>imports</code> metadata key of <code>NgModule</code> decorator of your application importing <code>Ng4ValidationsNoteModule</code> from <code>ng4-validations-note</code>, like that.</p>
+<pre class=" language-typescript"><code class="prism  language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Ng4ValidationsNoteModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ng4-validations-note'</span><span class="token punctuation">;</span>
 
 @<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     imports<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-        NgForValidationsNoteModule<span class="token punctuation">.</span><span class="token function">forRoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        Ng4ValidationsNoteModule<span class="token punctuation">.</span><span class="token function">forRoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token punctuation">]</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">MyModule</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
@@ -58,5 +58,5 @@
 	<span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>lib-form-uniq-validation</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-<p>So inject the <code>NgForValidationsNote.Services.Notifier</code> service on your component importing <code>NgForValidationsNote</code> from <code>ng-for-validations-note</code> and call the <code>notifier()</code> method when you want to show the validation message in your application. If you want to use <code>app-form-uniq-validation</code> or <code>app-form-validation-list</code>, you must pass a <code>NgForm</code> of <code>FormGroup</code> instance as argument to work.</p>
+<p>So inject the <code>Ng4ValidationsNote.Services.Notifier</code> service on your component importing <code>Ng4ValidationsNote</code> from <code>ng4-validations-note</code> and call the <code>notifier()</code> method when you want to show the validation message in your application. If you want to use <code>app-form-uniq-validation</code> or <code>app-form-validation-list</code>, you must pass a <code>NgForm</code> of <code>FormGroup</code> instance as argument to work.</p>
 
