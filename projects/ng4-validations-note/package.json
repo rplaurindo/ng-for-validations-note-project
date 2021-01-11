@@ -1,5 +1,5 @@
 {
-  "name": "@rplaurindo/ng-for-validations-note",
+  "name": "@actjs.on/ng4-validations-note",
   "version": "1.0.0-rc.1",
   "peerDependencies": {
     "@angular/common": ">= 5",

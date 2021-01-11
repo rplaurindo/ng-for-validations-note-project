@@ -35,7 +35,7 @@
 	}<span class="token punctuation">"</span></span>
 <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>lib-form-validation</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-<p>To use <code>lib-form-uniq-validation</code> or <code>lib-form-validation-list</code> you must define the <code>nameTranslations</code> property binding and define a variable to bind a property by <code>@ViewChild('')</code> of <code>NgForValidationsNote.Components.ListComponent</code> or <code>NgForValidationsNote.Components.UniqComponent</code> kind.</p>
+<p>To use <code>lib-form-uniq-validation</code> or <code>lib-form-validation-list</code> you must define the <code>nameTranslations</code> property binding and define a variable to bind a property by <code>@ViewChild('')</code> of <code>Ng4ValidationsNote.Components.ListComponent</code> or <code>ng4-validationsNote.Components.UniqComponent</code> kind.</p>
 <pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>lib-form-uniq-validation</span>
 	<span class="token attr-name">#validator</span> 
 	<span class="token attr-name">[nameTranslations]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{
@@ -44,7 +44,7 @@
 	}<span class="token punctuation">"</span></span>
 <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>lib-form-uniq-validation</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-<p>To in your component you should to call the <code>validate(form: FormGroup | NgForm)</code> of <code>NgForValidationsNote.Components.ListComponent</code> or <code>NgForValidationsNote.Components.UniqComponent</code>.</p>
+<p>To in your component you should to call the <code>validate(form: FormGroup | NgForm)</code> of <code>ng4-validationsNote.Components.ListComponent</code> or <code>ng4-validationsNote.Components.UniqComponent</code>.</p>
 <p>To use <code>lib-app-form-validation</code> you must define the <code>control</code> property binding.</p>
 <pre class=" language-html"><code class="prism  language-html"><span class="token comment">&lt;!-- on Reactive Forms --&gt;</span>
 <span class="token comment">&lt;!-- on Template Driven --&gt;</span>

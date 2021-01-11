@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/@rplaurindo/ng-for-validations-note",
+    "outDir": "../../dist/@actjs.on/ng4-validations-note",
     "target": "es2015",
     "declaration": true,
     "inlineSources": true,

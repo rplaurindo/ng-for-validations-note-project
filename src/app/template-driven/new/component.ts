@@ -3,8 +3,8 @@ import {
     , OnInit
 } from '@angular/core';
 
-// import { Notifier } from '@rplaurindo/ng-for-validations-note';
-import { Notifier } from 'projects/ng-for-validations-note';
+import { Notifier } from '@rplaurindo/ng4-validations-note';
+// import { Notifier } from 'projects/ng4-validations-note';
 
 import { IModelTemplateExample } from '../i-model-template-example';
 

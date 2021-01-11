@@ -32,11 +32,11 @@ import { UniqComponent } from './components/uniq/component';
         , UniqComponent
     ]
 })
-export class NgForValidationsNoteModule {
+export class Ng4ValidationsNoteModule {
 
     static forRoot(): ModuleWithProviders {
         return {
-            ngModule: NgForValidationsNoteModule
+            ngModule: Ng4ValidationsNoteModule
             , providers: [
                 Notifier
             ]

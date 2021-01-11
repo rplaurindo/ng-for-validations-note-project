@@ -11,7 +11,7 @@ import {
 })
 export class AppComponent implements OnInit {
 
-  title = `ng-for-validations-note-project`;
+  title = `ng4-validations-note-project`;
 
   constructor(
 

@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
-// import { NgForValidationsNoteModule } from '@rplaurindo/ng-for-validations-note';
-import { NgForValidationsNoteModule } from 'projects/ng-for-validations-note';
+import { Ng4ValidationsNoteModule } from '@actjs.on/ng4-validations-note';
+// import { Ng4ValidationsNoteModule } from 'projects/ng4-validations-note';
 
 import { NewComponent } from './new/component';
 
@@ -12,13 +12,13 @@ import { NewComponent } from './new/component';
     imports: [
         ReactiveFormsModule
 
-        , NgForValidationsNoteModule.forRoot()
+        , Ng4ValidationsNoteModule.forRoot()
     ],
     declarations: [
         NewComponent
     ],
     exports: [
-        NgForValidationsNoteModule
+        Ng4ValidationsNoteModule
         , NewComponent
     ],
     providers: [

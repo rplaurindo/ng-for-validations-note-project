@@ -120,33 +120,33 @@
         }
       }
     },
-    "ng-for-validations-note": {
+    "ng4-validations-note": {
       "projectType": "library",
-      "root": "projects/ng-for-validations-note",
-      "sourceRoot": "projects/ng-for-validations-note",
+      "root": "projects/ng4-validations-note",
+      "sourceRoot": "projects/ng4-validations-note",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ng-for-validations-note/tsconfig.lib.json",
-            "project": "projects/ng-for-validations-note/ng-package.json"
+            "tsConfig": "projects/ng4-validations-note/tsconfig.lib.json",
+            "project": "projects/ng4-validations-note/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-for-validations-note/src/test.ts",
-            "tsConfig": "projects/ng-for-validations-note/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-for-validations-note/karma.conf.js"
+            "main": "projects/ng4-validations-note/src/test.ts",
+            "tsConfig": "projects/ng4-validations-note/tsconfig.spec.json",
+            "karmaConfig": "projects/ng4-validations-note/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ng-for-validations-note/tsconfig.lib.json",
-              "projects/ng-for-validations-note/tsconfig.spec.json"
+              "projects/ng4-validations-note/tsconfig.lib.json",
+              "projects/ng4-validations-note/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
