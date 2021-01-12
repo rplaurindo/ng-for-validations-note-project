@@ -37,7 +37,6 @@ export class NewComponent implements OnInit {
     }
 
     onSubmit() {
-        // this.validator.notify();
 
         this.validatorAsList.validate(this.form);
 

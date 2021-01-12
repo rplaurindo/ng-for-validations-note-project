@@ -47,7 +47,7 @@ export class OverControlComponent implements OnInit,
                 if (this.control) {
                     mappedErrorKey = this.notifier.getNextErrorFor(
                         this.control,
-                        Notifier.typeKeys(this.messages)
+                        Notifier.getTypeKeysFrom(this.messages)
                     );
                     if (mappedErrorKey) {
                         this.displayed = true;

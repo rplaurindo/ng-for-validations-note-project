@@ -54,7 +54,7 @@ export class ListComponent implements OnInit {
                 control = controls[fieldName];
                 mappedErrorKey = this.notifier.getNextErrorFor(
                     control,
-                    Notifier.typeKeys(this.messages)
+                    Notifier.getTypeKeysFrom(this.messages)
                 );
 
                 if (this.nameTranslations[fieldName] && mappedErrorKey) {

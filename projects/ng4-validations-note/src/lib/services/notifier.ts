@@ -19,7 +19,7 @@ export class Notifier {
 
     }
 
-    static typeKeys(messages: object): Array<string> {
+    static getTypeKeysFrom(messages: object): Array<string> {
         const
             keys: Array<string> = [];
 

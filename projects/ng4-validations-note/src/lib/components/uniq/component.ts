@@ -58,7 +58,7 @@ export class UniqComponent implements OnInit {
                 control = controls[k];
                 mappedErrorKey = this.notifier.getNextErrorFor(
                     control,
-                    Notifier.typeKeys(this.messages)
+                    Notifier.getTypeKeysFrom(this.messages)
                 );
                 if (mappedErrorKey) {
                     this.displayed = true;

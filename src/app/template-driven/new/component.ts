@@ -4,6 +4,7 @@ import {
 } from '@angular/core';
 
 import { Notifier } from '@actjs.on/ng4-validations-note';
+// import { Notifier } from 'projects/ng4-validations-note';
 
 import { IModelTemplateExample } from '../i-model-template-example';
 
