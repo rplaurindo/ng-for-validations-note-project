@@ -70,5 +70,5 @@ To use `lib-form-validation` you must define the `control` property binding.
 </form>
 ```
 
-So inject the `Ng4ValidationsNote.Services.Notifier` service on your component importing `Ng4ValidationsNote` from `@actjs.on/ng4-validations-note` and call the `notifier()` method when you want to show the validation message in your application. If you want to use `app-form-uniq-validation` or `app-form-validation-list`, you must pass a `NgForm` of `FormGroup` instance as argument to work.
+So inject the `Ng4ValidationsNote.Services.Notifier` service on your component importing `Ng4ValidationsNote` from `@actjs.on/ng4-validations-note` and call the `notify()` method when you want to show the validation message in your application. If you want to use `app-form-uniq-validation` or `app-form-validation-list`, you must pass a `NgForm` of `FormGroup` instance as argument to work.
 
