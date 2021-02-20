@@ -45,7 +45,7 @@ export class OverControlComponent implements OnInit,
         this.validationSubscription = this.notifier.subscribe(
             () => {
                 if (this.control) {
-                    mappedErrorKey = this.notifier.getNextErrorFor(
+                    mappedErrorKey = this.notifier.getNextError4(
                         this.control,
                         Notifier.getTypeKeysFrom(this.messages)
                     );

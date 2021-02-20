@@ -56,7 +56,7 @@ export class UniqComponent implements OnInit {
             controls = form.controls;
             for (const k of Object.keys(controls)) {
                 control = controls[k];
-                mappedErrorKey = this.notifier.getNextErrorFor(
+                mappedErrorKey = this.notifier.getNextError4(
                     control,
                     Notifier.getTypeKeysFrom(this.messages)
                 );

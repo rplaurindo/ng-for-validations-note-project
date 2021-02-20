@@ -52,7 +52,7 @@ export class ListComponent implements OnInit {
             this.errorMessages = [];
             for (const fieldName of Object.keys(form.controls)) {
                 control = controls[fieldName];
-                mappedErrorKey = this.notifier.getNextErrorFor(
+                mappedErrorKey = this.notifier.getNextError4(
                     control,
                     Notifier.getTypeKeysFrom(this.messages)
                 );
