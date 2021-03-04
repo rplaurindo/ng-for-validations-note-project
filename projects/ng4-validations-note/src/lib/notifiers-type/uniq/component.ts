@@ -13,19 +13,24 @@ import { Notifier } from '../../services/notifier';
 
 
 @Component({
-    selector: 'lib-form-validation-list',
+    selector: 'lib-form-uniq-validation',
     templateUrl: './template.html',
     styleUrls: ['./style.styl']
 })
-export class ListComponent implements OnInit {
+export class UniqComponent implements OnInit {
 
     @Input()
-    messages: object;
+    messages!: object;
 
     @Input()
-    nameTranslations: object;
+    control: any;
+
+    @Input()
+    nameTranslations!: object;
 
     displayed: boolean;
+
+    message!: string;
 
     errorMessages: Array<string> = [];
 
@@ -49,21 +54,22 @@ export class ListComponent implements OnInit {
 
         if (form) {
             controls = form.controls;
-            this.errorMessages = [];
-            for (const fieldName of Object.keys(form.controls)) {
-                control = controls[fieldName];
+            for (const k of Object.keys(controls)) {
+                control = (controls as any)[k];
                 mappedErrorKey = this.notifier.getNextError4(
                     control,
                     Notifier.getTypeKeysFrom(this.messages)
                 );
-
-                if (this.nameTranslations[fieldName] && mappedErrorKey) {
-                    this.errorMessages.push(`\n${this.nameTranslations[fieldName]} ${this.messages[mappedErrorKey]}`);
+                if (mappedErrorKey) {
+                    this.displayed = true;
+                    this.message = `
+                                ${(this.nameTranslations as any)[k]} ${(this.messages as any)[mappedErrorKey]}
+                            `;
+                    break;
+                } else {
+                    this.message = '';
+                    this.displayed = false;
                 }
-            }
-
-            if (mappedErrorKey) {
-                this.displayed = true;
             }
         }
     }

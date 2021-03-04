@@ -13,24 +13,19 @@ import { Notifier } from '../../services/notifier';
 
 
 @Component({
-    selector: 'lib-form-uniq-validation',
+    selector: 'lib-form-validation-list',
     templateUrl: './template.html',
     styleUrls: ['./style.styl']
 })
-export class UniqComponent implements OnInit {
+export class ListComponent implements OnInit {
 
     @Input()
-    messages: object;
+    messages!: object;
 
     @Input()
-    control: any;
-
-    @Input()
-    nameTranslations: object;
+    nameTranslations!: object;
 
     displayed: boolean;
-
-    message: string;
 
     errorMessages: Array<string> = [];
 
@@ -46,7 +41,7 @@ export class UniqComponent implements OnInit {
 
     validate(form: NgForm | FormGroup) {
 
-        let mappedErrorKey: string;
+        let mappedErrorKey!: string;
 
         let controls: object;
 
@@ -54,22 +49,21 @@ export class UniqComponent implements OnInit {
 
         if (form) {
             controls = form.controls;
-            for (const k of Object.keys(controls)) {
-                control = controls[k];
+            this.errorMessages = [];
+            for (const fieldName of Object.keys(form.controls)) {
+                control = (controls as any)[fieldName];
                 mappedErrorKey = this.notifier.getNextError4(
                     control,
                     Notifier.getTypeKeysFrom(this.messages)
                 );
-                if (mappedErrorKey) {
-                    this.displayed = true;
-                    this.message = `
-                                ${this.nameTranslations[k]} ${this.messages[mappedErrorKey]}
-                            `;
-                    break;
-                } else {
-                    this.message = '';
-                    this.displayed = false;
+
+                if ((this.nameTranslations as any)[fieldName] && mappedErrorKey) {
+                    this.errorMessages.push(`\n${(this.nameTranslations as any)[fieldName]} ${(this.messages as any)[mappedErrorKey]}`);
                 }
+            }
+
+            if (mappedErrorKey) {
+                this.displayed = true;
             }
         }
     }

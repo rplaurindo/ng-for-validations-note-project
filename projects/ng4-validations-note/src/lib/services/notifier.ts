@@ -58,7 +58,7 @@ export class Notifier {
         let errorKeys: Array<string> = [];
 
         if (control.invalid) {
-            errorKeys = Object.keys(control.errors);
+            errorKeys = Object.keys(control.errors as any);
             for (error of errorKeys) {
                 if (validationTypes.indexOf(error) !== -1) {
                     return error;
@@ -74,7 +74,7 @@ export class Notifier {
             valuesMap: object = {};
 
         Object.keys(ngForm.controls).forEach(control => {
-            valuesMap[control] = ngForm.controls[control].value;
+            (valuesMap as any)[control] = ngForm.controls[control].value;
         });
 
         return valuesMap;

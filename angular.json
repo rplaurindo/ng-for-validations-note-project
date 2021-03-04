@@ -3,11 +3,14 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test8": {
+    "ng4-validations-note-project": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "styl"
+        },
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
       "root": "",
@@ -17,12 +20,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test8",
+            "outputPath": "dist/ng4-validations-note-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -43,9 +46,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -54,6 +55,11 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
@@ -62,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "test8:build"
+            "browserTarget": "ng4-validations-note-project:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "test8:build:production"
+              "browserTarget": "ng4-validations-note-project:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "test8:build"
+            "browserTarget": "ng4-validations-note-project:build"
           }
         },
         "test": {
@@ -110,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "test8:serve"
+            "devServerTarget": "ng4-validations-note-project:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "test8:serve:production"
+              "devServerTarget": "ng4-validations-note-project:serve:production"
             }
           }
         }
@@ -127,10 +133,15 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/ng4-validations-note/tsconfig.lib.json",
             "project": "projects/ng4-validations-note/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng4-validations-note/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -154,6 +165,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "test8"
+    }
+  },
+  "defaultProject": "ng4-validations-note-project",
+  "cli": {
+    "analytics": "a0a2532a-989a-4134-bdde-30fef4a836bd"
+  }
 }

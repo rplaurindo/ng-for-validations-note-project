@@ -19,18 +19,18 @@ export class OverControlComponent implements OnInit,
                                              OnDestroy {
 
     @Input()
-    messages: object;
+    messages!: object;
 
     @Input()
     control: any;
 
     displayed: boolean;
 
-    message: string;
+    message!: string;
 
     errorMessages: Array<string> = [];
 
-    private validationSubscription: Subscription;
+    private validationSubscription!: Subscription;
 
     constructor(
         private notifier: Notifier
@@ -51,7 +51,7 @@ export class OverControlComponent implements OnInit,
                     );
                     if (mappedErrorKey) {
                         this.displayed = true;
-                        this.message = this.messages[mappedErrorKey];
+                        this.message = (this.messages as any)[mappedErrorKey];
                     } else {
                         this.message = '';
                         this.displayed = false;
