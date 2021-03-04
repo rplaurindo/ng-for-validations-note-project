@@ -1,3 +1,3 @@
-export * from './list/module';
-export * from './over-control/module';
-export * from './uniq/module';
+export * from './list/component';
+export * from './over-control/component';
+export * from './uniq/component';

@@ -1,4 +1,6 @@
-export * from './src/lib/notifiers-type/index';
+export * from './src/lib/notifiers-type/list/module';
+export * from './src/lib/notifiers-type/over-control/module';
+export * from './src/lib/notifiers-type/uniq/module';
 
 export * from './src/lib/module';
 

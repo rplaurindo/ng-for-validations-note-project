@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import { ListModule, OverControlModule, UniqModule } from './notifiers-type';
+
+import { ListModule } from './notifiers-type/list/module';
+import { OverControlModule } from './notifiers-type/over-control/module';
+import { UniqModule } from './notifiers-type/uniq/module';
 
 
 @NgModule({

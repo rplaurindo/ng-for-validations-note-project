@@ -9,7 +9,8 @@ import {
     , Validators
 } from '@angular/forms';
 
-import { Ng4ValidationsNote } from '@actjs.on/ng4-validations-note';
+// import { Ng4ValidationsNote } from '@actjs.on/ng4-validations-note';
+import { Ng4ValidationsNote } from 'projects/ng4-validations-note/ng4-validations-note';
 
 
 @Component({
@@ -19,21 +20,23 @@ import { Ng4ValidationsNote } from '@actjs.on/ng4-validations-note';
 })
 export class NewComponent implements OnInit {
 
-    @ViewChild('validatorAsList', { static: false }) private validatorAsList: Ng4ValidationsNote.ListComponent;
+    @ViewChild('validatorAsList', { static: false }) private validatorAsList!: Ng4ValidationsNote.ListComponent;
 
-    @ViewChild('uniqMessageValidator', { static: false }) private uniqMessageValidator: Ng4ValidationsNote.UniqComponent;
+    @ViewChild('uniqMessageValidator', { static: false }) private uniqMessageValidator!: Ng4ValidationsNote.UniqComponent;
 
     form: FormGroup;
 
     constructor(
         private formBuilder: FormBuilder
-    ) { }
-
-    ngOnInit() {
+    ) {
         this.form = this.formBuilder.group({
             name: [null, [Validators.required, Validators.minLength(4)]],
             name2: [null, [Validators.required]]
         });
+    }
+
+    ngOnInit() {
+
     }
 
     onSubmit() {

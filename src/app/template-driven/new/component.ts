@@ -3,7 +3,7 @@ import {
     , OnInit
 } from '@angular/core';
 
-import { Notifier } from '@actjs.on/ng4-validations-note';
+import { Ng4ValidationsNote } from '@actjs.on/ng4-validations-note';
 // import { Notifier } from 'projects/ng4-validations-note';
 
 import { IModelTemplateExample } from '../i-model-template-example';
@@ -19,11 +19,11 @@ export class NewComponent implements OnInit {
     modelReference: IModelTemplateExample;
 
     constructor(
-        private validator: Notifier
+        private validator: Ng4ValidationsNote.Notifier
     ) {
         this.modelReference = {
-            name: null,
-            name2: null
+            name: undefined,
+            name2: undefined
         };
     }
 

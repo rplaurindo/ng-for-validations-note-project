@@ -1,7 +1,4 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -9,17 +6,8 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.styl']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  title = `ng4-validations-note-project`;
-
-  constructor(
-
-  ) {
-
-  }
-
-  ngOnInit() {
-  }
+  constructor() { }
 
 }

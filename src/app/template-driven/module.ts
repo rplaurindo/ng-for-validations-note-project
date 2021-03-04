@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 
-import { FormsModule } from '@angular/forms';
-
 import { Ng4ValidationsNoteModule } from '@actjs.on/ng4-validations-note';
 
 import { RoutingModule } from './routing.module';
@@ -11,10 +9,8 @@ import { NewComponent } from './new/component';
 
 @NgModule({
     imports: [
-        FormsModule
-        , RoutingModule
-
-        , Ng4ValidationsNoteModule.forRoot(),
+        RoutingModule
+        , Ng4ValidationsNoteModule
     ],
     declarations: [
         NewComponent
