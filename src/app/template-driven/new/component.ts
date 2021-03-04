@@ -3,8 +3,8 @@ import {
     , OnInit
 } from '@angular/core';
 
-import { Ng4ValidationsNote } from '@actjs.on/ng4-validations-note';
-// import { Notifier } from 'projects/ng4-validations-note';
+// import { Ng4ValidationsNote } from '@actjs.on/ng4-validations-note';
+import { Ng4ValidationsNote } from 'projects/ng4-validations-note/ng4-validations-note';
 
 import { IModelTemplateExample } from '../i-model-template-example';
 

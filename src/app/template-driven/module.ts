@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
-import { Ng4ValidationsNoteModule } from '@actjs.on/ng4-validations-note';
+// import { Ng4ValidationsNoteModule } from '@actjs.on/ng4-validations-note';
+import { Ng4ValidationsNoteModule } from 'projects/ng4-validations-note/ng4-validations-note';
 
 import { RoutingModule } from './routing.module';
 
