@@ -2,6 +2,7 @@ import {
     NgModule
     , ModuleWithProviders
 } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {
     FormsModule
     , ReactiveFormsModule
@@ -14,7 +15,8 @@ import { ListComponent } from './component';
 
 @NgModule({
     imports: [
-        FormsModule
+        CommonModule
+        , FormsModule
         , ReactiveFormsModule
     ],
     declarations: [
@@ -22,6 +24,7 @@ import { ListComponent } from './component';
     ],
     exports: [
         ListComponent
+        , CommonModule
         , FormsModule
         , ReactiveFormsModule
     ]

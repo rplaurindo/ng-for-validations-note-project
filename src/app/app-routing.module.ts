@@ -10,7 +10,7 @@ import { ListComponent } from './components/examples/index';
 const appRoutes: Routes = [
     {
         path: ''
-        , redirectTo: 'examples/over-control'
+        , redirectTo: 'examples/list'
         , pathMatch: 'full'
     }
     , {
@@ -26,7 +26,10 @@ const appRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forRoot(
+            appRoutes
+            // , { enableTracing: true }
+        )
     ],
     exports: [
         RouterModule

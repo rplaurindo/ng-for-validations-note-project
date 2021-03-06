@@ -2,6 +2,7 @@ import {
     NgModule
     , ModuleWithProviders
 } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {
     FormsModule,
     ReactiveFormsModule
@@ -14,15 +15,16 @@ import { OverControlComponent } from './component';
 
 @NgModule({
     imports: [
-
+        CommonModule
     ],
     declarations: [
         OverControlComponent
     ],
     exports: [
-        ReactiveFormsModule
+        OverControlComponent
+        , CommonModule
+        , ReactiveFormsModule
         , FormsModule
-        , OverControlComponent
     ]
 })
 export class OverControlModule {

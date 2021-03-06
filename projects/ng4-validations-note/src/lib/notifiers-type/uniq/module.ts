@@ -3,6 +3,7 @@ import {
     , ModuleWithProviders
 } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import {
     FormsModule
     , ReactiveFormsModule
@@ -16,6 +17,7 @@ import { UniqComponent } from './component';
 @NgModule({
     imports: [
         BrowserModule
+        , CommonModule
         , FormsModule
         , ReactiveFormsModule
     ],
@@ -23,8 +25,9 @@ import { UniqComponent } from './component';
         UniqComponent
     ],
     exports: [
-        BrowserModule
-        , UniqComponent
+        UniqComponent
+        , BrowserModule
+        , CommonModule
         , FormsModule
         , ReactiveFormsModule
     ]
