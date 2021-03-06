@@ -14,7 +14,7 @@ import { Ng4ValidationsNote } from 'projects/ng4-validations-note/ng4-validation
 
 
 @Component({
-    selector: 'app-list',
+    selector: 'app-list-example',
     templateUrl: './template.html',
     styleUrls: ['./style.styl']
 })

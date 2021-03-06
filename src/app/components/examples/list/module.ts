@@ -21,4 +21,4 @@ import { ListComponent } from './component';
 
     ]
 })
-export class ReactiveFormsExampleModule { }
+export class ListExampleModule { }

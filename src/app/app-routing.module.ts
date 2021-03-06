@@ -4,6 +4,8 @@ import {
     RouterModule
 } from '@angular/router';
 
+import { ListComponent } from './components/examples/index';
+
 
 const appRoutes: Routes = [
     {
@@ -15,8 +17,8 @@ const appRoutes: Routes = [
         path: 'examples',
         children: [
             {
-                path: 'novo',
-                component:
+                path: 'list',
+                component: ListComponent
             }
         ]
     }

@@ -1,19 +1,21 @@
-html
-  body
+.column
+  display inline-block
 
-    .float-right
-      float: right
+.y-in-middle
+  position absolute
+  top 50%
+  transform translateY(-50%)
 
-    .side-by-side
-      display: inline-block
-      vertical-align: top
+.x-in-middle
+  position absolute
+  left 50%
+  transform translateX(-50%)
 
-    .line
-      margin-bottom: 15px
+.xy-in-middle
+  position absolute
+  left 50%
+  top 50%
+  transform translate(-50%, -50%)
 
-      &:last-of-type
-        margin-bottom: initial
-
-    form
-      .actions
-        margin-top: 15px
+.uppercase
+  text-transform uppercase
