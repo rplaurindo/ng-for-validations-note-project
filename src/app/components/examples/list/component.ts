@@ -18,7 +18,7 @@ import { Ng4ValidationsNote } from 'projects/ng4-validations-note/ng4-validation
     templateUrl: './template.html',
     styleUrls: ['./style.styl']
 })
-export class ListComponent implements OnInit {
+export class ListExampleComponent implements OnInit {
 
     @ViewChild('validatorAsList', { static: false }) private validatorAsList!: Ng4ValidationsNote.ListComponent;
 

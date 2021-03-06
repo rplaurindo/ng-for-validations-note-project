@@ -4,7 +4,10 @@ import {
     RouterModule
 } from '@angular/router';
 
-import { ListComponent } from './components/examples/index';
+import {
+    ListExampleComponent,
+    OverControlExampleComponent
+} from './components/examples/index';
 
 
 const appRoutes: Routes = [
@@ -18,7 +21,11 @@ const appRoutes: Routes = [
         children: [
             {
                 path: 'list',
-                component: ListComponent
+                component: ListExampleComponent
+            }
+            , {
+                path: 'over-control',
+                component: OverControlExampleComponent
             }
         ]
     }

@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 // import { ListModule } from '@actjs.on/ng4-validations-note';
 import { ListModule } from 'projects/ng4-validations-note/ng4-validations-note';
 
-import { ListComponent } from './component';
+import { ListExampleComponent } from './component';
 
 
 @NgModule({
@@ -14,10 +14,10 @@ import { ListComponent } from './component';
         , ListModule.forRoot()
     ]
     , declarations: [
-        ListComponent
+        ListExampleComponent
     ]
     , exports: [
-        ListComponent
+        ListExampleComponent
         , BrowserModule
         , ListModule
     ],

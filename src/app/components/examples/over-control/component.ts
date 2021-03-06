@@ -14,7 +14,7 @@ import { IModelTemplateExample } from './i-model-template-example';
     templateUrl: './template.html',
     styleUrls: ['./style.styl']
 })
-export class OverControlComponent implements OnInit {
+export class OverControlExampleComponent implements OnInit {
 
     modelReference: IModelTemplateExample;
 

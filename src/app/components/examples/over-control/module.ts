@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 // import { OverControlModule } from '@actjs.on/ng4-validations-note';
 import { OverControlModule } from 'projects/ng4-validations-note/ng4-validations-note';
 
-import { OverControlComponent } from './component';
+import { OverControlExampleComponent } from './component';
 
 
 @NgModule({
@@ -11,14 +11,14 @@ import { OverControlComponent } from './component';
         OverControlModule.forRoot()
     ],
     declarations: [
-        OverControlComponent
+        OverControlExampleComponent
     ],
     exports: [
-        OverControlComponent
+        OverControlExampleComponent
         , OverControlModule
     ],
     providers: [
 
     ]
 })
-export class TemplateDrivenModule { }
+export class OverControlExampleModule { }
