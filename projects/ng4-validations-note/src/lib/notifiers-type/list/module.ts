@@ -14,7 +14,6 @@ import { ListComponent } from './component';
 
 @NgModule({
     imports: [
-
         FormsModule
         , ReactiveFormsModule
     ],
@@ -22,7 +21,8 @@ import { ListComponent } from './component';
         ListComponent
     ],
     exports: [
-        FormsModule
+        ListComponent
+        , FormsModule
         , ReactiveFormsModule
     ]
 })

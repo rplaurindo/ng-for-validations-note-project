@@ -1,7 +1,7 @@
 import {
-    Component,
-    Input,
-    OnInit
+    Component
+    , Input
+    , OnInit
 } from '@angular/core';
 import {
     FormControl,
