@@ -2,6 +2,10 @@ import {
     NgModule
     , ModuleWithProviders
 } from '@angular/core';
+import {
+    FormsModule,
+    ReactiveFormsModule
+} from '@angular/forms';
 
 import { Notifier } from '../../services/notifier';
 
@@ -16,7 +20,9 @@ import { OverControlComponent } from './component';
         OverControlComponent
     ],
     exports: [
-        OverControlComponent
+        ReactiveFormsModule
+        , FormsModule
+        , OverControlComponent
     ]
 })
 export class OverControlModule {

@@ -4,37 +4,21 @@ import {
     RouterModule
 } from '@angular/router';
 
-import { HomeComponent } from './components/home/component';
-
-import { NewComponent } from './reactive-forms/new/component';
-
 
 const appRoutes: Routes = [
     {
-        path: 'home',
-        component: HomeComponent
-    },
-    {
-        path: 'reactive-forms',
+        path: ''
+        , redirectTo: 'examples/over-control'
+        , pathMatch: 'full'
+    }
+    , {
+        path: 'examples',
         children: [
             {
                 path: 'novo',
-                component: NewComponent
+                component:
             }
         ]
-    },
-    {
-        path: 'template-driven',
-        loadChildren: './template-driven/module#TemplateDrivenModule'
-    },
-    {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-    },
-    {
-        path: '**',
-        loadChildren: './components/errors/404/module#PageNotFoundErrorModule'
     }
 ];
 

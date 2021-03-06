@@ -14,11 +14,11 @@ import { Ng4ValidationsNote } from 'projects/ng4-validations-note/ng4-validation
 
 
 @Component({
-    selector: 'app-reactive-form-form',
-    templateUrl: '../template.html',
-    styleUrls: ['../style.styl']
+    selector: 'app-list',
+    templateUrl: './template.html',
+    styleUrls: ['./style.styl']
 })
-export class NewComponent implements OnInit {
+export class ListComponent implements OnInit {
 
     @ViewChild('validatorAsList', { static: false }) private validatorAsList!: Ng4ValidationsNote.ListComponent;
 

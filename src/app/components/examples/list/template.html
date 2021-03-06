@@ -1,0 +1,38 @@
+<div class="line">
+  <lib-form-validation-list
+    #validatorAsList
+    [messages]="{
+      required: 'não pode ficar em branco.',
+      minlength: 'deve ter no mínimo 4 caracteres.'
+    }"
+    [nameTranslations]="{
+      name: 'Nome',
+      name2: 'Nome 2'
+    }"
+  ></lib-form-validation-list>
+</div>
+
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+
+  <div class="line">
+    <input
+      formControlName="name"
+      placeholder="nome"
+    />
+  </div>
+
+  <div class="line">
+    <input
+      formControlName="name2"
+      placeholder="nome 2"
+    />
+  </div>
+
+  <div class="actions">
+    <button type="submit">Salvar</button>
+  </div>
+
+</form>
