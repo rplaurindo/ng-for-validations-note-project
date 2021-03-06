@@ -1,18 +1,4 @@
 <div class="line">
-  <lib-form-validation-list
-    #validatorAsList
-    [messages]="{
-      required: 'não pode ficar em branco.',
-      minlength: 'deve ter no mínimo 4 caracteres.'
-    }"
-    [nameTranslations]="{
-      name: 'Nome',
-      name2: 'Nome 2'
-    }"
-  ></lib-form-validation-list>
-</div>
-
-<!-- <div class="line">
   <lib-form-uniq-validation
     #uniqMessageValidator
     [messages]="{
@@ -24,7 +10,7 @@
       name2: 'Nome 2'
     }"
   ></lib-form-uniq-validation>
-</div> -->
+</div>
 
 <form
   [formGroup]="form"
@@ -36,14 +22,6 @@
       formControlName="name"
       placeholder="nome"
     />
-
-    <!-- <lib-form-validation
-      [messages]="{
-        required: 'Não pode ficar em branco.',
-        minlength: 'Deve ter no mínimo 4 caracteres.'
-      }"
-      [control]="form.controls['name']"
-    ></lib-form-validation> -->
   </div>
 
   <div class="line">
@@ -52,13 +30,6 @@
       placeholder="nome 2"
     />
 
-    <!-- <lib-form-validation
-      [messages]="{
-        required: 'Não pode ficar em branco.',
-        minlength: 'Deve ter no mínimo 4 caracteres.'
-      }"
-      [control]="form.get('name2')"
-    ></lib-form-validation> -->
   </div>
 
   <div class="actions">
