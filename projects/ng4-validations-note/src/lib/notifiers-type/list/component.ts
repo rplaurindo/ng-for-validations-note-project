@@ -1,7 +1,6 @@
 import {
     Component
     , Input
-    , OnInit
 } from '@angular/core';
 import {
     FormControl,
@@ -13,11 +12,11 @@ import { Notifier } from '../../services/notifier';
 
 
 @Component({
-    selector: 'lib-form-validation-list',
+    selector: 'lib-list-form-validation',
     templateUrl: './template.html',
     styleUrls: ['./style.styl']
 })
-export class ListComponent implements OnInit {
+export class ListComponent {
 
     @Input()
     messages!: object;
@@ -33,10 +32,6 @@ export class ListComponent implements OnInit {
         private notifier: Notifier
     ) {
         this.displayed = false;
-    }
-
-    ngOnInit() {
-
     }
 
     validate(form: NgForm | FormGroup) {
@@ -61,7 +56,7 @@ export class ListComponent implements OnInit {
                     this.errorMessages.push(`\n${(this.nameTranslations as any)[fieldName]} ${(this.messages as any)[mappedErrorKey]}`);
                 }
             }
-
+            debugger
             if (mappedErrorKey) {
                 this.displayed = true;
             }

@@ -14,15 +14,13 @@ import { Ng4ValidationsNote } from 'projects/ng4-validations-note/ng4-validation
 
 
 @Component({
-    selector: 'app-uniq',
+    selector: 'app-form-validation',
     templateUrl: './template.html',
     styleUrls: ['./style.styl']
 })
-export class UniqComponent implements OnInit {
+export class Single41ControlAtTimeComponent implements OnInit {
 
-    @ViewChild('validatorAsList', { static: false }) private validatorAsList!: Ng4ValidationsNote.ListComponent;
-
-    @ViewChild('uniqMessageValidator', { static: false }) private uniqMessageValidator!: Ng4ValidationsNote.UniqComponent;
+    @ViewChild('single41ControlAtTimeValidator', { static: false }) private single41ControlAtTimeValidator!: Ng4ValidationsNote.Single41ControlAtTimeComponent;
 
     form: FormGroup;
 
@@ -40,10 +38,7 @@ export class UniqComponent implements OnInit {
     }
 
     onSubmit() {
-
-        this.validatorAsList.validate(this.form);
-
-        // this.uniqMessageValidator.validate(this.form);
+        this.single41ControlAtTimeValidator.validate(this.form);
     }
 
 }

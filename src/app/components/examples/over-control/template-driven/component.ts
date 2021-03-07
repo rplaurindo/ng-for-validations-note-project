@@ -10,11 +10,11 @@ import { IModelTemplateExample } from './i-model-template-example';
 
 
 @Component({
-    selector: 'app-over-control',
+    selector: 'app-form-validation',
     templateUrl: './template.html',
     styleUrls: ['./style.styl']
 })
-export class OverControlExampleComponent implements OnInit {
+export class OverControlAsTemplateDrivenExampleComponent implements OnInit {
 
     modelReference: IModelTemplateExample;
 

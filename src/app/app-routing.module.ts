@@ -5,8 +5,9 @@ import {
 } from '@angular/router';
 
 import {
-    ListExampleComponent,
-    OverControlExampleComponent
+    ListExampleComponent
+    , Single41ControlAtTimeComponent
+    // OverControlExampleComponent
 } from './components/examples/index';
 
 
@@ -25,7 +26,20 @@ const appRoutes: Routes = [
             }
             , {
                 path: 'over-control',
-                component: OverControlExampleComponent
+                children: [
+                    // {
+                    //     path: 'reactive-form'
+                    //     , component:
+                    // }
+                    // , {
+                    //     path: 'template-driven'
+                    //     , component:
+                    // }
+                ]
+            }
+            , {
+                path: 'single-4-1-control-at-time',
+                component: Single41ControlAtTimeComponent
             }
         ]
     }

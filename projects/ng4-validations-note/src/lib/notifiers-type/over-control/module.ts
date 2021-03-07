@@ -11,10 +11,13 @@ import {
 import { Notifier } from '../../services/notifier';
 
 import { OverControlComponent } from './component';
+// import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
     imports: [
+        // BrowserModule
+        // , CommonModule
         CommonModule
     ],
     declarations: [
@@ -22,6 +25,7 @@ import { OverControlComponent } from './component';
     ],
     exports: [
         OverControlComponent
+        // , BrowserModule
         , CommonModule
         , ReactiveFormsModule
         , FormsModule

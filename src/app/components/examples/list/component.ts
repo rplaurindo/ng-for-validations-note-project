@@ -14,15 +14,13 @@ import { Ng4ValidationsNote } from 'projects/ng4-validations-note/ng4-validation
 
 
 @Component({
-    selector: 'app-list-example',
+    selector: 'app-form-validation',
     templateUrl: './template.html',
     styleUrls: ['./style.styl']
 })
 export class ListExampleComponent implements OnInit {
 
     @ViewChild('validatorAsList', { static: false }) private validatorAsList!: Ng4ValidationsNote.ListComponent;
-
-    @ViewChild('uniqMessageValidator', { static: false }) private uniqMessageValidator!: Ng4ValidationsNote.UniqComponent;
 
     form: FormGroup;
 
@@ -40,10 +38,7 @@ export class ListExampleComponent implements OnInit {
     }
 
     onSubmit() {
-
         this.validatorAsList.validate(this.form);
-
-        // this.uniqMessageValidator.validate(this.form);
     }
 
 }

@@ -13,11 +13,11 @@ import { Notifier } from '../../services/notifier';
 
 
 @Component({
-    selector: 'lib-form-uniq-validation',
+    selector: 'lib-single-4-1-control-at-time-form-validation',
     templateUrl: './template.html',
     styleUrls: ['./style.styl']
 })
-export class UniqComponent implements OnInit {
+export class Single41ControlAtTimeComponent implements OnInit {
 
     @Input()
     messages!: object;

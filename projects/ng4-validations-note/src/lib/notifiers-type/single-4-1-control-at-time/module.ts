@@ -11,7 +11,7 @@ import {
 
 import { Notifier } from '../../services/notifier';
 
-import { UniqComponent } from './component';
+import { Single41ControlAtTimeComponent } from './component';
 
 
 @NgModule({
@@ -22,21 +22,21 @@ import { UniqComponent } from './component';
         , ReactiveFormsModule
     ],
     declarations: [
-        UniqComponent
+        Single41ControlAtTimeComponent
     ],
     exports: [
-        UniqComponent
+        Single41ControlAtTimeComponent
         , BrowserModule
         , CommonModule
         , FormsModule
         , ReactiveFormsModule
     ]
 })
-export class UniqModule {
+export class Single41ControlAtTimeModule {
 
-    static forRoot(): ModuleWithProviders<UniqModule> {
+    static forRoot(): ModuleWithProviders<Single41ControlAtTimeModule> {
         return {
-            ngModule: UniqModule
+            ngModule: Single41ControlAtTimeModule
             , providers: [
                 Notifier
             ]
