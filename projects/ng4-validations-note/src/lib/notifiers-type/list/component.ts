@@ -56,7 +56,7 @@ export class ListComponent {
                     this.errorMessages.push(`\n${(this.nameTranslations as any)[fieldName]} ${(this.messages as any)[mappedErrorKey]}`);
                 }
             }
-            debugger
+
             if (mappedErrorKey) {
                 this.displayed = true;
             }
