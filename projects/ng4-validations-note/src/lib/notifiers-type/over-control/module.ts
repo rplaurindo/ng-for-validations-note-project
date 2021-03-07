@@ -2,6 +2,7 @@ import {
     NgModule
     , ModuleWithProviders
 } from '@angular/core';
+// import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import {
     FormsModule,
@@ -11,7 +12,6 @@ import {
 import { Notifier } from '../../services/notifier';
 
 import { OverControlComponent } from './component';
-// import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
