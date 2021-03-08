@@ -17,7 +17,7 @@ nav
     ul
 
       > li
-        float left
+        display inline-block
 
         &.with-anchor
           padding initial !important
@@ -33,11 +33,7 @@ nav
           // >: combina com somente o primeiro elemento na árvore do dom, isto é, não combina recursivamente
           // o ul não pode ter overflow-x pois suprimirá os uls filhos
           > ul
-            display block !important
-            // display inline-block !important
-
-        a
-          display block
+            display block
 
         ul
           display none
@@ -47,7 +43,13 @@ nav
           li
             width 100%
 
+            &:hover
+              ul
+                display inline-block
+
             ul
+              width 100%
+
               li
                 &:first-of-type
                   background transparent !important
@@ -56,6 +58,3 @@ nav
                   &:hover
                     // para se haver efetividade caso haja um efeito no li ao se passar o mouse
                     background initial !important
-
-                    > ul
-                      display inline-block
