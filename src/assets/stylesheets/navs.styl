@@ -17,15 +17,12 @@ nav
     ul
 
       > li
-        display inline-block
-
-        &.with-anchor
-          padding initial !important
 
       li
         text-align center
         position relative
         margin-left: -1px
+        display table-cell
 
         &:hover
           cursor default
@@ -42,6 +39,8 @@ nav
 
           li
             width 100%
+            display block
+
 
             &:hover
               ul
