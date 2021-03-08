@@ -15,7 +15,6 @@ nav
   &.horizontal
 
     ul
-      display inline-block
 
       > li
         float left
@@ -35,6 +34,7 @@ nav
           // o ul não pode ter overflow-x pois suprimirá os uls filhos
           > ul
             display block !important
+            // display inline-block !important
 
         a
           display block
@@ -45,13 +45,17 @@ nav
           z-index 1
 
           li
+            width 100%
+
             ul
               li
                 &:first-of-type
-                  background transparent
-                  // if don’t set border-color, the assumed color will be of the color attribute
-                  border-top transparent
+                  background transparent !important
+                  border-top transparent !important
 
                   &:hover
                     // para se haver efetividade caso haja um efeito no li ao se passar o mouse
                     background initial !important
+
+                    > ul
+                      display inline-block
