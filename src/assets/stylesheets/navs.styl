@@ -26,33 +26,32 @@ nav
       li
         text-align center
         position relative
+        margin-left: -1px
 
         &:hover
           cursor default
 
-          // first child only
-          //o ul nÃo pode ter overflow-x pois suprimirá os uls filhos
+          // >: combina com somente o primeiro elemento na árvore do dom, isto é, não combina recursivamente
+          // o ul não pode ter overflow-x pois suprimirá os uls filhos
           > ul
             display block !important
 
         a
           display block
 
-        ul.sub-menu,
         ul
-
           display none
           position absolute
           z-index 1
 
-          &.sub-menu
-            li
-              ul
-                li
-                  &:first-of-type
-                    background transparent
-                    // if don’t set border-color, the assumed color will be of the color attribute
-                    border-top transparent
+          li
+            ul
+              li
+                &:first-of-type
+                  background transparent
+                  // if don’t set border-color, the assumed color will be of the color attribute
+                  border-top transparent
 
-                    &:hover
-                      background initial !important
+                  &:hover
+                    // para se haver efetividade caso haja um efeito no li ao se passar o mouse
+                    background initial !important
