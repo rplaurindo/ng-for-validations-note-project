@@ -1,12 +1,58 @@
 nav
+  ul
+    list-style none
+
   &.tabs-behavior
-    ul
-      list-style-type none
+    display inline-block
+
+    li
       display inline-block
 
+      a
+        display block
+        text-decoration none
+
+  &.horizontal
+
+    ul
+      display inline-block
+
+      > li
+        float left
+
+        &.with-anchor
+          padding initial !important
+
       li
-        display inline-block
+        text-align center
+        position relative
+
+        &:hover
+          cursor default
+
+          // first child only
+          //o ul nÃo pode ter overflow-x pois suprimirá os uls filhos
+          > ul
+            display block !important
 
         a
           display block
-          text-decoration none
+
+        ul.sub-menu,
+        ul
+
+          display none
+          position absolute
+          z-index 1
+
+          &.sub-menu
+            li
+              ul
+                li
+                  &:first-of-type
+                    background transparent
+                    // if don’t set border-color, the assumed color will be of the color attribute
+                    border-top transparent
+
+                    &:hover
+                      background initial !important

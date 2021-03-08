@@ -6,8 +6,9 @@ import {
 
 import {
     ListExampleComponent
+    , OverControlAsTemplateDrivenExampleComponent
+    , OverControlExampleComponent
     , Single41ControlAtTimeComponent
-    // OverControlExampleComponent
 } from './components/examples/index';
 
 
@@ -27,14 +28,14 @@ const appRoutes: Routes = [
             , {
                 path: 'over-control',
                 children: [
-                    // {
-                    //     path: 'reactive-form'
-                    //     , component:
-                    // }
-                    // , {
-                    //     path: 'template-driven'
-                    //     , component:
-                    // }
+                    {
+                        path: 'reactive-form'
+                        , component: OverControlExampleComponent
+                    }
+                    , {
+                        path: 'template-driven'
+                        , component: OverControlAsTemplateDrivenExampleComponent
+                    }
                 ]
             }
             , {

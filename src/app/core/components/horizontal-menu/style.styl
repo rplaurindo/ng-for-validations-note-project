@@ -1,9 +1,31 @@
 app-horizontal-menu:host
-  ul
-    li
-      display inline-block
-      margin-right 4px
-      margin-left 4px
 
-      &:first-of-type
-        margin-left initial
+  nav
+
+    &.horizontal
+      border-bottom 1px solid
+
+      ul
+
+        > li
+          padding padding 0
+
+        li
+
+          a
+            padding padding 0
+            text-decoration none
+
+          ul
+            &.sub-menu
+              li
+                border-top 1px solid
+                padding padding 0
+
+                ul
+                  top 1px
+
+                  li
+                    &:nth-of-type(2)
+                      &:hover
+                        border-top transparent
