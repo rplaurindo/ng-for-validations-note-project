@@ -15,12 +15,14 @@ nav
   &.horizontal
 
     ul
+      display table-cell
+      vertical-align middle
 
       li
         text-align center
-        position relative
         margin-left: -1px
-        display table-cell
+        position relative
+        display inline-block
 
         &:hover
           cursor default
@@ -35,8 +37,8 @@ nav
           position absolute
           z-index 1
           left 0
-          width 100%
-          margin-left -5px
+          margin-left -3px
+          width 98%
 
           li
             width 100%
@@ -50,7 +52,9 @@ nav
                 display inline-block
 
             ul
-              width 100%
+              top 0
+              left 100%
+              margin-left initial
 
               li
                 &:first-of-type
