@@ -16,8 +16,6 @@ nav
 
     ul
 
-      > li
-
       li
         text-align center
         position relative
@@ -36,11 +34,16 @@ nav
           display none
           position absolute
           z-index 1
+          left 0
+          width 100%
+          margin-left -5px
 
           li
             width 100%
             display block
 
+            &:first-of-type
+              border-top transparent !important
 
             &:hover
               ul
@@ -52,7 +55,6 @@ nav
               li
                 &:first-of-type
                   background transparent !important
-                  border-top transparent !important
 
                   &:hover
                     // para se haver efetividade caso haja um efeito no li ao se passar o mouse
