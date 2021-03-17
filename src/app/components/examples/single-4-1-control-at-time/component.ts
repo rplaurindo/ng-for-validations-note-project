@@ -7,6 +7,7 @@ import {
     FormGroup
     , FormBuilder
     , Validators
+    , FormControl
 } from '@angular/forms';
 
 // import { Ng4ValidationsNote } from '@actjs.on/ng4-validations-note';
@@ -27,10 +28,22 @@ export class Single41ControlAtTimeComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder
     ) {
+
         this.form = this.formBuilder.group({
-            name: [null, [Validators.required, Validators.minLength(4)]],
-            name2: [null, [Validators.required]]
+            name: new FormControl('',
+                {
+                    validators: [Validators.required, Validators.minLength(4)]
+                    , updateOn: 'blur'
+                }
+            )
+            , name2: new FormControl('',
+                {
+                    validators: [Validators.required]
+                    , updateOn: 'blur'
+                }
+            )
         });
+
     }
 
     ngOnInit() {
