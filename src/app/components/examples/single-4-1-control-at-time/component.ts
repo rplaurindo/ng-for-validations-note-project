@@ -14,7 +14,7 @@ import { Ng4ValidationsNote } from 'projects/ng4-validations-note/ng4-validation
 
 
 @Component({
-    selector: 'app-form-validation',
+    selector: 'app-form-validation-as-single-4-1-control-at-time',
     templateUrl: './template.html',
     styleUrls: ['./style.styl']
 })

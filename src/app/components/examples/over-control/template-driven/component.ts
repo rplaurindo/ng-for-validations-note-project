@@ -10,7 +10,7 @@ import { IModelTemplateExample } from './i-model-template-example';
 
 
 @Component({
-    selector: 'app-form-validation',
+    selector: 'app-form-validation-as-over-control',
     templateUrl: './template.html',
     styleUrls: ['./style.styl']
 })

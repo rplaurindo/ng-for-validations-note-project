@@ -1,15 +1,12 @@
 <form
-  #form="ngForm"
+  [formGroup]="form"
   (ngSubmit)="onSubmit()"
   >
 
   <div class="line">
     <input
-      [ngModel]="modelReference?.name"
-      name="name"
+      formControlName="name"
       placeholder="nome"
-      required
-      minlength="4"
     />
 
     <lib-form-validation
@@ -23,10 +20,8 @@
 
   <div class="line">
     <input
-      [ngModel]="modelReference?.name2"
-      name="name2"
+      formControlName="name2"
       placeholder="nome 2"
-      required
     />
 
     <lib-form-validation
