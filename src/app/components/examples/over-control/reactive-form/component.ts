@@ -4,6 +4,7 @@ import {
 } from '@angular/core';
 import {
     FormBuilder,
+    FormControl,
     FormGroup,
     Validators
 } from '@angular/forms';
@@ -27,8 +28,18 @@ export class OverControlExampleComponent implements OnInit {
     ) {
 
         this.form = this.formBuilder.group({
-            name: [null, [Validators.required, Validators.minLength(4)]],
-            name2: [null, [Validators.required]]
+            name: new FormControl('',
+                {
+                    validators: [Validators.required, Validators.minLength(4)]
+                    , updateOn: 'blur'
+                }
+            )
+            , name2: new FormControl('',
+                {
+                    validators: [ Validators.required]
+                    , updateOn: 'blur'
+                }
+            )
         });
 
     }

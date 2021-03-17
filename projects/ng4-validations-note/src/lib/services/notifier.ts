@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {
     NgForm,
-    FormControl
+    FormControl,
+    AbstractControl
 } from '@angular/forms';
 import {
     Subject,
@@ -48,10 +49,8 @@ export class Notifier {
         this.validationSubscription.next();
     }
 
-    getNextError4(
-        control: FormControl,
-        validationTypes: Array<string>
-    ): string {
+    // https://angular.io/guide/form-validation
+    getNextError4(control: AbstractControl, validationTypes: Array<string>): string {
 
         let error: string;
 
