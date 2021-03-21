@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
     NgForm,
-    FormControl,
     AbstractControl
 } from '@angular/forms';
 import {
@@ -15,7 +14,7 @@ export class Notifier {
 
     private validationSubscription: Subject<void> = new Subject();
 
-    // constructor(control: FormControl, validationTypes: Array<string>) {
+    // constructor(control: AbstractControl, validationTypes: Array<string>) {
     constructor() {
 
     }

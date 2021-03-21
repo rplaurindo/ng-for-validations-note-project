@@ -3,7 +3,7 @@ import {
     , Input
 } from '@angular/core';
 import {
-    FormControl,
+    AbstractControl,
     FormGroup,
     NgForm
 } from '@angular/forms';
@@ -40,7 +40,7 @@ export class ListComponent {
 
         let controls: object;
 
-        let control: FormControl;
+        let control: AbstractControl;
 
         if (form) {
             controls = form.controls;
