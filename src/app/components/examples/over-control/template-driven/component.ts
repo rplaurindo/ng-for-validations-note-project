@@ -12,7 +12,7 @@ import { IModelTemplateExample } from './i-model-template-example';
 @Component({
     selector: 'app-form-validation-as-over-control',
     templateUrl: './template.html',
-    styleUrls: ['./style.styl']
+    styleUrls: ['./style.less']
 })
 export class OverControlAsTemplateDrivenExampleComponent implements OnInit {
 

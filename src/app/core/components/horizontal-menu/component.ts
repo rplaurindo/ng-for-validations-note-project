@@ -7,7 +7,7 @@ import {
 @Component({
     selector: 'app-horizontal-menu',
     templateUrl: './template.html',
-    styleUrls: ['./style.styl']
+    styleUrls: ['./style.less']
 })
 export class HorizontalMenuComponent implements OnInit {
 

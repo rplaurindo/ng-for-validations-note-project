@@ -17,7 +17,7 @@ import { Ng4ValidationsNote } from 'projects/ng4-validations-note/ng4-validation
 @Component({
     selector: 'app-form-validation-as-list',
     templateUrl: './template.html',
-    styleUrls: ['./style.styl']
+    styleUrls: ['./style.less']
 })
 export class ListExampleComponent implements OnInit {
 
