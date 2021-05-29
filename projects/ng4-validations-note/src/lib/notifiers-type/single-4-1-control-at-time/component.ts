@@ -15,7 +15,7 @@ import { Notifier } from '../../services/notifier';
 @Component({
     selector: 'lib-single-4-1-control-at-time-form-validation',
     templateUrl: './template.html',
-    styleUrls: ['./style.styl']
+    styleUrls: ['./style.less']
 })
 export class Single41ControlAtTimeComponent implements OnInit {
 

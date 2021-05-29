@@ -78,7 +78,7 @@
               "browserTarget": "ng4-validations-note-project:build:production"
             },
             "development": {
-              "browserTarget": "test-lib:build:development"
+              "browserTarget": "ng4-validations-note-project:build:development"
             }
           },
           "defaultConfiguration": "development"

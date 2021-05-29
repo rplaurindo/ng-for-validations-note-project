@@ -13,7 +13,7 @@ import { Notifier } from '../../services/notifier';
 @Component({
     selector: 'lib-form-validation',
     templateUrl: './template.html',
-    styleUrls: ['./style.styl']
+    styleUrls: ['./style.less']
 })
 export class OverControlComponent implements OnInit,
                                              OnDestroy {
